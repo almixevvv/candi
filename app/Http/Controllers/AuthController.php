@@ -10,8 +10,11 @@ use Illuminate\Support\Carbon;
 
 class AuthController extends Controller
 {
-    public function show()
+    public function show(Request $request)
     {
+        // echo 'kesini';
+        // $request->session()->flush();
+        // $request->session()->invalidate();
         if (Auth::check()) {
             return redirect()->route('dashboard');
         }

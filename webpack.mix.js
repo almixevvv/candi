@@ -15,6 +15,7 @@ mix
 	.js('resources/js/app.js', 'public/js')
 	.js('resources/js/generalFunction.js', 'public/js')
 	.js('resources/js/sign-in/auth', 'public/js/sign-in')
+	.js('resources/js/front', 'public/js')
 	.postCss(
 		'resources/css/app.css',
 		'public/css',
