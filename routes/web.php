@@ -28,7 +28,7 @@ Route::view('/detail_blog', 'front.blog.detail')->name('detail_blog');
 
 //CMS Routes
 Route::prefix('cms')->group(function () {
-    Route::view('/', 'dashboard.index', ['pageName'    => 'Dashboard'])->name('dashboard');
+    Route::view('/', 'cms.dashboard.index', ['pageName'    => 'Dashboard'])->name('dashboard');
     Route::view('/dashboard', 'dashboard.index', ['pageName'    => 'Dashboard'])->name('dashboard');
 
     //Login Process
