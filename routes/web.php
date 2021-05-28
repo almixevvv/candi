@@ -15,7 +15,7 @@ use App\Http\Controllers\AuthController;
 |
 */
 
-Route::view('/', 'home.index');
+Route::view('/', 'front.home.index');
 
 //Front Routes
 Route::view('/blog', 'front.blog.index')->name('blog');
@@ -24,6 +24,7 @@ Route::view('/contact', 'front.contact.index')->name('contact');
 Route::view('/promo', 'front.promo.index')->name('promo');
 Route::view('/advertise', 'front.advertise.index')->name('advertise');
 Route::view('/directory', 'front.directory.index')->name('directory');
+Route::view('/detail_blog', 'front.blog.detail')->name('detail_blog');
 
 //CMS Routes
 Route::prefix('cms')->group(function () {
