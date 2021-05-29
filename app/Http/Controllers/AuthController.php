@@ -19,7 +19,17 @@ class AuthController extends Controller
             return redirect()->route('dashboard');
         }
 
-        return view('auth.index', ['pageName'    => 'Login']);
+        return view('cms.auth.index', ['pageName'    => 'Login']);
+    }
+
+    public function logout(Request $request)
+    {
+        Auth::logout();
+
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect()->route('login.index');
     }
 
     public function authenticate(Request $request)

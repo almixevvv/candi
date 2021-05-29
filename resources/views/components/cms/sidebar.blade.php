@@ -3,7 +3,7 @@
     <!--begin::Brand-->
     <div class="aside-logo flex-column-auto" id="kt_aside_logo">
         <!--begin::Logo-->
-        <a href="index.html">
+        <a href="{{ route('dashboard') }}">
             <img alt="Logo" src="/media/logos/logo-1.svg" class="h-15px logo" />
         </a>
         <!--end::Logo-->
@@ -31,7 +31,7 @@
             <!--begin::Menu-->
             <div class="menu menu-column menu-title-gray-800 menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-500" id="#kt_aside_menu" data-kt-menu="true">
                 <div class="menu-item">
-                    <a class="menu-link active" href="index.html">
+                    <a class="menu-link active" href="{{ route('dashboard') }}">
                         <span class="menu-icon">
                             <!--begin::Svg Icon | path: icons/stockholm/Design/PenAndRuller.svg-->
                             <span class="svg-icon svg-icon-2">
@@ -66,7 +66,7 @@
                                     @foreach ($sidebarChild as $subChild)
                                         @if ($subChild->parent_id == $child->appl_id)
                                             <div class="menu-item">
-                                                <a class="menu-link" href="{{ $subChild->link }}">
+                                                <a class="menu-link" href="{{ 'cms/' . $subChild->link }}">
                                                     <span class="menu-bullet">
                                                         <span class="bullet bullet-dot"></span>
                                                     </span>
@@ -76,20 +76,6 @@
                                         @endif
                                     @endforeach
                                 </div>
-                                    {{-- <div class="menu-sub menu-sub-accordion">
-                                    @foreach($sidebarChild as $subChild)
-                                        @if ($subChild->parent_id == $child->appl_id)
-                                        <div class="menu-item">
-                                            <a class="{{ $subChild->link }}" href="apps/customers/getting-started.html">
-                                                <span class="menu-bullet">
-                                                    <span class="bullet bullet-dot"></span>
-                                                </span>
-                                                <span class="menu-title">{{ $subChild->name }}</span>
-                                            </a>
-                                        </div>
-                                        @endif
-                                    @endforeach
-                                    </div> --}}
                             </div>
                             @endif
                         @endif

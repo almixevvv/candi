@@ -13,6 +13,8 @@
     <!--begin::Global Stylesheets Bundle(used by all pages)-->
     <link href="/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
     <link href="/css/style.bundle.css" rel="stylesheet" type="text/css" />
+    <script src="/js/app.js"></script>
+    
     <!--end::Global Stylesheets Bundle-->
 </head>
 <!--end::Head-->

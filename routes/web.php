@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\WhoareweController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,23 +20,28 @@ Route::view('/', 'front.home.index');
 
 //Front Routes
 Route::view('/blog', 'front.blog.index')->name('blog');
-Route::view('/whoweare', 'front.whoweare.index')->name('whoweare');
 Route::view('/contact', 'front.contact.index')->name('contact');
 Route::view('/promo', 'front.promo.index')->name('promo');
 Route::view('/advertise', 'front.advertise.index')->name('advertise');
 Route::view('/directory', 'front.directory.index')->name('directory');
 Route::view('/detail_blog', 'front.blog.detail')->name('detail_blog');
 
+Route::get('/whoweare', [WhoareweController::class, 'index'])->name('whoweare');
+
 //CMS Routes
 Route::prefix('cms')->group(function () {
-    Route::view('/', 'dashboard.index', ['pageName'    => 'Dashboard'])->name('dashboard');
-    Route::view('/dashboard', 'dashboard.index', ['pageName'    => 'Dashboard'])->name('dashboard');
+    Route::view('/', 'cms.dashboard.index', ['pageName'    => 'Dashboard'])->name('dashboard');
+    Route::view('/dashboard', 'cms.dashboard.index', ['pageName'    => 'Dashboard'])->name('dashboard');
+
+    //Who are we process
+    Route::get('/whoarewe', [WhoareweController::class, 'show'])->name('waw.index');
+    // Route::get('/fetchData', [WhoareweController::class, 'fetch'])->name('waw.fetch');
+    Route::post('/whoarewe', [WhoareweController::class, 'post'])->name('waw.post');
 
     //Login Process
-    // Route::view('/login', [AuthController::class, 'show'])->name('login.index');
     Route::get('/login', [AuthController::class, 'show'])->name('login.index');
     Route::post('/login', [AuthController::class, 'authenticate'])->name('login.process');
-
+    Route::get('/logout', [AuthController::class, 'logout'])->name('login.logout');
 
     Route::view('/reset', 'auth.reset', ['pageName'    => 'Reset Password'])->name('reset.index');
 });
