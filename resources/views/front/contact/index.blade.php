@@ -1,5 +1,15 @@
 @extends('layouts.front.index')
 @section('content')
+<style>
+    .input_bottom{
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border: none;
+        border-bottom: 2px solid red;
+        }
+</style>
 <div class="container">
     <div class="breadcrumbs">
         <div class="wrap">

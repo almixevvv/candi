@@ -6,6 +6,7 @@
     <title>Candi.id</title>
     <link href="https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Prata&display=swap" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/mainstyle.css">
   
     <link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/logo.svg">
@@ -25,6 +26,7 @@
           * {
           box-sizing: border-box;
         }
+       
          /*----------------------------- start grid blog and directory */
         .gridywrap div[class*=gridy] {
           background: #eee;
@@ -40,9 +42,11 @@
         .gridywrap .gridy-1 {width: 100%;}
         .gridywrap .gridy-2 {width: 100%;}
         .gridywrap .gridy-3 {width: 100%;}
+        .gridywrap .gridy-4 {width: 100%;}
 
         .gridywrap .gridyhe-1 {height: 320px;}
         .gridywrap .gridyhe-2 {height: 320px;}
+        .gridywrap .gridyhe-3 {height: 50%;}
 
         @media screen and (min-width: 640px) {
           .gridywrap .gridyhe-2 {height: 320px;}
@@ -52,11 +56,13 @@
           .gridywrap .gridy-1 {width: 50%;}
           .gridywrap .gridy-2 {width: 50%;}
           .gridywrap .gridy-3 {width: 100%;}
+          .gridywrap .gridy-4 {width: 25%;}
         }
         @media screen and (min-width: 1024px) {
           .gridywrap .gridy-1 {width: 33.3%;}
           .gridywrap .gridy-2 {width: 66.6%;}
           .gridywrap .gridy-3 {width: 100%;}
+          .gridywrap .gridy-4 {width: 25%;}
           .gridywrap .gridyhe-2 {height: 640px;}
         }
         /*styling*/
