@@ -464,7 +464,7 @@ button:hover * {
 body {
 	margin: 0;
 	padding: 0;
-	font-family: 'Nunito', sans-serif;
+	font-family: 'Comfortaa', sans-serif;
 	color: #000;
 	font-size: 16px;
 }
@@ -534,7 +534,7 @@ body.os-windows .popup::-webkit-scrollbar-thumb {
 }
 .title {
 	font-size: 48px;
-	font-family: 'Prata', serif;
+	font-family: 'Comfortaa', serif;
 	margin-bottom: 12px;
 }
 .subtitle {
@@ -634,31 +634,31 @@ body.os-windows .popup::-webkit-scrollbar-thumb {
 .page.static-page .left_content h2 {
 	font-size: 30px;
 	color: #222;
-	font-family: "Prata", serif;
+	font-family: "Comfortaa", serif;
 	margin: 30px 0 10px;
 }
 .page.static-page .left_content h3 {
 	font-size: 28px;
 	color: #222;
-	font-family: "Prata", serif;
+	font-family: "Comfortaa", serif;
 	margin: 30px 0 10px;
 }
 .page.static-page .left_content h4 {
 	font-size: 27px;
 	color: #222;
-	font-family: "Prata", serif;
+	font-family: "Comfortaa", serif;
 	margin: 30px 0 10px;
 }
 .page.static-page .left_content h5 {
 	font-size: 26px;
 	color: #222;
-	font-family: "Prata", serif;
+	font-family: "Comfortaa", serif;
 	margin: 30px 0 10px;
 }
 .page.static-page .left_content h6 {
 	font-size: 24px;
 	color: #222;
-	font-family: "Prata", serif;
+	font-family: "Comfortaa", serif;
 	margin: 30px 0 10px;
 }
 .page.static-page .left_content a {
@@ -1700,7 +1700,7 @@ body.os-windows .popup::-webkit-scrollbar-thumb {
 }
 .popup.book-now-popup .tour-info .col .date .day {
 	font-size: 42px;
-	font-family: "Prata", serif;
+	font-family: "Comfortaa", serif;
 	position: absolute;
 	left: 0;
 	top: 0;
@@ -2208,7 +2208,7 @@ body.os-windows .popup::-webkit-scrollbar-thumb {
 }
 .main_slider .slider_wrap .slide .slide_content .title_wrap .slide_title {
 	font-size: 157px;
-	font-family: 'Prata', serif;
+	font-family: 'Comfortaa', serif;
 	color: #fff;
 	width: auto;
 	line-height: 1;
@@ -2279,7 +2279,7 @@ body.os-windows .popup::-webkit-scrollbar-thumb {
 .main_slider .slider_wrap .slide .next_title {
 	font-size: 120px;
 	color: #fff;
-	font-family: 'Prata', serif;
+	font-family: 'Comfortaa', serif;
 	filter: blur(5px);
 	position: absolute;
 	width: auto;
@@ -2612,7 +2612,7 @@ body.os-windows .popup::-webkit-scrollbar-thumb {
 }
 .tour_item_bottom ._title {
 	font-size: 33px;
-	font-family: 'Prata', serif;
+	font-family: 'Comfortaa', serif;
 	color: #fff;
 	margin-bottom: 27px;
 }
@@ -2797,7 +2797,7 @@ body.os-windows .popup::-webkit-scrollbar-thumb {
 .destinations_item ._content ._title {
 	font-size: 34px;
 	color: #fff;
-	font-family: 'Prata', serif;
+	font-family: 'Comfortaa', serif;
 	text-align: center;
 	margin-bottom: 20px;
 }
@@ -2915,7 +2915,7 @@ body.os-windows .popup::-webkit-scrollbar-thumb {
 .search-form .date-col .day {
 	width: auto;
 	font-size: 59px;
-	font-family: 'Prata', serif;
+	font-family: 'Comfortaa', serif;
 	color: #fff;
 }
 .search-form .date-col .month {
@@ -2994,7 +2994,7 @@ body.os-windows .popup::-webkit-scrollbar-thumb {
 	font-size: 59px;
 	margin-left: 10px;
 	line-height: 1.4;
-	font-family: 'Prata', serif;
+	font-family: 'Comfortaa', serif;
 	color: #fff;
 	width: 80px;
 	height: 76px;
@@ -3219,7 +3219,7 @@ body.os-windows .popup::-webkit-scrollbar-thumb {
 .story_item ._content .country {
 	font-size: 32px;
 	color: #fff;
-	font-family: 'Prata', serif;
+	font-family: 'Comfortaa', serif;
 	margin-top: 10px;
 }
 .story_item ._content .text {
@@ -3352,7 +3352,7 @@ body.os-windows .popup::-webkit-scrollbar-thumb {
 }
 .blog_item_top ._title {
 	font-size: 25px;
-	font-family: 'Prata', serif;
+	font-family: 'Comfortaa', serif;
 	color: #fff;
 }
 .blog_item_top .shadow {
@@ -3513,7 +3513,7 @@ body.os-windows .popup::-webkit-scrollbar-thumb {
 .subscribe_section .subscribe_block ._title {
 	font-size: 48px;
 	color: #fff;
-	font-family: 'Prata', serif;
+	font-family: 'Comfortaa', serif;
 	width: auto;
 }
 .subscribe_section .subscribe_block ._subtitle {
@@ -3663,7 +3663,7 @@ body.os-windows .popup::-webkit-scrollbar-thumb {
 .footer_top ._title {
 	font-size: 28px;
 	color: #fff;
-	font-family: 'Prata', serif;
+	font-family: 'Comfortaa', serif;
 	margin-bottom: 32px;
 }
 .footer_top ul li {
@@ -4337,7 +4337,7 @@ body.os-windows .popup::-webkit-scrollbar-thumb {
 	}
 	.top_panel .center .menu ul li a {
 		font-size: 28px;
-		font-family: 'Prata', serif;
+		font-family: 'Comfortaa', serif;
 		width: 100%;
 		display: block;
 		float: left;
@@ -5839,7 +5839,7 @@ body.os-windows .popup::-webkit-scrollbar-thumb {
 }
 .stories_page_wrap .stories_box .items .item ._title {
 	font-size: 33px;
-	font-family: 'Prata', serif;
+	font-family: 'Comfortaa', serif;
 	color: #fff;
 	line-height: 1.3;
 	margin-bottom: 20px;
@@ -5944,7 +5944,7 @@ body.os-windows .popup::-webkit-scrollbar-thumb {
 }
 .stories_page_wrap .stories_box .story_info .counter {
 	font-size: 28px;
-	font-family: 'Prata', serif;
+	font-family: 'Comfortaa', serif;
 	color: #fff;
 	width: 100px;
 	line-height: 42px;
@@ -6269,7 +6269,7 @@ body.os-windows .popup::-webkit-scrollbar-thumb {
 }
 .travel-list .posts .item_right .item_title {
 	font-size: 33px;
-	font-family: 'Prata', serif;
+	font-family: 'Comfortaa', serif;
 	max-height: 94px;
 	overflow: hidden;
 	margin-bottom: 14px;
@@ -6540,7 +6540,7 @@ body.os-windows .popup::-webkit-scrollbar-thumb {
 }
 .sidebar ._block .block_title {
 	font-size: 30px;
-	font-family: 'Prata', serif;
+	font-family: 'Comfortaa', serif;
 	margin-bottom: 26px;
 }
 .sidebar ._block .stories {
@@ -6665,7 +6665,7 @@ body.os-windows .popup::-webkit-scrollbar-thumb {
 }
 .sidebar ._block .stories .items .item ._title {
 	font-size: 33px;
-	font-family: 'Prata', serif;
+	font-family: 'Comfortaa', serif;
 	color: #fff;
 	position: relative;
 	z-index: 1;
@@ -6708,7 +6708,7 @@ body.os-windows .popup::-webkit-scrollbar-thumb {
 	font-size: 21px;
 	color: #222;
 	min-height: 102px;
-	font-family: 'Prata', serif;
+	font-family: 'Comfortaa', serif;
 	display: flex;
 	align-items: center;
 	transition: all .2s linear;
@@ -7031,7 +7031,7 @@ body.os-windows .popup::-webkit-scrollbar-thumb {
 .tour_page_head .top-info .tour_title {
 	font-size: 48px;
 	color: #fff;
-	font-family: 'Prata', serif;
+	font-family: 'Comfortaa', serif;
 	max-width: 860px;
 	line-height: 1.2;
 }
@@ -7620,7 +7620,7 @@ body.os-windows .popup::-webkit-scrollbar-thumb {
 .comments-block .title_wrap .counter {
 	color: #919193;
 	font-size: 38px;
-	font-family: 'Prata', serif;
+	font-family: 'Comfortaa', serif;
 	width: auto;
 	line-height: 60px;
 	padding-top: 3px;
@@ -9480,7 +9480,7 @@ body.os-windows .popup::-webkit-scrollbar-thumb {
 	margin: 15px 0;
 }
 .blog-single-page .blog_single-body h2 {
-	font-family: 'Prata', serif;
+	font-family: 'Comfortaa', serif;
 	font-size: 30px;
 	margin: 34px 0 13px;
 }
@@ -9702,7 +9702,7 @@ body.os-windows .popup::-webkit-scrollbar-thumb {
 }
 .blog-single-page .blog_single-body .tour-block .item_right .item_title {
 	font-size: 33px;
-	font-family: 'Prata', serif;
+	font-family: 'Comfortaa', serif;
 	max-height: 94px;
 	overflow: hidden;
 	margin-bottom: 14px;
@@ -10609,7 +10609,7 @@ body.os-windows .popup::-webkit-scrollbar-thumb {
 }
 .gallery-page.gallery-single-page .tour .item .item_title {
 	font-size: 33px;
-	font-family: 'Prata', serif;
+	font-family: 'Comfortaa', serif;
 	max-height: 94px;
 	color: #fff;
 	overflow: hidden;
@@ -11180,7 +11180,7 @@ body.os-windows .popup::-webkit-scrollbar-thumb {
 }
 .about-us-page .statistics_item ._value {
 	font-size: 34px;
-	font-family: "Prata", serif;
+	font-family: "Comfortaa", serif;
 	color: #fff;
 	width: 112px;
 	height: 112px;
@@ -11691,7 +11691,7 @@ body.os-windows .popup::-webkit-scrollbar-thumb {
 .page_404 .error {
 	font-size: 203px;
 	color: #fff;
-	font-family: "Prata", serif;
+	font-family: "Comfortaa", serif;
 	text-align: center;
 	line-height: 1;
 }
@@ -11699,7 +11699,7 @@ body.os-windows .popup::-webkit-scrollbar-thumb {
 	font-size: 48px;
 	color: #fff;
 	text-align: center;
-	font-family: "Prata", serif;
+	font-family: "Comfortaa", serif;
 }
 .page_404 .buttons {
 	text-align: center;

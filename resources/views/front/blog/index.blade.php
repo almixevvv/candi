@@ -16,7 +16,7 @@
                 <div class="page_head">
                  <!-- ---------------------------------- -->
                     <div class="intro">
-                      <h1 class="title_grid">BLOG</h1>
+                      <!-- <h1 class="title_grid">BLOG</h1> -->
                       
                     </div>
 
