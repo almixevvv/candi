@@ -21,72 +21,175 @@
                                   <img src="https://ununsplash.imgix.net/photo-1415302199888-384f752645d0?q=75&fm=jpg&s=823bdcc1b7ad955f5180efd352561016" style="width: 100%;">
                             </div>
                              <div class="gridy-3" style="box-shadow: inset 0 0 0 0px #fff;">
-                                    <label style="font-size: 17px;font-weight: bolder;">Title Filter</label>
+                                    <label style="font-size: 17px;font-weight: bolder;">Covid-19</label>
                                     <br>
                                     <div>
                                         <div style="width: 10%;"><input type="checkbox" name=""></div>
-                                        <div style="width: 90%;">Lorem ipsum dolor sit amet, </div>
+                                        <div style="width: 90%;">Restaurant yang melakukan tindakan pencegahan </div>
                                     </div>
                                     
                             </div>
                             <hr >
                             <div class="gridy-3" style="box-shadow: inset 0 0 0 0px #fff;">
-                                    <label style="font-size: 17px;font-weight: bolder;">Title Filter</label>
+                                    <label style="font-size: 17px;font-weight: bolder;">Jenis Properti</label>
                                     <br>
                                     <div style="margin-bottom: 3px;">
                                         <div style="width: 10%;"><input type="checkbox" name=""></div>
-                                        <div style="width: 90%;">Lorem ipsum dolor </div>
+                                        <div style="width: 90%;">Restaurant </div>
                                     </div>
                                     <div style="margin-bottom: 3px;">
                                         <div style="width: 10%;"><input type="checkbox" name=""></div>
-                                        <div style="width: 90%;">Lorem ipsum  </div>
+                                        <div style="width: 90%;">Makan Cepat</div>
                                     </div>
                                     <div style="margin-bottom: 3px;">
                                         <div style="width: 10%;"><input type="checkbox" name=""></div>
-                                        <div style="width: 90%;">Lorem ipsum dolor sit amet, </div>
+                                        <div style="width: 90%;">Makanan Penutup </div>
                                     </div>
                                     <div style="margin-bottom: 3px;">
                                         <div style="width: 10%;"><input type="checkbox" name=""></div>
-                                        <div style="width: 90%;">Lorem ipsum  </div>
+                                        <div style="width: 90%;">Kopi & Teh </div>
                                     </div>
-                                    <div style="margin-bottom: 3px;">
-                                        <div style="width: 10%;"><input type="checkbox" name=""></div>
-                                        <div style="width: 90%;">Lorem ipsum dolor sit amet, </div>
-                                    </div>
-                                    <div style="margin-bottom: 3px;">
-                                        <div style="width: 10%;"><input type="checkbox" name=""></div>
-                                        <div style="width: 90%;">Lorem  </div>
-                                    </div>
+                                    
                             </div>
-                            <hr ><div class="gridy-3" style="box-shadow: inset 0 0 0 0px #fff;">
-                                    <label style="font-size: 17px;font-weight: bolder;">Title Filter</label>
+                            <hr >
+                            <div class="gridy-3" style="box-shadow: inset 0 0 0 0px #fff;">
+                                    <label style="font-size: 17px;font-weight: bolder;">Keunggulan Restaurant</label>
                                     <br>
                                      <div style="margin-bottom: 3px;">
                                         <div style="width: 10%;"><input type="checkbox" name=""></div>
-                                        <div style="width: 90%;">Lorem ipsum dolor sit amet, </div>
+                                        <div style="width: 90%;">Pengiriman </div>
                                     </div>
                                     <div style="margin-bottom: 3px;">
                                         <div style="width: 10%;"><input type="checkbox" name=""></div>
-                                        <div style="width: 90%;">Lorem  </div>
+                                        <div style="width: 90%;">Bawa Pulang </div>
                                     </div>
                                     <div style="margin-bottom: 3px;">
                                         <div style="width: 10%;"><input type="checkbox" name=""></div>
-                                        <div style="width: 90%;">Lorem ipsum  </div>
+                                        <div style="width: 90%;">Pelayanan di Meja  </div>
                                     </div>
                                     <div style="margin-bottom: 3px;">
                                         <div style="width: 10%;"><input type="checkbox" name=""></div>
-                                        <div style="width: 90%;">Lorem ipsum dolor  </div>
+                                        <div style="width: 90%;">Reservasi  </div>
+                                    </div>
+                                    
+                            </div>
+                            <hr >
+                            <div class="gridy-3" style="box-shadow: inset 0 0 0 0px #fff;">
+                                    <label style="font-size: 17px;font-weight: bolder;">Makanan</label>
+                                    <br>
+                                     <div style="margin-bottom: 3px;">
+                                        <div style="width: 10%;"><input type="checkbox" name=""></div>
+                                        <div style="width: 90%;">Sarapan </div>
                                     </div>
                                     <div style="margin-bottom: 3px;">
                                         <div style="width: 10%;"><input type="checkbox" name=""></div>
-                                        <div style="width: 90%;">Lorem  </div>
+                                        <div style="width: 90%;">Brunch </div>
                                     </div>
                                     <div style="margin-bottom: 3px;">
                                         <div style="width: 10%;"><input type="checkbox" name=""></div>
-                                        <div style="width: 90%;">Lorem ipsum dolor sit amet, </div>
+                                        <div style="width: 90%;">Makan Siang  </div>
+                                    </div>
+                                    <div style="margin-bottom: 3px;">
+                                        <div style="width: 10%;"><input type="checkbox" name=""></div>
+                                        <div style="width: 90%;">Makan Malam </div>
+                                    </div>
+                                    
+                            </div>
+                            <hr >
+                            <div class="gridy-3" style="box-shadow: inset 0 0 0 0px #fff;">
+                                    <label style="font-size: 17px;font-weight: bolder;">Reservasi</label>
+                                    <br>
+                                     <div style="margin-bottom: 3px;">
+                                        <div style="width: 10%;"><input type="checkbox" name=""></div>
+                                        <div style="width: 90%;">Reservasi Online </div>
+                                    </div>
+                                    
+                            </div>
+                            <hr >
+                            <div class="gridy-3" style="box-shadow: inset 0 0 0 0px #fff;">
+                                    <label style="font-size: 17px;font-weight: bolder;">Harga</label>
+                                    <br>
+                                     <div style="margin-bottom: 3px;">
+                                        <div style="width: 10%;"><input type="checkbox" name=""></div>
+                                        <div style="width: 90%;">Makanan Murah </div>
+                                    </div>
+                                    <div style="margin-bottom: 3px;">
+                                        <div style="width: 10%;"><input type="checkbox" name=""></div>
+                                        <div style="width: 90%;">Kelas Menengah </div>
+                                    </div>
+                                    <div style="margin-bottom: 3px;">
+                                        <div style="width: 10%;"><input type="checkbox" name=""></div>
+                                        <div style="width: 90%;">Restaurant Mewah  </div>
                                     </div>
                             </div>
                             <hr >
+                            <div class="gridy-3" style="box-shadow: inset 0 0 0 0px #fff;">
+                                    <label style="font-size: 17px;font-weight: bolder;">Masakan</label>
+                                    <br>
+                                     <div style="margin-bottom: 3px;">
+                                        <div style="width: 10%;"><input type="checkbox" name=""></div>
+                                        <div style="width: 90%;">Asia </div>
+                                    </div>
+                                    <div style="margin-bottom: 3px;">
+                                        <div style="width: 10%;"><input type="checkbox" name=""></div>
+                                        <div style="width: 90%;">Indonesia </div>
+                                    </div>
+                                    <div style="margin-bottom: 3px;">
+                                        <div style="width: 10%;"><input type="checkbox" name=""></div>
+                                        <div style="width: 90%;">Internasional  </div>
+                                    </div>
+                            </div>
+                            <hr >
+                            <div class="gridy-3" style="box-shadow: inset 0 0 0 0px #fff;">
+                                    <label style="font-size: 17px;font-weight: bolder;">Hidangan</label>
+                                    <br>
+                                     <div style="margin-bottom: 3px;">
+                                        <div style="width: 10%;"><input type="checkbox" name=""></div>
+                                        <div style="width: 90%;">Salad </div>
+                                    </div>
+                                    <div style="margin-bottom: 3px;">
+                                        <div style="width: 10%;"><input type="checkbox" name=""></div>
+                                        <div style="width: 90%;">Ikan </div>
+                                    </div>
+                                    <div style="margin-bottom: 3px;">
+                                        <div style="width: 10%;"><input type="checkbox" name=""></div>
+                                        <div style="width: 90%;">Jus & Smoothie </div>
+                                    </div>
+                            </div>
+                            <hr >
+                            <div class="gridy-3" style="box-shadow: inset 0 0 0 0px #fff;">
+                                    <label style="font-size: 17px;font-weight: bolder;">Batasan Menu Makanan</label>
+                                    <br>
+                                     <div style="margin-bottom: 3px;">
+                                        <div style="width: 10%;"><input type="checkbox" name=""></div>
+                                        <div style="width: 90%;">Sesuai untuk vegetarian </div>
+                                    </div>
+                                    <div style="margin-bottom: 3px;">
+                                        <div style="width: 10%;"><input type="checkbox" name=""></div>
+                                        <div style="width: 90%;">Pilihan Vegan </div>
+                                    </div>
+                                    <div style="margin-bottom: 3px;">
+                                        <div style="width: 10%;"><input type="checkbox" name=""></div>
+                                        <div style="width: 90%;">Halal </div>
+                                    </div>
+                            </div>
+                            <hr >
+                            <div class="gridy-3" style="box-shadow: inset 0 0 0 0px #fff;">
+                                    <label style="font-size: 17px;font-weight: bolder;">Cocok untuk</label>
+                                    <br>
+                                     <div style="margin-bottom: 3px;">
+                                        <div style="width: 10%;"><input type="checkbox" name=""></div>
+                                        <div style="width: 90%;">Keluarga dengan anak-anak </div>
+                                    </div>
+                                    <div style="margin-bottom: 3px;">
+                                        <div style="width: 10%;"><input type="checkbox" name=""></div>
+                                        <div style="width: 90%;">Anak-anak </div>
+                                    </div>
+                                    <div style="margin-bottom: 3px;">
+                                        <div style="width: 10%;"><input type="checkbox" name=""></div>
+                                        <div style="width: 90%;">Grup Besar </div>
+                                    </div>
+                            </div>
                            
                         
                       </div>

@@ -245,72 +245,7 @@
                              </div>
                            </div>
                           <!-- -------------------------- end content -->
-                          <!-- -------------------------- start content -->
-                          <div class="gridy-3" style="box-shadow: inset 0 0 0 0px #fff;background-color: #fff;">
-                             <hr>
-                             <div class="gridy-1 gridyhe-1" style="height:250px;">
-                                <div class="gridimg" style="background-image: url(https://ununsplash.imgix.net/photo-1415302199888-384f752645d0?q=75&fm=jpg&s=823bdcc1b7ad955f5180efd352561016)">&nbsp;</div>
-                             </div>
-                             <div class="gridy-2 gridyhe-1" style="height:250px;">
-                                Content
-                             </div>
-                           </div>
-                          <!-- -------------------------- end content -->
-                          <!-- -------------------------- start content -->
-                          <div class="gridy-3" style="box-shadow: inset 0 0 0 0px #fff;background-color: #fff;">
-                             <hr>
-                             <div class="gridy-1 gridyhe-1" style="height:250px;">
-                                <div class="gridimg" style="background-image: url(https://ununsplash.imgix.net/photo-1415302199888-384f752645d0?q=75&fm=jpg&s=823bdcc1b7ad955f5180efd352561016)">&nbsp;</div>
-                             </div>
-                             <div class="gridy-2 gridyhe-1" style="height:250px;">
-                                Content
-                             </div>
-                           </div>
-                          <!-- -------------------------- end content -->
-                          <!-- -------------------------- start content -->
-                          <div class="gridy-3" style="box-shadow: inset 0 0 0 0px #fff;background-color: #fff;">
-                             <hr>
-                             <div class="gridy-1 gridyhe-1" style="height:250px;">
-                                <div class="gridimg" style="background-image: url(https://ununsplash.imgix.net/photo-1415302199888-384f752645d0?q=75&fm=jpg&s=823bdcc1b7ad955f5180efd352561016)">&nbsp;</div>
-                             </div>
-                             <div class="gridy-2 gridyhe-1" style="height:250px;">
-                                Content
-                             </div>
-                           </div>
-                          <!-- -------------------------- end content -->
-                          <!-- -------------------------- start content -->
-                          <div class="gridy-3" style="box-shadow: inset 0 0 0 0px #fff;background-color: #fff;">
-                             <hr>
-                             <div class="gridy-1 gridyhe-1" style="height:250px;">
-                                <div class="gridimg" style="background-image: url(https://ununsplash.imgix.net/photo-1415302199888-384f752645d0?q=75&fm=jpg&s=823bdcc1b7ad955f5180efd352561016)">&nbsp;</div>
-                             </div>
-                             <div class="gridy-2 gridyhe-1" style="height:250px;">
-                                Content
-                             </div>
-                           </div>
-                          <!-- -------------------------- end content -->
-                          <!-- -------------------------- start content -->
-                          <div class="gridy-3" style="box-shadow: inset 0 0 0 0px #fff;background-color: #fff;">
-                             <hr>
-                             <div class="gridy-1 gridyhe-1" style="height:250px;">
-                                <div class="gridimg" style="background-image: url(https://ununsplash.imgix.net/photo-1415302199888-384f752645d0?q=75&fm=jpg&s=823bdcc1b7ad955f5180efd352561016)">&nbsp;</div>
-                             </div>
-                             <div class="gridy-2 gridyhe-1" style="height:250px;">
-                                Content
-                             </div>
-                           </div>
-                          <!-- -------------------------- end content -->
-                          <!-- -------------------------- start content -->
-                          <div class="gridy-3" style="box-shadow: inset 0 0 0 0px #fff;background-color: #fff;">
-                             <hr>
-                             <div class="gridy-1 gridyhe-1" style="height:250px;">
-                                <div class="gridimg" style="background-image: url(https://ununsplash.imgix.net/photo-1415302199888-384f752645d0?q=75&fm=jpg&s=823bdcc1b7ad955f5180efd352561016)">&nbsp;</div>
-                             </div>
-                             <div class="gridy-2 gridyhe-1" style="height:250px;">
-                                Content
-                             </div>
-                           </div>
-                          <!-- -------------------------- end content -->
+                     
                           
                          </div>
                          
