@@ -5,13 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Whoarewe extends Model
+class Postal extends Model
 {
     use HasFactory;
-
-    protected $casts = [
-        'contents'  => 'array'
-    ];
-
-    protected $table = 'g_whoarewes';
 }

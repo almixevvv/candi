@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\WhoareweController;
+use App\Http\Controllers\ListingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,9 +28,6 @@ Route::view('/promo', 'front.promo.index')->name('promo');
 Route::view('/advertise', 'front.advertise.index')->name('advertise');
 Route::view('/directory', 'front.directory.index')->name('directory');
 Route::view('/detail_directory', 'front.directory.detail')->name('detail_directory');
-
-
-
 Route::get('/whoweare', [WhoareweController::class, 'index'])->name('whoweare');
 
 //CMS Routes
@@ -41,6 +39,9 @@ Route::prefix('cms')->group(function () {
     Route::get('/whoarewe', [WhoareweController::class, 'show'])->name('waw.index');
     // Route::get('/fetchData', [WhoareweController::class, 'fetch'])->name('waw.fetch');
     Route::post('/whoarewe', [WhoareweController::class, 'post'])->name('waw.post');
+
+    //Listing process
+    Route::get('/listing/create', [ListingController::class, 'create'])->name('listing.create');
 
     //Login Process
     Route::get('/login', [AuthController::class, 'show'])->name('login.index');

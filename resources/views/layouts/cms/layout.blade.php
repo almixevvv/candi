@@ -48,6 +48,81 @@
     <script src="/js/custom/modals/create-app.js"></script>
     <script src="/js/custom/modals/upgrade-plan.js"></script>
     <!--end::Page Custom Javascript-->
+
+    <script>
+        /*
+            2. Features & Cuisines Tag
+        */
+    
+       let featureTag = document.querySelector("#kt_tagify_features");
+       let cuisineTag = document.querySelector("#kt_tagify_cuisines");
+
+       // Initialize Tagify script on the above inputs
+        new Tagify(featureTag, {
+            whitelist: ["Ada", "Adenine", "Agda", "Agilent VEE"],
+            maxTags: 10,
+            dropdown: {
+                maxItems: 20,           // <- mixumum allowed rendered suggestions
+                classname: "tagify__inline__suggestions", // <- custom classname for this dropdown, so it could be targeted
+                enabled: 0,             // <- show suggestions on focus
+                closeOnSelect: false    // <- do not hide the suggestions dropdown once an item has been selected
+            }
+        });
+
+        new Tagify(cuisineTag, {
+            whitelist: ["Ada", "Adenine", "Agda", "Agilent VEE"],
+            maxTags: 10,
+            dropdown: {
+                maxItems: 20,           // <- mixumum allowed rendered suggestions
+                classname: "tagify__inline__suggestions", // <- custom classname for this dropdown, so it could be targeted
+                enabled: 0,             // <- show suggestions on focus
+                closeOnSelect: false    // <- do not hide the suggestions dropdown once an item has been selected
+            }
+        });
+
+
+        /* 
+            1. Prices Slider
+        */
+        let $vMin   = $('#kt_slider_basic_min');
+        let $vMax   = $('#kt_slider_basic_max');
+        const slider = document.querySelector("#kt_slider_basic");
+
+        var formatter = new Intl.NumberFormat('id', {
+            style: 'currency',
+            currency: 'IDR',
+            // These options are needed to round to whole numbers if that's what you want.
+            //minimumFractionDigits: 0, // (this suffices for whole numbers, but will print 2500.10 as $2,500.1)
+            //maximumFractionDigits: 0, // (causes 2500.99 to be printed as $2,501)
+        });
+        
+
+        noUiSlider.create(slider, {
+            start: [50000, 1000000],
+            connect: true,
+            // tooltips: [false, wNumb({decimals: 1}), true],
+            range: {
+                "min": 100000,
+                "max": 1000000
+            },
+            pips: {
+                mode: "values",
+                values: [100000, 1000000],
+                density: 2
+            }
+        });
+
+        slider.noUiSlider.on('update', function(values, handle) {
+            if(handle) {
+                $($vMax).html(formatter.format(values[handle]));
+                // console.log('MAX Value: ' + values[handle]);
+            } else {
+                $($vMin).html(formatter.format(values[handle]));
+                // console.log('MIN Value: ' + values[handle]);
+            }
+        });
+    </script>
+
     <!--end::Javascript-->
 
 </body>

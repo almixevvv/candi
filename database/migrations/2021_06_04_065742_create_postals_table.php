@@ -5,7 +5,7 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\DB;
 
-class CreateWhoarewesTable extends Migration
+class CreatePostalsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,11 +14,14 @@ class CreateWhoarewesTable extends Migration
      */
     public function up()
     {
-        Schema::create('g_whoarewes', function (Blueprint $table) {
+        Schema::create('m_postals', function (Blueprint $table) {
             $table->id();
-            $table->json('contents');
-            $table->timestamp('created_at');
-            $table->timestamp('updated_at')->nullable(true);
+            $table->string('urban');
+            $table->string('sub_district');
+            $table->string('city');
+            $table->string('province_code');
+            $table->string('postal_code');
+            $table->timestamps();
         });
     }
 
@@ -29,6 +32,6 @@ class CreateWhoarewesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('g_whoarewes');
+        Schema::dropIfExists('m_postals');
     }
 }

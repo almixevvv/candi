@@ -53,7 +53,7 @@ class CreateSAppl extends Migration
                 'icon'              => '',
                 'parent_id'         => 'LISTING',
                 'order'             => '1',
-                'link'              => '-'
+                'link'              => 'cms/listing/create'
             ],
             [
                 'appl_id'           => 'SHOW_LISTING',
@@ -63,7 +63,7 @@ class CreateSAppl extends Migration
                 'icon'              => '',
                 'parent_id'         => 'LISTING',
                 'order'             => '2',
-                'link'              => '-'
+                'link'              => 'cms/listing/show'
             ],
             [
                 'appl_id'           => 'STORIES',

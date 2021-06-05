@@ -66,7 +66,7 @@
                                     @foreach ($sidebarChild as $subChild)
                                         @if ($subChild->parent_id == $child->appl_id)
                                             <div class="menu-item">
-                                                <a class="menu-link" href="{{ 'cms/' . $subChild->link }}">
+                                                <a class="menu-link" href="{{ $subChild->link }}">
                                                     <span class="menu-bullet">
                                                         <span class="bullet bullet-dot"></span>
                                                     </span>
