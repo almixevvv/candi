@@ -1,0 +1,11 @@
+.directory-list p,
+a {
+	color: #000;
+	font-size: 16px;
+	line-height: 20px;
+	font-weight: 500;
+}
+
+.directory-container {
+	background-color: #f2f2f2 !important;
+}

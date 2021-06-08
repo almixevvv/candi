@@ -17,6 +17,8 @@ mix
 	.js('resources/js/sign-in/auth', 'public/js/sign-in')
 	.js('resources/js/editor/editor', 'public/js/editor')
 	.js('resources/js/editor/front', 'public/js/editor')
+	.postCss('resources/css/blog/blogdetail', 'public/css/blog')
+	.postCss('resources/css/blog/blogmain', 'public/css/blog')
 	.postCss(
 		'resources/css/app.css',
 		'public/css',

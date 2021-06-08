@@ -1,46 +1,10 @@
 @extends('layouts.front.index')
 @section('content')
-<style>
-    .input_bottom{
-        width: 100%;
-        padding: 12px 20px;
-        margin: 8px 0;
-        box-sizing: border-box;
-        border: none;
-        border-bottom: 2px solid #908d8d;
-        background-color:transparent;
-        color:black;       }
-    .input_bottom::placeholder {
-        color: #908d8d;
-        opacity: 1; /* Firefox */
-        font-size:23px;
-        font-family:Comfortaa;
-        }
-    .select_option{
-        width: 100%;
-        padding: 12px 20px;
-        margin: 8px 0;
-        box-sizing: border-box;
-        border: none;
-        border: 2px solid #908d8d;
-        background-color:transparent;
-        color:black;       
-    }
-    .button_contact{
-        padding: 18px 19px !important;
-        line-height: 1em;
-        font-size: 12px;
-        background-color: #f4f4f2!important;
-        color: #222222!important;
-        border:1px solid black;
-    }
-    .button_contact:hover{
-       box-shadow:3px 3px;
-    }
-   
-    
-</style>
-<div class="container">
+
+<link rel="stylesheet" href="./css/contact/contact.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.css">
+
+<div class="container float-none">
     <div class="breadcrumbs">
         <div class="wrap">
             <div class="wrap_float">
@@ -51,7 +15,130 @@
         </div>
     </div>
     <div class="page contacts-page full-width">
-        <div class="wrap">
+
+        <div class="container-fluid px-0 mb-3">
+            <div class="d-flex justify-content-around flex-column flex-md-row">
+                
+                <div class="contact-container">
+                    <div class="contact-card mx-0 lg-mx-2">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="contact-bottom">
+                            <span>
+                                <h5>Home</h5>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <span>
+                            426 East Avenue, 7th floor, New York, NY 07102
+                        </span>
+                    </div>
+                </div>
+
+                <div class="contact-container even">
+                    <div class="contact-card mx-0 lg-mx-2">
+                        <i class="fas fa-phone-square-alt"></i>
+                        <div class="contact-bottom">
+                            <h5>Phone</h5>
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <span>
+                            (021) 731 - 9564
+                        </span>
+                    </div>
+                </div>
+
+                <div class="contact-container odd">
+                    <div class="contact-card mx-0 lg-mx-2">
+                        <i class="fas fa-envelope"></i>
+                        <div class="contact-bottom">
+                            <h5>Email</h5>
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <span>
+                            contact@candi.id
+                        </span>
+                    </div>
+                </div>
+
+                <div class="contact-container">
+                    <div class="contact-card mx-0 lg-mx-2">
+                        <i class="fas fa-clock"></i>
+                        <div class="contact-bottom">
+                            <h5>Hours</h5>
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <span>
+                            Monday - Friday </br>
+                            10:00 AM - 6:00 PM
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="container-fluid" id="contactForm">
+            <div class="contact-form d-flex justify-content-center text-center">
+                <span class="contact-heading">
+                    Contact Us
+                </span>
+            </div>
+
+            <div class="form-container">
+                <div class="row">
+                    <div class="col-12 col-md-6">
+                        <div class="contact-input">
+                            <div class="user-box">
+                                <input type="text" name="userName" required>
+                                <label>Your Name</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6">
+                        <div class="contact-input">
+                            <div class="user-box">
+                                <input type="email" name="userEmail" required>
+                                <label>Your Email</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="contact-input">
+                            <div class="user-box">
+                                <textarea name="userContact" id="userContact" required></textarea>
+                                <label>Your Messages</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="user-box">
+                            <input class="w-auto" type="checkbox" name="checkbox" id="contactCheck"> 
+                            <label class="checkbox-label position-relative" for="contactCheck">I agree that my submitted data is being collected and stored.</label>
+                          </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12">
+                        <button type="button" class="btn btn-secondary mt-5">Send Message</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        {{-- <div class="wrap">
             <div class="wrap_float">
                 <div class="page_head">
                    <div class="gridywrap ">
@@ -73,7 +160,7 @@
                    </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
     </div>
 </div>
 @include('components.front.pagefooter')

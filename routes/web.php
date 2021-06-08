@@ -22,7 +22,7 @@ Route::view('/', 'front.home.index');
 //Front Routes
 Route::view('/home', 'front.home.index')->name('home');
 Route::view('/blog', 'front.blog.index')->name('blog');
-Route::view('/detail_blog', 'front.blog.detail')->name('detail_blog');
+Route::view('/detail_blog', 'front.blog.detail')->name('blog.detail');
 Route::view('/contact', 'front.contact.index')->name('contact');
 Route::view('/promo', 'front.promo.index')->name('promo');
 Route::view('/advertise', 'front.advertise.index')->name('advertise');
