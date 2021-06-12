@@ -467,7 +467,7 @@ a:focus {
 	overflow: visible;
 	/* max-width: 700px; */
 	margin: 0 auto;
-	padding: 24px 30px 120px;
+	padding: 45px 60px 120px;
 
 	margin-top: -10vh;
 	background-color: white;
@@ -687,9 +687,15 @@ a:focus {
 	margin: 0 23vw;
 }
 
+@media (min-width: 425px) and (max-width: 767px) {
+	.post-meta {
+		margin: 0 10vw;
+	}
+}
+
 @media (min-width: 720px) and (max-width: 1399px) {
 	.post-meta {
-		margin: 0 28vw;
+		margin: 0 22vw;
 	}
 }
 

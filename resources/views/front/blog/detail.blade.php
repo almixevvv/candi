@@ -101,7 +101,7 @@
                 </div>
             </article>
 
-            <div class="container">
+            <div class="container-fluid px-0">
                 <aside class="section-prev-next">
                     <div class="prev-next-wrap">
                         <a href="../architecture-belongs-to-culture-not-to-civilization/index.html" class="prev-post post tag-people tag-journey no-image ">
