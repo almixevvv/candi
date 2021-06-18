@@ -23,32 +23,6 @@ class CreateSApplGroup extends Migration
             $table->integer('order');
             $table->timestamp('created_at', $precision = 0);
         });
-
-        $defaultApplGroup = array(
-            [
-                'appl_group_id'      => 'GENERAL',
-                'appl_group_name'    => 'General Settings',
-                'description'        => 'General Menu Settings',
-                'status'             => 'ACTIVE',
-                'order'              => 1
-            ],
-            [
-                'appl_group_id'      => 'COMPANY',
-                'appl_group_name'    => 'Company Settings',
-                'description'        => 'Company Settings',
-                'status'             => 'ACTIVE',
-                'order'              => 2
-            ],
-            [
-                'appl_group_id'      => 'SYSTEM',
-                'appl_group_name'    => 'System Management Settings',
-                'description'        => 'System Management Settings',
-                'status'             => 'ACTIVE',
-                'order'              => 3
-            ],
-        );
-
-        DB::table('s_appl_group')->insert($defaultApplGroup);
     }
 
     /**

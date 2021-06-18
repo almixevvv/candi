@@ -26,7 +26,7 @@
             <span class="indicator-progress">Please wait...
                 <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
         </button>
-        <a href="{{ route('login.index') }}" class="btn btn-lg btn-light-primary fw-bolder">Cancel</a>
+        <a href="{{ route('cms.login.index') }}" class="btn btn-lg btn-light-primary fw-bolder">Cancel</a>
     </div>
     <!--end::Actions-->
 </form>

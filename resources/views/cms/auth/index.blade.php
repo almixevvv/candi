@@ -2,7 +2,7 @@
 
 @section('content')
 <!--begin::Form-->
-<form class="form w-100" novalidate="novalidate" id="kt_sign_in_form" action="{{ route('login.process') }}" method="POST">
+<form class="form w-100" novalidate="novalidate" id="kt_sign_in_form" action="{{ route('cms.login.process') }}" method="POST">
     @csrf
     <!--begin::Heading-->
     <div class="text-center mb-10">
@@ -29,7 +29,7 @@
             <label class="form-label fw-bolder text-dark fs-6 mb-0">Password</label>
             <!--end::Label-->
             <!--begin::Link-->
-            <a href="{{ route('reset.index') }}" class="link-primary fs-6 fw-bolder">Forgot Password ?</a>
+            <a href="{{ route('cms.reset.index') }}" class="link-primary fs-6 fw-bolder">Forgot Password ?</a>
             <!--end::Link-->
         </div>
         <!--end::Wrapper-->

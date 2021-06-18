@@ -22,47 +22,6 @@ class CreateListingCategoriesTable extends Migration
             $table->string('status');
             $table->timestamps();
         });
-
-        $listingCategories = array(
-            array(
-                'name'          => 'Restaurant',
-                'category_id'   => 'RST',
-                'icon'          => '',
-                'status'        => 'ACTIVE'
-            ),
-            array(
-                'name'          => 'Cafe',
-                'category_id'   => 'CFE',
-                'icon'          => '',
-                'status'        => 'ACTIVE'
-            ),
-            array(
-                'name'          => 'Bar',
-                'category_id'   => 'BAR',
-                'icon'          => '',
-                'status'        => 'ACTIVE'
-            ),
-            array(
-                'name'          => 'Tour Attraction',
-                'category_id'   => 'TAT',
-                'icon'          => '',
-                'status'        => 'ACTIVE'
-            ),
-            array(
-                'name'          => 'Hotel & Resort',
-                'category_id'   => 'HAR',
-                'icon'          => '',
-                'status'        => 'ACTIVE'
-            ),
-            array(
-                'name'          => 'Shopping Center',
-                'category_id'   => 'SHC',
-                'icon'          => '',
-                'status'        => 'ACTIVE'
-            ),
-        );
-
-        DB::table('listing_categories')->insert($listingCategories);
     }
 
     /**
