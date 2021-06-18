@@ -45,44 +45,6 @@
                         <span class="menu-title">Dashboard</span>
                     </a>
                 </div>
-                {{-- @foreach ($sidebarParent as $parent)
-                <div class="menu-item">
-                    <div class="menu-content pt-8 pb-2">
-                        <span class="menu-section text-muted text-uppercase fs-8 ls-1">{{ $parent->appl_group_name }}</span>
-                        @foreach ($sidebarChild as $child)
-                        @if($child->appl_group_id == $parent->appl_group_id)
-                            @if($child->parent_id == '-')
-                            <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-                                <span class="menu-link">
-                                    <span class="menu-icon">
-                                        <!--begin::Svg Icon | path: icons/stockholm/Communication/Group.svg-->
-                                        {!! $child->icon !!}
-                                        <!--end::Svg Icon-->
-                                    </span>
-                                    <span class="menu-title">{{ $child->name }}</span>
-                                    <span class="menu-arrow"></span>
-                                </span>
-                                <div class="menu-sub menu-sub-accordion">
-                                    @foreach ($sidebarChild as $subChild)
-                                        @if ($subChild->parent_id == $child->appl_id)
-                                            <div class="menu-item">
-                                                <a class="menu-link" href="{{ $subChild->link }}">
-                                                    <span class="menu-bullet">
-                                                        <span class="bullet bullet-dot"></span>
-                                                    </span>
-                                                    <span class="menu-title">{{ $subChild->name }}</span>
-                                                </a>
-                                            </div>        
-                                        @endif
-                                    @endforeach
-                                </div>
-                            </div>
-                            @endif
-                        @endif
-                        @endforeach
-                    </div>
-                </div>
-                @endforeach --}}
 
                 @foreach($_menus as $menu)
                     {{-- @role($menu->permission) --}}
