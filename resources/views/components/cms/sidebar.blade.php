@@ -45,7 +45,7 @@
                         <span class="menu-title">Dashboard</span>
                     </a>
                 </div>
-                @foreach ($sidebarParent as $parent)
+                {{-- @foreach ($sidebarParent as $parent)
                 <div class="menu-item">
                     <div class="menu-content pt-8 pb-2">
                         <span class="menu-section text-muted text-uppercase fs-8 ls-1">{{ $parent->appl_group_name }}</span>
@@ -82,6 +82,47 @@
                         @endforeach
                     </div>
                 </div>
+                @endforeach --}}
+
+                @foreach($_menus as $menu)
+                    {{-- @role($menu->permission) --}}
+                        <div data-kt-menu-trigger="click"
+                            class="menu-item menu-accordion
+                            {{ $menu->current() ? "menu-item-open menu-item-here" : "" }}
+                            {{ ! $menu->route ? "" : "menu-item-submenu" }}"
+                            aria-haspopup="true"
+                            @if($menu->route)
+                                data-menu-toggle="hover"
+                            @endif
+                        >
+                            <a href="{{ $menu->route ? route($menu->route) : "#" }}" class="menu-link
+                                {{ $menu->route ? "" : "menu-toggle" }}">
+                                <span class="svg-icon menu-icon">
+                                    {!! $_icon->getIcon($menu->icon) !!}
+                                </span>
+                                <span class="menu-text">{{ $menu->name }}</span>
+                                @if(! $menu->route)
+                                    <i class="menu-arrow"></i>
+                                @endif
+                            </a>
+                            <div class="menu-sub menu-sub-accordion">
+                                @foreach($menu->subMenu as $submenu)
+                                    {{-- @role($submenu->permission) --}}
+                                        <div class="menu-item {{
+                                            Route::current()->getName() == $submenu->route ? "menu-item-active" : ""
+                                        }}"
+                                            aria-haspopup="true" data-menu-toggle="hover">
+                                            <a href="{{ $submenu->route ? route($submenu->route) : "#" }}" class="menu-link menu-toggle">
+                                                <span class="menu-text">
+                                                    <i class="{{ $submenu->icon }} mr-5"></i> {{ $submenu->name }}
+                                                </span>
+                                            </a>
+                                        </div>
+                                    {{-- @endrole --}}
+                                @endforeach
+                            </div>
+                        </div>
+                    {{-- @endrole --}}
                 @endforeach
 
                 <div class="menu-item">

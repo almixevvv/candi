@@ -14,6 +14,7 @@ Route::get('/whoarewe', [WhoareweController::class, 'show'])->name('waw.index');
 Route::post('/whoarewe', [WhoareweController::class, 'post'])->name('waw.post');
 
 //Listing process
+Route::get('/listing', [ListingController::class, 'create'])->name('listing.index');
 Route::get('/listing/create', [ListingController::class, 'create'])->name('listing.create');
 
 //Login Process
