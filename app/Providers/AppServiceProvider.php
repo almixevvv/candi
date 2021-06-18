@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\Str;
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -30,5 +31,7 @@ class AppServiceProvider extends ServiceProvider
 
             return Str::title($value);
         });
+
+        Paginator::useBootstrap();
     }
 }

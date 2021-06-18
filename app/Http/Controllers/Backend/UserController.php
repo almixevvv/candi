@@ -23,7 +23,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        $this->contextData['users'] = User::orderBy('id')->get();
+        $this->contextData['users'] = User::with('roles')->orderBy('id', 'desc')->paginate(config('app.pagination_limit'));
+        $this->contextData['lastID'] = $this->contextData['users']->last()->id;
 
         return view('cms.users.index', $this->contextData);
     }

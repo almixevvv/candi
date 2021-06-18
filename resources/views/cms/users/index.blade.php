@@ -29,6 +29,7 @@
                 @endforeach
             </tbody>
         </table>
+        {{ $users->appends(request()->input())->links() }}
     </x-panel>
 </div>
 @endsection
