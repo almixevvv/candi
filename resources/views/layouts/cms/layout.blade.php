@@ -16,7 +16,7 @@
     <link href="/css/cms/custom.css" rel="stylesheet" type="text/css" />
     <script src="/js/app.js"></script>
 
-    @yield('extra-css')
+    @stack('extra-css')
     
     <!--end::Global Stylesheets Bundle-->
 </head>
@@ -127,7 +127,7 @@
     </script>
 
     <!--end::Javascript-->
-    @yield('extra-js')
+    @stack('extra-js')
 </body>
 
 </html>
