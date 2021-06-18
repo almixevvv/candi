@@ -10,8 +10,6 @@ class IconComposer implements ComposerContract
 {
     public function compose(View $view)
     {
-        $icon = new Icon;
-
-        $view->with('_icon', $icon);
+        $view->with('_icon', new Icon);
     }
 }
