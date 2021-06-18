@@ -16,7 +16,7 @@ class AuthController extends Controller
         // $request->session()->flush();
         // $request->session()->invalidate();
         if (Auth::check()) {
-            return redirect()->route('dashboard');
+            return redirect()->route('cms.dashboard.index');
         }
 
         return view('cms.auth.index', ['pageName'    => 'Login']);
@@ -29,7 +29,7 @@ class AuthController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return redirect()->route('login.index');
+        return redirect()->route('cms.login.index');
     }
 
     public function authenticate(Request $request)

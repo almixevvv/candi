@@ -21,7 +21,7 @@
         <!--end::Aside mobile toggle-->
         <!--begin::Mobile logo-->
         <div class="d-flex align-items-center flex-grow-1 flex-lg-grow-0">
-            <a href="{{ route('dashboard') }}" class="d-lg-none">
+            <a href="{{ route('cms.dashboard.index') }}" class="d-lg-none">
                 <img alt="Logo" src="/media/logos/logo-3.svg" class="h-30px" />
             </a>
         </div>
@@ -35,7 +35,7 @@
                     <!--begin::Menu-->
                     <div class="menu menu-lg-rounded menu-column menu-lg-row menu-state-bg menu-title-gray-700 menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-400 fw-bold my-5 my-lg-0 align-items-stretch" id="#kt_header_menu" data-kt-menu="true">
                         <div class="menu-item me-lg-1">
-                            <a class="menu-link active py-3" href="{{ route('dashboard') }}">
+                            <a class="menu-link active py-3" href="{{ route('cms.dashboard.index') }}">
                                 <span class="menu-title">Dashboard</span>
                             </a>
                         </div>
@@ -506,7 +506,7 @@
                             <!--end::Menu item-->
                             <!--begin::Menu item-->
                             <div class="menu-item px-5">
-                                <a href="{{ route('login.logout') }}" class="menu-link px-5">Sign Out</a>
+                                <a href="{{ route('cms.login.logout') }}" class="menu-link px-5">Sign Out</a>
                             </div>
                             <!--end::Menu item-->
                         </div>

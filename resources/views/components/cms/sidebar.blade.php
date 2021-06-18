@@ -3,7 +3,7 @@
     <!--begin::Brand-->
     <div class="aside-logo flex-column-auto" id="kt_aside_logo">
         <!--begin::Logo-->
-        <a href="{{ route('dashboard') }}">
+        <a href="{{ route('cms.dashboard.index') }}">
             <img alt="Logo" src="/media/logos/logo-1.svg" class="h-15px logo" />
         </a>
         <!--end::Logo-->
@@ -31,7 +31,7 @@
             <!--begin::Menu-->
             <div class="menu menu-column menu-title-gray-800 menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-500" id="#kt_aside_menu" data-kt-menu="true">
                 <div class="menu-item">
-                    <a class="menu-link active" href="{{ route('dashboard') }}">
+                    <a class="menu-link active" href="{{ route('cms.dashboard.index') }}">
                         <span class="menu-icon">
                             <!--begin::Svg Icon | path: icons/stockholm/Design/PenAndRuller.svg-->
                             <span class="svg-icon svg-icon-2">

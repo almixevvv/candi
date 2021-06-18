@@ -22,29 +22,6 @@ class CreateSGroup extends Migration
             $table->string('status');
             $table->timestamp('created_at', $precision = 0);
         });
-
-        $defaultUserGroup = array(
-            [
-                'group_id'      => 'ADMIN',
-                'group_name'    => 'Administrator',
-                'description'   => 'System Administrator',
-                'status'        => 'ACTIVE'
-            ],
-            [
-                'group_id'      => 'SALES',
-                'group_name'    => 'Sales Admin',
-                'description'   => 'Sales Administrator',
-                'status'        => 'ACTIVE'
-            ],
-            [
-                'group_id'      => 'GENERAL',
-                'group_name'    => 'General Staff',
-                'description'   => 'General Staff',
-                'status'        => 'ACTIVE'
-            ],
-        );
-
-        DB::table('s_group')->insert($defaultUserGroup);
     }
 
     /**
