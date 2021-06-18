@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>{{ $pageName }} | Candi Content Management System</title>
+    <title>{{ $pageName ?? '' }} | Candi Content Management System</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="shortcut icon" href="/media/logos/favicon.ico" />
     <!--begin::Fonts-->
@@ -13,7 +13,10 @@
     <!--begin::Global Stylesheets Bundle(used by all pages)-->
     <link href="/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
     <link href="/css/style.bundle.css" rel="stylesheet" type="text/css" />
+    <link href="/css/cms/custom.css" rel="stylesheet" type="text/css" />
     <script src="/js/app.js"></script>
+
+    @yield('extra-css')
     
     <!--end::Global Stylesheets Bundle-->
 </head>
@@ -124,7 +127,7 @@
     </script>
 
     <!--end::Javascript-->
-
+    @yield('extra-js')
 </body>
 
 </html>

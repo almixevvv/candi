@@ -3,6 +3,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ListingController;
 use App\Http\Controllers\WhoareweController;
+use App\Http\Controllers\Backend\UserController;
 
 
 Route::view('/', 'cms.dashboard.index', ['pageName'    => 'Dashboard'])->name('dashboard.index');
@@ -21,5 +22,8 @@ Route::get('/listing/create', [ListingController::class, 'create'])->name('listi
 Route::get('/login', [AuthController::class, 'show'])->name('login.index');
 Route::post('/login', [AuthController::class, 'authenticate'])->name('login.process');
 Route::get('/logout', [AuthController::class, 'logout'])->name('login.logout');
+
+// user
+Route::resource('/users', UserController::class);
 
 Route::view('/reset', 'auth.reset', ['pageName'    => 'Reset Password'])->name('reset.index');

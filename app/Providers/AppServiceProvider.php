@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Illuminate\Support\Str;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -23,6 +24,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        Str::macro('titleFormat', function ($value) {
+            $value = str_replace('_', ' ', $value);
+            $value = str_replace('-', ' ', $value);
+
+            return Str::title($value);
+        });
     }
 }
