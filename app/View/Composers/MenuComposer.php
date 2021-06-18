@@ -9,17 +9,12 @@ class MenuComposer implements ComposerContract
 {
     public function compose(View $view)
     {
-        // $menus = cache()->remember('menu', 60 * 60, function () {
-        //     return Menu::with(['subMenu' => function ($query) {
-        //         return $query->orderBy('id');
-        //     }])->where('child_of', 0)->orderBy('id')->get();
-        // });
-
-        $menus = Menu::with([
-            'subMenu' => function ($query) {
+        // recache every hour
+        $menus = cache()->remember('menu', 60 * 60, function () {
+            return Menu::with(['subMenu' => function ($query) {
                 return $query->orderBy('position');
-            }
-        ])->where('child_of', 0)->orderBy('position')->get();
+            }])->where('child_of', 0)->orderBy('position')->get();
+        });
 
         $view->with('_menus', $menus);
     }
