@@ -1,0 +1,32 @@
+.detail-table thead th {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.form-group {
+    margin-top: 1.25em;
+}
+
+form button.btn-primary {
+    margin-top: 1.25em;
+}
+
+form label {
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 0.5em;
+}
+
+input:read-only {
+    background-color: #f4f4f4 !important;
+}
+
+.form-check {
+    margin-top: 1em;
+}
+
+.form-check label {
+    font-weight: unset;
+    text-transform: unset;
+}

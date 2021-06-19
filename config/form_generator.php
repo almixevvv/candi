@@ -5,7 +5,7 @@ return [
      * Set your default styling 
      * the option is [tailwind, bootstrap]
      */
-    "style" => "tailwind",
+    "style" => "bootstrap",
 
     /**
      * Fill this with your view path
