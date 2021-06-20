@@ -16,20 +16,16 @@
 
 @push('extra-js')
 @if (array_key_exists("uploadTo", $form->extra))
-    @include("cms.includes.ckeditor")
+    <script src="{{ asset('js/ckeditor/ckeditor.js') }}"></script>
+    @include("vendor.ckfinder.setup")
     <script>
         let ckEditor = null
         const toolbar = ClassicEditor.defaultConfig.toolbar.items
+        toolbar.splice(11, 1)
         toolbar.push("ckfinder")
 
         ClassicEditor.create(document.querySelector('.wysiwyg'), {
-            toolbar: toolbar,
-            ckfinder: {
-                uploadUrl: "{{ route('cms.upload.editor-image') }}?_token={{ csrf_token() }}&uploadTo={{ $form->extra['uploadTo'] }}",
-                options: {
-                    resourceType: 'Images'
-                }
-            }
+            toolbar: toolbar
         }).then((editor) => {
             ckEditor = editor
         }).catch(error => {

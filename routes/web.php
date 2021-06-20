@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Response;
 use App\Http\Controllers\WhoareweController;
+use CKSource\CKFinderBridge\Controller\CKFinderController;
 use Illuminate\Contracts\Filesystem\FileNotFoundException;
 
 /*
@@ -49,3 +50,7 @@ Route::get('storage/{path}', function($path) {
         abort(404);
     }
 })->where('path', ".*")->name('storage');
+
+// CKFinder
+Route::any('/ckfinder/connector', [CKFinderController::class, 'requestAction'])->name('ckfinder_connector');
+Route::any('/ckfinder/browser', [CKFinderController::class, 'browserAction'])->name('ckfinder_browser');

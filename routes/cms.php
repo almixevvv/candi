@@ -34,4 +34,5 @@ Route::resource('/users', UserController::class);
 Route::view('/reset', 'auth.reset', ['pageName'    => 'Reset Password'])->name('reset.index');
 
 // utility
+// probably will not used in the future for now dont delete
 Route::post('/editor-upload-image', [UploadController::class, 'editorImageUpload'])->name('upload.editor-image');
