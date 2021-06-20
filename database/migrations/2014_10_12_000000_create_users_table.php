@@ -25,19 +25,6 @@ class CreateUsersTable extends Migration
             $table->timestamp('updated_at')->nullable(true);
             $table->timestamp('created_at', $precision = 0)->default(DB::raw('CURRENT_TIMESTAMP'));
         });
-
-        $defaultPassword = 'abc123';
-
-        $defaultUsers = array(
-            [
-                'username'          => 'candi.admin',
-                'user_group'        => 'ADMIN',
-                'password'          =>  Hash::make($defaultPassword),
-                'status'            => 'ACTIVE',
-            ],
-        );
-
-        DB::table('users')->insert($defaultUsers);
     }
 
     /**

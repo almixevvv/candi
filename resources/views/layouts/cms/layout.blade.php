@@ -53,6 +53,8 @@
     <!--end::Page Custom Javascript-->
 
     <script>
+        const BASE_URL = "{!! url('/') !!}";
+        const CSRF_TOKEN = "{{ csrf_token() }}";
         /*
             2. Features & Cuisines Tag
         */

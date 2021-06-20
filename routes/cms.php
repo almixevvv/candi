@@ -1,18 +1,23 @@
 <?php
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ListingController;
-use App\Http\Controllers\WhoareweController;
 use App\Http\Controllers\Backend\UserController;
+use App\Http\Controllers\Backend\UploadController;
+use App\Http\Controllers\Backend\WhoWeAreController;
 
+
+Auth::loginUsingId(1);
+// dd(Auth::user()->roles);
 
 Route::view('/', 'cms.dashboard.index', ['pageName'    => 'Dashboard'])->name('dashboard.index');
 Route::view('/dashboard', 'cms.dashboard.index', ['pageName'    => 'Dashboard'])->name('dashboard.index');
 
 //Who are we process
-Route::get('/whoarewe', [WhoareweController::class, 'show'])->name('waw.index');
+Route::get('/whoarewe', [WhoWeAreController::class, 'index'])->name('waw.index');
 // Route::get('/fetchData', [WhoareweController::class, 'fetch'])->name('waw.fetch');
-Route::post('/whoarewe', [WhoareweController::class, 'post'])->name('waw.post');
+Route::post('/whoarewe', [WhoWeAreController::class, 'store'])->name('waw.store');
 
 //Listing process
 Route::get('/listing', [ListingController::class, 'create'])->name('listing.index');
@@ -27,3 +32,6 @@ Route::get('/logout', [AuthController::class, 'logout'])->name('login.logout');
 Route::resource('/users', UserController::class);
 
 Route::view('/reset', 'auth.reset', ['pageName'    => 'Reset Password'])->name('reset.index');
+
+// utility
+Route::post('/editor-upload-image', [UploadController::class, 'editorImageUpload'])->name('upload.editor-image');

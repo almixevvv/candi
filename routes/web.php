@@ -1,7 +1,10 @@
 <?php
 
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Response;
 use App\Http\Controllers\WhoareweController;
+use Illuminate\Contracts\Filesystem\FileNotFoundException;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,3 +33,19 @@ Route::get('/whoweare', [WhoareweController::class, 'index'])->name('whoweare');
 
 //CMS Routes
 Route::prefix('cms')->name('cms.')->group(base_path('routes/cms.php'));
+
+
+// Storage Manipulation to prevent file upload attack (php script upload)
+Route::get('storage/{path}', function($path) {
+    $path = storage_path("app/public/$path");
+    try {
+        $file = File::get($path);
+        $type = File::mimeType($path);
+        $response = Response::make($file, 200);
+        $response->header("Content-Type", $type);
+        return $response;
+    }
+    catch(FileNotFoundException $e) {
+        abort(404);
+    }
+})->where('path', ".*")->name('storage');
