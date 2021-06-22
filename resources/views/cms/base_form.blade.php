@@ -23,14 +23,13 @@
         const toolbar = ClassicEditor.defaultConfig.toolbar.items
         toolbar.splice(11, 1)
         toolbar.push("ckfinder")
+        // toolbar.push("htmlembed")
 
         ClassicEditor.create(document.querySelector('.wysiwyg'), {
             toolbar: toolbar
-        }).then((editor) => {
-            ckEditor = editor
-        }).catch(error => {
-            console.log(error)
         })
+        .then((editor) => { ckEditor = editor })
+        .catch(error => { console.log(error) })
     </script>
 @endif
 @endpush
