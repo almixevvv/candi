@@ -47,7 +47,7 @@
                 </div>
 
                 @foreach($_menus as $menu)
-                    {{-- @role($menu->permission) --}}
+                    @hasRole($menu->permission)
                         <div data-kt-menu-trigger="click"
                             class="menu-item menu-accordion
                             {{ $menu->current() ? "menu-item-open menu-item-here" : "" }}
@@ -69,7 +69,7 @@
                             </a>
                             <div class="menu-sub menu-sub-accordion">
                                 @foreach($menu->subMenu as $submenu)
-                                    {{-- @role($submenu->permission) --}}
+                                    @hasRole($submenu->permission)
                                         <div class="menu-item {{
                                             Route::current()->getName() == $submenu->route ? "menu-item-active" : ""
                                         }}"
@@ -80,11 +80,11 @@
                                                 </span>
                                             </a>
                                         </div>
-                                    {{-- @endrole --}}
+                                    @endhasRole
                                 @endforeach
                             </div>
                         </div>
-                    {{-- @endrole --}}
+                    @endhasRole
                 @endforeach
 
                 <div class="menu-item">
