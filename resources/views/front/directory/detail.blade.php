@@ -112,7 +112,7 @@
           </div>
         </div>
 
-        <div class="row px-3 d-block d-md-none">
+        <div class="row px-3 d-block d-md-none pt-3">
           <div class="col-4">
             <div class="text-center directory-contacts">
               <i class="fas fa-phone-alt"></i>
@@ -319,7 +319,6 @@
             </div>
           </div>
         </div>
-
       </div>
 
       <div class="directory-rating mt-3 bg-white border-bottom pb-4 pt-3 d-block d-md-none">
@@ -558,7 +557,7 @@
         </div>
       </div>
 
-      <div class="directory-recomended mt-3 bg-white border-bottom pb-4 pt-3 d-block d-md-none">
+      {{-- <div class="directory-recomended mt-3 bg-white border-bottom pb-4 pt-3 d-block d-md-none">
             <div class="col-12 col-lg-9">
               <div class="row mx-0 g-0">
                   <div class="col-12">
@@ -721,7 +720,7 @@
             </div>
 
 
-      </div>
+      </div> --}}
 
       <div class="directory-faq mt-3 bg-white border-bottom pb-4 pt-3">
         <div class="row g-0">

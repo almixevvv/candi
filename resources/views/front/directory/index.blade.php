@@ -8,9 +8,9 @@
     <div class="breadcrumbs">
         <div class="wrap">
             <div class="wrap_float">
-                <a href="#">Home</a>
+                <a href="{{ route('home') }}">Home</a>
                 <span class="separator">/</span>
-                <a href="#">Travel List Right Sidebar</a>
+                <a href="#">{{ ucfirst($request->path()) }}</a>
             </div>
         </div>
     </div>
@@ -378,18 +378,6 @@
                                     </div>
                                     <div class="card-body position-relative">
                                       <h5 class="card-title">Nourish Cafe</h5>
-                                        <div class="rating-holder" aria-label="4.5 of 5 bubbles. 387 reviews">
-                                          <svg class="rating-bubble" viewBox="0 0 68 12" width="68" height="12" aria-label="" title="">
-                                              <path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="scale(0.5)"></path>
-                                              <path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(14 0) scale(0.5)"></path>
-                                              <path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(28 0) scale(0.5)"></path>
-                                              <path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(42 0) scale(0.5)"></path>
-                                              <path d="M 12 0C5.389 0 0 5.389 0 12c0 6.62 5.389 12 12 12 6.62 0 12-5.379 12-12S18.621 0 12 0zm0 2a9.984 9.984 0 0110 10 9.976 9.976 0 01-10 10z" transform="translate(56 0) scale(0.5)"></path>
-                                            </svg>
-                                            <span class="DrjyGw-P _26S7gyB4 _14_buatE _1dimhEoy">
-                                                <span class="_1pFNzDPe">387</span>
-                                            </span>
-                                        </div>
                                       <div class="tags-holder">
                                           <span class="text-truncate">Seafood, Europian, A... </span>
                                           <i class="fas fa-circle"></i>
@@ -407,18 +395,6 @@
                                     </div>
                                     <div class="card-body position-relative">
                                       <h5 class="card-title">Nourish Cafe</h5>
-                                      <div class="rating-holder" aria-label="4.5 of 5 bubbles. 387 reviews">
-                                        <svg class="rating-bubble" viewBox="0 0 68 12" width="68" height="12" aria-label="" title="">
-                                            <path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="scale(0.5)"></path>
-                                            <path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(14 0) scale(0.5)"></path>
-                                            <path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(28 0) scale(0.5)"></path>
-                                            <path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(42 0) scale(0.5)"></path>
-                                            <path d="M 12 0C5.389 0 0 5.389 0 12c0 6.62 5.389 12 12 12 6.62 0 12-5.379 12-12S18.621 0 12 0zm0 2a9.984 9.984 0 0110 10 9.976 9.976 0 01-10 10z" transform="translate(56 0) scale(0.5)"></path>
-                                          </svg>
-                                          <span class="DrjyGw-P _26S7gyB4 _14_buatE _1dimhEoy">
-                                              <span class="_1pFNzDPe">387</span>
-                                          </span>
-                                      </div>
                                     <div class="tags-holder">
                                         <span>Seafood, Europian, A... </span>
                                         <i class="fas fa-circle"></i>
@@ -436,18 +412,6 @@
                                     </div>
                                     <div class="card-body position-relative">
                                       <h5 class="card-title">Nourish Cafe</h5>
-                                      <div class="rating-holder" aria-label="4.5 of 5 bubbles. 387 reviews">
-                                        <svg class="rating-bubble" viewBox="0 0 68 12" width="68" height="12" aria-label="" title="">
-                                            <path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="scale(0.5)"></path>
-                                            <path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(14 0) scale(0.5)"></path>
-                                            <path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(28 0) scale(0.5)"></path>
-                                            <path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(42 0) scale(0.5)"></path>
-                                            <path d="M 12 0C5.389 0 0 5.389 0 12c0 6.62 5.389 12 12 12 6.62 0 12-5.379 12-12S18.621 0 12 0zm0 2a9.984 9.984 0 0110 10 9.976 9.976 0 01-10 10z" transform="translate(56 0) scale(0.5)"></path>
-                                          </svg>
-                                          <span class="DrjyGw-P _26S7gyB4 _14_buatE _1dimhEoy">
-                                              <span class="_1pFNzDPe">387</span>
-                                          </span>
-                                      </div>
                                     <div class="tags-holder">
                                         <span>Seafood, Europian, A... </span>
                                         <i class="fas fa-circle"></i>
@@ -465,18 +429,6 @@
                                     </div>
                                     <div class="card-body position-relative">
                                       <h5 class="card-title">Nourish Cafe</h5>
-                                      <div class="rating-holder" aria-label="4.5 of 5 bubbles. 387 reviews">
-                                        <svg class="rating-bubble" viewBox="0 0 68 12" width="68" height="12" aria-label="" title="">
-                                            <path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="scale(0.5)"></path>
-                                            <path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(14 0) scale(0.5)"></path>
-                                            <path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(28 0) scale(0.5)"></path>
-                                            <path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(42 0) scale(0.5)"></path>
-                                            <path d="M 12 0C5.389 0 0 5.389 0 12c0 6.62 5.389 12 12 12 6.62 0 12-5.379 12-12S18.621 0 12 0zm0 2a9.984 9.984 0 0110 10 9.976 9.976 0 01-10 10z" transform="translate(56 0) scale(0.5)"></path>
-                                          </svg>
-                                          <span class="DrjyGw-P _26S7gyB4 _14_buatE _1dimhEoy">
-                                              <span class="_1pFNzDPe">387</span>
-                                          </span>
-                                      </div>
                                     <div class="tags-holder">
                                         <span>Seafood, Europian, A... </span>
                                         <i class="fas fa-circle"></i>
@@ -494,18 +446,6 @@
                                     </div>
                                     <div class="card-body position-relative">
                                       <h5 class="card-title">Nourish Cafe</h5>
-                                      <div class="rating-holder" aria-label="4.5 of 5 bubbles. 387 reviews">
-                                        <svg class="rating-bubble" viewBox="0 0 68 12" width="68" height="12" aria-label="" title="">
-                                            <path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="scale(0.5)"></path>
-                                            <path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(14 0) scale(0.5)"></path>
-                                            <path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(28 0) scale(0.5)"></path>
-                                            <path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(42 0) scale(0.5)"></path>
-                                            <path d="M 12 0C5.389 0 0 5.389 0 12c0 6.62 5.389 12 12 12 6.62 0 12-5.379 12-12S18.621 0 12 0zm0 2a9.984 9.984 0 0110 10 9.976 9.976 0 01-10 10z" transform="translate(56 0) scale(0.5)"></path>
-                                          </svg>
-                                          <span class="DrjyGw-P _26S7gyB4 _14_buatE _1dimhEoy">
-                                              <span class="_1pFNzDPe">387</span>
-                                          </span>
-                                      </div>
                                     <div class="tags-holder">
                                         <span>Seafood, Europian, A... </span>
                                         <i class="fas fa-circle"></i>
@@ -537,18 +477,6 @@
                                     </div>
                                     <div class="card-body position-relative">
                                     <h5 class="card-title">Nourish Cafe</h5>
-                                    <div class="rating-holder" aria-label="4.5 of 5 bubbles. 387 reviews">
-                                        <svg class="rating-bubble" viewBox="0 0 68 12" width="68" height="12" aria-label="" title="">
-                                            <path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="scale(0.5)"></path>
-                                            <path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(14 0) scale(0.5)"></path>
-                                            <path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(28 0) scale(0.5)"></path>
-                                            <path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(42 0) scale(0.5)"></path>
-                                            <path d="M 12 0C5.389 0 0 5.389 0 12c0 6.62 5.389 12 12 12 6.62 0 12-5.379 12-12S18.621 0 12 0zm0 2a9.984 9.984 0 0110 10 9.976 9.976 0 01-10 10z" transform="translate(56 0) scale(0.5)"></path>
-                                        </svg>
-                                        <span class="DrjyGw-P _26S7gyB4 _14_buatE _1dimhEoy">
-                                            <span class="_1pFNzDPe">387</span>
-                                        </span>
-                                    </div>
                                     <div class="tags-holder">
                                         <span>Seafood, Europian, A... </span>
                                         <i class="fas fa-circle"></i>
@@ -566,18 +494,6 @@
                                     </div>
                                     <div class="card-body position-relative">
                                     <h5 class="card-title">Nourish Cafe</h5>
-                                    <div class="rating-holder" aria-label="4.5 of 5 bubbles. 387 reviews">
-                                        <svg class="rating-bubble" viewBox="0 0 68 12" width="68" height="12" aria-label="" title="">
-                                            <path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="scale(0.5)"></path>
-                                            <path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(14 0) scale(0.5)"></path>
-                                            <path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(28 0) scale(0.5)"></path>
-                                            <path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(42 0) scale(0.5)"></path>
-                                            <path d="M 12 0C5.389 0 0 5.389 0 12c0 6.62 5.389 12 12 12 6.62 0 12-5.379 12-12S18.621 0 12 0zm0 2a9.984 9.984 0 0110 10 9.976 9.976 0 01-10 10z" transform="translate(56 0) scale(0.5)"></path>
-                                        </svg>
-                                        <span class="DrjyGw-P _26S7gyB4 _14_buatE _1dimhEoy">
-                                            <span class="_1pFNzDPe">387</span>
-                                        </span>
-                                    </div>
                                     <div class="tags-holder">
                                         <span>Seafood, Europian, A... </span>
                                         <i class="fas fa-circle"></i>
@@ -595,18 +511,6 @@
                                     </div>
                                     <div class="card-body position-relative">
                                     <h5 class="card-title">Nourish Cafe</h5>
-                                    <div class="rating-holder" aria-label="4.5 of 5 bubbles. 387 reviews">
-                                        <svg class="rating-bubble" viewBox="0 0 68 12" width="68" height="12" aria-label="" title="">
-                                            <path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="scale(0.5)"></path>
-                                            <path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(14 0) scale(0.5)"></path>
-                                            <path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(28 0) scale(0.5)"></path>
-                                            <path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(42 0) scale(0.5)"></path>
-                                            <path d="M 12 0C5.389 0 0 5.389 0 12c0 6.62 5.389 12 12 12 6.62 0 12-5.379 12-12S18.621 0 12 0zm0 2a9.984 9.984 0 0110 10 9.976 9.976 0 01-10 10z" transform="translate(56 0) scale(0.5)"></path>
-                                        </svg>
-                                        <span class="DrjyGw-P _26S7gyB4 _14_buatE _1dimhEoy">
-                                            <span class="_1pFNzDPe">387</span>
-                                        </span>
-                                    </div>
                                     <div class="tags-holder">
                                         <span>Seafood, Europian, A... </span>
                                         <i class="fas fa-circle"></i>
@@ -624,18 +528,6 @@
                                     </div>
                                     <div class="card-body position-relative">
                                     <h5 class="card-title">Nourish Cafe</h5>
-                                    <div class="rating-holder" aria-label="4.5 of 5 bubbles. 387 reviews">
-                                        <svg class="rating-bubble" viewBox="0 0 68 12" width="68" height="12" aria-label="" title="">
-                                            <path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="scale(0.5)"></path>
-                                            <path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(14 0) scale(0.5)"></path>
-                                            <path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(28 0) scale(0.5)"></path>
-                                            <path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(42 0) scale(0.5)"></path>
-                                            <path d="M 12 0C5.389 0 0 5.389 0 12c0 6.62 5.389 12 12 12 6.62 0 12-5.379 12-12S18.621 0 12 0zm0 2a9.984 9.984 0 0110 10 9.976 9.976 0 01-10 10z" transform="translate(56 0) scale(0.5)"></path>
-                                        </svg>
-                                        <span class="DrjyGw-P _26S7gyB4 _14_buatE _1dimhEoy">
-                                            <span class="_1pFNzDPe">387</span>
-                                        </span>
-                                    </div>
                                     <div class="tags-holder">
                                         <span>Seafood, Europian, A... </span>
                                         <i class="fas fa-circle"></i>
@@ -653,18 +545,6 @@
                                     </div>
                                     <div class="card-body position-relative">
                                     <h5 class="card-title">Nourish Cafe</h5>
-                                    <div class="rating-holder" aria-label="4.5 of 5 bubbles. 387 reviews">
-                                        <svg class="rating-bubble" viewBox="0 0 68 12" width="68" height="12" aria-label="" title="">
-                                            <path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="scale(0.5)"></path>
-                                            <path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(14 0) scale(0.5)"></path>
-                                            <path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(28 0) scale(0.5)"></path>
-                                            <path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(42 0) scale(0.5)"></path>
-                                            <path d="M 12 0C5.389 0 0 5.389 0 12c0 6.62 5.389 12 12 12 6.62 0 12-5.379 12-12S18.621 0 12 0zm0 2a9.984 9.984 0 0110 10 9.976 9.976 0 01-10 10z" transform="translate(56 0) scale(0.5)"></path>
-                                        </svg>
-                                        <span class="DrjyGw-P _26S7gyB4 _14_buatE _1dimhEoy">
-                                            <span class="_1pFNzDPe">387</span>
-                                        </span>
-                                    </div>
                                     <div class="tags-holder">
                                         <span>Seafood, Europian, A... </span>
                                         <i class="fas fa-circle"></i>
@@ -682,18 +562,6 @@
                                     </div>
                                     <div class="card-body position-relative">
                                     <h5 class="card-title">Nourish Cafe</h5>
-                                    <div class="rating-holder" aria-label="4.5 of 5 bubbles. 387 reviews">
-                                        <svg class="rating-bubble" viewBox="0 0 68 12" width="68" height="12" aria-label="" title="">
-                                            <path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="scale(0.5)"></path>
-                                            <path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(14 0) scale(0.5)"></path>
-                                            <path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(28 0) scale(0.5)"></path>
-                                            <path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(42 0) scale(0.5)"></path>
-                                            <path d="M 12 0C5.389 0 0 5.389 0 12c0 6.62 5.389 12 12 12 6.62 0 12-5.379 12-12S18.621 0 12 0zm0 2a9.984 9.984 0 0110 10 9.976 9.976 0 01-10 10z" transform="translate(56 0) scale(0.5)"></path>
-                                        </svg>
-                                        <span class="DrjyGw-P _26S7gyB4 _14_buatE _1dimhEoy">
-                                            <span class="_1pFNzDPe">387</span>
-                                        </span>
-                                    </div>
                                     <div class="tags-holder">
                                         <span>Seafood, Europian, A... </span>
                                         <i class="fas fa-circle"></i>
@@ -872,18 +740,6 @@
                                     </div>
                                     <div class="card-body position-relative">
                                     <h5 class="card-title">Nourish Cafe</h5>
-                                    <div class="rating-holder" aria-label="4.5 of 5 bubbles. 387 reviews">
-                                        <svg class="rating-bubble" viewBox="0 0 68 12" width="68" height="12" aria-label="" title="">
-                                            <path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="scale(0.5)"></path>
-                                            <path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(14 0) scale(0.5)"></path>
-                                            <path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(28 0) scale(0.5)"></path>
-                                            <path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(42 0) scale(0.5)"></path>
-                                            <path d="M 12 0C5.389 0 0 5.389 0 12c0 6.62 5.389 12 12 12 6.62 0 12-5.379 12-12S18.621 0 12 0zm0 2a9.984 9.984 0 0110 10 9.976 9.976 0 01-10 10z" transform="translate(56 0) scale(0.5)"></path>
-                                        </svg>
-                                        <span class="DrjyGw-P _26S7gyB4 _14_buatE _1dimhEoy">
-                                            <span class="_1pFNzDPe">387</span>
-                                        </span>
-                                    </div>
                                     <div class="tags-holder">
                                         <span>Seafood, Europian, A... </span>
                                         <i class="fas fa-circle"></i>
@@ -901,18 +757,6 @@
                                     </div>
                                     <div class="card-body position-relative">
                                     <h5 class="card-title">Nourish Cafe</h5>
-                                    <div class="rating-holder" aria-label="4.5 of 5 bubbles. 387 reviews">
-                                        <svg class="rating-bubble" viewBox="0 0 68 12" width="68" height="12" aria-label="" title="">
-                                            <path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="scale(0.5)"></path>
-                                            <path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(14 0) scale(0.5)"></path>
-                                            <path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(28 0) scale(0.5)"></path>
-                                            <path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(42 0) scale(0.5)"></path>
-                                            <path d="M 12 0C5.389 0 0 5.389 0 12c0 6.62 5.389 12 12 12 6.62 0 12-5.379 12-12S18.621 0 12 0zm0 2a9.984 9.984 0 0110 10 9.976 9.976 0 01-10 10z" transform="translate(56 0) scale(0.5)"></path>
-                                        </svg>
-                                        <span class="DrjyGw-P _26S7gyB4 _14_buatE _1dimhEoy">
-                                            <span class="_1pFNzDPe">387</span>
-                                        </span>
-                                    </div>
                                     <div class="tags-holder">
                                         <span>Seafood, Europian, A... </span>
                                         <i class="fas fa-circle"></i>
@@ -930,18 +774,6 @@
                                     </div>
                                     <div class="card-body position-relative">
                                     <h5 class="card-title">Nourish Cafe</h5>
-                                    <div class="rating-holder" aria-label="4.5 of 5 bubbles. 387 reviews">
-                                        <svg class="rating-bubble" viewBox="0 0 68 12" width="68" height="12" aria-label="" title="">
-                                            <path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="scale(0.5)"></path>
-                                            <path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(14 0) scale(0.5)"></path>
-                                            <path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(28 0) scale(0.5)"></path>
-                                            <path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(42 0) scale(0.5)"></path>
-                                            <path d="M 12 0C5.389 0 0 5.389 0 12c0 6.62 5.389 12 12 12 6.62 0 12-5.379 12-12S18.621 0 12 0zm0 2a9.984 9.984 0 0110 10 9.976 9.976 0 01-10 10z" transform="translate(56 0) scale(0.5)"></path>
-                                        </svg>
-                                        <span class="DrjyGw-P _26S7gyB4 _14_buatE _1dimhEoy">
-                                            <span class="_1pFNzDPe">387</span>
-                                        </span>
-                                    </div>
                                     <div class="tags-holder">
                                         <span>Seafood, Europian, A... </span>
                                         <i class="fas fa-circle"></i>

@@ -4,9 +4,9 @@
     <div class="breadcrumbs">
         <div class="wrap">
             <div class="wrap_float">
-                <a href="#">Home</a>
+                <a href="{{ route('home') }}">Home</a>
                 <span class="separator">/</span>
-                <a href="#">Travel List Right Sidebar</a>
+                <a href="#">{{ ucfirst($request->path()) }}</a>
             </div>
         </div>
     </div>

@@ -1,4 +1,5 @@
 <?php
+
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
@@ -6,7 +7,6 @@ use App\Http\Controllers\ListingController;
 use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\Backend\UploadController;
 use App\Http\Controllers\Backend\WhoWeAreController;
-
 
 // Auth::loginUsingId(1);
 // dd(Auth::user()->roles);
@@ -30,7 +30,6 @@ Route::get('/logout', [AuthController::class, 'logout'])->name('login.logout');
 
 // user
 Route::resource('/users', UserController::class);
-
 Route::view('/reset', 'auth.reset', ['pageName'    => 'Reset Password'])->name('reset.index');
 
 // utility

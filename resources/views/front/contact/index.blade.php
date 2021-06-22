@@ -4,13 +4,24 @@
 <link rel="stylesheet" href="./css/contact/contact.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.css">
 
+<style>
+    .btn-secondary {
+        background-color: #23a8e4;
+        border: #23a8e4;
+    }
+
+    .contact-card i {
+        color: #23a8e4;
+    }
+</style>
+
 <div class="container float-none">
     <div class="breadcrumbs">
         <div class="wrap">
             <div class="wrap_float">
-                <a href="/">Home</a>
+                <a href="{{ route('home') }}">Home</a>
                 <span class="separator">/</span>
-                <a href="#">Contact Us</a>
+                <a href="#">{{ ucfirst($request->path()) }}</a>
             </div>
         </div>
     </div>

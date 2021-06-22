@@ -7,12 +7,12 @@ use App\Models\Whoarewe;
 
 class WhoareweController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $modelContent = Whoarewe::latest('created_at')->first();
+        // $modelContent = Whoarewe::latest('created_at')->first();
 
         return view('front.whoweare.index', [
-            'content'   => $modelContent,
+            'request'   => $request,
             'pageName'  => 'Who are we'
         ]);
     }

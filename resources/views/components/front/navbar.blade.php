@@ -5,14 +5,20 @@
                 <div class="left">
                     <div class="search_btn"></div>
                     <a href="/home" class="logo">
-                        <img src="/images/logo_horizontal.svg" alt="">
+                        @if (strlen($request->path()) > 1 && $request->path() != 'home')
+                            <img src="/images/logo_horizontal_2.svg" alt="Candi Alt Logo">
+                        @elseif ($request->path() == '/home')
+                            <img src="/images/logo_horizontal.svg" alt="Candi Logo Original">
+                        @else
+                            <img src="/images/logo_horizontal.svg" alt="Candi Logo Original">
+                        @endif
                     </a>
                 </div>
                 <div class="menu_wrap" id="menu_wrap">
                     <div class="scroll">
                         <div class="center">
                             <div class="menu" id="menu_mobile_content">
-                                <ul>  
+                                <ul>
                                     <li><a href="{{ route('whoweare') }}"><span>Who We Are</span></a></li>
                                     <li><a href="{{ route('blog') }}"><span>Blog</span></a></li>
                                     <li><a href="{{ route('contact') }}"><span>Contact Us</span></a></li>
