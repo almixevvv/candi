@@ -83,7 +83,7 @@ trait HasImage
         return $this;
     }
 
-    public function removeImage(Image|int $image) 
+    public function removeImage($image) 
     {
         $name = $this->getModelName();
         if (is_int($image)) {

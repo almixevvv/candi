@@ -8,7 +8,7 @@ use App\Http\Controllers\Backend\UploadController;
 use App\Http\Controllers\Backend\WhoWeAreController;
 
 
-Auth::loginUsingId(1);
+// Auth::loginUsingId(1);
 // dd(Auth::user()->roles);
 
 Route::view('/', 'cms.dashboard.index', ['pageName'    => 'Dashboard'])->name('dashboard.index');

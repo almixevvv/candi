@@ -26,7 +26,7 @@ class WhoWeAreController extends Controller
             "action" => route('cms.waw.store'),
             "method" => "POST",
             "data" => [
-                "contents" => $whoWeAre->contents
+                "contents" => $whoWeAre ? $whoWeAre->contents : ""
             ],
             "extra" => [
                 "uploadTo" => class_basename(WhoWeAre::class)

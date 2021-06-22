@@ -8,7 +8,7 @@ use Illuminate\View\Component;
 class Panel extends Component
 {
     public string $title;
-    public mixed $createUrl = null;
+    public ?string $createUrl = null;
     public bool $backButton = false;
 
 
@@ -17,7 +17,7 @@ class Panel extends Component
      *
      * @return void
      */
-    public function __construct(string $title, mixed $createUrl = null, bool $backButton = false)
+    public function __construct(string $title, ?string $createUrl = null, bool $backButton = false)
     {
         $this->title = Str::titleFormat($title);
         $this->backButton = $backButton;
