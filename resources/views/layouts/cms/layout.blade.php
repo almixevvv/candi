@@ -16,6 +16,7 @@
     <link href="/css/cms/custom.css" rel="stylesheet" type="text/css" />
     <script src="/js/app.js"></script>
 
+    @livewireStyles
     @stack('extra-css')
     
     <!--end::Global Stylesheets Bundle-->
@@ -129,6 +130,7 @@
     </script>
 
     <!--end::Javascript-->
+    @livewireScripts
     @stack('extra-js')
 </body>
 
