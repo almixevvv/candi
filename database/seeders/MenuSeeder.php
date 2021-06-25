@@ -30,12 +30,11 @@ class MenuSeeder extends Seeder
         $this->addMenu(41, "Edit Content", "employee", "-", ["route" => 'cms.waw.index', "child_of" => 40, "position" => 1]);
 
         $this->addMenu(50, "User", "superuser", "users", ["position" => 5]);
-        $this->addMenu(51, "Create User", "superuser", "-", ["route" => 'cms.users.create', "child_of" => 50, "position" => 1]);
-        $this->addMenu(52, "Show All User", "superuser", "-", ["route" => 'cms.users.index', "child_of" => 50, "position" => 2]);
+        $this->addMenu(51, "User", "superuser", "-", ["route" => 'cms.users.index', "child_of" => 50, "position" => 1]);
+        $this->addMenu(52, "Roles", "superuser", "-", ["route" => 'cms.roles.index', "child_of" => 50, "position" => 2]);
 
-        $this->addMenu(60, "User Group", "employee", "user-group", ["position" => 6]);
-        $this->addMenu(61, "Create New User Group", "employee", "-", ["route" => null, "child_of" => 60, "position" => 1]);
-        $this->addMenu(62, "Show All User Group", "employee", "-", ["route" => null, "child_of" => 60, "position" => 2]);
+        $this->addMenu(60, "Settings", "superuser", "users", ["position" => 6]);
+        $this->addMenu(61, "Menu", "superuser", "-", ["route" => 'cms.menu.index', "child_of" => 60, "position" => 1]);
         
         $this->addMenu(70, "Categories", "employee", "categories", ["position" => 7]);
         $this->addMenu(71, "Categories", "employee", "-", ["route" => null, "child_of" => 70, "position" => 1]);

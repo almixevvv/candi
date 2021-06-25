@@ -15,7 +15,7 @@ class ButtonGroup extends Component
      *
      * @return void
      */
-    public function __construct(string $editUrl, string $deleteUrl, bool $showEdit = true, bool $showDelete = true)
+    public function __construct(string $editUrl = "", string $deleteUrl = "", bool $showEdit = true, bool $showDelete = true)
     {
         $this->showEdit = $showEdit;
         $this->showDelete = $showDelete;

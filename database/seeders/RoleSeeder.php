@@ -30,11 +30,19 @@ class RoleSeeder extends Seeder
                 'password'          =>  bcrypt($defaultPassword),
                 'status'            => UserStatus::Active,
             ],
+            [
+                'username'          => 'agus24',
+                'password'          =>  bcrypt("rahasia"),
+                'status'            => UserStatus::Active,
+            ],
         );
 
         User::insert($defaultUsers);
 
         $user = User::first();
+        $user->assignRole(["superuser", "employee"]);
+
+        $user = User::find(2);
         $user->assignRole(["superuser", "employee"]);
     }
 }
