@@ -19,12 +19,14 @@ class MenuSeeder extends Seeder
         $this->addMenu(11, "Show All Listing", "employee", "-", ["route" => 'cms.listing.index', "child_of" => 10, "position" => 1]);
         $this->addMenu(12, "Create Listing", "employee", "-", ["route" => 'cms.listing.create', "child_of" => 10, "position" => 2]);
 
-        $this->addMenu(20, "Stories List", "employee", "stories-list", ["position" => 2]);
-        $this->addMenu(21, "Create Story", "employee", "-", ["route" => null, "child_of" => 20, "position" => 1]);
-        $this->addMenu(22, "Show All Stories", "employee", "-", ["route" => null, "child_of" => 20, "position" => 2]);
+        $this->addMenu(20, "Listings", "employee", "stories-list", ["position" => 2]);
+        $this->addMenu(21, "Listing Categories", "employee", "-", ["route" => null, "child_of" => 20, "position" => 1]);
+        $this->addMenu(22, "Listing", "employee", "-", ["route" => null, "child_of" => 20, "position" => 2]);
+        $this->addMenu(23, "Listing Tags", "employee", "-", ["route" => null, "child_of" => 20, "position" => 3]);
 
-        $this->addMenu(30, "Subscribers", "employee", "subscribers", ["position" => 3]);
-        $this->addMenu(31, "Show Subscribers", "employee", "subscribers", ["route" => null, "child_of" => 30, "position" => 1]);
+        $this->addMenu(30, "Blog", "employee", "subscribers", ["position" => 3]);
+        $this->addMenu(31, "Blog Categories", "employee", "subscribers", ["route" => null, "child_of" => 30, "position" => 1]);
+        $this->addMenu(32, "Blog List", "employee", "subscribers", ["route" => null, "child_of" => 30, "position" => 2]);
 
         $this->addMenu(40, "Who Are We", "employee", "whoweare", ["position" => 4]);
         $this->addMenu(41, "Edit Content", "employee", "-", ["route" => 'cms.waw.index', "child_of" => 40, "position" => 1]);
@@ -35,7 +37,7 @@ class MenuSeeder extends Seeder
 
         $this->addMenu(60, "Settings", "superuser", "users", ["position" => 6]);
         $this->addMenu(61, "Menu", "superuser", "-", ["route" => 'cms.menu.index', "child_of" => 60, "position" => 1]);
-        
+
         $this->addMenu(70, "Categories", "employee", "categories", ["position" => 7]);
         $this->addMenu(71, "Categories", "employee", "-", ["route" => null, "child_of" => 70, "position" => 1]);
         $this->addMenu(72, "Categories", "employee", "-", ["route" => null, "child_of" => 70, "position" => 1]);
