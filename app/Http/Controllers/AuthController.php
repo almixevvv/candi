@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Enums\UserStatus;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
@@ -67,6 +68,15 @@ class AuthController extends Controller
             $request->session()->regenerate();
 
             $user = Auth::user();
+
+            if ($user->status->value == UserStatus::Inactive) {
+                Auth::logout();
+                return response()->json([
+                    'status'    => 200,
+                    'code'      => 401,
+                    'message'   => 'User Not Found.'
+                ]);
+            }
 
             $userDetail = User::find($user->id);
             $userDetail->last_login = Carbon::now();
