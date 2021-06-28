@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Backend;
 
+use App\Rules\TagRule;
 use App\Models\Listing;
 use App\Models\ListingTag;
 use Illuminate\Http\Request;
@@ -64,7 +65,7 @@ class ListingController extends Controller
             "long" => "required|numeric",
             "low_price" => "required|numeric|min:1",
             "high_price" => "required|numeric|min:1",
-            "tags" => "required|json",
+            "tags" => ["required", new TagRule],
             "category_id" => "required",
             "image" => "required|image"
         ]);
@@ -145,7 +146,7 @@ class ListingController extends Controller
             "long" => "required|numeric",
             "low_price" => "required|numeric|min:1",
             "high_price" => "required|numeric|min:1",
-            "tags" => "required|json",
+            "tags" => ["required", new TagRule],
             "category_id" => "required",
             "image" => "image"
         ]);
