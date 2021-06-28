@@ -15,15 +15,10 @@ class MenuSeeder extends Seeder
      */
     public function run()
     {
-        $this->addMenu(10, "Tour Listing", "employee", "tour-listing", ["position" => 1]);
-        $this->addMenu(11, "Show All Listing", "employee", "-", ["route" => 'cms.listings.index', "child_of" => 10, "position" => 1]);
-        $this->addMenu(12, "Create Listing", "employee", "-", ["route" => 'cms.listings.create', "child_of" => 10, "position" => 2]);
-
         $this->addMenu(20, "Listings", "employee", "stories-list", ["position" => 2]);
         $this->addMenu(21, "Listing Categories", "employee", "-", ["route" => 'cms.listing-categories.index', "child_of" => 20, "position" => 1]);
         $this->addMenu(22, "Listing Tags", "employee", "-", ["route" => 'cms.listing-tags.index', "child_of" => 20, "position" => 2]);
         $this->addMenu(23, "Listing", "employee", "-", ["route" => 'cms.listings.index', "child_of" => 20, "position" => 3]);
-
 
         $this->addMenu(30, "Blog", "employee", "subscribers", ["position" => 3]);
         $this->addMenu(31, "Blog Categories", "employee", "subscribers", ["route" => null, "child_of" => 30, "position" => 1]);
@@ -39,9 +34,8 @@ class MenuSeeder extends Seeder
         $this->addMenu(60, "Settings", "superuser", "users", ["position" => 6]);
         $this->addMenu(61, "Menu", "superuser", "-", ["route" => null, "child_of" => 60, "position" => 1]);
 
-        $this->addMenu(70, "Categories", "employee", "categories", ["position" => 7]);
-        $this->addMenu(71, "Categories", "employee", "-", ["route" => null, "child_of" => 70, "position" => 1]);
-        $this->addMenu(72, "Categories", "employee", "-", ["route" => null, "child_of" => 70, "position" => 1]);
+        $this->addMenu(70, "Faq", "employee", "categories", ["position" => 7]);
+        $this->addMenu(71, "Faq", "employee", "-", ["route" => 'cms.faq.index', "child_of" => 70, "position" => 1]);
 
         Menu::truncate();
         Menu::createNew($this->menus, true);
