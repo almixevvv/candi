@@ -8,7 +8,7 @@ class FaqCreateForm extends Form
     public function handle() 
     {
         $this->text('question', "Question");
-        $this->text('answer', "Answer");
+        $this->textArea('answer', "Answer");
         $this->number('position', "Position");
     }
 }
