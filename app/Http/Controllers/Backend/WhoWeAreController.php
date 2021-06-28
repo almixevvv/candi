@@ -29,7 +29,7 @@ class WhoWeAreController extends Controller
                 "contents" => $whoWeAre ? $whoWeAre->contents : ""
             ],
             "extra" => [
-                "uploadTo" => class_basename(WhoWeAre::class)
+                "wysiwyg" => true
             ]
         ]);
 

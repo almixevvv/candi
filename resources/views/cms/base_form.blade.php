@@ -30,7 +30,7 @@
 @endpush
 
 @push('extra-js')
-@if (array_key_exists("uploadTo", $form->extra))
+@if (array_key_exists("wysiwyg", $form->extra))
     <script src="{{ asset('js/ckeditor/build/ckeditor.js') }}"></script>
     @include("vendor.ckfinder.setup")
     <script>
