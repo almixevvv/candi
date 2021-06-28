@@ -96,7 +96,7 @@ trait HasImage
     public function removeAllImage() 
     {
         $name = $this->getModelName();
-        $image = Image::where('model_name', $name);
+        $image = Image::where('model_name', $name)->where('model_id', $this->id);
         $images = $image->get();
         foreach ($images as $img) {
             if (Storage::exists("public/{$img->getRawOriginal('image_url')}")) {
