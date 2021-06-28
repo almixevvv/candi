@@ -12,8 +12,8 @@ class ListingCategory extends Model
 
     public $fillable = ["name"];
   
-    protected $attributes = [
-        'created_at'    => date("Y-m-d H:i:s")
+    protected $casts = [
+        'created_at' => "date"
     ];
 
     public function listings() 
