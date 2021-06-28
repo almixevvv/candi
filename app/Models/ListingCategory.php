@@ -11,5 +11,10 @@ class ListingCategory extends Model
 
     protected $attributes = [
         'created_at'    => date("Y-m-d H:i:s")
-    ]
+    ];
+
+    public function listings() 
+    {
+        return $this->hasMany(Listing::class, "category_id", "id");
+    }
 }
