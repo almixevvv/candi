@@ -3,13 +3,15 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\Backend\BlogController;
 use App\Http\Controllers\Backend\RoleController;
 use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\Backend\UploadController;
 use App\Http\Controllers\Backend\ListingController;
-use App\Http\Controllers\Backend\ListingCategoryController;
-use App\Http\Controllers\Backend\ListingTagController;
 use App\Http\Controllers\Backend\WhoWeAreController;
+use App\Http\Controllers\Backend\ListingTagController;
+use App\Http\Controllers\Backend\BlogCategoryController;
+use App\Http\Controllers\Backend\ListingCategoryController;
 
 // Auth::loginUsingId(1);
 
@@ -41,6 +43,10 @@ Route::group(["middleware" => "auth"], function() {
         Route::put('{id}', [ListingTagController::class, "updateTag"])->name('update');
         Route::delete('{id}', [ListingTagController::class, "destroyTag"])->name('destroy');
     });
+
+    // Blog
+    Route::resource('blog-categories', BlogCategoryController::class);
+    Route::resource('blog', BlogController::class);
 
     // user
     Route::resource('/users', UserController::class);

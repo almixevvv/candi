@@ -41,7 +41,7 @@ class ListingController extends Controller
             "method" => "POST",
             "action" => route('cms.listings.store'),
             "extra" => [
-                "uploadTo" => class_basename(Listing::class)
+                "wysiwyg" => true
             ]
         ]);
 

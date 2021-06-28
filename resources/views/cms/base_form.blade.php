@@ -31,7 +31,7 @@
 @push('extra-js')
 <script src="https://unpkg.com/@yaireo/tagify"></script>
 <script src="https://unpkg.com/@yaireo/tagify/dist/tagify.polyfills.min.js"></script>
-@if (array_key_exists("uploadTo", $form->extra))
+@if (array_key_exists("wysiwyg", $form->extra))
     <script src="{{ asset('js/ckeditor/ckeditor.js') }}"></script>
     @include("vendor.ckfinder.setup")
     <script>
