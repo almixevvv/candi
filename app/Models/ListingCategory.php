@@ -11,6 +11,10 @@ class ListingCategory extends Model
     use HasFactory, HasImage;
 
     public $fillable = ["name"];
+  
+    protected $attributes = [
+        'created_at'    => date("Y-m-d H:i:s")
+    ];
 
     public function listings() 
     {

@@ -16,7 +16,7 @@ class ModifyListingTagTable extends Migration
         Schema::table('listing_tags', function(Blueprint $table) {
             $table->string('name')->nullable();
             $table->foreignId('category_id')->nullable()->references('id')->on('listing_tag_categories')->onDelete('cascade');
-
+          
             $table->dropColumn(['tag_name', 'tag_type']);
         });
     }

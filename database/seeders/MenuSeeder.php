@@ -24,6 +24,7 @@ class MenuSeeder extends Seeder
         $this->addMenu(22, "Listing Tags", "employee", "-", ["route" => 'cms.listing-tags.index', "child_of" => 20, "position" => 2]);
         $this->addMenu(23, "Listing", "employee", "-", ["route" => 'cms.listings.index', "child_of" => 20, "position" => 3]);
 
+
         $this->addMenu(30, "Blog", "employee", "subscribers", ["position" => 3]);
         $this->addMenu(31, "Blog Categories", "employee", "subscribers", ["route" => null, "child_of" => 30, "position" => 1]);
         $this->addMenu(32, "Blog List", "employee", "subscribers", ["route" => null, "child_of" => 30, "position" => 2]);
