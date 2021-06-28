@@ -1326,16 +1326,16 @@
         },
         {
             "name": "gustiawan/laravel-form-builder",
-            "version": "1.3.6",
+            "version": "1.3.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/agus24/laravel-form-builder.git",
-                "reference": "94bd1722cf9d5f1661c68a5a3ffa7ab69a1a2c2c"
+                "reference": "27d59142b94d1aa2e2684867dea9bfec54db2815"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/agus24/laravel-form-builder/zipball/94bd1722cf9d5f1661c68a5a3ffa7ab69a1a2c2c",
-                "reference": "94bd1722cf9d5f1661c68a5a3ffa7ab69a1a2c2c",
+                "url": "https://api.github.com/repos/agus24/laravel-form-builder/zipball/27d59142b94d1aa2e2684867dea9bfec54db2815",
+                "reference": "27d59142b94d1aa2e2684867dea9bfec54db2815",
                 "shasum": ""
             },
             "require": {
@@ -1371,9 +1371,9 @@
             ],
             "support": {
                 "issues": "https://github.com/agus24/laravel-form-builder/issues",
-                "source": "https://github.com/agus24/laravel-form-builder/tree/1.3.6"
+                "source": "https://github.com/agus24/laravel-form-builder/tree/1.3.9"
             },
-            "time": "2021-06-18T13:10:26+00:00"
+            "time": "2021-06-28T06:30:34+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",

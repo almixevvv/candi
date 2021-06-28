@@ -4,10 +4,13 @@ namespace App\Models;
 
 use App\Casts\ImageCast;
 use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\File;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image as ImageResizer;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Intervention\Image\Exception\NotReadableException;
 
 class Image extends Model
 {
@@ -47,21 +50,28 @@ class Image extends Model
 
         File::ensureDirectoryExists($storagePath);
 
-        $img = ImageResizer::make($file->path());
-        $img->resize(800, 800)->save($storagePath . "/" . $fileName, 80);
-        $img->resize(100, 100)->save($storagePath . "/" . $thumbnailName, 20);
-
-        $file->move($storagePath, $fileName);
+        try {
+            $img = ImageResizer::make($file->path());
+            $img->resize(800, 800)->save($storagePath . "/" . $fileName, 80);
+            $img->resize(100, 100)->save($storagePath . "/" . $thumbnailName, 20);
+            $file->move($storagePath, $fileName);
+        } catch(NotReadableException $exception) {
+            Log::info("not supportted image");
+            $file->move($storagePath, $fileName);
+            $path = collect(["public", $uploadTo, $dateTimeStamp])->join("/");
+            Storage::copy($path . "/" . $fileName, $path . "/" . $thumbnailName);
+        }
 
         $id = array_key_exists("id", $extra) ? $extra['id'] : null;
-        $name = array_key_exists("name", $extra) ? $extra['id'] : null;
+        $name = array_key_exists("name", $extra) ? $extra['name'] : null;
 
         return Image::create([
             "model_id" => $id,
             "model_name" => $name,
             "image_url" => "{$filePath}/{$fileName}",
             "image_thumbnail" => "{$filePath}/{$thumbnailName}",
-            "metadata" => $metadata
+            "metadata" => $metadata,
+            "is_temporary" => $isTemporary
         ]);
     }
 }

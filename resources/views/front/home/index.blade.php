@@ -374,4 +374,3 @@
 
 @include('components.front.pagefooter')
 @endsection
-   

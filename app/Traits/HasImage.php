@@ -46,7 +46,7 @@ trait HasImage
     }
 
     public function addImage(UploadedFile $file, array $metadata = []) : Image
-    {   
+    {
         return Image::uploadImage($file, $this->getModelShortName(), $metadata, false, [
             "id" => $this->id,
             "name" => $this->getModelName()
@@ -96,6 +96,17 @@ trait HasImage
     public function removeAllImage() 
     {
         $name = $this->getModelName();
-        Image::where('model_name', $name)->delete();
+        $image = Image::where('model_name', $name);
+        $images = $image->get();
+        foreach ($images as $img) {
+            if (Storage::exists("public/{$img->getRawOriginal('image_url')}")) {
+                Storage::delete("public/{$img->getRawOriginal('image_url')}");
+            }
+            if (Storage::exists("public/{$img->getRawOriginal('image_thumbnail')}")) {
+                Storage::delete("public/{$img->getRawOriginal('image_thumbnail')}");
+            }
+        }
+
+        $image->delete();
     }
 }

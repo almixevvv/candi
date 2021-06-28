@@ -15,7 +15,7 @@ class ListingCategorySeeder extends Seeder
     public function run()
     {
         $this->listing_categories_seeder();
-        $this->listing_tags_seeder();
+        // $this->listing_tags_seeder();
     }
 
     private function listing_categories_seeder() 
@@ -23,39 +23,39 @@ class ListingCategorySeeder extends Seeder
         $listingCategories = array(
             array(
                 'name'          => 'Restaurant',
-                'category_id'   => 'RST',
-                'icon'          => '',
-                'status'        => 'ACTIVE'
+                // 'category_id'   => 'RST',
+                // 'icon'          => 'icon-restaurant.svg',
+                // 'status'        => 'ACTIVE'
             ),
             array(
                 'name'          => 'Cafe',
-                'category_id'   => 'CFE',
-                'icon'          => '',
-                'status'        => 'ACTIVE'
+                // 'category_id'   => 'CFE',
+                // 'icon'          => 'icon-cafe.svg',
+                // 'status'        => 'ACTIVE'
             ),
             array(
                 'name'          => 'Bar',
-                'category_id'   => 'BAR',
-                'icon'          => '',
-                'status'        => 'ACTIVE'
+                // 'category_id'   => 'BAR',
+                // 'icon'          => 'icon-bar.svg',
+                // 'status'        => 'ACTIVE'
             ),
             array(
                 'name'          => 'Tour Attraction',
-                'category_id'   => 'TAT',
-                'icon'          => '',
-                'status'        => 'ACTIVE'
+                // 'category_id'   => 'TAT',
+                // 'icon'          => 'icon-tour.svg',
+                // 'status'        => 'ACTIVE'
             ),
             array(
                 'name'          => 'Hotel & Resort',
-                'category_id'   => 'HAR',
-                'icon'          => '',
-                'status'        => 'ACTIVE'
+                // 'category_id'   => 'HAR',
+                // 'icon'          => 'icon-hotel.svg',
+                // 'status'        => 'ACTIVE'
             ),
             array(
                 'name'          => 'Shopping Center',
-                'category_id'   => 'SHC',
-                'icon'          => '',
-                'status'        => 'ACTIVE'
+                // 'category_id'   => 'SHC',
+                // 'icon'          => 'icon-shopping.svg',
+                // 'status'        => 'ACTIVE'
             ),
         );
 

@@ -14,15 +14,15 @@ class ModifyListingTable extends Migration
     public function up()
     {
         Schema::table('listings', function(Blueprint $table) {
-            $table->string("title");
-            $table->text('details');
-            $table->text('address');
-            $table->float('lat');
-            $table->float('long');
+            $table->string("title")->default('');
+            $table->text('details')->default('');
+            $table->text('address')->default('');
+            $table->float('lat')->default(0);
+            $table->float('long')->default(0);
             $table->float('low_price')->default(0);
             $table->float('high_price')->default(0);
 
-            $table->foreignId("category_id")->references('id')->on('listing_categories');
+            $table->foreignId("category_id")->nullable()->references('id')->on('listing_categories');
         });
     }
 

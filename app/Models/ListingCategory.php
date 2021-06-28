@@ -2,16 +2,15 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Traits\HasImage;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class ListingCategory extends Model
 {
-    use HasFactory;
+    use HasFactory, HasImage;
 
-    protected $attributes = [
-        'created_at'    => date("Y-m-d H:i:s")
-    ];
+    public $fillable = ["name"];
 
     public function listings() 
     {

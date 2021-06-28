@@ -15,8 +15,8 @@ class CreateListingHasTagsTable extends Migration
     {
         Schema::create('listing_has_tags', function (Blueprint $table) {
             $table->id();
-            $table->foreignId("listing_id")->references('id')->on('listings');
-            $table->foreignId("listing_tag_id")->references('id')->on('listing_tags');
+            $table->foreignId("listing_id")->references('id')->on('listings')->onDelete('cascade');
+            $table->foreignId("listing_tag_id")->references('id')->on('listing_tags')->onDelete('cascade');
             $table->timestamps();
         });
     }

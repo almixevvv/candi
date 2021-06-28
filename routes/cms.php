@@ -3,10 +3,12 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\ListingController;
 use App\Http\Controllers\Backend\RoleController;
 use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\Backend\UploadController;
+use App\Http\Controllers\Backend\ListingController;
+use App\Http\Controllers\Backend\ListingCategoryController;
+use App\Http\Controllers\Backend\ListingTagController;
 use App\Http\Controllers\Backend\WhoWeAreController;
 
 // Auth::loginUsingId(1);
@@ -27,8 +29,18 @@ Route::group(["middleware" => "auth"], function() {
     Route::post('/whoarewe', [WhoWeAreController::class, 'store'])->name('waw.store');
 
     //Listing process
-    Route::get('/listing', [ListingController::class, 'create'])->name('listing.index');
-    Route::get('/listing/create', [ListingController::class, 'create'])->name('listing.create');
+    Route::resource('listings', ListingController::class);
+    Route::resource('listing-categories', ListingCategoryController::class);
+
+    // listing tags
+    Route::resource('listing-tags', ListingTagController::class);
+    Route::name('listing-tags.tags.')->prefix("listing-tags/tags/{tagID}")->group(function() {
+        Route::get('create', [ListingTagController::class, "addTag"])->name('create');
+        Route::post('', [ListingTagController::class, "storeTag"])->name('store');
+        Route::get('{id}/edit', [ListingTagController::class, "editTag"])->name('edit');
+        Route::put('{id}', [ListingTagController::class, "updateTag"])->name('update');
+        Route::delete('{id}', [ListingTagController::class, "destroyTag"])->name('destroy');
+    });
 
     // user
     Route::resource('/users', UserController::class);

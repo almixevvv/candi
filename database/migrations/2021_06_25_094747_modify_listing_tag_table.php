@@ -14,7 +14,10 @@ class ModifyListingTagTable extends Migration
     public function up()
     {
         Schema::table('listing_tags', function(Blueprint $table) {
-            $table->foreignId('category_id')->references('id')->on('listing_tag_categories');
+            $table->string('name')->nullable();
+            $table->foreignId('category_id')->nullable()->references('id')->on('listing_tag_categories')->onDelete('cascade');
+
+            $table->dropColumn(['tag_name', 'tag_type']);
         });
     }
 
@@ -26,7 +29,9 @@ class ModifyListingTagTable extends Migration
     public function down()
     {
         Schema::table('listing_tags', function(Blueprint $table) {
-            $table->dropColumn('category_id');
+            $table->dropColumn(['category_id', 'name']);
+            $table->string('tag_name')->nullable();
+            $table->string('tag_type')->nullable();
         });
     }
 }
