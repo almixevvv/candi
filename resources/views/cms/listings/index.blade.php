@@ -19,8 +19,8 @@
                             <a href="{{ route('cms.listings.show', $listing) }}">{{ $listing->id }}</a>
                         </td>
                         <td>
-                            @if ($listing->getImages()->first())
-                                <img src="{{ $listing->getImages()->first()->image_thumbnail }}" />
+                            @if ($listing->image)
+                                <img src="{{ $listing->image->image_thumbnail }}" />
                             @endif
                         </td>
                         <td>{{ $listing->title }}</td>

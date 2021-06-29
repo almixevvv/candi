@@ -19,9 +19,10 @@
                         </td>
                         <td>{{ $listingCategory->name }}</td>
                         <td>
-                            @if ($listingCategory->getImages()->first())
-                                <img src="{{ $listingCategory->getImages()->first()->image_thumbnail }}" />
+                            @if ($listingCategory->image)
+                                <img src="{{ $listingCategory->image->image_thumbnail }}" />
                             @endif
+                        </td>
                         <td>
                             <x-button-group 
                                 editUrl="{{ route('cms.listing-categories.edit', $listingCategory) }}"
