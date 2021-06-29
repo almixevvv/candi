@@ -24,7 +24,7 @@ class ListingCategoryController extends Controller
      */
     public function index()
     {
-        $this->contextData['listingCategories'] = ListingCategory::orderBy('id', 'desc')->paginate(config('app.pagination_limit'));
+        $this->contextData['listingCategories'] = ListingCategory::with('image')->orderBy('id', 'desc')->paginate(config('app.pagination_limit'));
 
         return view('cms.listing-categories.index', $this->contextData);
     }

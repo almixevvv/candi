@@ -24,7 +24,7 @@ class BlogController extends Controller
      */
     public function index()
     {
-        $this->contextData['blogs'] = Blog::orderBy('id', 'desc')->paginate(config('app.pagination_limit'));
+        $this->contextData['blogs'] = Blog::with('image')->orderBy('id', 'desc')->paginate(config('app.pagination_limit'));
 
         return view('cms.blog.index', $this->contextData);
     }

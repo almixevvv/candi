@@ -45,6 +45,16 @@ trait HasImage
         return $images->get();
     }
 
+    public function image() 
+    {
+        return $this->hasOne(Image::class, "model_id", "id")->where('model_name', $this->getModelName());
+    }
+
+    public function images() 
+    {
+        return $this->hasMany(Image::class, "model_id", "id")->where('model_name', $this->getModelName());
+    }
+
     public function addImage(UploadedFile $file, array $metadata = []) : Image
     {
         return Image::uploadImage($file, $this->getModelShortName(), $metadata, false, [

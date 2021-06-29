@@ -19,7 +19,7 @@
                         </td>
                         <td>{{ $blog->title }}</td>
                         <td>
-                            <img src="{{ $blog->getImages()->first()->image_thumbnail }}" width="25%" />
+                            <img src="{{ $blog->image->image_thumbnail }}" width="25%" />
                         </td>
                         <td>
                             <x-button-group 
