@@ -8,6 +8,7 @@ use App\Http\Controllers\Backend\RoleController;
 use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\Backend\UploadController;
 use App\Http\Controllers\Backend\ListingController;
+use App\Http\Controllers\Backend\SettingController;
 use App\Http\Controllers\Backend\WhoWeAreController;
 use App\Http\Controllers\Backend\ListingTagController;
 use App\Http\Controllers\Backend\BlogCategoryController;
@@ -54,6 +55,10 @@ Route::group(["middleware" => "auth"], function() {
 
     // FAQ
     Route::resource('/faq', FaqController::class);
+
+    // Settings
+    Route::get('profile-setting', [SettingController::class, "profile"])->name('profile.index');
+    Route::post('profile-setting', [SettingController::class, "updateProfile"])->name('profile.update');
 
     // utility
     // probably will not used in the future for now dont delete
