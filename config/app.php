@@ -229,6 +229,9 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
+        // extra aliases
+        'Markdown' => GrahamCampbell\Markdown\Facades\Markdown::class,
+
     ],
 
     'pagination_limit' => 20

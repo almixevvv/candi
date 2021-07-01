@@ -1,1 +1,12 @@
-
+.markdown div, .markdown p, .markdown ul, .markdown ol, .markdown li, .markdown header, .markdown footer, .markdown section, .markdown nav, .markdown h1, .markdown h2, .markdown h3, .markdown h4, .markdown h5, .markdown h6, .markdown form, .markdown article, .markdown main, .markdown adress {
+  display: revert;
+  float: revert;
+  width: revert;
+  font-size: revert;
+  font-weight: revert;
+  margin: revert;
+  padding: revert;
+}
+.markdown.who-we-are {
+  padding: 2%;
+}

@@ -2,17 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\WhoWeAre;
 use Illuminate\Http\Request;
-use App\Models\Whoarewe;
 
 class WhoareweController extends Controller
 {
     public function index(Request $request)
     {
-        // $modelContent = Whoarewe::latest('created_at')->first();
+        $content = WhoWeAre::first()->contents;
 
         return view('front.whoweare.index', [
             'request'   => $request,
+            'content'   => $content,
             'pageName'  => 'Who are we'
         ]);
     }
