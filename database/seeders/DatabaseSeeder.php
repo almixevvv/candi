@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\WhoWeAre;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -16,6 +17,9 @@ class DatabaseSeeder extends Seeder
         // $this->call(SApplSeeder::class);
         // $this->call(AreaSeeder::class);
         // $this->call(ListingCategorySeeder::class);
+        WhoWeAre::create([
+            "contents" => "empty content"
+        ]);
         $this->call(MenuSeeder::class);
         $this->call(RoleSeeder::class);
     }

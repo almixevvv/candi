@@ -1,0 +1,15 @@
+.markdown {
+    div, p, ul, ol, li, header, footer, section, nav, h1, h2, h3, h4, h5, h6, form, article, main, adress {
+        display: revert;
+        float: revert;
+        width: revert;
+        font-size: revert;
+        font-weight: revert;
+        margin: revert;
+        padding: revert;
+    }
+
+    &.who-we-are {
+        padding: 2%;
+    }
+}
