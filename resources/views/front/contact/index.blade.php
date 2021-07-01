@@ -41,7 +41,7 @@
                     </div>
                     <div class="contact-detail">
                         <span>
-                            426 East Avenue, 7th floor, New York, NY 07102
+                            {{ $_profile->address }}
                         </span>
                     </div>
                 </div>
@@ -55,7 +55,7 @@
                     </div>
                     <div class="contact-detail">
                         <span>
-                            (021) 731 - 9564
+                            {{ $_profile->phone_number }}
                         </span>
                     </div>
                 </div>
@@ -69,7 +69,7 @@
                     </div>
                     <div class="contact-detail">
                         <span>
-                            contact@candi.id
+                            {{ $_profile->email }}
                         </span>
                     </div>
                 </div>
@@ -83,8 +83,8 @@
                     </div>
                     <div class="contact-detail">
                         <span>
-                            Monday - Friday </br>
-                            10:00 AM - 6:00 PM
+                            {{ $_profile->open_day_range }} </br>
+                            {{ $_profile->open_hour_range }}
                         </span>
                     </div>
                 </div>
