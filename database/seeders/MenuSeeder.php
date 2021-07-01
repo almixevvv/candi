@@ -32,7 +32,7 @@ class MenuSeeder extends Seeder
         $this->addMenu(52, "Roles", "superuser", "-", ["route" => 'cms.roles.index', "child_of" => 50, "position" => 2]);
 
         $this->addMenu(60, "Settings", "superuser", "users", ["position" => 6]);
-        $this->addMenu(61, "Menu", "superuser", "-", ["route" => null, "child_of" => 60, "position" => 1]);
+        $this->addMenu(61, "Profile", "superuser", "-", ["route" => 'cms.profile.index', "child_of" => 60, "position" => 1]);
 
         $this->addMenu(70, "Faq", "employee", "categories", ["position" => 7]);
         $this->addMenu(71, "Faq", "employee", "-", ["route" => 'cms.faq.index', "child_of" => 70, "position" => 1]);
