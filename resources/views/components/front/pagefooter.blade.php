@@ -36,11 +36,11 @@
                     <div class="_title">Contacts</div>
                     <div class="contacts_info">
                         <div class="tel">
-                            <a href="tel:+1500383">{{ $_profile->phone_number }}</a>
+                            <a href="tel:{{ $_profile->phone_number }}">{{ $_profile->phone_number }}</a>
                             <p>Round the clock support</p>
                         </div>
                         <div class="email">
-                            <a href="mailto:info@hellodigi.ru">{{ $_profile->email }}</a>
+                            <a href="mailto:{{ $_profile->email }}">{{ $_profile->email }}</a>
                             <p>For any questions</p>
                         </div>
                         <div class="address">
