@@ -3,7 +3,7 @@
 @section('content')
 <!--begin::Content-->
 <div class="content d-flex flex-column flex-column-fluid px-8" id="kt_content">
-    <x-panel :title="$title" createUrl="{{ route('cms.roles.create') }}">
+    <x-panel :title="$title">
         <table class="table table-stripped table-bordered detail-table">
             <thead>
                 <th>ID</th>
@@ -15,11 +15,7 @@
                     <tr>
                         <td>{{ $role->id }}</td>
                         <td>{{ $role->name }}</td>
-                        <td>
-                            <x-button-group 
-                                deleteUrl="{{ route('cms.roles.destroy', $role) }}" 
-                            />
-                        </td>
+                        <td><i>No Action</i></td>
                     </tr>
                 @endforeach
             </tbody>
