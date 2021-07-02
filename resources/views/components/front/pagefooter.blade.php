@@ -36,23 +36,21 @@
                     <div class="_title">Contacts</div>
                     <div class="contacts_info">
                         <div class="tel">
-                            <a href="tel:+1500383">+ 1500383</a>
+                            <a href="tel:{{ $_profile->phone_number }}">{{ $_profile->phone_number }}</a>
                             <p>Round the clock support</p>
                         </div>
                         <div class="email">
-                            <a href="mailto:info@hellodigi.ru">info@candi.id</a>
+                            <a href="mailto:{{ $_profile->email }}">{{ $_profile->email }}</a>
                             <p>For any questions</p>
                         </div>
                         <div class="address">
-                            1355 Digistrict St, Suite 909 San, Francisco, CA 10001 <br> United States
+                            {{ $_profile->address }}
                         </div>
                     </div>
                     <div class="socials social-links">
-                        <a href="#" class="link facebook"><span></span></a>
-                        <a href="#" class="link instagram"><span></span></a>
-                        <a href="#" class="link pinterest"><span></span></a>
-                        <a href="#" class="link twitter"><span></span></a>
-                        <a href="#" class="link youtube"><span></span></a>
+                        <a href="{{ $_profile->facebook }}" class="link facebook"><span></span></a>
+                        <a href="{{ $_profile->instagram }}" class="link instagram"><span></span></a>
+                        <a href="{{ $_profile->youtube }}" class="link youtube"><span></span></a>
                     </div>
                 </div>
             </div>

@@ -1,10 +1,11 @@
 <?php
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Response;
-use Illuminate\Http\Request;
 
+use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\WhoareweController;
 use CKSource\CKFinderBridge\Controller\CKFinderController;
 use Illuminate\Contracts\Filesystem\FileNotFoundException;
@@ -37,9 +38,7 @@ Route::get('/detail_blog', function (Request $request) {
     return view('front.blog.detail', ['request' => $request]);
 })->name('blog.detail');
 
-Route::get('/contact', function (Request $request) {
-    return view('front.contact.index', ['request' => $request]);
-})->name('contact');
+Route::get('/contact', [FrontendController::class, "contact"])->name('contact');
 
 Route::get('/promo', function (Request $request) {
     return view('front.promo.index', ['request' => $request]);
