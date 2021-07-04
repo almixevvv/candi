@@ -9,10 +9,8 @@
                 <tr>
                     <th>Image</th>
                     <td>
-                        @if ($listing->getImages()->first())
-                            <img src="{{ $listing->getImages()->first()->image_thumbnail }}" width="100%"
-                                onclick="window.location.href='{{ $listing->getImages()->first()->image_url }}'" style="cursor:pointer"/>
-                        @endif
+                        <img src="{{ $listing->image->image_url }}" width="25%"
+                             onclick="window.location.href='{{ $listing->image->image_url }}'" style="cursor:pointer"/>
                     </td>
                 </tr>
                 <tr>
@@ -48,8 +46,41 @@
                     <th>Price Range</th>
                     <td>Rp {{ number_format($listing->low_price) . " - ". number_format($listing->high_price) }}</td>
                 </tr>
+                <tr>
+                    <th>Details</th>
+                    <td>{!! Markdown::convertToHtml($listing->details) !!}</td>
+                </tr>
             </tbody>
         </table>
+        @if ($listing->metadata)
+            <h3 style="margin-top: 2em; margin-bottom: 2em">Metadata</h3>
+            <div>
+                <table class="table table-stripped table-bordered detail-table">
+                    <tbody>
+                        <tr>
+                            <td>Meta Title</td>
+                            <td>{{ $listing->metadata->title }}</td>
+                        </tr>
+                        <tr>
+                            <td>Meta description (char count: {{ strlen($listing->metadata->description) }})</td>
+                            <td>{{ $listing->metadata->description }}</td>
+                        </tr>
+                        <tr>
+                            <td>Meta keywords</td>
+                            <td>{{ $listing->metadata->keywords }}</td>
+                        </tr>
+                        <tr>
+                            <td>Meta canonical</td>
+                            <td>{{ $listing->metadata->canonical }}</td>
+                        </tr>
+                        <tr>
+                            <td>Meta robots</td>
+                            <td>{{ $listing->metadata->robots }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        @endif
     </x-panel>
 </div>
 @endsection

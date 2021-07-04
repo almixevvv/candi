@@ -83,6 +83,14 @@ class ListingController extends Controller
 
         $listing->addImage($request->file('image'));
 
+        $listing->createOrUpdateMetadata([
+            "title" => $request->title,
+            "description" => $request->description,
+            "robots" => $request->robots,
+            "keywords" => $request->keywords,
+            "canonical" => $request->canonical,
+        ]);
+
         return redirect($this->index);
     }
 
@@ -110,7 +118,7 @@ class ListingController extends Controller
             "method" => "PUT",
             "action" => route('cms.listings.update', $listing),
             "extra" => [
-                "uploadTo" => class_basename(Listing::class),
+                "wysiwyg" => true,
                 "helpText" => "You will replace the image if you upload a new image"
             ],
             "data" => [
@@ -123,6 +131,12 @@ class ListingController extends Controller
                 "category_id" => $listing->category_id,
                 "tags" => $listing->tags->map(fn ($value) => $value->name),
                 "details" => $listing->details,
+
+                // metadata details
+                "description" => ($listing->metadata) ? $listing->metadata->description : "",
+                "robots" => ($listing->metadata) ? $listing->metadata->robots : "",
+                "keywords" => ($listing->metadata) ? $listing->metadata->keywords : "",
+                "canonical" => ($listing->metadata) ? $listing->metadata->canonical : "",
             ]
         ]);
 
@@ -167,6 +181,14 @@ class ListingController extends Controller
             $listing->removeAllImage();
             $listing->addImage($request->file('image'));
         }
+
+        $listing->createOrUpdateMetadata([
+            "title" => $request->title,
+            "description" => $request->description,
+            "robots" => $request->robots,
+            "keywords" => $request->keywords,
+            "canonical" => $request->canonical,
+        ]);
 
         return redirect($this->index);
     }
