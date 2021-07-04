@@ -25,5 +25,12 @@ class ListingCreateForm extends Form
         $this->extra['taglify'] = collect([
             "tags" => ListingTag::all()->map(fn ($value) => $value->name)
         ]);
+
+        $this->separator('Metadata');
+
+        $this->textArea('description', 'Meta Description');
+        $this->text('keywords', 'Meta Keywords (comma separated)');
+        $this->text('canonical', 'Meta Canonical');
+        $this->text('robots', 'Robots');
     }
 }

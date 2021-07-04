@@ -30,6 +30,6 @@ class SidebarServiceProvider extends ServiceProvider
     {
         View::composer('components.cms.sidebar', MenuComposer::class);
         View::composer('*', IconComposer::class);
-        View::composer('*', ProfileComposer::class);
+        View::composer('front.*', ProfileComposer::class);
     }
 }

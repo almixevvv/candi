@@ -26,7 +26,14 @@ class WhoWeAreController extends Controller
             "action" => route('cms.waw.store'),
             "method" => "POST",
             "data" => [
-                "contents" => $whoWeAre ? $whoWeAre->contents : ""
+                "contents" => $whoWeAre ? $whoWeAre->contents : "",
+
+                // metadata
+                "title" => ($whoWeAre->metadata) ? $whoWeAre->metadata->title : "",
+                "description" => ($whoWeAre->metadata) ? $whoWeAre->metadata->description : "",
+                "robots" => ($whoWeAre->metadata) ? $whoWeAre->metadata->robots : "",
+                "keywords" => ($whoWeAre->metadata) ? $whoWeAre->metadata->keywords : "",
+                "canonical" => ($whoWeAre->metadata) ? $whoWeAre->metadata->canonical : "",
             ],
             "extra" => [
                 "wysiwyg" => true
@@ -41,6 +48,14 @@ class WhoWeAreController extends Controller
         $whoWeAre = WhoWeAre::first();
         $whoWeAre->contents = $request->contents;
         $whoWeAre->save();
+
+        $whoWeAre->createOrUpdateMetadata([
+            "title" => $request->title,
+            "description" => $request->description,
+            "robots" => $request->robots,
+            "keywords" => $request->keywords,
+            "canonical" => $request->canonical,
+        ]);
 
         Cache::delete(url()->previous() . ":image_ids");
         return redirect($this->index);

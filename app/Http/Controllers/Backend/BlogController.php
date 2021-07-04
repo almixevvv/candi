@@ -66,6 +66,14 @@ class BlogController extends Controller
 
         $blog->addImage($request->file('image'));
 
+        $blog->createOrUpdateMetadata([
+            "title" => $request->title,
+            "description" => $request->description,
+            "robots" => $request->robots,
+            "keywords" => $request->keywords,
+            "canonical" => $request->canonical,
+        ]);
+
         return redirect($this->index);
     }
 
@@ -100,7 +108,13 @@ class BlogController extends Controller
             "data" => [
                 "title" => $blog->title,
                 "content" => $blog->content,
-                "category_id" => $blog->category_id
+                "category_id" => $blog->category_id,
+
+                // metadata
+                "description" => ($blog->metadata) ? $blog->metadata->description : "",
+                "robots" => ($blog->metadata) ? $blog->metadata->robots : "",
+                "keywords" => ($blog->metadata) ? $blog->metadata->keywords : "",
+                "canonical" => ($blog->metadata) ? $blog->metadata->canonical : "",
             ]
         ]);
 
@@ -132,6 +146,14 @@ class BlogController extends Controller
             $blog->removeAllImage();
             $blog->addImage($request->file('image'));
         }
+
+        $blog->createOrUpdateMetadata([
+            "title" => $request->title,
+            "description" => $request->description,
+            "robots" => $request->robots,
+            "keywords" => $request->keywords,
+            "canonical" => $request->canonical,
+        ]);
 
         return redirect($this->index);
     }

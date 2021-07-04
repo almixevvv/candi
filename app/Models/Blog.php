@@ -3,12 +3,13 @@
 namespace App\Models;
 
 use App\Traits\HasImage;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Traits\HasMetadata;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Blog extends Model
 {
-    use HasFactory, HasImage;
+    use HasFactory, HasImage, HasMetadata;
 
     public $fillable = ["title", "content", "category_id"];
 

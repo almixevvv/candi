@@ -13,5 +13,12 @@ class BlogCreateForm extends Form
         $this->textArea("content", "Content", ["class" => "wysiwyg"]);
         $this->radio("category_id", "Category", Utils::createModelChoices(BlogCategory::all(), "id", "name"));
         $this->upload("image", "Header Image");
+
+        $this->separator('Metadata');
+
+        $this->textArea('description', 'Meta Description');
+        $this->text('keywords', 'Meta Keywords (comma separated)');
+        $this->text('canonical', 'Meta Canonical');
+        $this->text('robots', 'Robots');
     }
 }
