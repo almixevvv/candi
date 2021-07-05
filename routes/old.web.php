@@ -1,11 +1,11 @@
 <?php
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Response;
+use Illuminate\Http\Request;
 
-use App\Http\Controllers\FrontendController;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\WhoareweController;
 use CKSource\CKFinderBridge\Controller\CKFinderController;
@@ -33,20 +33,15 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 //     return view('front.home.index', ['request' => $request]);
 // })->name('home');
 
-// Route::get('/blog', function (Request $request) {
-//     return view('front.blog.index', ['request' => $request]);
-// })->name('blog');
-
-// Route::get('/detail_blog', function (Request $request) {
-//     return view('front.blog.detail', ['request' => $request]);
-// })->name('blog.detail');
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::get('/blog', [BlogController::class, 'index'])->name('blog');
 
 Route::get('/detail_blog/{blog}', [BlogController::class, 'detail'])->name('blog.detail');
 
-Route::get('/contact', [FrontendController::class, "contact"])->name('contact');
+Route::get('/contact', function (Request $request) {
+    return view('front.contact.index', ['request' => $request]);
+})->name('contact');
 
 Route::get('/promo', function (Request $request) {
     return view('front.promo.index', ['request' => $request]);

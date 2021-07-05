@@ -29,6 +29,8 @@
 
         <div class="container-fluid px-0 mb-3">
             <div class="d-flex justify-content-around flex-column flex-md-row">
+
+
                 
                 <div class="contact-container">
                     <div class="contact-card mx-0 lg-mx-2">
@@ -41,35 +43,41 @@
                     </div>
                     <div class="contact-detail">
                         <span>
-                            {{ $_profile->address }}
+                            426 East Avenue, 7th floor, New York, NY 07102
                         </span>
                     </div>
                 </div>
 
                 <div class="contact-container even">
                     <div class="contact-card mx-0 lg-mx-2">
-                        <i class="fas fa-phone-square-alt"></i>
+                        <a href="https://api.whatsapp.com/send?phone=+6289525022809" target="_blank">
+                            <i class="fas fa-phone-square-alt"></i>
+                        </a>
+                        
                         <div class="contact-bottom">
                             <h5>Phone</h5>
                         </div>
                     </div>
                     <div class="contact-detail">
                         <span>
-                            {{ $_profile->phone_number }}
+                            (021) 731 - 9564
                         </span>
                     </div>
                 </div>
 
                 <div class="contact-container odd">
                     <div class="contact-card mx-0 lg-mx-2">
-                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:wisan.maulana@gmail.com?subject=test" target="_blank">
+                           <i class="fas fa-envelope"></i> 
+                        </a>
+                        
                         <div class="contact-bottom">
                             <h5>Email</h5>
                         </div>
                     </div>
                     <div class="contact-detail">
                         <span>
-                            {{ $_profile->email }}
+                            contact@candi.id
                         </span>
                     </div>
                 </div>
@@ -83,8 +91,8 @@
                     </div>
                     <div class="contact-detail">
                         <span>
-                            {{ $_profile->open_day_range }} </br>
-                            {{ $_profile->open_hour_range }}
+                            Monday - Friday </br>
+                            10:00 AM - 6:00 PM
                         </span>
                     </div>
                 </div>
@@ -100,6 +108,10 @@
             </div>
 
             <div class="form-container">
+                <form action="/action_page.php">
+                 
+                  
+                </form>
                 <div class="row">
                      <div class="col-12">
                         <div class="contact-input">
@@ -113,6 +125,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="row">
                     <div class="col-12 col-md-6">
                         <div class="contact-input">

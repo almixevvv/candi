@@ -10,7 +10,7 @@
                             <div class="title_wrap" style="margin-top: -25em;">
                                 <p class="slide_title" style="font-size:36pt; text-align:center;">Time to start a journey</p>
                                 <div id="rcorners1" class="searching-menu">
-                                <img src="/images/search-hover.svg" style="float:left;width:7%;"></img>
+                                <img src="/images/search-hover.svg" style="float:left; width:4%; "></img>
                                 <label style="float:left;">&nbsp; What are you looking for?</label>
                                 </div>
                             </div>
@@ -72,7 +72,156 @@
         </div>
     </div>
 
-    <div class="destinations">
+    <!-- <div class="most_popular">
+            <div class="wrap">
+                <div class="wrap_float">
+                    <div class="title_wrap">
+                        <h2 class="title">Discover Our Journey Stories</h2>
+                        <p class="subtitle">
+                            Let's take a look at the best recommended places to visit and reviews about them
+                        </p>
+                       
+                    </div>
+                    <div class="section_content">
+                        <div class="tour-slider" id="tour-slider">
+                            <a href="tour-page-right-sidebar.html" class="tour_item" style="background-image: url(/images/iceland.jpg)">
+                                <div class="tour_item_top">
+                                    <p class="country">
+                                        <span>North Africa</span>
+                                    </p>
+                                    <div class="add_bookmark fav-button">
+                                        <i class="is-added bouncy"></i>
+                                        <i class="not-added bouncy"></i>
+                                        <span class="fav-overlay"></span>
+                                    </div>
+                                </div>
+                                <div class="tour_item_bottom">
+                                    <h3 class="_title">A trip to the mighty desert</h3>
+                                    <div class="_info">
+                                        <div class="_info_left">
+                                            <div class="days">5 days |</div>
+                                            <div class="cost">from $356</div>
+                                        </div>
+                                        <div class="_info_right">
+                                            <div class="rating-stars">
+                                                <div class="star filled"></div>
+                                                <div class="star filled"></div>
+                                                <div class="star filled"></div>
+                                                <div class="star"></div>
+                                                <div class="star"></div>
+                                            </div>
+                                            <p class="rating-text">10 reviews</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="shadow js-shadow"></div>
+                            </a>
+
+                            <a href="tour-page-right-sidebar.html" class="tour_item" style="background-image: url(/images/arizona.jpg)">
+                                <div class="tour_item_top">
+                                    <p class="country">
+                                        <span>United States of America</span>
+                                    </p>
+                                    <div class="add_bookmark fav-button">
+                                        <i class="is-added bouncy"></i>
+                                        <i class="not-added bouncy"></i>
+                                        <span class="fav-overlay"></span>
+                                    </div>
+                                </div>
+                                <div class="tour_item_bottom">
+                                    <h3 class="_title">Antelope canyon in Arizona USA exclusive tour</h3>
+                                    <div class="_info">
+                                        <div class="_info_left">
+                                            <div class="days">5 days |</div>
+                                            <div class="cost">from $356</div>
+                                        </div>
+                                        <div class="_info_right">
+                                            <div class="rating-stars">
+                                                <div class="star filled"></div>
+                                                <div class="star filled"></div>
+                                                <div class="star filled"></div>
+                                                <div class="star"></div>
+                                                <div class="star"></div>
+                                            </div>
+                                            <p class="rating-text">5 reviews</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="shadow js-shadow"></div>
+                            </a>
+
+                            <a href="tour-page-right-sidebar.html" class="tour_item" style="background-image: url(/images/iceland.jpg)">
+                                <div class="tour_item_top">
+                                    <p class="country">
+                                        <span>Iceland</span>
+                                    </p>
+                                    <div class="add_bookmark fav-button">
+                                        <i class="is-added bouncy"></i>
+                                        <i class="not-added bouncy"></i>
+                                        <span class="fav-overlay"></span>
+                                    </div>
+                                </div>
+                                <div class="tour_item_bottom">
+                                    <h3 class="_title">Reykjavik</h3>
+                                    <div class="_info">
+                                        <div class="_info_left">
+                                            <div class="days">5 days |</div>
+                                            <div class="cost">from $356</div>
+                                        </div>
+                                        <div class="_info_right">
+                                            <div class="rating-stars">
+                                                <div class="star filled"></div>
+                                                <div class="star filled"></div>
+                                                <div class="star filled"></div>
+                                                <div class="star"></div>
+                                                <div class="star"></div>
+                                            </div>
+                                            <p class="rating-text">10 reviews</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="shadow js-shadow"></div>
+                            </a>
+
+                            <a href="tour-page-right-sidebar.html" class="tour_item" style="background-image: url(/images/asia.jpg)">
+                                <div class="tour_item_top">
+                                    <p class="country">
+                                        <span>The biggest part of the world</span>
+                                    </p>
+                                    <div class="add_bookmark fav-button">
+                                        <i class="is-added bouncy"></i>
+                                        <i class="not-added bouncy"></i>
+                                        <span class="fav-overlay"></span>
+                                    </div>
+                                </div>
+                                <div class="tour_item_bottom">
+                                    <h3 class="_title">Asia</h3>
+                                    <div class="_info">
+                                        <div class="_info_left">
+                                            <div class="days">5 days |</div>
+                                            <div class="cost">from $356</div>
+                                        </div>
+                                        <div class="_info_right">
+                                            <div class="rating-stars">
+                                                <div class="star filled"></div>
+                                                <div class="star filled"></div>
+                                                <div class="star filled"></div>
+                                                <div class="star"></div>
+                                                <div class="star"></div>
+                                            </div>
+                                            <p class="rating-text">10 reviews</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="shadow js-shadow"></div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+        <div class="destinations">
             <div class="wrap">
                 <div class="wrap_float">
                     <div class="title_wrap">
@@ -201,7 +350,7 @@
             </div>
         </div>
 
-    <div class="blog slick232">
+        <div class="blog slick232">
             <div class="wrap">
                 <div class="wrap_float">
                     <div class="title_wrap">
@@ -209,20 +358,21 @@
                         <p class="subtitle">
                             Let's take a look at the best recommended places to visit and reviews about them
                         </p>
+                        <!-- <div class="controls">
+                            <a href="blog.html" class="link">All Blog Posts</a>
+                        </div> -->
                     </div>
                     <div class="section_content">
-                        @foreach($homeBlog as $blogHome)
-                        @if (count($blogHome->blogs))
-                        <a href="{{ route('blog.detail', ['blog' => $blogHome->blogs[0]]) }}" class="blog_item">
+                        <a href="{{ route('blog') }}" class="blog_item">
                             <div class="blog_item_top" style="background-image: url(https://images.unsplash.com/photo-1524222717473-730000096953?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ&amp;s=8b1938d0d4ef26e336db84568708980a);">
                                 <div class="sq_parent">
                                     <div class="sq_wrap">
                                         <div class="sq_content">
                                             <div class="tags">
-                                                <div class="tag red">{{ $blogHome->name }}</div>                                                
+                                                <div class="tag red">Category 1</div>                                                
                                             </div>
                                             <h3 class="_title">
-                                                {{ $blogHome->blogs[0]->title }}
+                                                I&#x27;m passionate about food, the tradition of it, cooking it, sharing it
                                             </h3>
                                         </div>
                                     </div>
@@ -236,10 +386,103 @@
                                 </p>
                             </div>
                         </a>
-                        @endif
-              @endforeach
 
-                        
+                        <a href="{{ route('blog') }}" class="blog_item">
+                            <div class="blog_item_top" style="background-image: url(https://images.unsplash.com/photo-1524502974494-abe9b22351c5?ixlib=rb-0.3.5&amp;q=75&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=830&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ&amp;s=99d928cca1254d88d37a9f2f1642c0d5);">
+                            
+                                <div class="sq_parent">
+                                    <div class="sq_wrap">
+                                        <div class="sq_content">
+                                            <div class="tags">
+                                                <div class="tag blue">Category 2</div>
+                                            </div>
+                                            <h3 class="_title">
+                                                Look at life with the eyes of a child
+                                            </h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="shadow js-shadow" style="background-image: url(https://images.unsplash.com/photo-1524502974494-abe9b22351c5?ixlib=rb-0.3.5&amp;q=75&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=830&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ&amp;s=99d928cca1254d88d37a9f2f1642c0d5);"></div>
+                            </div>
+                            <div class="blog_item_bottom">
+                               
+                                <p class="text">
+                                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+                                </p>
+                            </div>
+                        </a>
+
+                        <a href="{{ route('blog') }}" class="blog_item">
+                            <div class="blog_item_top" style="background-image: url(https://images.unsplash.com/photo-1520032484190-e5ef81d87978?ixlib=rb-1.2.1&amp;q=75&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=830&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ);">
+                                <div class="sq_parent">
+                                    <div class="sq_wrap">
+                                        <div class="sq_content">
+                                            <div class="tags">
+                                                <div class="tag black">Trips</div>
+                                            </div>
+                                            <h3 class="_title">
+                                                I think it&#x27;s the responsibility of a designer to try to break rules and barriers
+                                            </h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="shadow js-shadow" style="background-image: url(https://images.unsplash.com/photo-1520032484190-e5ef81d87978?ixlib=rb-1.2.1&amp;q=75&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=830&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ);"></div>
+                            </div>
+                            <div class="blog_item_bottom">
+                                
+                                <p class="text">
+                                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+                                </p>
+                            </div>
+                        </a>
+
+                        <a href="{{ route('blog') }}" class="blog_item" style="margin-top: 20px;">
+                            <div class="blog_item_top" style="background-image: url(https://images.unsplash.com/photo-1515106426117-7483c8b91e9b?ixlib=rb-0.3.5&amp;q=75&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=830&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ&amp;s=e7f2a64b9c3918b1714161e88bb1d00c);">
+                                <div class="sq_parent">
+                                    <div class="sq_wrap">
+                                        <div class="sq_content">
+                                            <div class="tags">
+                                                <div class="tag black">Trips</div>
+                                            </div>
+                                            <h3 class="_title">
+                                                Every day, in every city and town across the country
+                                            </h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="shadow js-shadow" style="background-image: url(https://images.unsplash.com/photo-1515106426117-7483c8b91e9b?ixlib=rb-0.3.5&amp;q=75&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=830&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ&amp;s=e7f2a64b9c3918b1714161e88bb1d00c);"></div>
+                            </div>
+                            <div class="blog_item_bottom">
+                                
+                                <p class="text">
+                                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+                                </p>
+                            </div>
+                        </a>
+
+                        <a href="{{ route('blog') }}" class="blog_item" style="margin-top: 20px;">
+                            <div class="blog_item_top" style="background-image: url(https://images.unsplash.com/photo-1518382473172-c5b406fe7efd?ixlib=rb-0.3.5&amp;q=75&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=830&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ&amp;s=598e5f569f9994edf8ccc9b9b4903e51);">
+                                <div class="sq_parent">
+                                    <div class="sq_wrap">
+                                        <div class="sq_content">
+                                            <div class="tags">
+                                                <div class="tag black">Trips</div>
+                                            </div>
+                                            <h3 class="_title">
+                                                Pop culture is a reflection
+                                            </h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="shadow js-shadow" style="background-image: url(https://images.unsplash.com/photo-1518382473172-c5b406fe7efd?ixlib=rb-0.3.5&amp;q=75&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=830&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ&amp;s=598e5f569f9994edf8ccc9b9b4903e51);"></div>
+                            </div>
+                            <div class="blog_item_bottom">
+                                
+                                <p class="text">
+                                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+                                </p>
+                            </div>
+                        </a>
                     </div>
                 </div>
                 <div style="text-align: center; margin-top: 10px;">
@@ -272,3 +515,4 @@
 
 @include('components.front.pagefooter')
 @endsection
+   

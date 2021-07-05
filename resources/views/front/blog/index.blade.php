@@ -27,7 +27,7 @@
                     Featured
                 </span>
                 <h2>
-                    <a href="{{ route('blog.detail') }}">I&#x27;m passionate about food, the tradition of it, cooking it, sharing it</a><span class="featured-dot"></span>
+                    <a href="{{ route('blog.detail', ['blog' => 1]) }}">I&#x27;m passionate about food, the tradition of it, cooking it, sharing it</a><span class="featured-dot"></span>
                 </h2>
                 <div class="item-meta white">
                     <span>by</span>
@@ -47,7 +47,7 @@
                               <path d="M22.9712403,8.05987765 L16.2291373,8.05987765 L12.796794,0.459688839 C12.5516266,-0.153229613 11.4483734,-0.153229613 11.0806223,0.459688839 L7.64827899,8.05987765 L0.906176009,8.05987765 C0.538424938,8.05987765 0.170673866,8.30504503 0.0480901758,8.6727961 C-0.0744935148,9.04054717 0.0480901758,9.40829825 0.293257557,9.65346563 L5.31918887,14.3116459 L3.11268244,22.4021694 C2.99009875,22.7699205 3.11268244,23.1376716 3.48043351,23.382839 C3.72560089,23.6280063 4.21593565,23.6280063 4.46110303,23.5054227 L11.9387082,19.2149935 L19.4163133,23.5054227 C19.538897,23.6280063 19.6614807,23.6280063 19.906648,23.6280063 C20.1518154,23.6280063 20.2743991,23.5054227 20.5195665,23.382839 C20.7647339,23.1376716 20.8873176,22.7699205 20.8873176,22.4021694 L18.6808111,14.3116459 L23.7067424,9.65346563 C23.9519098,9.40829825 24.0744935,9.04054717 23.9519098,8.6727961 C23.7067424,8.30504503 23.3389914,8.05987765 22.9712403,8.05987765 Z"/>
                           </svg> Featured
                       </span>
-                      <h2><a href="{{ route('blog.detail') }}">I think it&#x27;s the responsibility of a designer to try to break rules and barriers</a><span class="featured-dot"></span></h2>
+                      <h2><a href="{{ route('blog.detail', ['blog' => 1]) }}">I think it&#x27;s the responsibility of a designer to try to break rules and barriers</a><span class="featured-dot"></span></h2>
                       <div class="item-meta white">
                           <span>by</span>
                           <a href="#">Janet Robertson</a>, <a href="#">James Bryant</a>, <a href="#">Marcos Duran</a>
@@ -66,7 +66,7 @@
                               <path d="M22.9712403,8.05987765 L16.2291373,8.05987765 L12.796794,0.459688839 C12.5516266,-0.153229613 11.4483734,-0.153229613 11.0806223,0.459688839 L7.64827899,8.05987765 L0.906176009,8.05987765 C0.538424938,8.05987765 0.170673866,8.30504503 0.0480901758,8.6727961 C-0.0744935148,9.04054717 0.0480901758,9.40829825 0.293257557,9.65346563 L5.31918887,14.3116459 L3.11268244,22.4021694 C2.99009875,22.7699205 3.11268244,23.1376716 3.48043351,23.382839 C3.72560089,23.6280063 4.21593565,23.6280063 4.46110303,23.5054227 L11.9387082,19.2149935 L19.4163133,23.5054227 C19.538897,23.6280063 19.6614807,23.6280063 19.906648,23.6280063 C20.1518154,23.6280063 20.2743991,23.5054227 20.5195665,23.382839 C20.7647339,23.1376716 20.8873176,22.7699205 20.8873176,22.4021694 L18.6808111,14.3116459 L23.7067424,9.65346563 C23.9519098,9.40829825 24.0744935,9.04054717 23.9519098,8.6727961 C23.7067424,8.30504503 23.3389914,8.05987765 22.9712403,8.05987765 Z"/>
                           </svg> Featured
                       </span>
-                      <h2><a href="{{ route('blog.detail') }}">The creation of beauty is art</a><span class="featured-dot"></span></h2>
+                      <h2><a href="{{ route('blog.detail', ['blog' => 1]) }}">The creation of beauty is art</a><span class="featured-dot"></span></h2>
                           <div class="item-meta white">
                               <span>by</span>
                               <a href="#">Margaret Robertson</a> <span>&</span> <a href="#">James Bryant</a>
@@ -85,20 +85,24 @@
     <div class="page blog-list-page full-width">
       <div id="loop" class="section-loop blog-wrap is-featured">
           <div class="items-wrap flex loop-first">
-              <div class="item-wrap flex post tag-story tag-hash-orange tag-hash-post-orange tag-hash-cta-violet no-image ">
-                  <article>
-                      <a href="{{ route('blog.detail') }}" class="item-link-overlay" aria-label="The future of architecture is culture"></a>
-                      <h2><a href="{{ route('blog.detail') }}" class="white">The future of architecture is culture</a></h2>
-                      <div class="item-meta white is-primary-tag is-members-label">
-                          <span>by</span>
-                          <a href="#">Patricia Jenkins</a>
-                          <time datetime="2018-05-17">3 years ago</time>
-                      </div>
-                      <a class="primary-tag global-tag white" href="#">Story</a>
-                  </article>
-              </div>		
+              @foreach($blogCategories as $blogCategory)
+                @if (count($blogCategory->blogs))
+                  <div class="item-wrap flex post tag-story tag-hash-orange tag-hash-post-orange tag-hash-cta-violet no-image ">
+                      <article>
+                          <a href="{{ route('blog.detail', ['blog' => $blogCategory->blogs[0]]) }}" class="item-link-overlay" aria-label="The future of architecture is culture"></a>
+                          <h2><a href="{{ route('blog.detail', ['blog' => $blogCategory->blogs[0]]) }}" class="white">{{ $blogCategory->blogs[0]->title }}</a></h2>
+                          <div class="item-meta white is-primary-tag is-members-label">
+                              <span>by</span>
+                              <a href="#">Patricia Jenkins</a>
+                              <time datetime="2018-05-17">{{ $blogCategory->blogs[0]->created_at->diffForHumans() }}</time>
+                          </div>
+                          <a class="primary-tag global-tag white" href="#">{{ $blogCategory->name }}</a>
+                      </article>
+                  </div>
+                @endif
+              @endforeach
               
-              <div class="item-wrap flex post tag-lifestyle tag-hash-large featured is-image">
+              {{-- <div class="item-wrap flex post tag-lifestyle tag-hash-large featured is-image">
                   <article>
                       <a href="{{ route('blog.detail')  }}" class="item-link-overlay" aria-label="I&#x27;m passionate about food, the tradition of it, cooking it, sharing it"></a>
                       <div class="item-image" style="background-image: url(https://images.unsplash.com/photo-1524222717473-730000096953?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ&amp;s=8b1938d0d4ef26e336db84568708980a)"></div>
@@ -194,11 +198,11 @@
                       </div>
                       <a class="primary-tag global-tag white" ##">Culture</a>
                   </article>
-              </div>	
+              </div> --}}
           </div>
       </div>
     </div>
     
 </div>
-@include('components.front.pagefooter')
+{{-- @include('components.front.pagefooter') --}}
 @endsection

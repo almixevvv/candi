@@ -36,21 +36,25 @@
                     <div class="_title">Contacts</div>
                     <div class="contacts_info">
                         <div class="tel">
-                            <a href="tel:{{ $_profile->phone_number }}">{{ $_profile->phone_number }}</a>
+                            {{-- <a href="tel:+1500383">+ 1500383</a> --}}
+                            <a href="https://api.whatsapp.com/send?phone=+6289525022809" target="_blank">+ 1500383</a>
                             <p>Round the clock support</p>
                         </div>
                         <div class="email">
-                            <a href="mailto:{{ $_profile->email }}">{{ $_profile->email }}</a>
+                            {{-- <a href="mailto:info@hellodigi.ru">info@candi.id</a> --}}
+                            <a href="mailto:wisan.maulana@gmail.com?subject=test" target="_blank">info@candi.id</a>
                             <p>For any questions</p>
                         </div>
                         <div class="address">
-                            {{ $_profile->address }}
+                            1355 Digistrict St, Suite 909 San, Francisco, CA 10001 <br> United States
                         </div>
                     </div>
                     <div class="socials social-links">
-                        <a href="{{ $_profile->facebook }}" class="link facebook"><span></span></a>
-                        <a href="{{ $_profile->instagram }}" class="link instagram"><span></span></a>
-                        <a href="{{ $_profile->youtube }}" class="link youtube"><span></span></a>
+                        <a href="https://www.facebook.com/Arfadia.PT/" class="link facebook"><span></span></a>
+                        <a href="https://www.instagram.com/arfadia/" class="link instagram"><span></span></a>
+                        <a href="#" class="link pinterest"><span></span></a>
+                        <a href="https://twitter.com/arfadia?lang=en" class="link twitter"><span></span></a>
+                        <a href="#" class="link youtube"><span></span></a>
                     </div>
                 </div>
             </div>

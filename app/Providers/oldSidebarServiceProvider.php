@@ -7,7 +7,6 @@ use App\View\Composers\IconComposer;
 use App\View\Composers\MenuComposer;
 use App\View\Composers\BlogComposer;
 use Illuminate\Support\Facades\View;
-use App\View\Composers\ProfileComposer;
 use Illuminate\Support\ServiceProvider;
 
 class SidebarServiceProvider extends ServiceProvider
@@ -31,8 +30,6 @@ class SidebarServiceProvider extends ServiceProvider
     {
         View::composer('components.cms.sidebar', MenuComposer::class);
         View::composer('*', IconComposer::class);
-         View::composer('*', BlogComposer::class);
-        View::composer('front.*', ProfileComposer::class);
-
+        View::composer('*', BlogComposer::class);
     }
 }

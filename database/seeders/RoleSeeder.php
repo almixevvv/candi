@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Enums\UserStatus;
 use App\Models\User;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Schema;
 use Spatie\Permission\Models\Role;
 
 class RoleSeeder extends Seeder
@@ -16,6 +17,7 @@ class RoleSeeder extends Seeder
      */
     public function run()
     {
+    	Schema::disableForeignKeyConstraints();  // mysql feature msti di disable foreign key check
         Role::truncate();
         User::truncate();
 
@@ -35,6 +37,11 @@ class RoleSeeder extends Seeder
                 'password'          =>  bcrypt("rahasia"),
                 'status'            => UserStatus::Active,
             ],
+            [
+                'username'          => 'wisan',
+                'password'          =>  bcrypt("1234"),
+                'status'            => UserStatus::Active,
+            ],
         );
 
         User::insert($defaultUsers);
@@ -44,5 +51,9 @@ class RoleSeeder extends Seeder
 
         $user = User::find(2);
         $user->assignRole(["superuser", "employee"]);
+
+        $user = User::find(3);
+        $user->assignRole(["superuser", "employee"]);
+        Schema::enableForeignKeyConstraints();
     }
 }
