@@ -15,7 +15,9 @@ class ModifyMetadataField extends Migration
     {
         Schema::table('metadata', function (Blueprint $table) {
             $table->dropColumn('model_id');
-            $table->unisgnedInteger('model_id');
+        });
+        Schema::table('metadata', function (Blueprint $table) {
+            $table->unsignedInteger('model_id');
         });
     }
 
@@ -28,6 +30,8 @@ class ModifyMetadataField extends Migration
     {
         Schema::table('metadata', function (Blueprint $table) {
             $table->dropColumn('model_id');
+        });
+        Schema::table('metadata', function (Blueprint $table) {
             $table->string('model_id');
         });
     }
