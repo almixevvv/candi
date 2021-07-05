@@ -24,9 +24,7 @@ $config = array();
 
 $config['loadRoutes'] = false;
 
-$config['authentication'] = function () {
-    return true;
-};
+$config['authentication'] = true;
 
 /*============================ License Key ============================================*/
 // http://docs.cksource.com/ckfinder3-php/configuration.html#configuration_options_licenseKey

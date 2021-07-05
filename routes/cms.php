@@ -22,7 +22,7 @@ Route::view('/reset', 'auth.reset', ['pageName'    => 'Reset Password'])->name('
 
 Route::group(["middleware" => "auth"], function() {
     Route::view('/', 'cms.dashboard.index', ['pageName'    => 'Dashboard'])->name('dashboard.index');
-    Route::view('/dashboard', 'cms.dashboard.index', ['pageName'    => 'Dashboard'])->name('dashboard.index');
+    Route::view('/dashboard', 'cms.dashboard.index', ['pageName'    => 'Dashboard'])->name('dashboard');
 
     //Who are we process
     Route::get('/whoarewe', [WhoWeAreController::class, 'index'])->name('waw.index');
