@@ -3,10 +3,11 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Response;
+use App\Http\Controllers\BlogController;
 
-use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\HomeController;
+use Illuminate\Support\Facades\Response;
+use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\WhoareweController;
 use CKSource\CKFinderBridge\Controller\CKFinderController;
 use Illuminate\Contracts\Filesystem\FileNotFoundException;
@@ -26,7 +27,7 @@ use Illuminate\Contracts\Filesystem\FileNotFoundException;
 //     return view('front.home.index', ['request' => $request]);
 // });
 
-Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('index');
 
 //Front Routes
 // Route::get('/home', function (Request $request) {
