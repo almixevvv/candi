@@ -26,6 +26,9 @@ class ListingCreateForm extends Form
             "tags" => ListingTag::all()->map(fn ($value) => $value->name)
         ]);
 
+        $this->separator('360 Image');
+        $this->upload('image_360', '360 Image');
+
         $this->separator('Metadata');
 
         $this->textArea('description', 'Meta Description');

@@ -82,6 +82,7 @@ class ListingController extends Controller
         $listing->tags()->attach($tags);
 
         $listing->addImage($request->file('image'));
+        $listing->uploadImage360($request->file('image_360'));
 
         $listing->createOrUpdateMetadata([
             "title" => $request->title,
@@ -100,9 +101,9 @@ class ListingController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Listing $listing)
+    public function show(int $id)
     {
-        $this->contextData['listing'] = $listing;
+        $this->contextData['listing'] = Listing::with('image')->find($id);
         return view('cms.listings.show', $this->contextData);
     }
 
@@ -182,6 +183,11 @@ class ListingController extends Controller
             $listing->addImage($request->file('image'));
         }
 
+        if ($request->file('image_360')) {
+            $listing->removeImage360();
+            $listing->uploadImage360($request->file('image_360'));
+        }
+
         $listing->createOrUpdateMetadata([
             "title" => $request->title,
             "description" => $request->description,
@@ -202,6 +208,10 @@ class ListingController extends Controller
     public function destroy(Listing $listing)
     {
         $listing->removeAllImage();
+        if ($listing->image_360_url != null) {
+            $listing->removeImage360();
+        }
+
         $listing->delete();
         return redirect($this->index);
     }

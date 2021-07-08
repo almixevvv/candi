@@ -83,7 +83,7 @@ Route::get('storage/{path}', function ($path) {
     } catch (FileNotFoundException $e) {
         abort(404);
     }
-})->where('path', ".*")->name('storage');
+})->where('path', ".*")->name('storage')->middleware('cors');
 
 // CKFinder
 Route::any('/ckfinder/connector', [CKFinderController::class, 'requestAction'])->name('ckfinder_connector');
