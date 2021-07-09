@@ -6,20 +6,23 @@
         </h3>
     </div>
     <div class="card-body">
-        @if ($backButton)
-            <div class="row">
-                <div class="col-md-2">
+        <div class="row">
+            @if ($backButton)
+                <div class="col">
                     <a href="{{ url()->previous() }}" class="btn btn-warning"> Back</a>
                 </div>
-            </div><br>
-        @endif
-        @if ($createUrl)
-            <div class="row">
-                <div class="col-md-2">
+            @endif
+            @if ($createUrl)
+                <div class="col">
                     <a href="{{ $createUrl }}" class="btn btn-primary">Create</a>
                 </div>
-            </div><br>
-        @endif
+            @endif
+            @if ($filterButton)
+                <div class="col-md-2">
+                    <x-modal-form :form="$form" />
+                </div>
+            @endif
+        </div><br>
         <div class="row">
             <div class="col-md-12">
                 {{ $slot }}

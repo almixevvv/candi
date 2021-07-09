@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\ListingTagCategory;
 use App\Http\Controllers\Controller;
 use App\Form\ListingTags\ListingTagAddTagForm;
+use App\Form\ListingTags\ListingTagSearchForm;
 use App\Form\ListingTags\ListingTagsCreateForm;
 
 class ListingTagController extends Controller
@@ -24,9 +25,16 @@ class ListingTagController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $this->contextData['listingTags'] = ListingTagCategory::orderBy('id')->paginate(config('app.pagination_limit'));
+        $form = new ListingTagSearchForm([
+            "action" => $this->index,
+            "method" => "GET"
+        ]);
+
+        $this->contextData['listingTags'] = $form->filter($request);
+        $this->contextData['modalForm'] = $form;
+
         return view('cms.listing-tags.index', $this->contextData);
     }
 
