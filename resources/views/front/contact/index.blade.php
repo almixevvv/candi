@@ -79,7 +79,7 @@
                     </div>
                     <div class="contact-detail">
                         <span>
-                            <a href=mailto:candi@gmail.com?>{{ $_profile->email }}</a>
+                            <a href="mailto:{{ $_profile->email }}?">{{ $_profile->email }}</a>
                             {{-- {{ $_profile->email }} --}}
                         </span>
                     </div>
