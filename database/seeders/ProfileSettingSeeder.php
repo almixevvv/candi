@@ -23,7 +23,7 @@ class ProfileSettingSeeder extends Seeder
             "open_hour_range" => "10:00 AM - 6:00 PM",
             "facebook" => "",
             "instagram" => "",
-            "youtube" => "",
+            "twitter" => "",
             "maps" => "",
         ]);
     }
