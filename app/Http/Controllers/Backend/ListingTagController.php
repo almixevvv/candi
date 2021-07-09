@@ -50,6 +50,8 @@ class ListingTagController extends Controller
             "action" => route('cms.listing-tags.store')
         ]);
 
+        $this->message("success", "Create success.");
+
         return view('cms.base_form', $this->contextData);
     }
 
@@ -121,6 +123,8 @@ class ListingTagController extends Controller
         $listingTagCategory->name = $request->name;
         $listingTagCategory->save();
 
+        $this->message("success", "Update success.");
+
         return redirect($this->index);
     }
 
@@ -134,6 +138,8 @@ class ListingTagController extends Controller
     {
         $listingTagCategory = ListingTagCategory::findOrFail($id);
         $listingTagCategory->delete();
+
+        $this->message("success", "Delete success.");
         return redirect($this->index);
     }
 
@@ -159,6 +165,8 @@ class ListingTagController extends Controller
             "category_id" => $listingTagCategory->id,
             "name" => $request->name
         ]);
+
+        $this->message("success", "Create success.");
 
         return redirect(route('cms.listing-tags.show', $listingTagCategory->id));
     }
@@ -191,6 +199,8 @@ class ListingTagController extends Controller
         $listingTag->name = $request->name;
         $listingTag->save();
 
+        $this->message("success", "Update success.");
+
         return redirect(route('cms.listing-tags.show', $listingTagCategory->id));
     }
 
@@ -198,6 +208,8 @@ class ListingTagController extends Controller
     {
         $listingTagCategory = ListingTagCategory::findOrFail($tagID);
         ListingTag::findOrFail($id)->delete();
+
+        $this->message("success", "Delete success.");
 
         return redirect(route('cms.listing-tags.show', $listingTagCategory->id));
     }

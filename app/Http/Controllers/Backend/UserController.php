@@ -66,6 +66,8 @@ class UserController extends Controller
             "status" => $request->status,
         ])->assignRole($request->roles);
 
+        $this->message("success", "Create success.");
+
         return redirect($this->index);
     }
 
@@ -129,6 +131,8 @@ class UserController extends Controller
         $user->save();
         $user->syncRoles($request->roles);
 
+        $this->message("success", "Update success.");
+
         return redirect($this->index);
     }
 
@@ -141,6 +145,8 @@ class UserController extends Controller
     public function destroy(User $user)
     {
         $user->delete();
+
+        $this->message("success", "Delete success.");
         return redirect($this->index);
     }
 }

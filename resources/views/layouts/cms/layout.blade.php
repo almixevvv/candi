@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <title>{{ $pageName ?? 'Candi' }} | Candi Content Management System</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="shortcut icon" href="/images/favicons/logo.svg" />
     <!--begin::Fonts-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
     <!--end::Fonts-->
@@ -34,13 +34,13 @@
             <!--begin::Wrapper-->
             <div class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper" style="padding-top: 5em">
                 @include('components.cms.navbar')
-                
                 @if (session()->has('message'))
-                    <div class="alert alert-{{ session()->get('message_type') ?? "success"}}">
-                        {{ session()->get('message') }}
+                    <div class="content px-8 pt-8 pb-0" id="kt_content">
+                        <div class="alert alert-{{ session()->get('message_type') ?? "success"}}" role="alert">
+                            <b>{{ session()->get('message') }}</b>
+                        </div>
                     </div>
                 @endif
-
                 @yield('content')
                 @include('components.cms.footer')
             </div>

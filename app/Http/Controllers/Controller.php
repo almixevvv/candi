@@ -15,6 +15,6 @@ class Controller extends BaseController
     public function message(string $type, string $message) 
     {
         Session::flash('message', $message);
-        Session::flash('type', $type);
+        Session::flash('message_type', $type);
     }
 }
