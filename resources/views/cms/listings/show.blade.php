@@ -9,8 +9,7 @@
                 <tr>
                     <th>Image</th>
                     <td>
-                        <img src="{{ $listing->image->image_url }}" width="25%"
-                             onclick="window.location.href='{{ $listing->image->image_url }}'" style="cursor:pointer"/>
+                        <img src="{{ $listing->image->image_url }}" width="25%" onclick="window.location.href='{{ $listing->image->image_url }}'" style="cursor:pointer" />
                     </td>
                 </tr>
                 <tr>
@@ -28,7 +27,7 @@
                 <tr>
                     <th>Address</th>
                     <td>
-                        {{ $listing->address }} 
+                        {{ $listing->address }}
                         (<a href="https://www.google.com/maps/search/?api=1&query={{ $listing->lat }},{{ $listing->long }}" target="_blank">
                             Show on Map
                         </a>)
@@ -53,33 +52,33 @@
             </tbody>
         </table>
         @if ($listing->metadata)
-            <h3 style="margin-top: 2em; margin-bottom: 2em">Metadata</h3>
-            <div>
-                <table class="table table-stripped table-bordered detail-table">
-                    <tbody>
-                        <tr>
-                            <td>Meta Title</td>
-                            <td>{{ $listing->metadata->title }}</td>
-                        </tr>
-                        <tr>
-                            <td>Meta description (char count: {{ strlen($listing->metadata->description) }})</td>
-                            <td>{{ $listing->metadata->description }}</td>
-                        </tr>
-                        <tr>
-                            <td>Meta keywords</td>
-                            <td>{{ $listing->metadata->keywords }}</td>
-                        </tr>
-                        <tr>
-                            <td>Meta canonical</td>
-                            <td>{{ $listing->metadata->canonical }}</td>
-                        </tr>
-                        <tr>
-                            <td>Meta robots</td>
-                            <td>{{ $listing->metadata->robots }}</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+        <h3 style="margin-top: 2em; margin-bottom: 2em">Metadata</h3>
+        <div>
+            <table class="table table-stripped table-bordered detail-table">
+                <tbody>
+                    <tr>
+                        <td>Meta Title</td>
+                        <td>{{ $listing->metadata->title }}</td>
+                    </tr>
+                    <tr>
+                        <td>Meta description (char count: {{ strlen($listing->metadata->description) }})</td>
+                        <td>{{ $listing->metadata->description }}</td>
+                    </tr>
+                    <tr>
+                        <td>Meta keywords</td>
+                        <td>{{ $listing->metadata->keywords }}</td>
+                    </tr>
+                    <tr>
+                        <td>Meta canonical</td>
+                        <td>{{ $listing->metadata->canonical }}</td>
+                    </tr>
+                    <tr>
+                        <td>Meta robots</td>
+                        <td>{{ $listing->metadata->robots }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
         @endif
     </x-panel>
 </div>

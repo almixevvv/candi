@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Traits;
 
 use Exception;
@@ -12,7 +13,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Database\Eloquent\Collection;
 use Intervention\Image\Facades\Image as ImageResizer;
 
-trait HasImage 
+trait HasImage
 {
     public function getModelName(): string
     {
@@ -45,17 +46,17 @@ trait HasImage
         return $images->get();
     }
 
-    public function image() 
+    public function image()
     {
         return $this->hasOne(Image::class, "model_id", "id")->where('model_name', $this->getModelName());
     }
 
-    public function images() 
+    public function images()
     {
         return $this->hasMany(Image::class, "model_id", "id")->where('model_name', $this->getModelName());
     }
 
-    public function addImage(UploadedFile $file, array $metadata = []) : Image
+    public function addImage(UploadedFile $file, array $metadata = []): Image
     {
         return Image::uploadImage($file, $this->getModelShortName(), $metadata, false, [
             "id" => $this->id,
@@ -63,16 +64,16 @@ trait HasImage
         ]);
     }
 
-    public function attach(Image $image) 
+    public function attach(Image $image)
     {
-        $new_image_url = "public/". Str::replace("tmp/", "", $image->getRawOriginal('image_url'));
-        $new_image_thumbnail = "public/". Str::replace("tmp/", "", $image->getRawOriginal('image_thumbnail'));
+        $new_image_url = "public/" . Str::replace("tmp/", "", $image->getRawOriginal('image_url'));
+        $new_image_thumbnail = "public/" . Str::replace("tmp/", "", $image->getRawOriginal('image_thumbnail'));
 
-        if (! Storage::exists("public/{$image->getRawOriginal('image_url')}")) {
+        if (!Storage::exists("public/{$image->getRawOriginal('image_url')}")) {
             throw new Exception("File not found.");
         }
 
-        if (! Storage::exists("public/{$image->getRawOriginal('image_thumbnail')}")) {
+        if (!Storage::exists("public/{$image->getRawOriginal('image_thumbnail')}")) {
             throw new Exception("File not found.");
         }
 
@@ -84,7 +85,7 @@ trait HasImage
         $image->is_temporary = false;
     }
 
-    public function attachImages(Collection $images) 
+    public function attachImages(Collection $images)
     {
         foreach ($images as $image) {
             $this->attach($image);
@@ -93,7 +94,7 @@ trait HasImage
         return $this;
     }
 
-    public function removeImage($image) 
+    public function removeImage($image)
     {
         $name = $this->getModelName();
         if (is_int($image)) {
@@ -103,7 +104,7 @@ trait HasImage
         }
     }
 
-    public function removeAllImage() 
+    public function removeAllImage()
     {
         $name = $this->getModelName();
         $image = Image::where('model_name', $name)->where('model_id', $this->id);
