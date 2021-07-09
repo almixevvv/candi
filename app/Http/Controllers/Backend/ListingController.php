@@ -12,7 +12,7 @@ use App\Form\Listing\ListingSearchForm;
 
 class ListingController extends Controller
 {
-    public function __construct() 
+    public function __construct()
     {
         $this->index = route('cms.listings.index');
         $this->contextData = [
@@ -81,6 +81,7 @@ class ListingController extends Controller
 
         $tagData = collect(json_decode($request->tags))->map(fn ($value) => $value->value);
         $tags = [];
+
         foreach ($tagData as $tag) {
             $tags[] = ListingTag::where('name', $tag)->firstOrFail();
         }

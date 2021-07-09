@@ -22,44 +22,44 @@
                     <div class="section_content" style="padding-left:10%;padding-right:5%;">
                         <div class="box_image">
                             <a href="/home" class="logo">
-                                <img src="/images/icon-restaurant.svg" alt="" >
+                                <img src="/images/icon-restaurant.svg" alt="">
                             </a>
-                            <label >Restaurant</label>
+                            <label>Restaurant</label>
                         </div>
-                        
+
                         <div class="box_image">
                             <a href="/'home" class="logo">
-                                <img src="/images/icon-cafe.svg" alt="" >
+                                <img src="/images/icon-cafe.svg" alt="">
                             </a>
-                            <label >Cafe</label>
+                            <label>Cafe</label>
                         </div>
-                        
+
                         <div class="box_image">
                             <a href="/home" class="logo">
-                                <img src="/images/icon-bar.svg" alt="" >
+                                <img src="/images/icon-bar.svg" alt="">
                             </a>
-                            <label >Bar</label>
+                            <label>Bar</label>
                         </div>
-                               
-                        <div class="box_image2" >
+
+                        <div class="box_image2">
                             <a href="/home" class="logo">
-                                <img src="/images/icon-tour.svg" alt="" >
+                                <img src="/images/icon-tour.svg" alt="">
                             </a>
-                            <label >Tour Attraction</label>
+                            <label>Tour Attraction</label>
                         </div>
-                        
+
                         <div class="box_image">
                             <a href="/home" class="logo">
-                                <img src="/images/icon-hotel.svg" alt="" >
+                                <img src="/images/icon-hotel.svg" alt="">
                             </a>
-                            <label >Hotel & Resort</label>
+                            <label>Hotel & Resort</label>
                         </div>
-                        
+
                         <div class="box_image">
                             <a href="/home" class="logo">
-                                <img src="/images/icon-shopping.svg" alt="" >
+                                <img src="/images/icon-shopping.svg" alt="">
                             </a>
-                            <label >Shopping Center</label>
+                            <label>Shopping Center</label>
                         </div>
                     </div>
                 </div>
@@ -101,28 +101,28 @@
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" id="restFilter">
                                     <label class="form-check-label" for="restFilter">
-                                      Restaurant
+                                        Restaurant
                                     </label>
                                 </div>
 
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" id="qckFilter">
                                     <label class="form-check-label" for="qckFilter">
-                                      Quick Bites
+                                        Quick Bites
                                     </label>
                                 </div>
-    
+
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" id="dstFilter">
                                     <label class="form-check-label" for="dstFilter">
-                                      Dessert
+                                        Dessert
                                     </label>
                                 </div>
-    
+
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" id="catFilter">
                                     <label class="form-check-label" for="catFilter">
-                                      Coffee & Tea
+                                        Coffee & Tea
                                     </label>
                                 </div>
                             </div>
@@ -137,28 +137,28 @@
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" id="dlvFilter">
                                     <label class="form-check-label" for="dlvFilter">
-                                      Delivery
+                                        Delivery
                                     </label>
                                 </div>
 
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" id="tktFilter">
                                     <label class="form-check-label" for="tktFilter">
-                                      Takeout
+                                        Takeout
                                     </label>
                                 </div>
-    
+
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" id="tblFilter">
                                     <label class="form-check-label" for="tblFilter">
-                                      Table Service
+                                        Table Service
                                     </label>
                                 </div>
-    
+
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" id="rsvFilter">
                                     <label class="form-check-label" for="rsvFilter">
-                                      Reservation
+                                        Reservation
                                     </label>
                                 </div>
                             </div>
@@ -173,28 +173,28 @@
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" id="brkFilter">
                                     <label class="form-check-label" for="brkFilter">
-                                      Breakfast
+                                        Breakfast
                                     </label>
                                 </div>
 
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" id="brhFilter">
                                     <label class="form-check-label" for="brhFilter">
-                                      Brunch
+                                        Brunch
                                     </label>
                                 </div>
-    
+
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" id="lnchFilter">
                                     <label class="form-check-label" for="lnchFilter">
-                                      Lunch
+                                        Lunch
                                     </label>
                                 </div>
-    
+
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" id="dnrFilter">
                                     <label class="form-check-label" for="dnrFilter">
-                                      Dinner
+                                        Dinner
                                     </label>
                                 </div>
                             </div>
@@ -209,7 +209,7 @@
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" id="onlFilter">
                                     <label class="form-check-label" for="onlFilter">
-                                      Online Reservation
+                                        Online Reservation
                                     </label>
                                 </div>
                             </div>
@@ -224,21 +224,21 @@
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" id="chpFilter">
                                     <label class="form-check-label" for="chpFilter">
-                                      Cheap Eats
+                                        Cheap Eats
                                     </label>
                                 </div>
 
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" id="mdrFilter">
                                     <label class="form-check-label" for="mdrFilter">
-                                      Mid-Range
+                                        Mid-Range
                                     </label>
                                 </div>
 
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" id="fndFilter">
                                     <label class="form-check-label" for="fndFilter">
-                                      Fine Dining
+                                        Fine Dining
                                     </label>
                                 </div>
                             </div>
@@ -253,28 +253,28 @@
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" id="asnFilter">
                                     <label class="form-check-label" for="asnFilter">
-                                      Asian
+                                        Asian
                                     </label>
                                 </div>
 
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" id="indFilter">
                                     <label class="form-check-label" for="indFilter">
-                                      Indonesian
+                                        Indonesian
                                     </label>
                                 </div>
 
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" id="intFilter">
                                     <label class="form-check-label" for="intFilter">
-                                      Internasional
+                                        Internasional
                                     </label>
                                 </div>
 
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" id="seaFilter">
                                     <label class="form-check-label" for="seaFilter">
-                                      Seafood
+                                        Seafood
                                     </label>
                                 </div>
                             </div>
@@ -289,28 +289,28 @@
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" id="saladFilter">
                                     <label class="form-check-label" for="saladFilter">
-                                      Salad
+                                        Salad
                                     </label>
                                 </div>
 
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" id="fishFilter">
                                     <label class="form-check-label" for="fishFilter">
-                                      Fish
+                                        Fish
                                     </label>
                                 </div>
 
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" id="burgFilter">
                                     <label class="form-check-label" for="burgFilter">
-                                      Burger
+                                        Burger
                                     </label>
                                 </div>
 
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" id="saladFilter">
                                     <label class="form-check-label" for="saladFilter">
-                                      Salad
+                                        Salad
                                     </label>
                                 </div>
                             </div>
@@ -325,7 +325,7 @@
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" id="restFilter">
                                     <label class="form-check-label" for="restFilter">
-                                      Restaurant
+                                        Restaurant
                                     </label>
                                 </div>
                             </div>
@@ -340,28 +340,28 @@
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" id="vgfFilter">
                                     <label class="form-check-label" for="vgfFilter">
-                                      Vegetarian Friendly
+                                        Vegetarian Friendly
                                     </label>
                                 </div>
 
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" id="vgoFilter">
                                     <label class="form-check-label" for="vgoFilter">
-                                      Vegan Options
+                                        Vegan Options
                                     </label>
                                 </div>
-    
+
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" id="hllFilter">
                                     <label class="form-check-label" for="hllFilter">
-                                      Halal
+                                        Halal
                                     </label>
                                 </div>
-    
+
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" id="kshFilter">
                                     <label class="form-check-label" for="kshFilter">
-                                      Kosher
+                                        Kosher
                                     </label>
                                 </div>
                             </div>
@@ -376,33 +376,33 @@
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" id="fmlFilter">
                                     <label class="form-check-label" for="fmlFilter">
-                                      Families with Children
+                                        Families with Children
                                     </label>
                                 </div>
 
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" id="kdsFilter">
                                     <label class="form-check-label" for="kdsFilter">
-                                      Kids
+                                        Kids
                                     </label>
                                 </div>
-    
+
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" id="lrgFilter">
                                     <label class="form-check-label" for="lrgFilter">
-                                      Large Groups
+                                        Large Groups
                                     </label>
                                 </div>
-    
+
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" id="locFilter">
                                     <label class="form-check-label" for="locFilter">
-                                      Local Cuisines
+                                        Local Cuisines
                                     </label>
                                 </div>
                             </div>
                         </div>
-        
+
                     </div>
 
 
@@ -419,55 +419,44 @@
                                     <a href="#">See All</a>
                                 </div>
                             </div>
+
                             <div class="d-flex directory-content">
+                                @foreach($listings as $listing)
                                 <div class="card card-content">
                                     <div class="card-image-container">
                                         <div class="image-holder">
-                                            <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="card-img-top" alt="Restaurant">
+                                            <img src="{{ $listing->image->image_thumbnail }}" class="card-img-top" alt="{{ $listing->title }}">
                                         </div>
                                     </div>
                                     <div class="card-body position-relative">
-                                      <h5 class="card-title">Nourish Cafe</h5>
-                                      <div class="tags-holder">
-                                          <span class="text-truncate">Seafood, Europian, A... </span>
-                                          <i class="fas fa-circle"></i>
-                                          <span>$$ - $$$</span>
-                                      </div>
-                                        <a href="#" class="btn btn-primary btn-order">Order Online</a>
+                                        <h5 class="card-title">{{ $listing->title }}</h5>
+                                        <div class="tags-holder">
+                                            @foreach($listing->tags as $tag)
+                                            <span class="text-truncate">{{ $tag->name }} </span>
+                                            @endforeach
+                                            <i class="fas fa-circle"></i>
+                                            <span>$$ - $$$</span>
+                                        </div>
+                                        <a href="{{ route('directory.detail', ['directory' => $listing->id ]) }}" class="btn btn-primary btn-order">Order Online</a>
                                     </div>
                                 </div>
-        
-                                <div class="card card-content">
+                                @endforeach
+
+
+                                <!-- <div class="card card-content">
                                     <div class="card-image-container">
                                         <div class="image-holder">
                                             <img src="https://media-cdn.tripadvisor.com/media/photo-s/0d/e3/89/d8/ribeye-steak-australian.jpg" class="card-img-top" alt="Restaurant">
                                         </div>
                                     </div>
                                     <div class="card-body position-relative">
-                                      <h5 class="card-title">Nourish Cafe</h5>
-                                    <div class="tags-holder">
-                                        <span>Seafood, Europian, A... </span>
-                                        <i class="fas fa-circle"></i>
-                                        <span>$$ - $$$</span>
-                                    </div>
-                                      <a href="#" class="btn btn-primary btn-order">Order Online</a>
-                                    </div>
-                                </div>
-        
-                                <div class="card card-content">
-                                    <div class="card-image-container">
-                                        <div class="image-holder">
-                                            <img src="https://media-cdn.tripadvisor.com/media/photo-s/0f/d2/30/09/caper-dusted-seared-tuna.jpg" class="card-img-top" alt="La Brizza">
+                                        <h5 class="card-title">Nourish Cafe</h5>
+                                        <div class="tags-holder">
+                                            <span>Seafood, Europian, A... </span>
+                                            <i class="fas fa-circle"></i>
+                                            <span>$$ - $$$</span>
                                         </div>
-                                    </div>
-                                    <div class="card-body position-relative">
-                                      <h5 class="card-title">Nourish Cafe</h5>
-                                    <div class="tags-holder">
-                                        <span>Seafood, Europian, A... </span>
-                                        <i class="fas fa-circle"></i>
-                                        <span>$$ - $$$</span>
-                                    </div>
-                                      <a href="#" class="btn btn-primary btn-order">Order Online</a>
+                                        <a href="#" class="btn btn-primary btn-order">Order Online</a>
                                     </div>
                                 </div>
 
@@ -478,13 +467,13 @@
                                         </div>
                                     </div>
                                     <div class="card-body position-relative">
-                                      <h5 class="card-title">Nourish Cafe</h5>
-                                    <div class="tags-holder">
-                                        <span>Seafood, Europian, A... </span>
-                                        <i class="fas fa-circle"></i>
-                                        <span>$$ - $$$</span>
-                                    </div>
-                                      <a href="#" class="btn btn-primary btn-order">Order Online</a>
+                                        <h5 class="card-title">Nourish Cafe</h5>
+                                        <div class="tags-holder">
+                                            <span>Seafood, Europian, A... </span>
+                                            <i class="fas fa-circle"></i>
+                                            <span>$$ - $$$</span>
+                                        </div>
+                                        <a href="#" class="btn btn-primary btn-order">Order Online</a>
                                     </div>
                                 </div>
 
@@ -495,15 +484,32 @@
                                         </div>
                                     </div>
                                     <div class="card-body position-relative">
-                                      <h5 class="card-title">Nourish Cafe</h5>
-                                    <div class="tags-holder">
-                                        <span>Seafood, Europian, A... </span>
-                                        <i class="fas fa-circle"></i>
-                                        <span>$$ - $$$</span>
-                                    </div>
-                                      <a href="#" class="btn btn-primary btn-order">Order Online</a>
+                                        <h5 class="card-title">Nourish Cafe</h5>
+                                        <div class="tags-holder">
+                                            <span>Seafood, Europian, A... </span>
+                                            <i class="fas fa-circle"></i>
+                                            <span>$$ - $$$</span>
+                                        </div>
+                                        <a href="#" class="btn btn-primary btn-order">Order Online</a>
                                     </div>
                                 </div>
+
+                                <div class="card card-content">
+                                    <div class="card-image-container">
+                                        <div class="image-holder">
+                                            <img src="https://media-cdn.tripadvisor.com/media/photo-s/0f/d2/30/09/caper-dusted-seared-tuna.jpg" class="card-img-top" alt="La Brizza">
+                                        </div>
+                                    </div>
+                                    <div class="card-body position-relative">
+                                        <h5 class="card-title">Nourish Cafe</h5>
+                                        <div class="tags-holder">
+                                            <span>Seafood, Europian, A... </span>
+                                            <i class="fas fa-circle"></i>
+                                            <span>$$ - $$$</span>
+                                        </div>
+                                        <a href="#" class="btn btn-primary btn-order">Order Online</a>
+                                    </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>
@@ -526,13 +532,13 @@
                                         </div>
                                     </div>
                                     <div class="card-body position-relative">
-                                    <h5 class="card-title">Nourish Cafe</h5>
-                                    <div class="tags-holder">
-                                        <span>Seafood, Europian, A... </span>
-                                        <i class="fas fa-circle"></i>
-                                        <span>$$ - $$$</span>
-                                    </div>
-                                    <a href="#" class="btn btn-primary btn-order">Order Online</a>
+                                        <h5 class="card-title">Nourish Cafe</h5>
+                                        <div class="tags-holder">
+                                            <span>Seafood, Europian, A... </span>
+                                            <i class="fas fa-circle"></i>
+                                            <span>$$ - $$$</span>
+                                        </div>
+                                        <a href="#" class="btn btn-primary btn-order">Order Online</a>
                                     </div>
                                 </div>
 
@@ -543,13 +549,13 @@
                                         </div>
                                     </div>
                                     <div class="card-body position-relative">
-                                    <h5 class="card-title">Nourish Cafe</h5>
-                                    <div class="tags-holder">
-                                        <span>Seafood, Europian, A... </span>
-                                        <i class="fas fa-circle"></i>
-                                        <span>$$ - $$$</span>
-                                    </div>
-                                    <a href="#" class="btn btn-primary btn-order">Order Online</a>
+                                        <h5 class="card-title">Nourish Cafe</h5>
+                                        <div class="tags-holder">
+                                            <span>Seafood, Europian, A... </span>
+                                            <i class="fas fa-circle"></i>
+                                            <span>$$ - $$$</span>
+                                        </div>
+                                        <a href="#" class="btn btn-primary btn-order">Order Online</a>
                                     </div>
                                 </div>
 
@@ -560,13 +566,13 @@
                                         </div>
                                     </div>
                                     <div class="card-body position-relative">
-                                    <h5 class="card-title">Nourish Cafe</h5>
-                                    <div class="tags-holder">
-                                        <span>Seafood, Europian, A... </span>
-                                        <i class="fas fa-circle"></i>
-                                        <span>$$ - $$$</span>
-                                    </div>
-                                    <a href="#" class="btn btn-primary btn-order">Order Online</a>
+                                        <h5 class="card-title">Nourish Cafe</h5>
+                                        <div class="tags-holder">
+                                            <span>Seafood, Europian, A... </span>
+                                            <i class="fas fa-circle"></i>
+                                            <span>$$ - $$$</span>
+                                        </div>
+                                        <a href="#" class="btn btn-primary btn-order">Order Online</a>
                                     </div>
                                 </div>
 
@@ -577,13 +583,13 @@
                                         </div>
                                     </div>
                                     <div class="card-body position-relative">
-                                    <h5 class="card-title">Nourish Cafe</h5>
-                                    <div class="tags-holder">
-                                        <span>Seafood, Europian, A... </span>
-                                        <i class="fas fa-circle"></i>
-                                        <span>$$ - $$$</span>
-                                    </div>
-                                    <a href="#" class="btn btn-primary btn-order">Order Online</a>
+                                        <h5 class="card-title">Nourish Cafe</h5>
+                                        <div class="tags-holder">
+                                            <span>Seafood, Europian, A... </span>
+                                            <i class="fas fa-circle"></i>
+                                            <span>$$ - $$$</span>
+                                        </div>
+                                        <a href="#" class="btn btn-primary btn-order">Order Online</a>
                                     </div>
                                 </div>
 
@@ -594,13 +600,13 @@
                                         </div>
                                     </div>
                                     <div class="card-body position-relative">
-                                    <h5 class="card-title">Nourish Cafe</h5>
-                                    <div class="tags-holder">
-                                        <span>Seafood, Europian, A... </span>
-                                        <i class="fas fa-circle"></i>
-                                        <span>$$ - $$$</span>
-                                    </div>
-                                    <a href="#" class="btn btn-primary btn-order">Order Online</a>
+                                        <h5 class="card-title">Nourish Cafe</h5>
+                                        <div class="tags-holder">
+                                            <span>Seafood, Europian, A... </span>
+                                            <i class="fas fa-circle"></i>
+                                            <span>$$ - $$$</span>
+                                        </div>
+                                        <a href="#" class="btn btn-primary btn-order">Order Online</a>
                                     </div>
                                 </div>
 
@@ -611,13 +617,13 @@
                                         </div>
                                     </div>
                                     <div class="card-body position-relative">
-                                    <h5 class="card-title">Nourish Cafe</h5>
-                                    <div class="tags-holder">
-                                        <span>Seafood, Europian, A... </span>
-                                        <i class="fas fa-circle"></i>
-                                        <span>$$ - $$$</span>
-                                    </div>
-                                    <a href="#" class="btn btn-primary btn-order">Order Online</a>
+                                        <h5 class="card-title">Nourish Cafe</h5>
+                                        <div class="tags-holder">
+                                            <span>Seafood, Europian, A... </span>
+                                            <i class="fas fa-circle"></i>
+                                            <span>$$ - $$$</span>
+                                        </div>
+                                        <a href="#" class="btn btn-primary btn-order">Order Online</a>
                                     </div>
                                 </div>
                             </div>
@@ -639,7 +645,7 @@
                                         </div>
                                     </div>
                                     <div class="card-body position-relative">
-                                    <h5 class="card-title">Seafood</h5>
+                                        <h5 class="card-title">Seafood</h5>
                                     </div>
                                 </div>
 
@@ -650,7 +656,7 @@
                                         </div>
                                     </div>
                                     <div class="card-body position-relative">
-                                    <h5 class="card-title">Cafe</h5>
+                                        <h5 class="card-title">Cafe</h5>
                                     </div>
                                 </div>
 
@@ -661,7 +667,7 @@
                                         </div>
                                     </div>
                                     <div class="card-body position-relative">
-                                    <h5 class="card-title">Barbeque</h5>
+                                        <h5 class="card-title">Barbeque</h5>
                                     </div>
                                 </div>
 
@@ -672,7 +678,7 @@
                                         </div>
                                     </div>
                                     <div class="card-body position-relative">
-                                    <h5 class="card-title">Indian</h5>
+                                        <h5 class="card-title">Indian</h5>
                                     </div>
                                 </div>
 
@@ -683,7 +689,7 @@
                                         </div>
                                     </div>
                                     <div class="card-body position-relative">
-                                    <h5 class="card-title">Pizza</h5>
+                                        <h5 class="card-title">Pizza</h5>
                                     </div>
                                 </div>
 
@@ -694,7 +700,7 @@
                                         </div>
                                     </div>
                                     <div class="card-body position-relative">
-                                    <h5 class="card-title">Steakhouse</h5>
+                                        <h5 class="card-title">Steakhouse</h5>
                                     </div>
                                 </div>
 
@@ -705,11 +711,11 @@
                                         </div>
                                     </div>
                                     <div class="card-body position-relative">
-                                    <h5 class="card-title">Indonesian</h5>
+                                        <h5 class="card-title">Indonesian</h5>
                                     </div>
                                 </div>
 
-                            
+
                             </div>
                         </div>
                     </div>
@@ -729,7 +735,7 @@
                                         </div>
                                     </div>
                                     <div class="card-body position-relative">
-                                    <h5 class="card-title">Breakfast</h5>
+                                        <h5 class="card-title">Breakfast</h5>
                                     </div>
                                 </div>
 
@@ -740,7 +746,7 @@
                                         </div>
                                     </div>
                                     <div class="card-body position-relative">
-                                    <h5 class="card-title">Brunch</h5>
+                                        <h5 class="card-title">Brunch</h5>
                                     </div>
                                 </div>
 
@@ -751,7 +757,7 @@
                                         </div>
                                     </div>
                                     <div class="card-body position-relative">
-                                    <h5 class="card-title">Lunch</h5>
+                                        <h5 class="card-title">Lunch</h5>
                                     </div>
                                 </div>
 
@@ -762,11 +768,11 @@
                                         </div>
                                     </div>
                                     <div class="card-body position-relative">
-                                    <h5 class="card-title">Dinner</h5>
+                                        <h5 class="card-title">Dinner</h5>
                                     </div>
                                 </div>
 
-                            
+
                             </div>
                         </div>
                     </div>
@@ -789,13 +795,13 @@
                                         </div>
                                     </div>
                                     <div class="card-body position-relative">
-                                    <h5 class="card-title">Nourish Cafe</h5>
-                                    <div class="tags-holder">
-                                        <span>Seafood, Europian, A... </span>
-                                        <i class="fas fa-circle"></i>
-                                        <span>$$ - $$$</span>
-                                    </div>
-                                    <a href="#" class="btn btn-primary btn-order">Order Online</a>
+                                        <h5 class="card-title">Nourish Cafe</h5>
+                                        <div class="tags-holder">
+                                            <span>Seafood, Europian, A... </span>
+                                            <i class="fas fa-circle"></i>
+                                            <span>$$ - $$$</span>
+                                        </div>
+                                        <a href="#" class="btn btn-primary btn-order">Order Online</a>
                                     </div>
                                 </div>
 
@@ -806,13 +812,13 @@
                                         </div>
                                     </div>
                                     <div class="card-body position-relative">
-                                    <h5 class="card-title">Nourish Cafe</h5>
-                                    <div class="tags-holder">
-                                        <span>Seafood, Europian, A... </span>
-                                        <i class="fas fa-circle"></i>
-                                        <span>$$ - $$$</span>
-                                    </div>
-                                    <a href="#" class="btn btn-primary btn-order">Order Online</a>
+                                        <h5 class="card-title">Nourish Cafe</h5>
+                                        <div class="tags-holder">
+                                            <span>Seafood, Europian, A... </span>
+                                            <i class="fas fa-circle"></i>
+                                            <span>$$ - $$$</span>
+                                        </div>
+                                        <a href="#" class="btn btn-primary btn-order">Order Online</a>
                                     </div>
                                 </div>
 
@@ -823,13 +829,13 @@
                                         </div>
                                     </div>
                                     <div class="card-body position-relative">
-                                    <h5 class="card-title">Nourish Cafe</h5>
-                                    <div class="tags-holder">
-                                        <span>Seafood, Europian, A... </span>
-                                        <i class="fas fa-circle"></i>
-                                        <span>$$ - $$$</span>
-                                    </div>
-                                    <a href="#" class="btn btn-primary btn-order">Order Online</a>
+                                        <h5 class="card-title">Nourish Cafe</h5>
+                                        <div class="tags-holder">
+                                            <span>Seafood, Europian, A... </span>
+                                            <i class="fas fa-circle"></i>
+                                            <span>$$ - $$$</span>
+                                        </div>
+                                        <a href="#" class="btn btn-primary btn-order">Order Online</a>
                                     </div>
                                 </div>
                             </div>
@@ -959,7 +965,7 @@
                         </span>
                     </div>
                 </div>
-    
+
                 <div class="pb-2">
                     <div class="d-flex justify-content-between">
                         <div>
@@ -977,7 +983,7 @@
                         </span>
                     </div>
                 </div>
-    
+
                 <div class="pb-2">
                     <div class="d-flex justify-content-between">
                         <div class="text-start">
@@ -1017,7 +1023,7 @@
                         </span>
                     </div>
                 </div>
-    
+
                 <div class="pb-2">
                     <div class="d-flex justify-content-between">
                         <div>
@@ -1050,14 +1056,14 @@
                         </span>
                     </div>
                 </div>
-    
+
                 <div class="pb-2">
                     <div class="d-flex justify-content-between">
                         <div>
                             <span>Dishes</span>
                         </div>
                         <div class="text-end">
-                            <span >See All</span>
+                            <span>See All</span>
                         </div>
                     </div>
                     <div class="regular-grid filter-holder">
@@ -1083,14 +1089,14 @@
                         </span>
                     </div>
                 </div>
-    
+
                 <div class="pb-2">
                     <div class="d-flex justify-content-between">
                         <div>
                             <span>Dietary Restriction</span>
                         </div>
                         <div class="text-end">
-                            <span >See All</span>
+                            <span>See All</span>
                         </div>
                     </div>
                     <div class="regular-grid filter-holder">
@@ -1116,13 +1122,13 @@
                         </span>
                     </div>
                 </div>
-    
+
                 <div class="pb-2">
                     <div class="d-flex justify-content-between">
                         <div>
                             <span>Good For</span>
                         </div>
-                        <div  class="text-end">
+                        <div class="text-end">
                             <span>See All</span>
                         </div>
                     </div>
@@ -1149,7 +1155,7 @@
                         </span>
                     </div>
                 </div>
-    
+
 
 
             </div>

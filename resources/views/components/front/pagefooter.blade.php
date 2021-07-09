@@ -50,7 +50,7 @@
                     <div class="socials social-links">
                         <a href="{{ $_profile->facebook }}" class="link facebook"><span></span></a>
                         <a href="{{ $_profile->instagram }}" class="link instagram"><span></span></a>
-                        <a href="{{ $_profile->youtube }}" class="link youtube"><span></span></a>
+                        <a href="{{ $_profile->twitter }}" class="link twitter"><span></span></a>
                     </div>
                 </div>
             </div>

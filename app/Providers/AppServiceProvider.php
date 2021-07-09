@@ -15,7 +15,13 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        
+        Str::macro('phoneFormat', function ($value) {
+            if (!Str::startsWith($value, '62')) return $value;
+
+            $splittedString = explode("62", $value)[1];
+            return "(+62) " . implode(" ", str_split($splittedString, 4));
+        });
     }
 
     /**
@@ -31,6 +37,7 @@ class AppServiceProvider extends ServiceProvider
 
             return Str::title($value);
         });
+
 
         Paginator::useBootstrap();
     }

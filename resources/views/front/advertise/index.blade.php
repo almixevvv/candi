@@ -1,4 +1,3 @@
-
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -27,7 +26,7 @@
     window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.tripadvisor.com\/business\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.2.11"}};
     !function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])?!1:!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([55357,56424,55356,57342,8205,55358,56605,8205,55357,56424,55356,57340],[55357,56424,55356,57342,8203,55358,56605,8203,55357,56424,55356,57340])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
 </script>
-<script src="https://www.tripadvisor.com/business/wp-includes/js/wp-emoji-release.min.js?ver=5.2.11" type="text/javascript" defer=""></script>
+{{-- <script src="https://www.tripadvisor.com/business/wp-includes/js/wp-emoji-release.min.js?ver=5.2.11" type="text/javascript" defer=""></script> --}}
 <meta content="Hotels New landers - Divi child theme v.1.0" name="generator"><style type="text/css">
 img.wp-smiley,
 img.emoji {
@@ -51,7 +50,7 @@ img.emoji {
 </style>
 <link rel="stylesheet" id="parent-style-css" href="https://mk0talandersoo5abw3x.kinstacdn.com/wp-content/themes/Divi/style.css?ver=5.2.11" type="text/css" media="all">
 <link rel="stylesheet" id="divi-style-css" href="https://mk0talandersoo5abw3x.kinstacdn.com/wp-content/themes/Divi-Child-Reputation/style.css?ver=4.0.11" type="text/css" media="all">
-<link rel="stylesheet" id="et-builder-googlefonts-cached-css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro%3A200%2C200italic%2C300%2C300italic%2Cregular%2Citalic%2C600%2C600italic%2C700%2C700italic%2C900%2C900italic&amp;ver=5.2.11#038;subset=latin-ext,greek,greek-ext,vietnamese,cyrillic,latin,cyrillic-ext" type="text/css" media="all">
+<link rel="stylesheet" id="et-builder-googlefonts-cached-css" href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap" rel="stylesheet" type="text/css" media="all">
 <link rel="stylesheet" id="dashicons-css" href="https://mk0talandersoo5abw3x.kinstacdn.com/wp-includes/css/dashicons.min.css?ver=5.2.11" type="text/css" media="all">
 <script type="text/javascript" src="https://mk0talandersoo5abw3x.kinstacdn.com/wp-content/plugins/dp-portfolio-posts-pro/js/ajax-get-post.js?ver=1.0.2"></script>
 <script type="text/javascript" src="https://mk0talandersoo5abw3x.kinstacdn.com/wp-includes/js/jquery/jquery.js?ver=1.12.4-wp"></script>
@@ -102,14 +101,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="apple-touch-icon-precomposed" href="https://mk0talandersoo5abw3x.kinstacdn.com/wp-content/uploads/2020/01/cropped-Tripadvsor_circle-logo_2020-180x180.png">
 <meta name="msapplication-TileImage" content="https://mk0talandersoo5abw3x.kinstacdn.com/wp-content/uploads/2020/01/cropped-Tripadvsor_circle-logo_2020-270x270.png">
 <link rel="stylesheet" id="et-divi-customizer-global-cached-inline-styles" href="https://mk0talandersoo5abw3x.kinstacdn.com/wp-content/et-cache/global/et-divi-customizer-global-16220547932215.min.css" onerror="et_core_page_resource_fallback(this, true)" onload="et_core_page_resource_fallback(this)">
-<link rel="stylesheet" id="et-builder-googlefonts-cached-css" href="https://fonts.googleapis.com/css?family=Poppins%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2Cregular%2Citalic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&amp;ver=5.2.7#038;subset=latin-ext,devanagari,latin" type="text/css" media="all">
+<link rel="stylesheet" id="et-builder-googlefonts-cached-css" href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap" rel="stylesheet" type="text/css" media="all">
 <link rel="stylesheet" href="https://mk0talandersoo5abw3x.kinstacdn.com/wp-content/themes/Divi-Child-Reputation/assets/css/owl.carousel.min.css" type="text/css">
 <link rel="stylesheet" href="https://mk0talandersoo5abw3x.kinstacdn.com/wp-content/themes/Divi-Child-Reputation/assets/css/owl.theme.default.min.css" type="text/css">
 <link rel="stylesheet" href="https://mk0talandersoo5abw3x.kinstacdn.com/wp-content/themes/Divi-Child-Reputation/assets/css/owl.theme.green.min.css" type="text/css">
 <script src="https://mk0talandersoo5abw3x.kinstacdn.com/wp-content/themes/Divi-Child-Reputation/assets/js/owl.carousel.min.js"></script>
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://mk0talandersoo5abw3x.kinstacdn.com/wp-content/themes/Divi-Child-Reputation/style.css?618" type="text/css" media="screen">
-<link href="https://fonts.googleapis.com/css2?family=PT+Serif&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://mk0talandersoo5abw3x.kinstacdn.com/wp-content/themes/Divi-Child-Reputation/assets/css/bootstrap.min.css">
 <script src="https://mk0talandersoo5abw3x.kinstacdn.com/wp-content/themes/Divi-Child-Reputation/assets/js/bootstrap.min.js"></script>
 
@@ -179,7 +178,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 <div id="page-container">
-    <div class="container-fluid" style="padding-left: 0px; padding-right:0px; overflow:hidden;">
+    {{-- <div class="container-fluid" style="padding-left: 0px; padding-right:0px; overflow:hidden;">
         <div class="box-shadow" style="position: absolute; background-color: #fff; width: 100%; top:0px;">
             <div class="fixedMenu">
                 <div class="pageReputationPro pageWrapper rp-header">
@@ -258,7 +257,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 
 <script type="text/javascript">
 
@@ -322,7 +321,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                                                     <p class="bannerText">Promote yourself across Candi and drive more direct bookings with Sponsored Placements.</p> 
                                                                     <p>
                                                                         <!-- CTA BUTTONS -->
-                                                                        <a id="get_started_top" href="/AdsManager?mcid=&amp;detail=" class="button button--black cta_1">Get started
+                                                                        <a id="get_started_top" href="{{ route('contact') }}" class="button button--black cta_1">Get started
                                                                             <img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=2633300&amp;conversionId=3369226&amp;fmt=gif">
                                                                             <!-- Facebook Pixel Code - Lander CTA Click -->
                                                                             <img src="https://www.facebook.com/tr?id=2414438745333370&amp;ev={ViewContent}" height="1" width="1" style="display:none">
@@ -608,7 +607,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                                         <!-- READY BOTTOM CTA-->
                                                         <h2>Ready to increase your reach and boost direct bookings?</h2>
 
-                                                        <a id="get_started_bottom" class="buttonWhite cta_1" href="/AdsManager?mcid=&amp;detail=">Get started
+                                                        <a id="get_started_bottom" class="buttonWhite cta_1" href="{{ route('contact') }}">Get started
                                                             <img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=2633300&amp;conversionId=3369226&amp;fmt=gif">
                                                             <!-- Facebook Pixel Code - Lander CTA Click --><img src="https://www.facebook.com/tr?id=2414438745333370&amp;ev={ViewContent}" height="1" width="1" style="display:none">
                                                         </a>

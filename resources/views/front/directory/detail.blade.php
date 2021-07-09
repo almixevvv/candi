@@ -3,16 +3,17 @@
 
 <link rel="stylesheet" href="./css/directory/detail.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.css">
+<script src="https://storage.googleapis.com/vrview/2.0/build/vrview.min.js"></script>
 
 <div class="container-fluid px-0">
   <div class="breadcrumbs">
-      <div class="wrap">
-          <div class="wrap_float">
-              <a href="#">Home</a>
-              <span class="separator">/</span>
-              <a href="#">Travel List Right Sidebar</a>
-          </div>
+    <div class="wrap">
+      <div class="wrap_float">
+        <a href="#">Home</a>
+        <span class="separator">/</span>
+        <a href="#">Travel List Right Sidebar</a>
       </div>
+    </div>
   </div>
   <div class="page contacts-page full-width" style="background-color: #f2f2f2;">
 
@@ -25,7 +26,9 @@
           <div class="col-12">
             <div>
               <span>
-                <h1 class="fw-bold">Tarunyan Resto Tradisional</h1>
+                <h1 class="fw-bold">
+                  {{ $listingDetail->title }}
+                </h1>
               </span>
             </div>
           </div>
@@ -36,33 +39,24 @@
           <div class="col-12">
             <div class="d-flex">
               <span class="border-end me-2 pe-3">
-                <svg class="rating-bubble" viewBox="0 0 68 12" width="68" height="12" aria-label="" title="">
-                  <path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="scale(0.5)"></path>
-                  <path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(14 0) scale(0.5)"></path>
-                  <path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(28 0) scale(0.5)"></path>
-                  <path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(42 0) scale(0.5)"></path>
-                  <path d="M 12 0C5.389 0 0 5.389 0 12c0 6.62 5.389 12 12 12 6.62 0 12-5.379 12-12S18.621 0 12 0zm0 2a9.984 9.984 0 0110 10 9.976 9.976 0 01-10 10z" transform="translate(56 0) scale(0.5)"></path>
-                </svg>
-                <span class="DrjyGw-P _26S7gyB4 _14_buatE _1dimhEoy">
-                    <span class="_1pFNzDPe">387 Reviews</span>
-                </span>
-              </span>
-              <span class="border-end me-2 pe-3">
                 <span>
                   <b>#1</b> Restaurant in Jimbaran
                 </span>
               </span>
               <span class="me-2 pe-3">
-                $, Chinese, Indian, German
+                $,
+                @foreach ($listingDetail->tags as $tag)
+                {{ $tag->name }}
+                @endforeach
               </span>
-            </div>  
+            </div>
           </div>
           <div class="col-12 mt-2">
             <div class="d-flex">
               <span class="border-end me-2 pe-3">
                 <i class="fas fa-map-marker-alt"></i>
                 <span>
-                    Jl Uluwatu no 99, Jimbaran 80361 Indonesia
+                  {{ $listingDetail->address }}
                 </span>
               </span>
               <span class="border-end me-2 pe-3">
@@ -85,15 +79,15 @@
           <div class="col-12">
             <div class="rating-holder" aria-label="4.5 of 5 bubbles. 387 reviews">
               <svg class="rating-bubble" viewBox="0 0 68 12" width="68" height="12" aria-label="" title="">
-                  <path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="scale(0.5)"></path>
-                  <path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(14 0) scale(0.5)"></path>
-                  <path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(28 0) scale(0.5)"></path>
-                  <path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(42 0) scale(0.5)"></path>
-                  <path d="M 12 0C5.389 0 0 5.389 0 12c0 6.62 5.389 12 12 12 6.62 0 12-5.379 12-12S18.621 0 12 0zm0 2a9.984 9.984 0 0110 10 9.976 9.976 0 01-10 10z" transform="translate(56 0) scale(0.5)"></path>
-                </svg>
-                <span class="DrjyGw-P _26S7gyB4 _14_buatE _1dimhEoy">
-                    <span class="_1pFNzDPe">387 Reviews</span>
-                </span>
+                <path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="scale(0.5)"></path>
+                <path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(14 0) scale(0.5)"></path>
+                <path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(28 0) scale(0.5)"></path>
+                <path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(42 0) scale(0.5)"></path>
+                <path d="M 12 0C5.389 0 0 5.389 0 12c0 6.62 5.389 12 12 12 6.62 0 12-5.379 12-12S18.621 0 12 0zm0 2a9.984 9.984 0 0110 10 9.976 9.976 0 01-10 10z" transform="translate(56 0) scale(0.5)"></path>
+              </svg>
+              <span class="DrjyGw-P _26S7gyB4 _14_buatE _1dimhEoy">
+                <span class="_1pFNzDPe">387 Reviews</span>
+              </span>
             </div>
           </div>
         </div>
@@ -107,7 +101,7 @@
         <div class="row g-0">
           <div class="col-12">
             <div class="mt-3">
-              <img class="img-fluid" src="https://media-cdn.tripadvisor.com/media/photo-w/16/e1/d1/b7/try-the-wild-bebek-that.jpg" alt="Food Feature Image" style="height: 300px; width: 100%; object-fit: cover;">
+              <img class="img-fluid" src="{{ $listingDetail->image->image_url }}" alt="Food Feature Image" style="height: 300px; width: 100%; object-fit: cover;">
             </div>
           </div>
         </div>
@@ -141,36 +135,19 @@
 
       </div>
 
-      <div class="directory-cards mt-3 pb-4 pt-3">
+      <div class="directory-cards mt-3 pb-4 pt-3 d-none d-md-block">
         <div class="bg-white border pt-3 me-4" style="min-width: 300px;">
           <div class="row">
             <div class="col-12">
               <div class="px-3">
-                <h3 class="fw-bold">Ratings and reviews</h3>
+                <h3 class="fw-bold">Reviews</h3>
               </div>
             </div>
           </div>
-  
+
           <div class="row mt-2">
             <div class="col-12">
               <div class="px-3">
-                <div class="rating-holder w-100" aria-label="4.5 of 5 bubbles. 387 reviews">
-                    <span class="number-rating">
-                      <h3>5.0</h3>
-                    </span>
-                    <span>
-                      <svg class="rating-bubble" viewBox="0 0 68 12" width="68" height="12" aria-label="" title="">
-                        <path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="scale(0.5)"></path>
-                        <path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(14 0) scale(0.5)"></path>
-                        <path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(28 0) scale(0.5)"></path>
-                        <path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(42 0) scale(0.5)"></path>
-                        <path d="M 12 0C5.389 0 0 5.389 0 12c0 6.62 5.389 12 12 12 6.62 0 12-5.379 12-12S18.621 0 12 0zm0 2a9.984 9.984 0 0110 10 9.976 9.976 0 01-10 10z" transform="translate(56 0) scale(0.5)"></path>
-                      </svg>
-                    </span>
-                    <span class="DrjyGw-P _26S7gyB4 _14_buatE _1dimhEoy">
-                        <span class="_1pFNzDPe">387 Reviews</span>
-                    </span>
-                </div>
                 <div class="mt-2 ranking-section">
                   <span>
                     <span class="fw-bold">#1</span> Chinese Restaurant in Jimbaran
@@ -195,7 +172,7 @@
                       </svg>
                     </div>
                   </div>
-  
+
                   <div class="row my-2">
                     <div class="col-1">
                       <i class="fas fa-hamburger"></i>
@@ -213,7 +190,7 @@
                       </svg>
                     </div>
                   </div>
-  
+
                   <div class="row my-2">
                     <div class="col-1">
                       <i class="fas fa-wallet"></i>
@@ -251,13 +228,13 @@
                   <div class="col-12 mb-3">
                     <i class="fas fa-quote-right"></i>
                     <span>
-                      When we left we needed to order a <b>taxi</b>  and the owner (I presume) took almost...
+                      When we left we needed to order a <b>taxi</b> and the owner (I presume) took almost...
                     </span>
                   </div>
                   <div class="col-12">
                     <i class="fas fa-quote-right"></i>
                     <span>
-                      Pork ribs Traditioanal, wild  <b>duck</b>  , and seafood platter were Verry delicious.
+                      Pork ribs Traditioanal, wild <b>duck</b> , and seafood platter were Verry delicious.
                     </span>
                   </div>
                 </div>
@@ -273,11 +250,12 @@
               <div class="px-3">
                 <h2 class="fw-bold">Location and Contact</h2>
               </div>
-  
+
               <div class="px-3 pt-2">
                 <div>
                   <span>
-                    <img class="img-fluid" alt="" class="rAA8XwlX" src="https://maps.google.com/maps/api/staticmap?&amp;channel=ta.desktop.restaurant_review&amp;zoom=15&amp;size=347x137&amp;scale=1&amp;client=gme-tripadvisorinc&amp;format=jpg&amp;sensor=false&amp;language=en_US&amp;center=-8.795039,115.162514&amp;maptype=roadmap&amp;&amp;markers=icon:http%3A%2F%2Fc1.tacdn.com%2F%2Fimg2%2Fmaps%2Ficons%2Fcomponent_map_pins_v1%2FR_Pin_Small.png|-8.795039,115.162514&amp;signature=Ekt4ym_eY-uF-FaMxKGklncED4Y=">
+                    <iframe class="w-100" style="border:0" loading="lazy" allowfullscreen src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCQGNMGUsmXbzXFMqbYIE53AtYsCk7c5Bc&q=Hungry+Hunt+Burger+Canggu&center={{ $listingDetail->lat . ',' . $listingDetail->long }}">
+                    </iframe>
                   </span>
                 </div>
               </div>
@@ -314,7 +292,7 @@
                     </span>
                   </div>
                 </div>
-  
+
               </div>
             </div>
           </div>
@@ -325,7 +303,7 @@
         <div class="row">
           <div class="col-12">
             <div class="px-3">
-              <h3 class="fw-bold">Ratings and reviews</h3>
+              <h3 class="fw-bold">Reviews</h3>
             </div>
           </div>
         </div>
@@ -333,23 +311,6 @@
         <div class="row mt-2">
           <div class="col-12">
             <div class="px-3">
-              <div class="rating-holder" aria-label="4.5 of 5 bubbles. 387 reviews">
-                  <span class="number-rating">
-                    <h3>5.0</h3>
-                  </span>
-                  <span>
-                    <svg class="rating-bubble" viewBox="0 0 68 12" width="68" height="12" aria-label="" title="">
-                      <path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="scale(0.5)"></path>
-                      <path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(14 0) scale(0.5)"></path>
-                      <path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(28 0) scale(0.5)"></path>
-                      <path d="M 12 0C5.388 0 0 5.388 0 12s5.388 12 12 12 12-5.38 12-12c0-6.612-5.38-12-12-12z" transform="translate(42 0) scale(0.5)"></path>
-                      <path d="M 12 0C5.389 0 0 5.389 0 12c0 6.62 5.389 12 12 12 6.62 0 12-5.379 12-12S18.621 0 12 0zm0 2a9.984 9.984 0 0110 10 9.976 9.976 0 01-10 10z" transform="translate(56 0) scale(0.5)"></path>
-                    </svg>
-                  </span>
-                  <span class="DrjyGw-P _26S7gyB4 _14_buatE _1dimhEoy">
-                      <span class="_1pFNzDPe">387 Reviews</span>
-                  </span>
-              </div>
               <div class="mt-2 ranking-section">
                 <span>
                   <span class="fw-bold">#1</span> Chinese Restaurant in Jimbaran
@@ -438,7 +399,7 @@
                 </div>
                 <div class="col-11">
                   <span>
-                    When we left we needed to order a <b>taxi</b>  and the owner (I presume) took almost...
+                    When we left we needed to order a <b>taxi</b> and the owner (I presume) took almost...
                   </span>
                 </div>
               </div>
@@ -448,7 +409,7 @@
                 </div>
                 <div class="col-11">
                   <span>
-                    Pork ribs Traditioanal, wild  <b>duck</b>  , and seafood platter were Verry delicious.
+                    Pork ribs Traditioanal, wild <b>duck</b> , and seafood platter were Verry delicious.
                   </span>
                 </div>
               </div>
@@ -489,7 +450,7 @@
                   </div>
                 </div>
               </div>
-              
+
             </div>
           </div>
         </div>
@@ -506,7 +467,8 @@
             <div class="px-3 pt-2">
               <div>
                 <span>
-                  <img alt="" class="rAA8XwlX" src="https://maps.google.com/maps/api/staticmap?&amp;channel=ta.desktop.restaurant_review&amp;zoom=15&amp;size=347x137&amp;scale=1&amp;client=gme-tripadvisorinc&amp;format=jpg&amp;sensor=false&amp;language=en_US&amp;center=-8.795039,115.162514&amp;maptype=roadmap&amp;&amp;markers=icon:http%3A%2F%2Fc1.tacdn.com%2F%2Fimg2%2Fmaps%2Ficons%2Fcomponent_map_pins_v1%2FR_Pin_Small.png|-8.795039,115.162514&amp;signature=Ekt4ym_eY-uF-FaMxKGklncED4Y=">
+                  <iframe class="w-100" style="border:0" loading="lazy" allowfullscreen src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCQGNMGUsmXbzXFMqbYIE53AtYsCk7c5Bc&q=Hungry+Hunt+Burger+Canggu&center={{ $listingDetail->lat . ',' . $listingDetail->long }}">
+                  </iframe>
                 </span>
               </div>
             </div>
@@ -516,7 +478,7 @@
                   <i class="fas fa-map-marker-alt"></i>
                 </div>
                 <div class="col-11">
-                  <span >
+                  <span>
                     Jl. Uluwatu no 99, Jimbaran Bay 80361 Indonesia
                   </span>
                 </div>
@@ -552,6 +514,22 @@
                 </div>
               </div>
 
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="directory-location mt-3 bg-white border-bottom pb-4 pt-3">
+        <div class="row">
+          <div class="col-12">
+            <div class="px-3">
+              <h2 class="fw-bold">360 View</h2>
+            </div>
+
+            <div class="px-3 pt-2">
+              <div>
+                <div id="vwview"></div>
+              </div>
             </div>
           </div>
         </div>
@@ -728,7 +706,7 @@
             <div class="px-3">
               <h2 class="fw-bold">Frequently Asked Question about Tarunyan Resto Traditional</h2>
             </div>
-            
+
             <div class="accordion px-3 pt-3" id="accordionExample">
               <div class="accordion-item border-0 border-top">
                 <h2 class="accordion-header" id="headingOne">
@@ -789,5 +767,21 @@
   </div>
 
 </div>
+
+
+<script>
+  window.addEventListener('load', onVrViewLoad);
+
+  function onVrViewLoad() {
+    // Selector '#vrview' finds element with id 'vrview'.
+    var vrView = new VRView.Player('#vwview', {
+      image: '{{ $listingDetail->image_360_url }}',
+      is_stereo: true,
+      width: '100%',
+      height: '450px'
+    });
+  }
+</script>
+
 @include('components.front.pagefooter')
 @endsection

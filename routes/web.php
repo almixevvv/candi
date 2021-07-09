@@ -4,11 +4,13 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\ContactController;
 
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Response;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\WhoareweController;
+use App\Http\Controllers\ListingController;
 use CKSource\CKFinderBridge\Controller\CKFinderController;
 use Illuminate\Contracts\Filesystem\FileNotFoundException;
 
@@ -41,13 +43,13 @@ Route::get('/', [HomeController::class, 'index'])->name('index');
 // Route::get('/detail_blog', function (Request $request) {
 //     return view('front.blog.detail', ['request' => $request]);
 // })->name('blog.detail');
+
 Route::get('/home', [HomeController::class, 'index'])->name('home');
-
 Route::get('/blog', [BlogController::class, 'index'])->name('blog');
-
 Route::get('/detail_blog/{blog}', [BlogController::class, 'detail'])->name('blog.detail');
-
 Route::get('/contact', [FrontendController::class, "contact"])->name('contact');
+
+Route::post('/contact', [ContactController::class, "store"])->name('contact.store');
 
 Route::get('/promo', function (Request $request) {
     return view('front.promo.index', ['request' => $request]);
@@ -57,13 +59,16 @@ Route::get('/advertise', function (Request $request) {
     return view('front.advertise.index', ['request' => $request]);
 })->name('advertise');
 
-Route::get('/directory', function (Request $request) {
-    return view('front.directory.index', ['request' => $request]);
-})->name('directory');
+Route::get('/directory', [ListingController::class, 'index'])->name('directory');
+Route::get('/directory/{directory}', [ListingController::class, 'detail'])->name('directory.detail');
 
-Route::get('/detail_directory', function (Request $request) {
-    return view('front.directory.detail', ['request' => $request]);
-})->name('detail_directory');
+// function (Request $request) {
+//     return view('front.directory.index', ['request' => $request]);
+// })->name('directory');
+
+// Route::get('/detail_directory', function (Request $request) {
+//     return view('front.directory.detail', ['request' => $request]);
+// })->name('detail_directory');
 
 Route::get('/whoweare', [WhoareweController::class, 'index'])->name('whoweare');
 

@@ -40,8 +40,9 @@
 					items: ['heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'alignment', 'blockQuote', 
                         '|', 'fontSize', 'fontFamily', 'subscript', 'superscript', 
                         '|', 'outdent', 'indent', 
-                        '|', 'undo', 'redo', '-', 'strikethrough', 'underline', 'horizontalLine', 
-                        '|', 'specialCharacters', 'insertTable', 
+                        '|', 'undo', 'redo', 
+                        '-', 'strikethrough', 'underline', 'horizontalLine', 
+                        '|', 'specialCharacters', 'insertTable', 'mediaEmbed',
                         '|', 'htmlEmbed', 'CKFinder'],
 					shouldNotGroupWhenFull: true
 				},
