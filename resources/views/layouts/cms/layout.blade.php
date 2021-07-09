@@ -32,8 +32,15 @@
         <div class="page d-flex flex-row flex-column-fluid">
             @include('components.cms.sidebar')
             <!--begin::Wrapper-->
-            <div class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper">
+            <div class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper" style="padding-top: 5em">
                 @include('components.cms.navbar')
+                
+                @if (session()->has('message'))
+                    <div class="alert alert-{{ session()->get('message_type') ?? "success"}}">
+                        {{ session()->get('message') }}
+                    </div>
+                @endif
+
                 @yield('content')
                 @include('components.cms.footer')
             </div>
