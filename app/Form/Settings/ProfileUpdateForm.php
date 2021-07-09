@@ -14,6 +14,7 @@ class ProfileUpdateForm extends Form
         $this->text("open_hour_range", "Open Hour Range");
         $this->text("facebook", "Facebook");
         $this->text("instagram", "Instagram");
-        $this->text("youtube", "Youtube");
+        $this->text("twitter", "Twitter");
+        $this->text("maps", "Maps");
     }
 }

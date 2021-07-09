@@ -16,7 +16,7 @@ class ProfileSettingSeeder extends Seeder
     {
         ProfileSetting::truncate();
         ProfileSetting::create([
-            "address" => "426 East Avenue, 7th floor, New York, NY 07102",
+            "address" => "asdfasdfasdf",
             "phone_number" => "(021) 731 - 9564",
             "email" => "contact@candi.id",
             "open_day_range" => "Monday - Friday",
@@ -24,6 +24,7 @@ class ProfileSettingSeeder extends Seeder
             "facebook" => "",
             "instagram" => "",
             "youtube" => "",
+            "maps" => "",
         ]);
     }
 }

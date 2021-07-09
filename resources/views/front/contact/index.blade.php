@@ -32,7 +32,9 @@
                 
                 <div class="contact-container">
                     <div class="contact-card mx-0 lg-mx-2">
-                        <i class="fas fa-map-marker-alt"></i>
+                        <a href="{{ $_profile->gmaps }}" target="_blank">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </a>
                         <div class="contact-bottom">
                             <span>
                                 <h5>Home</h5>
@@ -41,35 +43,44 @@
                     </div>
                     <div class="contact-detail">
                         <span>
-                            {{ $_profile->address }}
+                            <a href="{{ $_profile->gmaps }}">{{ $_profile->address }}</a>
+                            {{-- {{ $_profile->address }} --}}
                         </span>
                     </div>
                 </div>
 
                 <div class="contact-container even">
                     <div class="contact-card mx-0 lg-mx-2">
-                        <i class="fas fa-phone-square-alt"></i>
+                        <a href="https://api.whatsapp.com/send?phone={{ $_profile->phone_number }}" target="_blank">
+                            <i class="fas fa-phone-square-alt"></i>
+                        </a>
                         <div class="contact-bottom">
                             <h5>Phone</h5>
                         </div>
                     </div>
                     <div class="contact-detail">
                         <span>
-                            {{ $_profile->phone_number }}
+                            <a href="https://api.whatsapp.com/send?phone={{ $_profile->phone_number }}" target="_blank">
+                                {{ Str::phoneFormat($_profile->phone_number) }}
+                            </a>
+                            {{-- {{ $_profile->phone_number }} --}}
                         </span>
                     </div>
                 </div>
 
                 <div class="contact-container odd">
                     <div class="contact-card mx-0 lg-mx-2">
-                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:{{ $_profile->email }}?" target="_blank">
+                           <i class="fas fa-envelope"></i> 
+                        </a>
                         <div class="contact-bottom">
                             <h5>Email</h5>
                         </div>
                     </div>
                     <div class="contact-detail">
                         <span>
-                            {{ $_profile->email }}
+                            <a href=mailto:wisan.maulana@gmail.com?>{{ $_profile->email }}</a>
+                            {{-- {{ $_profile->email }} --}}
                         </span>
                     </div>
                 </div>
@@ -98,13 +109,24 @@
                     Contact Us
                 </span>
             </div>
-
+            @if($errors->any())
+                <div class="alert alert-danger" role="alert">
+                    {!! implode('', $errors->all('<li>:message</li>')) !!}
+                </div>
+            @endif
+            @if(session()->has('message'))
+                <div class="alert alert-success" role="alert">
+                    {{ session()->get('message') }}
+                </div>
+            @endif
+            <form action="{{ route('contact.store') }}" method="POST">
+            @csrf
             <div class="form-container">
                 <div class="row">
                      <div class="col-12">
                         <div class="contact-input">
                             <div class="user-box">
-                                 <select name="cars" id="cars" class="">
+                                 <select name="purpose" id="cars" class="">
                                     <option value="" selected="">Select Purpose</option>
                                     <option value="Kerjasama">Kerja Sama</option>
                                     <option value="Saran">Kritik dan Saran</option>
@@ -117,7 +139,7 @@
                     <div class="col-12 col-md-6">
                         <div class="contact-input">
                             <div class="user-box">
-                                <input type="text" name="userName" required>
+                                <textarea name="name" id="contactName" required></textarea>
                                 <label>Your Name</label>
                             </div>
                         </div>
@@ -126,7 +148,7 @@
                     <div class="col-12 col-md-6">
                         <div class="contact-input">
                             <div class="user-box">
-                                <input type="email" name="userEmail" required>
+                                <textarea name="email" id="contactEmail" ></textarea>
                                 <label>Your Email</label>
                             </div>
                         </div>
@@ -137,7 +159,7 @@
                     <div class="col-12">
                         <div class="contact-input">
                             <div class="user-box">
-                                <textarea name="userContact" id="userContact" required></textarea>
+                                <textarea name="message" id="contactMessage" ></textarea>
                                 <label>Your Messages</label>
                             </div>
                         </div>
@@ -155,11 +177,13 @@
 
                 <div class="row">
                     <div class="col-12">
-                        <button type="button" class="btn btn-secondary mt-5">Send Message</button>
+                        <button type="submit" class="btn btn-secondary mt-5">Send Message</button>
+                        {{-- <a href="{{ url('/contacts') }}" type="button" class="btn btn-secondary mt-5">Send Message</a> --}}
                     </div>
                 </div>
 
             </div>
+        </form>
         </div>
 
         {{-- <div class="wrap">

@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\ContactController;
 
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Response;
@@ -48,6 +49,8 @@ Route::get('/blog', [BlogController::class, 'index'])->name('blog');
 Route::get('/detail_blog/{blog}', [BlogController::class, 'detail'])->name('blog.detail');
 
 Route::get('/contact', [FrontendController::class, "contact"])->name('contact');
+
+Route::post('/contact', [ContactController::class, "store"])->name('contact.store');
 
 Route::get('/promo', function (Request $request) {
     return view('front.promo.index', ['request' => $request]);
