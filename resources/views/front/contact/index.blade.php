@@ -1,4 +1,13 @@
 @extends('layouts.front.index')
+
+@push('extra-css')
+<style>
+    select option {
+        padding: 2em;
+    }
+</style>
+@endpush
+
 @section('content')
 
 <link rel="stylesheet" href="./css/contact/contact.css">
@@ -126,10 +135,11 @@
                      <div class="col-12">
                         <div class="contact-input">
                             <div class="user-box">
-                                 <select name="purpose" id="cars" class="">
+                                 <select name="purpose_id" id="cars" class="">
                                     <option value="" selected="">Select Purpose</option>
-                                    <option value="Kerjasama">Kerja Sama</option>
-                                    <option value="Saran">Kritik dan Saran</option>
+                                    @foreach($purposes as $purpose)
+                                        <option value="{{ $purpose->id }}">{{ $purpose->name }}</option>
+                                    @endforeach
                                   </select>
                             </div>
                         </div>
