@@ -2,16 +2,24 @@
 
 namespace App\Models;
 
+use App\Casts\ImageCast;
 use App\Traits\HasImage;
 use App\Traits\HasMetadata;
+use Illuminate\Support\Facades\File;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 class Listing extends Model
 {
     use HasFactory, HasImage, HasMetadata;
 
-    public $fillable = ["title", "details", "address", "lat", "long", "low_price", "high_price", 'category_id'];
+    public $fillable = ["title", "details", "address", "lat", "long", "low_price", "high_price", 'category_id', 'image_360_url'];
+
+    public $casts = [
+        "image_360_url" => ImageCast::class
+    ];
 
     public function category() 
     {
@@ -21,5 +29,36 @@ class Listing extends Model
     public function tags() 
     {
         return $this->belongsToMany(ListingTag::class, "listing_has_tags", "listing_id", "listing_tag_id");
+    }
+
+    public function uploadImage360(UploadedFile $file) 
+    {
+        // remove 360 image if exists
+        if ($this->image_360_url) {
+            $this->removeImage360();
+        }
+
+        $today = now();
+        $dateTimeStamp = collect([$today->year, $today->month, $today->day])->join("/");
+        $fileName = Image::generateImageRandomName($file->getClientOriginalName());
+
+        $storagePath = storage_path(collect(["app", "public", "Listing", $dateTimeStamp, "360_image"])->join("/"));
+        $filePath = collect(['Listing', $dateTimeStamp, "360_image"])->join("/");
+
+        File::ensureDirectoryExists($storagePath);
+        $file->move($storagePath, $fileName);
+
+        $this->image_360_url = "{$filePath}/{$fileName}";
+        $this->save();
+    }
+
+    public function removeImage360() 
+    {
+        if (Storage::exists("public/{$this->getRawOriginal('image_360_url')}")) {
+            Storage::delete("public/{$this->getRawOriginal('image_360_url')}");
+        }
+
+        $this->image_360_url = null;
+        $this->save();
     }
 }

@@ -69,6 +69,10 @@ a {
 	flex-basis: 33%;
 }
 
+.card-content {
+	max-width: 24%;
+}
+
 @media (min-width: 1024px) {
 	.card-content {
 		flex-basis: 24%;

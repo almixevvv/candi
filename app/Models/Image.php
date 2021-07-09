@@ -29,7 +29,7 @@ class Image extends Model
         return md5(uniqid(rand(), true)) . "_" . $imageName;
     }
 
-    public static function uploadImage(UploadedFile $file, string $uploadTo, array $metadata = [], bool $isTemporary = true, array $extra = []) : Image
+    public static function uploadImage(UploadedFile $file, string $uploadTo, array $metadata = [], bool $isTemporary = true, array $extra = []): Image
     {
         $today = now();
 
@@ -55,7 +55,7 @@ class Image extends Model
             $img->resize(800, 800)->save($storagePath . "/" . $fileName, 80);
             $img->resize(100, 100)->save($storagePath . "/" . $thumbnailName, 20);
             $file->move($storagePath, $fileName);
-        } catch(NotReadableException $exception) {
+        } catch (NotReadableException $exception) {
             Log::info("not supportted image");
             $file->move($storagePath, $fileName);
             $path = collect(["public", $uploadTo, $dateTimeStamp])->join("/");

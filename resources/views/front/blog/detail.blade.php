@@ -1,7 +1,7 @@
 @extends('layouts.front.index')
 
 @push('extra-css')
-    <link rel="stylesheet" href="{{ asset('css/blog/blogdetail.css') }}">
+<link rel="stylesheet" href="{{ asset('css/blog/blogdetail.css') }}">
 @endpush
 
 @section('content')
@@ -18,7 +18,7 @@
             </div>
         </div>
     </div>
-    
+
     <div class="global-wrap">
         <div class="section-content-wrap">
             <article>
@@ -35,22 +35,24 @@
                                 <a href="../author/sean/index.html">Sean Hamilton</a>
                                 <time datetime="2017-06-28">{{ $blog->created_at->diffForHumans() }}</time>
                                 <span class="reading-time">
-                                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"> 
-                                        <path d="M10.1907692,24 C4.5625628,24 0,19.4374372 0,13.8092308 C0,8.18102433 4.5625628,3.61846154 10.1907692,3.61846154 C15.8189757,3.61846154 20.3815385,8.18102433 20.3815385,13.8092308 C20.3815385,19.4374372 15.8189757,24 10.1907692,24 Z M10.1907692,22 C14.7144062,22 18.3815385,18.3328677 18.3815385,13.8092308 C18.3815385,9.28559383 14.7144062,5.61846154 10.1907692,5.61846154 C5.6671323,5.61846154 2,9.28559383 2,13.8092308 C2,18.3328677 5.6671323,22 10.1907692,22 Z" id="Oval"></path><path d="M7.53230769,2.32923077 C6.98002294,2.32923077 6.53230769,1.88151552 6.53230769,1.32923077 C6.53230769,0.776946019 6.98002294,0.329230769 7.53230769,0.329230769 L12.9225711,0.329230769 C13.4748559,0.329230769 13.9225711,0.776946019 13.9225711,1.32923077 C13.9225711,1.88151552 13.4748559,2.32923077 12.9225711,2.32923077 L7.53230769,2.32923077 Z" id="Line-2"></path><path d="M13.2928932,9.29289322 C13.6834175,8.90236893 14.3165825,8.90236893 14.7071068,9.29289322 C15.0976311,9.68341751 15.0976311,10.3165825 14.7071068,10.7071068 L10.897876,14.5163376 C10.5073517,14.9068618 9.87418674,14.9068618 9.48366245,14.5163376 C9.09313816,14.1258133 9.09313816,13.4926483 9.48366245,13.102124 L13.2928932,9.29289322 Z" id="Line"></path>
+                                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M10.1907692,24 C4.5625628,24 0,19.4374372 0,13.8092308 C0,8.18102433 4.5625628,3.61846154 10.1907692,3.61846154 C15.8189757,3.61846154 20.3815385,8.18102433 20.3815385,13.8092308 C20.3815385,19.4374372 15.8189757,24 10.1907692,24 Z M10.1907692,22 C14.7144062,22 18.3815385,18.3328677 18.3815385,13.8092308 C18.3815385,9.28559383 14.7144062,5.61846154 10.1907692,5.61846154 C5.6671323,5.61846154 2,9.28559383 2,13.8092308 C2,18.3328677 5.6671323,22 10.1907692,22 Z" id="Oval"></path>
+                                        <path d="M7.53230769,2.32923077 C6.98002294,2.32923077 6.53230769,1.88151552 6.53230769,1.32923077 C6.53230769,0.776946019 6.98002294,0.329230769 7.53230769,0.329230769 L12.9225711,0.329230769 C13.4748559,0.329230769 13.9225711,0.776946019 13.9225711,1.32923077 C13.9225711,1.88151552 13.4748559,2.32923077 12.9225711,2.32923077 L7.53230769,2.32923077 Z" id="Line-2"></path>
+                                        <path d="M13.2928932,9.29289322 C13.6834175,8.90236893 14.3165825,8.90236893 14.7071068,9.29289322 C15.0976311,9.68341751 15.0976311,10.3165825 14.7071068,10.7071068 L10.897876,14.5163376 C10.5073517,14.9068618 9.87418674,14.9068618 9.48366245,14.5163376 C9.09313816,14.1258133 9.09313816,13.4926483 9.48366245,13.102124 L13.2928932,9.29289322 Z" id="Line"></path>
                                     </svg> 2 min read
                                 </span>
                             </div>
                         </div>
                     </div>
-                </div>	
+                </div>
                 <div class="container" id="postWrapper">
                     <div class="post-wrap ">
 
-                    <div class="markdown who-we-are">
-                        {!! Markdown::convertToHtml($blog->content) !!}
-                    </div>
-                    
-                    <div class="post-meta">
+                        <div class="markdown who-we-are">
+                            {!! Markdown::convertToHtml($blog->content) !!}
+                        </div>
+
+                        <!-- <div class="post-meta">
                         <div class="post-share">
                             <a class="twitter" href="https://twitter.com/intent/tweet?text=Look%20at%20life%20with%20the%20eyes%20of%20a%20child&amp;url=https://nurui.fueko.net/look-at-life-with-the-eyes-of-a-child/" target="_blank" rel="noopener">
                                 <svg class="global-svg" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -69,31 +71,31 @@
                             </a>
                             <input type="text" value="https://nurui.fueko.net/look-at-life-with-the-eyes-of-a-child/" id="link-value">
                         </div>		
+                    </div> -->
+
                     </div>
-                    
-                </div>
             </article>
 
             <div class="container-fluid px-0">
                 <aside class="section-prev-next">
                     <div class="prev-next-wrap">
                         @if ($newer)
-                            <a href="{{ route('blog.detail', ['blog' => $newer->id]) }}" class="prev-post post tag-people tag-journey is-image ">
-                                <div class="prev-next-image" style="background-image: url({{ $newer->image->image_url }})"></div>
-                                <section class="prev-next-title">
-                                    <h5>Newer Post</h5>
-                                    <h3>{{ $newer->title }}</h3>
-                                </section>
-                            </a>
+                        <a href="{{ route('blog.detail', ['blog' => $newer->id]) }}" class="prev-post post tag-people tag-journey is-image ">
+                            <div class="prev-next-image" style="background-image: url({{ $newer->image->image_url }})"></div>
+                            <section class="prev-next-title">
+                                <h5>Newer Post</h5>
+                                <h3>{{ $newer->title }}</h3>
+                            </section>
+                        </a>
                         @endif
                         @if ($older)
-                            <a href="{{ route('blog.detail', ['blog' => $older->id]) }}" class="next-post post tag-design featured is-image">
-                                <div class="prev-next-image" style="background-image: url({{ $older->image->image_url }})"></div>
-                                <section class="prev-next-title">
-                                    <h5>Older Post</h5>
-                                    <h3>{{ $older->title }}</h3>
-                                </section>
-                            </a>
+                        <a href="{{ route('blog.detail', ['blog' => $older->id]) }}" class="next-post post tag-design featured is-image">
+                            <div class="prev-next-image" style="background-image: url({{ $older->image->image_url }})"></div>
+                            <section class="prev-next-title">
+                                <h5>Older Post</h5>
+                                <h3>{{ $older->title }}</h3>
+                            </section>
+                        </a>
                         @endif
                     </div>
                 </aside>

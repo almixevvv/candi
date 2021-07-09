@@ -14,24 +14,21 @@
             </thead>
             <tbody>
                 @foreach($listings as $listing)
-                    <tr>
-                        <td>
-                            <a href="{{ route('cms.listings.show', $listing) }}">{{ $listing->id }}</a>
-                        </td>
-                        <td>
-                            @if ($listing->image)
-                                <img src="{{ $listing->image->image_thumbnail }}" />
-                            @endif
-                        </td>
-                        <td>{{ $listing->title }}</td>
-                        <td>{{ $listing->address }}</td>
-                        <td>
-                            <x-button-group 
-                                editUrl="{{ route('cms.listings.edit', $listing) }}"
-                                deleteUrl="{{ route('cms.listings.destroy', $listing) }}" 
-                            />
-                        </td>
-                    </tr>
+                <tr>
+                    <td>
+                        <a href="{{ route('cms.listings.show', $listing) }}">{{ $listing->id }}</a>
+                    </td>
+                    <td>
+                        @if ($listing->image)
+                        <img src="{{ $listing->image->image_thumbnail }}" />
+                        @endif
+                    </td>
+                    <td>{{ $listing->title }}</td>
+                    <td>{{ $listing->address }}</td>
+                    <td>
+                        <x-button-group editUrl="{{ route('cms.listings.edit', $listing) }}" deleteUrl="{{ route('cms.listings.destroy', $listing) }}" />
+                    </td>
+                </tr>
                 @endforeach
             </tbody>
         </table>

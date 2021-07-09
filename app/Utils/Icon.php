@@ -1,9 +1,10 @@
 <?php
+
 namespace App\Utils;
 
 use Exception;
 
-class Icon 
+class Icon
 {
     public array $icons = [];
 
@@ -50,7 +51,7 @@ class Icon
                     <path d="M3.00065168,20.1992055 C3.38825852,15.4265159 7.26191235,13 11.9833413,13 C16.7712164,13 20.7048837,15.2931929 20.9979143,20.2 C21.0095879,20.3954741 20.9979143,21 20.2466999,21 C16.541124,21 11.0347247,21 3.72750223,21 C3.47671215,21 2.97953825,20.45918 3.00065168,20.1992055 Z" fill="#000000" fill-rule="nonzero"/>
                 </g>
             </svg></span>';
-        
+
         $this->icons['user-group'] = '
             <span class="svg-icon svg-icon-2">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
