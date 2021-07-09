@@ -8,6 +8,7 @@ use App\Models\ListingTag;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Form\Listing\ListingCreateForm;
+use App\Form\Listing\ListingSearchForm;
 
 class ListingController extends Controller
 {
@@ -24,9 +25,15 @@ class ListingController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $this->contextData['listings'] = Listing::with('image')->orderBy('id', 'desc')->paginate(config('app.pagination_limit'));
+        $form = new ListingSearchForm([
+            "method" => "GET",
+            "action" => $this->index
+        ]);
+
+        $this->contextData['listings'] = $form->filter($request);
+        $this->contextData['modalForm'] = $form;
 
         return view('cms.listings.index', $this->contextData);
     }

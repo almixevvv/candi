@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Backend;
 
+use App\Form\ListingCategory\ListingCategorySearchForm;
 use Illuminate\Http\Request;
 use App\Models\ListingCategory;
 use App\Http\Controllers\Controller;
@@ -22,9 +23,15 @@ class ListingCategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $this->contextData['listingCategories'] = ListingCategory::with('image')->orderBy('id', 'desc')->paginate(config('app.pagination_limit'));
+        $form = new ListingCategorySearchForm([
+            "action" => $this->index,
+            "method" => "GET"
+        ]);
+
+        $this->contextData['listingCategories'] = $form->filter($request);
+        $this->contextData['modalForm'] = $form;
 
         return view('cms.listing-categories.index', $this->contextData);
     }
