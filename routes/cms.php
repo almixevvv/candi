@@ -12,6 +12,7 @@ use App\Http\Controllers\Backend\SettingController;
 use App\Http\Controllers\Backend\WhoWeAreController;
 use App\Http\Controllers\Backend\ListingTagController;
 use App\Http\Controllers\Backend\BlogCategoryController;
+use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\ListingCategoryController;
 
 //Login Process
@@ -21,8 +22,7 @@ Route::get('/logout', [AuthController::class, 'logout'])->name('login.logout');
 Route::view('/reset', 'auth.reset', ['pageName'    => 'Reset Password'])->name('reset.index');
 
 Route::group(["middleware" => "auth"], function() {
-    Route::view('/', 'cms.dashboard.index', ['pageName'    => 'Dashboard'])->name('dashboard.index');
-    Route::view('/dashboard', 'cms.dashboard.index', ['pageName'    => 'Dashboard'])->name('dashboard');
+    Route::get('/', [DashboardController::class, "index"])->name('dashboard.index');
 
     //Who are we process
     Route::get('/whoarewe', [WhoWeAreController::class, 'index'])->name('waw.index');
