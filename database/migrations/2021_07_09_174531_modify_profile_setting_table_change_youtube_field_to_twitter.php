@@ -15,7 +15,7 @@ class ModifyProfileSettingTableChangeYoutubeFieldToTwitter extends Migration
     {
         Schema::table('profile_settings', function (Blueprint $table) {
             $table->dropColumn('youtube');
-            $table->string('twitter');
+            $table->string('twitter')->default('');
         });
     }
 
@@ -27,7 +27,7 @@ class ModifyProfileSettingTableChangeYoutubeFieldToTwitter extends Migration
     public function down()
     {
         Schema::table('profile_settings', function (Blueprint $table) {
-            $table->string('youtube');
+            $table->string('youtube')->default('');
             $table->dropColumn('twitter');
         });
     }

@@ -14,7 +14,7 @@ class AddNewFieldMaps extends Migration
     public function up()
     {
         Schema::table('profile_settings', function (Blueprint $table) {
-            $table->string('maps');
+            $table->string('maps')->default('');
         });
     }
 
