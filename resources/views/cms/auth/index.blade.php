@@ -28,9 +28,6 @@
             <!--begin::Label-->
             <label class="form-label fw-bolder text-dark fs-6 mb-0">Password</label>
             <!--end::Label-->
-            <!--begin::Link-->
-            <a href="{{ route('cms.reset.index') }}" class="link-primary fs-6 fw-bolder">Forgot Password ?</a>
-            <!--end::Link-->
         </div>
         <!--end::Wrapper-->
         <!--begin::Input-->
@@ -53,7 +50,7 @@
     </div>
 
     <div class="text-gray-400 fw-bold fs-4 mt-7"> Not supposed to be here? </br>
-        <a href="authentication/flows/dark/sign-up.html" class="link-primary fw-bolder">Back to front page</a>
+        <a href="{{ route('index') }}" class="link-primary fw-bolder">Back to front page</a>
     </div>
 
     <!--end::Actions-->

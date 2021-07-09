@@ -27,7 +27,7 @@
             <div class="d-flex flex-center flex-column flex-column-fluid p-10 pb-lg-20">
                 <!--begin::Logo-->
                 <div class="mb-12">
-                    <img alt="Logo" src="/media/logos/logo-2.svg" class="h-45px" />
+                    <img alt="Logo" src="/images/logo_horizontal_2.svg" class="h-50px" />
                 </div>
                 <!--end::Logo-->
                 <!--begin::Wrapper-->
