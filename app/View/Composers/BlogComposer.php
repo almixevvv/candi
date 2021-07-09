@@ -9,7 +9,10 @@ class BlogComposer implements ComposerContract
 {
     public function compose(View $view)
     {
-    	$blog = Blog::orderBy('created_at', 'desc')->limit(3)->get();
+        $blog = cache()->remember("blog", 60, function() {
+            return Blog::orderBy('created_at', 'desc')->limit(3)->get();
+        });
+
         $view->with('latest_blog', $blog);
     }
 }
