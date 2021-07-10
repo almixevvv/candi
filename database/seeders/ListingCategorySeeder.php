@@ -73,6 +73,8 @@ class ListingCategorySeeder extends Seeder
                 "metadata" => "[]"
             ]);
 
+            File::ensureDirectoryExists($category['files'][1]);
+
             File::copy($category['files'][0], $category['files'][1]);
         }
     }
