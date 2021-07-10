@@ -8,7 +8,7 @@ use App\Models\ListingTag;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Form\Listing\ListingCreateForm;
-use App\Form\Listing\ListingSearchForm;
+use App\Form\Listing\ListingFilterForm;
 
 class ListingController extends Controller
 {
@@ -27,7 +27,7 @@ class ListingController extends Controller
      */
     public function index(Request $request)
     {
-        $form = new ListingSearchForm([
+        $form = new ListingFilterForm([
             "method" => "GET",
             "action" => $this->index
         ]);
@@ -99,6 +99,8 @@ class ListingController extends Controller
             "keywords" => $request->keywords,
             "canonical" => $request->canonical,
         ]);
+
+        $this->message("success", "Create success.");
 
         return redirect($this->index);
     }
@@ -204,6 +206,8 @@ class ListingController extends Controller
             "canonical" => $request->canonical,
         ]);
 
+        $this->message("success", "Update success.");
+
         return redirect($this->index);
     }
 
@@ -221,6 +225,8 @@ class ListingController extends Controller
         }
 
         $listing->delete();
+
+        $this->message("success", "Delete success.");
         return redirect($this->index);
     }
 }

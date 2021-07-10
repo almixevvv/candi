@@ -14,14 +14,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(SApplSeeder::class);
-        // $this->call(AreaSeeder::class);
-        // $this->call(ListingCategorySeeder::class);
+        WhoWeAre::truncate(); // should truncate who we are before running
         WhoWeAre::create([
             "contents" => "empty content"
         ]);
         $this->call(MenuSeeder::class);
         $this->call(RoleSeeder::class);
         $this->call(ProfileSettingSeeder::class);
+        $this->call(PurposeSeeder::class);
     }
 }

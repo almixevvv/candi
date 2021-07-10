@@ -2,19 +2,18 @@
 
 namespace App\Http\Controllers\Backend;
 
-use App\Models\BlogCategory;
+use App\Form\Purpose\PurposeCreateForm;
+use App\Models\Purpose;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Form\BlogCategories\BlogCategoriesCreateForm;
-use App\Form\BlogCategories\BlogCategoriesFilterForm;
 
-class BlogCategoryController extends Controller
+class PurposeController extends Controller
 {
-    public function __construct() 
+    public function __construct()
     {
-        $this->index = route('cms.blog-categories.index');
+        $this->index = route('cms.purposes.index');
         $this->contextData = [
-            'title' => 'Blog Categories'
+            'title' => 'Purpose'
         ];
     }
 
@@ -23,16 +22,12 @@ class BlogCategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
-        $form = new BlogCategoriesFilterForm([
-            "action" => $this->index,
-            "method" => "GET"
-        ]);
-        $this->contextData['modalForm'] = $form;
-        $this->contextData['blogCategories'] = $form->filter($request);
+        $purposes = Purpose::paginate(config('app.pagination_limit'));
 
-        return view('cms.blog-categories.index', $this->contextData);
+        $this->contextData['purposes'] = $purposes;
+        return view('cms.purposes.index', $this->contextData);
     }
 
     /**
@@ -42,8 +37,8 @@ class BlogCategoryController extends Controller
      */
     public function create()
     {
-        $this->contextData['form'] = new BlogCategoriesCreateForm([
-            "action" => route('cms.blog-categories.store'),
+        $this->contextData['form'] = new PurposeCreateForm([
+            "action" => route('cms.purposes.store'),
             "method" => "POST"
         ]);
 
@@ -62,9 +57,9 @@ class BlogCategoryController extends Controller
             "name" => "required"
         ]);
 
-        BlogCategory::create($request->only('name'));
+        Purpose::create($request->except('_token'));
+        $this->message('success', 'Create Success.');
 
-        $this->message("success", "Create success.");
         return redirect($this->index);
     }
 
@@ -85,13 +80,13 @@ class BlogCategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(BlogCategory $blogCategory)
+    public function edit(Purpose $purpose)
     {
-        $this->contextData['form'] = new BlogCategoriesCreateForm([
-            "action" => route('cms.blog-categories.update', $blogCategory),
+        $this->contextData['form'] = new PurposeCreateForm([
+            "action" => route('cms.purposes.update', $purpose),
             "method" => "PUT",
             "data" => [
-                "name" => $blogCategory->name
+                "name" => $purpose->name
             ]
         ]);
 
@@ -105,16 +100,15 @@ class BlogCategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, BlogCategory $blogCategory)
+    public function update(Request $request, Purpose $purpose)
     {
         $this->validate($request, [
             "name" => "required"
         ]);
 
-        $blogCategory->name = $request->name;
-        $blogCategory->save();
+        $purpose->update($request->only('name'));
 
-        $this->message("success", "Update success.");
+        $this->message('success', 'Update Success.');
 
         return redirect($this->index);
     }
@@ -125,10 +119,11 @@ class BlogCategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(BlogCategory $blogCategory)
+    public function destroy(Purpose $purpose)
     {
-        $blogCategory->delete();
-        $this->message("success", "Delete success.");
+        $purpose->delete();
+        $this->message('success', 'Delete success.');
+
         return redirect($this->index);
     }
 }

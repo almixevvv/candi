@@ -11,11 +11,12 @@
                 <div class="col">
                     <a href="{{ url()->previous() }}" class="btn btn-warning"> Back</a>
                 </div>
-            @endif
-            @if ($createUrl)
+            @elseif ($createUrl)
                 <div class="col">
                     <a href="{{ $createUrl }}" class="btn btn-primary">Create</a>
                 </div>
+            @else
+                <div class="col">&nbsp;</div>
             @endif
             @if ($filterButton)
                 <div class="col-md-2">

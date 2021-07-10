@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers\Backend;
 
-use App\Models\ListingTag;
 use Illuminate\Http\Request;
-use App\Models\ListingTagCategory;
 use App\Http\Controllers\Controller;
+
+use App\Models\ListingTagCategory;
+use App\Models\ListingTag;
 use App\Form\ListingTags\ListingTagAddTagForm;
-use App\Form\ListingTags\ListingTagSearchForm;
+use App\Form\ListingTags\ListingTagFilterForm;
 use App\Form\ListingTags\ListingTagsCreateForm;
 
 class ListingTagController extends Controller
@@ -27,7 +28,7 @@ class ListingTagController extends Controller
      */
     public function index(Request $request)
     {
-        $form = new ListingTagSearchForm([
+        $form = new ListingTagFilterForm([
             "action" => $this->index,
             "method" => "GET"
         ]);
@@ -49,6 +50,8 @@ class ListingTagController extends Controller
             "method" => "POST",
             "action" => route('cms.listing-tags.store')
         ]);
+
+        $this->message("success", "Create success.");
 
         return view('cms.base_form', $this->contextData);
     }
@@ -121,6 +124,8 @@ class ListingTagController extends Controller
         $listingTagCategory->name = $request->name;
         $listingTagCategory->save();
 
+        $this->message("success", "Update success.");
+
         return redirect($this->index);
     }
 
@@ -134,6 +139,8 @@ class ListingTagController extends Controller
     {
         $listingTagCategory = ListingTagCategory::findOrFail($id);
         $listingTagCategory->delete();
+
+        $this->message("success", "Delete success.");
         return redirect($this->index);
     }
 
@@ -159,6 +166,8 @@ class ListingTagController extends Controller
             "category_id" => $listingTagCategory->id,
             "name" => $request->name
         ]);
+
+        $this->message("success", "Create success.");
 
         return redirect(route('cms.listing-tags.show', $listingTagCategory->id));
     }
@@ -191,6 +200,8 @@ class ListingTagController extends Controller
         $listingTag->name = $request->name;
         $listingTag->save();
 
+        $this->message("success", "Update success.");
+
         return redirect(route('cms.listing-tags.show', $listingTagCategory->id));
     }
 
@@ -198,6 +209,8 @@ class ListingTagController extends Controller
     {
         $listingTagCategory = ListingTagCategory::findOrFail($tagID);
         ListingTag::findOrFail($id)->delete();
+
+        $this->message("success", "Delete success.");
 
         return redirect(route('cms.listing-tags.show', $listingTagCategory->id));
     }

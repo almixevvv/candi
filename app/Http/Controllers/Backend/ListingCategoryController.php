@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Backend;
 
-use App\Form\ListingCategory\ListingCategorySearchForm;
 use Illuminate\Http\Request;
 use App\Models\ListingCategory;
 use App\Http\Controllers\Controller;
 use App\Form\ListingCategory\ListingCategoryCreateForm;
+use App\Form\ListingCategory\ListingCategoryFilterForm;
 
 class ListingCategoryController extends Controller
 {
@@ -25,7 +25,7 @@ class ListingCategoryController extends Controller
      */
     public function index(Request $request)
     {
-        $form = new ListingCategorySearchForm([
+        $form = new ListingCategoryFilterForm([
             "action" => $this->index,
             "method" => "GET"
         ]);
@@ -69,6 +69,8 @@ class ListingCategoryController extends Controller
         ]);
 
         $listingCategory->addImage($request->file('image'));
+
+        $this->message("success", "Create success.");
         return redirect($this->index);
     }
 
@@ -129,6 +131,8 @@ class ListingCategoryController extends Controller
             $listingCategory->addImage($request->file('image'));
         }
 
+        $this->message("success", "Update success.");
+
         return redirect($this->index);
     }
 
@@ -141,6 +145,8 @@ class ListingCategoryController extends Controller
     public function destroy(ListingCategory $listingCategory)
     {
         $listingCategory->delete();
+
+        $this->message("success", "Delete success.");
         return redirect($this->index);
     }
 }

@@ -62,6 +62,8 @@ class FaqController extends Controller
 
         Faq::create($request->except('_token', '_method'));
 
+        $this->message("success", "Create success.");
+
         return redirect($this->index);
     }
 
@@ -116,6 +118,8 @@ class FaqController extends Controller
 
         $faq->update($request->except('_token', '_method'));
 
+        $this->message("success", "Update success.");
+
         return redirect($this->index);
     }
 
@@ -128,6 +132,7 @@ class FaqController extends Controller
     public function destroy(Faq $faq)
     {
         $faq->delete();
+        $this->message("success", "Delete success.");
         return redirect($this->index);
     }
 }

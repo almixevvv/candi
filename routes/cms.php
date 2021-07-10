@@ -7,11 +7,14 @@ use App\Http\Controllers\Backend\BlogController;
 use App\Http\Controllers\Backend\RoleController;
 use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\Backend\UploadController;
+use App\Http\Controllers\Backend\ContactController;
 use App\Http\Controllers\Backend\ListingController;
+use App\Http\Controllers\Backend\PurposeController;
 use App\Http\Controllers\Backend\SettingController;
 use App\Http\Controllers\Backend\WhoWeAreController;
 use App\Http\Controllers\Backend\ListingTagController;
 use App\Http\Controllers\Backend\BlogCategoryController;
+use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\ListingCategoryController;
 
 //Login Process
@@ -21,8 +24,7 @@ Route::get('/logout', [AuthController::class, 'logout'])->name('login.logout');
 Route::view('/reset', 'auth.reset', ['pageName'    => 'Reset Password'])->name('reset.index');
 
 Route::group(["middleware" => "auth"], function() {
-    Route::view('/', 'cms.dashboard.index', ['pageName'    => 'Dashboard'])->name('dashboard.index');
-    Route::view('/dashboard', 'cms.dashboard.index', ['pageName'    => 'Dashboard'])->name('dashboard');
+    Route::get('/', [DashboardController::class, "index"])->name('dashboard.index');
 
     //Who are we process
     Route::get('/whoarewe', [WhoWeAreController::class, 'index'])->name('waw.index');
@@ -55,6 +57,12 @@ Route::group(["middleware" => "auth"], function() {
 
     // FAQ
     Route::resource('/faq', FaqController::class);
+
+    // Purpose
+    Route::resource('/purposes', PurposeController::class);
+
+    // Contact
+    Route::get('/contacts', [ContactController::class, 'index'])->name('contacts.index');
 
     // Settings
     Route::get('profile-setting', [SettingController::class, "profile"])->name('profile.index');

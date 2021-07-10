@@ -2,31 +2,36 @@
 
 namespace App\Http\Controllers\Backend;
 
-use Illuminate\Support\Str;
 use Illuminate\Http\Request;
-use App\Form\Role\RoleCreateForm;
-use Spatie\Permission\Models\Role;
 use App\Http\Controllers\Controller;
+use App\Form\Contact\ContactFilterForm;
 
-class RoleController extends Controller
+class ContactController extends Controller
 {
-    public function __construct() 
+    public function __construct()
     {
-        $this->index = route('cms.roles.index');
+        $this->index = route('cms.contacts.index');
         $this->contextData = [
-            'title' => 'Roles'
+            'title' => 'Contacts'
         ];
     }
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $this->contextData['roles'] = Role::paginate(config('app.pagination_limit'));
+        $form = new ContactFilterForm([
+            "method" => "GET",
+            "action" => $this->index
+        ]);
 
-        return view('cms.roles.index', $this->contextData);
+        $this->contextData['modalForm'] = $form;
+        $this->contextData['contacts'] = $form->filter($request);
+
+        return view('cms.contacts.index', $this->contextData);
     }
 
     /**
@@ -36,12 +41,7 @@ class RoleController extends Controller
      */
     public function create()
     {
-        $this->contextData['form'] = new RoleCreateForm([
-            "action" => route('cms.roles.store'),
-            "method" => "POST"
-        ]);
-
-        return view('cms.base_form', $this->contextData);
+        //
     }
 
     /**
@@ -52,17 +52,7 @@ class RoleController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
-            "name" => "required|unique:roles,name"
-        ]);
-
-        Role::create([
-            "name" => $request->name,
-        ]);
-
-        $this->message("success", "Create success.");
-
-        return redirect($this->index);
+        //
     }
 
     /**
@@ -105,11 +95,8 @@ class RoleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Role $role)
+    public function destroy($id)
     {
-        $role->delete();
-
-        $this->message("success", "Delete success.");
-        return redirect($this->index);
+        //
     }
 }

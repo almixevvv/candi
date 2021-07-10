@@ -58,6 +58,8 @@ class WhoWeAreController extends Controller
         ]);
 
         Cache::delete(url()->previous() . ":image_ids");
+
+        $this->message("success", "Update success.");
         return redirect($this->index);
     }
 }

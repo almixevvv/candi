@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Gustiawan\FormBuilder\Form;
 use Illuminate\Pagination\LengthAwarePaginator;
 
-class ListingSearchForm extends Form
+class ListingFilterForm extends Form
 {
     public function handle() 
     {
