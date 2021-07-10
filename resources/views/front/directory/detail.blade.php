@@ -783,5 +783,4 @@
   }
 </script>
 
-@include('components.front.pagefooter')
 @endsection

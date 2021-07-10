@@ -204,5 +204,4 @@
     </div>
     
 </div>
-{{-- @include('components.front.pagefooter') --}}
 @endsection

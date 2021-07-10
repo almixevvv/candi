@@ -105,5 +105,4 @@
     {{-- <div class="page contacts-page full-width">
     </div> --}}
 </div>
-@include('components.front.pagefooter')
 @endsection
