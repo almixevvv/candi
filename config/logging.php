@@ -104,7 +104,7 @@ return [
         'discord' => [
             'driver' => 'custom',
             'via' => MarvinLabs\DiscordLogger\Logger::class,
-            'level' => 'debug',
+            'level' => env('LOG_LEVEL', 'debug'),
             'url' => env('LOG_DISCORD_WEBHOOK_URL'),
         ],
     ],
