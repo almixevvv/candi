@@ -22,7 +22,7 @@ class ProfileSettingSeeder extends Seeder
             "open_day_range" => "Monday - Friday",
             "open_hour_range" => "10:00 AM - 6:00 PM",
             "facebook" => "",
-            "instagram" => "",
+            "instagram" => "candi.id.official",
             "twitter" => "",
             "maps" => "",
         ]);
