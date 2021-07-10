@@ -34,6 +34,7 @@
 <body>
     @include('components.front.navbar')
     @yield('content')
+    @include('components.front.pagefooter')
     @include('components.front.footer')
 
     @stack('extra-js')

@@ -184,5 +184,4 @@
     <div class="container-fluid filter-page">
     </div>
 </div>
-@include('components.front.pagefooter')
 @endsection
