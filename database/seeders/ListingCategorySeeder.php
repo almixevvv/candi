@@ -2,8 +2,12 @@
 
 namespace Database\Seeders;
 
+use App\Models\Image;
+use App\Models\ListingCategory;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 
 class ListingCategorySeeder extends Seeder
 {
@@ -20,46 +24,57 @@ class ListingCategorySeeder extends Seeder
 
     private function listing_categories_seeder() 
     {
-        $listingCategories = array(
-            array(
-                'name'          => 'Restaurant',
-                // 'category_id'   => 'RST',
-                // 'icon'          => 'icon-restaurant.svg',
-                // 'status'        => 'ACTIVE'
-            ),
-            array(
-                'name'          => 'Cafe',
-                // 'category_id'   => 'CFE',
-                // 'icon'          => 'icon-cafe.svg',
-                // 'status'        => 'ACTIVE'
-            ),
-            array(
-                'name'          => 'Bar',
-                // 'category_id'   => 'BAR',
-                // 'icon'          => 'icon-bar.svg',
-                // 'status'        => 'ACTIVE'
-            ),
-            array(
-                'name'          => 'Tour Attraction',
-                // 'category_id'   => 'TAT',
-                // 'icon'          => 'icon-tour.svg',
-                // 'status'        => 'ACTIVE'
-            ),
-            array(
-                'name'          => 'Hotel & Resort',
-                // 'category_id'   => 'HAR',
-                // 'icon'          => 'icon-hotel.svg',
-                // 'status'        => 'ACTIVE'
-            ),
-            array(
-                'name'          => 'Shopping Center',
-                // 'category_id'   => 'SHC',
-                // 'icon'          => 'icon-shopping.svg',
-                // 'status'        => 'ACTIVE'
-            ),
-        );
+        $modelName = "App\Models\ListingCategory";
+        ListingCategory::truncate();
+        Image::where('model_name', $modelName)->delete();
+        $categories = [
+            [
+                "name" => "Bar",
+                "files" => [public_path("/images/icon-bar.svg"), storage_path('/app/public/ListingCategory/2021/6/28/icon-bar.svg')],
+                "filename" => "icon-bar.svg",
+            ],
+            [
+                "name" => "Cafe",
+                "files" => [public_path("/images/icon-cafe.svg"), storage_path('/app/public/ListingCategory/2021/6/28/icon-cafe.svg')],
+                "filename" => "icon-cafe.svg",
+            ],
+            [
+                "name" => "Hotel",
+                "files" => [public_path("/images/icon-hotel.svg"), storage_path('/app/public/ListingCategory/2021/6/28/icon-hotel.svg')],
+                "filename" => "icon-hotel.svg",
+            ],
+            [
+                "name" => "Restaurant",
+                "files" => [public_path("/images/icon-restaurant.svg"), storage_path('/app/public/ListingCategory/2021/6/28/icon-restaurant.svg')],
+                "filename" => "icon-restaurant.svg",
+            ],
+            [
+                "name" => "Shopping",
+                "files" => [public_path("/images/icon-shopping.svg"), storage_path('/app/public/ListingCategory/2021/6/28/icon-shopping.svg')],
+                "filename" => "icon-shopping.svg",
+            ],
+            [
+                "name" => "Tour",
+                "files" => [public_path("/images/icon-tour.svg"), storage_path('/app/public/ListingCategory/2021/6/28/icon-tour.svg')],
+                "filename" => "icon-tour.svg",
+            ],
+        ];
 
-        DB::table('listing_categories')->insert($listingCategories);
+        foreach ($categories as $category) {
+            $listingCategory = ListingCategory::create([
+                'name' => $category['name'],
+            ]);
+    
+            Image::create([
+                "model_name" => $modelName,
+                "model_id" => $listingCategory->id,
+                "image_url" => "ListingCategory/2021/6/28/" . $category['filename'],
+                "image_thumbnail" => "ListingCategory/2021/6/28/" . $category['filename'],
+                "metadata" => "[]"
+            ]);
+
+            File::copy($category['files'][0], $category['files'][1]);
+        }
     }
 
     private function listing_tags_seeder() 

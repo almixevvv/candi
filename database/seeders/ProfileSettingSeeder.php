@@ -17,7 +17,7 @@ class ProfileSettingSeeder extends Seeder
         ProfileSetting::truncate();
         ProfileSetting::create([
             "address" => "asdfasdfasdf",
-            "phone_number" => "(021) 731 - 9564",
+            "phone_number" => "628113700387",
             "email" => "contact@candi.id",
             "open_day_range" => "Monday - Friday",
             "open_hour_range" => "10:00 AM - 6:00 PM",

@@ -3,9 +3,11 @@
 namespace App\View\Components;
 
 use Illuminate\View\Component;
+use App\Models\ListingCategory;
 
 class DirectoryCategories extends Component
 {
+    public $categories;
     /**
      * Create a new component instance.
      *
@@ -13,7 +15,7 @@ class DirectoryCategories extends Component
      */
     public function __construct()
     {
-        //
+        $this->categories = ListingCategory::with('image')->orderBy('id', 'desc')->get();
     }
 
     /**
