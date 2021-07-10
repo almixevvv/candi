@@ -24,5 +24,4 @@
 </div>
 
 <script src="/js/editor/front.js"></script>
-@include('components.front.pagefooter')
 @endsection
