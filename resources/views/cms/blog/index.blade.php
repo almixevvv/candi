@@ -3,11 +3,12 @@
 @section('content')
 <!--begin::Content-->
 <div class="content d-flex flex-column flex-column-fluid px-8" id="kt_content">
-    <x-panel :title="$title" createUrl="{{ route('cms.blog.create') }}">
+    <x-panel :title="$title" createUrl="{{ route('cms.blog.create') }}" :filterButton="true" :form="$modalForm">
         <table class="table table-stripped table-bordered detail-table">
             <thead>
                 <th>ID</th>
                 <th>Title</th>
+                <th>Category</th>
                 <th>Image</th>
                 <th>Action</th>
             </thead>
@@ -18,6 +19,7 @@
                             <a href="{{ route('cms.blog.show', $blog) }}">{{ $blog->id }}</a>
                         </td>
                         <td>{{ $blog->title }}</td>
+                        <td>{{ $blog->category->name }}</td>
                         <td>
                             <img src="{{ $blog->image->image_thumbnail }}" width="25%" />
                         </td>

@@ -8,7 +8,7 @@ use App\Models\ListingTag;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Form\Listing\ListingCreateForm;
-use App\Form\Listing\ListingSearchForm;
+use App\Form\Listing\ListingFilterForm;
 
 class ListingController extends Controller
 {
@@ -27,7 +27,7 @@ class ListingController extends Controller
      */
     public function index(Request $request)
     {
-        $form = new ListingSearchForm([
+        $form = new ListingFilterForm([
             "method" => "GET",
             "action" => $this->index
         ]);

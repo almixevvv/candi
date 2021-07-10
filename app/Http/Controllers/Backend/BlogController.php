@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Models\Blog;
 use Illuminate\Http\Request;
 use App\Form\Blog\BlogCreateForm;
+use App\Form\Blog\BlogFilterForm;
 use App\Http\Controllers\Controller;
 
 class BlogController extends Controller
@@ -22,9 +23,15 @@ class BlogController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $this->contextData['blogs'] = Blog::with('image')->orderBy('id', 'desc')->paginate(config('app.pagination_limit'));
+        $form = new BlogFilterForm([
+            "action" => $this->index,
+            "method" => "GET"
+        ]);
+
+        $this->contextData['modalForm'] = $form;
+        $this->contextData['blogs'] = $form->filter($request);
 
         return view('cms.blog.index', $this->contextData);
     }

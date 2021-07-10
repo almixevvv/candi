@@ -7,7 +7,7 @@ use Gustiawan\FormBuilder\Form;
 use App\Models\ListingTagCategory;
 use Illuminate\Pagination\LengthAwarePaginator;
 
-class ListingTagSearchForm extends Form
+class ListingTagFilterForm extends Form
 {
     public function handle() 
     {

@@ -6,6 +6,7 @@ use App\Models\BlogCategory;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Form\BlogCategories\BlogCategoriesCreateForm;
+use App\Form\BlogCategories\BlogCategoriesFilterForm;
 
 class BlogCategoryController extends Controller
 {
@@ -22,9 +23,14 @@ class BlogCategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $this->contextData['blogCategories'] = BlogCategory::orderBy('id', 'desc')->paginate(config('app.pagination_limit'));
+        $form = new BlogCategoriesFilterForm([
+            "action" => $this->index,
+            "method" => "GET"
+        ]);
+        $this->contextData['modalForm'] = $form;
+        $this->contextData['blogCategories'] = $form->filter($request);
 
         return view('cms.blog-categories.index', $this->contextData);
     }
