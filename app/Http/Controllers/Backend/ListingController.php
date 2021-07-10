@@ -90,7 +90,9 @@ class ListingController extends Controller
         $listing->tags()->attach($tags);
 
         $listing->addImage($request->file('image'));
-        $listing->uploadImage360($request->file('image_360'));
+        if ($request->file('image_360')) {
+            $listing->uploadImage360($request->file('image_360'));
+        }
 
         $listing->createOrUpdateMetadata([
             "title" => $request->title,

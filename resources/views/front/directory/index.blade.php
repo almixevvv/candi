@@ -425,7 +425,9 @@
                                 <div class="card card-content">
                                     <div class="card-image-container">
                                         <div class="image-holder">
-                                            <img src="{{ $listing->image->image_thumbnail }}" class="card-img-top" alt="{{ $listing->title }}">
+                                            @if ($listing->image)
+                                                <img src="{{ $listing->image->image_thumbnail }}" class="card-img-top" alt="{{ $listing->title }}">
+                                            @endif
                                         </div>
                                     </div>
                                     <div class="card-body position-relative">
