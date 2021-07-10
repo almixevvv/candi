@@ -60,6 +60,8 @@ class RoleController extends Controller
             "name" => $request->name,
         ]);
 
+        $this->message("success", "Create success.");
+
         return redirect($this->index);
     }
 
@@ -106,6 +108,8 @@ class RoleController extends Controller
     public function destroy(Role $role)
     {
         $role->delete();
+
+        $this->message("success", "Delete success.");
         return redirect($this->index);
     }
 }

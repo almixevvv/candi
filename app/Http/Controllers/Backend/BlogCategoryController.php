@@ -64,6 +64,7 @@ class BlogCategoryController extends Controller
 
         BlogCategory::create($request->only('name'));
 
+        $this->message("success", "Create success.");
         return redirect($this->index);
     }
 
@@ -113,6 +114,8 @@ class BlogCategoryController extends Controller
         $blogCategory->name = $request->name;
         $blogCategory->save();
 
+        $this->message("success", "Update success.");
+
         return redirect($this->index);
     }
 
@@ -125,6 +128,7 @@ class BlogCategoryController extends Controller
     public function destroy(BlogCategory $blogCategory)
     {
         $blogCategory->delete();
+        $this->message("success", "Delete success.");
         return redirect($this->index);
     }
 }

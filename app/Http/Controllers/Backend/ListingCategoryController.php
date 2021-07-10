@@ -69,6 +69,8 @@ class ListingCategoryController extends Controller
         ]);
 
         $listingCategory->addImage($request->file('image'));
+
+        $this->message("success", "Create success.");
         return redirect($this->index);
     }
 
@@ -129,6 +131,8 @@ class ListingCategoryController extends Controller
             $listingCategory->addImage($request->file('image'));
         }
 
+        $this->message("success", "Update success.");
+
         return redirect($this->index);
     }
 
@@ -141,6 +145,8 @@ class ListingCategoryController extends Controller
     public function destroy(ListingCategory $listingCategory)
     {
         $listingCategory->delete();
+
+        $this->message("success", "Delete success.");
         return redirect($this->index);
     }
 }

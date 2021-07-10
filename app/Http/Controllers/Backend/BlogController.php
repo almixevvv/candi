@@ -81,6 +81,8 @@ class BlogController extends Controller
             "canonical" => $request->canonical,
         ]);
 
+        $this->message("success", "Create success.");
+
         return redirect($this->index);
     }
 
@@ -162,6 +164,8 @@ class BlogController extends Controller
             "canonical" => $request->canonical,
         ]);
 
+        $this->message("success", "Update success.");
+
         return redirect($this->index);
     }
 
@@ -175,6 +179,8 @@ class BlogController extends Controller
     {
         $blog->removeAllImage();
         $blog->delete();
+
+        $this->message("success", "Delete success.");
 
         return redirect($this->index);
     }

@@ -100,6 +100,8 @@ class ListingController extends Controller
             "canonical" => $request->canonical,
         ]);
 
+        $this->message("success", "Create success.");
+
         return redirect($this->index);
     }
 
@@ -204,6 +206,8 @@ class ListingController extends Controller
             "canonical" => $request->canonical,
         ]);
 
+        $this->message("success", "Update success.");
+
         return redirect($this->index);
     }
 
@@ -221,6 +225,8 @@ class ListingController extends Controller
         }
 
         $listing->delete();
+
+        $this->message("success", "Delete success.");
         return redirect($this->index);
     }
 }

@@ -52,7 +52,9 @@ class SettingController extends Controller
             "twitter" => "present",
         ]);
 
-        $profileSetting = ProfileSetting::first()->update($request->except('_token'));
+        ProfileSetting::first()->update($request->except('_token'));
+
+        $this->message("success", "Update success.");
 
         return redirect(route('cms.profile.index'));
     }
