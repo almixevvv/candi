@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
-// use App\Models\BlogCategory;
 use App\Models\Contact;
 
-use Session;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class ContactController extends Controller
 {
@@ -27,11 +25,11 @@ class ContactController extends Controller
         $this->validate($request, [
             "name" => "required",
             "email" => "required|email",
-            "purpose" => "required",
+            "purpose_id" => "required",
             "message" => "required"
         ]);
 
-        Contact::create($request->all());
+        Contact::create($request->except('_token'));
         Session::flash('message', 'Your message has been sent.');
 
         return redirect()->route('contact');
