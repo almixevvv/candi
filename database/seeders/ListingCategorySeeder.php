@@ -30,32 +30,32 @@ class ListingCategorySeeder extends Seeder
         $categories = [
             [
                 "name" => "Bar",
-                "files" => [public_path("/images/icon-bar.svg"), storage_path('/app/public/ListingCategory/2021/6/28/icon-bar.svg')],
+                "files" => [public_path("images/icon-bar.svg"), storage_path('app/public/ListingCategory/2021/6/28/icon-bar.svg')],
                 "filename" => "icon-bar.svg",
             ],
             [
                 "name" => "Cafe",
-                "files" => [public_path("/images/icon-cafe.svg"), storage_path('/app/public/ListingCategory/2021/6/28/icon-cafe.svg')],
+                "files" => [public_path("images/icon-cafe.svg"), storage_path('app/public/ListingCategory/2021/6/28/icon-cafe.svg')],
                 "filename" => "icon-cafe.svg",
             ],
             [
                 "name" => "Hotel",
-                "files" => [public_path("/images/icon-hotel.svg"), storage_path('/app/public/ListingCategory/2021/6/28/icon-hotel.svg')],
+                "files" => [public_path("images/icon-hotel.svg"), storage_path('app/public/ListingCategory/2021/6/28/icon-hotel.svg')],
                 "filename" => "icon-hotel.svg",
             ],
             [
                 "name" => "Restaurant",
-                "files" => [public_path("/images/icon-restaurant.svg"), storage_path('/app/public/ListingCategory/2021/6/28/icon-restaurant.svg')],
+                "files" => [public_path("images/icon-restaurant.svg"), storage_path('app/public/ListingCategory/2021/6/28/icon-restaurant.svg')],
                 "filename" => "icon-restaurant.svg",
             ],
             [
                 "name" => "Shopping",
-                "files" => [public_path("/images/icon-shopping.svg"), storage_path('/app/public/ListingCategory/2021/6/28/icon-shopping.svg')],
+                "files" => [public_path("images/icon-shopping.svg"), storage_path('app/public/ListingCategory/2021/6/28/icon-shopping.svg')],
                 "filename" => "icon-shopping.svg",
             ],
             [
                 "name" => "Tour",
-                "files" => [public_path("/images/icon-tour.svg"), storage_path('/app/public/ListingCategory/2021/6/28/icon-tour.svg')],
+                "files" => [public_path("images/icon-tour.svg"), storage_path('app/public/ListingCategory/2021/6/28/icon-tour.svg')],
                 "filename" => "icon-tour.svg",
             ],
         ];
