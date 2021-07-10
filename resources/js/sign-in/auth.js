@@ -35,7 +35,7 @@ $formElement.submit(function(e) {
 					if (t.isConfirmed) {
 						$('input[name="username"').val('');
 						$('input[name="password"').val('');
-						window.location.replace(baseUrl + 'dashboard');
+						window.location.replace(baseUrl + '');
 					}
 				});
 			} else {
