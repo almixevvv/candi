@@ -10,7 +10,7 @@
                         <div class="title_wrap" style="margin-top: -25em;">
                             <p class="slide_title" style="font-size:36pt; text-align:center;">Time to start a journey</p>
                             <div id="rcorners1" class="searching-menu">
-                                <img src="/images/search-hover.svg" style="float:left;width:7%;"></img>
+                                <img src="/images/search-hover.svg" style="float:left;width:1.25em;"></img>
                                 <label style="float:left;">&nbsp; What are you looking for?</label>
                             </div>
                         </div>
