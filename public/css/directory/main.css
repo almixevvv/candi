@@ -70,12 +70,13 @@ a {
 }
 
 .card-content {
-	max-width: 24%;
+	max-width: 60%;
 }
 
 @media (min-width: 1024px) {
 	.card-content {
 		flex-basis: 24%;
+        max-width: 24%;
 	}
 
 	.card-content-2 {

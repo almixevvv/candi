@@ -7,18 +7,6 @@
 <script src="/js/scripts.js"></script>
 <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 <script>
-    //Directory Filter
-    $('#openFilter').click(function() {
-        // $('.filter-page').addClass('filter-page-active');
-        $('.filter-page').css('top', '0');
-        $('.filter-button').css('bottom', '0');
-    }); 
-
-    $('#closeFilter').click(function() {
-        $('.filter-page').css('top', '-50em');
-        $('.filter-button').css('bottom', '-50em');
-    });
-
     //Blog Slider
   var slider = document.getElementById('slider'),
       sliderTrigger = document.querySelector('.section-scrollable .section-featured');

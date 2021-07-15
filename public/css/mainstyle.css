@@ -553,7 +553,7 @@ body.os-windows .popup::-webkit-scrollbar-thumb {
 	color: rgba(74, 74, 74, 0.58);
 }
 .section_content {
-	margin-top: 36px;
+	/* margin-top: 36px; */
 }
 .container {
 	overflow: hidden;
