@@ -28,6 +28,7 @@
     <link rel="stylesheet" href="{{ asset('css/mainTheme.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/app.css') }}" />
 
+    @livewireStyles
     @stack('extra-css')
 </head>
 
@@ -36,7 +37,7 @@
     @yield('content')
     @include('components.front.pagefooter')
     @include('components.front.footer')
-
+    @livewireScripts
     @stack('extra-js')
 </body>
 

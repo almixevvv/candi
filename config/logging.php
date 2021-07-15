@@ -37,6 +37,12 @@ return [
     'channels' => [
         'stack' => [
             'driver' => 'stack',
+            'channels' => ['single'],
+            'ignore_exceptions' => false,
+        ],
+
+        'server' => [
+            'driver' => 'stack',
             'channels' => ['single', 'discord'],
             'ignore_exceptions' => false,
         ],
