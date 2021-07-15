@@ -22,5 +22,17 @@
         align-items: center;
         justify-content: center;
         padding: 0 10%;
+        
+        .box-image {
+            max-width: 33%;
+        }
+    }
+
+    @media (min-width: 1024) {
+        .section_content {
+            .box-image {
+                max-width: 16%;
+            }
+        }
     }
 }

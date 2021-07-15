@@ -7,7 +7,7 @@
             <div class="row mx-0 g-0">
                 <div class="col-12">
                     <div class="border-top border-bottom">
-                        <div class="d-flex justify-content-center py-2" id="openFilter">
+                        <div class="d-flex justify-content-center py-2" wire:click="openFilter()" id="openFilter">
                             <h5 class="text-center font-weight-bold">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
@@ -109,18 +109,18 @@
         </div>
     </div>
 
-    <div class="container-fluid filter-page px-0" id="filterPage">
+    <div class="container-fluid filter-page px-0 {{ $filterIsOpen ? "open" : "" }}" id="filterPage">
         <div class="container-fluid px-0">
             <div class="d-flex justify-content-between pt-3 border-bottom px-3 pb-2">
                 <div class="text-start">
-                    <span>Reset</span>
+                    <span>&nbsp;</span>
                 </div>
                 <div class="text-center">
                     <span>Filter</span>
                 </div>
                 <div class="text-end">
                     <span>
-                        <i class="fas fa-times" id="closeFilter"></i>
+                        <i class="fas fa-times" id="closeFilter" wire:click="closeFilter()"></i>
                     </span>
                 </div>
             </div>
@@ -141,7 +141,14 @@
                         @foreach($tagCategory->tags as $tag)
                             <div class="regular-grid filter-holder">
                                 <span>
-                                    <button>
+                                    <button
+                                        @if(in_array($tag->id, $checkedTag))
+                                            wire:click="removeCheckedTag({{ $tag->id }})"
+                                            style="border: 1px solid blue"
+                                        @else
+                                            wire:click="addCheckedTag({{ $tag->id }})"
+                                        @endif
+                                    >
                                         <span>{{ $tag->name }}</span>
                                     </button>
                                 </span>
@@ -149,270 +156,11 @@
                         @endforeach
                     </div>
                 @endforeach
-
-                <div class="pb-2">
-                    <div class="d-flex justify-content-between">
-                        <div>
-                            <span>Restaurant Features</span>
-                        </div>
-                        <div class="text-end">
-                            <span>See All</span>
-                        </div>
-                    </div>
-                    <div class="regular-grid filter-holder">
-                        <span>
-                            <button>
-                                <span>Delivery</span>
-                            </button>
-                        </span>
-                        <span>
-                            <button>
-                                <span>Takeout</span>
-                            </button>
-                        </span>
-                        <span>
-                            <button>
-                                <span>Table Service</span>
-                            </button>
-                        </span>
-                        <span>
-                            <button>
-                                <span>Reservation</span>
-                            </button>
-                        </span>
-                    </div>
-                </div>
-
-                <div class="pb-2">
-                    <div class="d-flex justify-content-between">
-                        <div>
-                            <span>Meals</span>
-                        </div>
-                        <div class="text-end">
-                            <span>See All</span>
-                        </div>
-                    </div>
-                    <div class="regular-grid filter-holder">
-                        <span>
-                            <button>
-                                <span>Breakfast</span>
-                            </button>
-                        </span>
-                        <span>
-                            <button>
-                                <span>Brunch</span>
-                            </button>
-                        </span>
-                        <span>
-                            <button>
-                                <span>Lunch</span>
-                            </button>
-                        </span>
-                        <span>
-                            <button>
-                                <span>Dinner</span>
-                            </button>
-                        </span>
-                    </div>
-                </div>
-
-                <div class="pb-2">
-                    <div class="d-flex justify-content-between">
-                        <div>
-                            <span>Reservation</span>
-                        </div>
-                        <div class="text-end">
-                            <span>See All</span>
-                        </div>
-                    </div>
-                    <div class="full-grid filter-holder">
-                        <span>
-                            <button>
-                                <span>Online Reservations</span>
-                            </button>
-                        </span>
-                    </div>
-                </div>
-
-                <div class="pb-2">
-                    <div class="d-flex justify-content-between">
-                        <div class="text-start">
-                            <span>Price</span>
-                        </div>
-                    </div>
-                    <div class="price-grid filter-holder">
-                        <span>
-                            <button class="px-1">
-                                <div>
-                                    <span>$</span>
-                                </div>
-                                <div>
-                                    <span>Cheap Eats</span>
-                                </div>
-                            </button>
-                        </span>
-                        <span>
-                            <button>
-                                <div>
-                                    <span>$$ - $$$</span>
-                                </div>
-                                <div>
-                                    <span>Mid Range</span>
-                                </div>
-                            </button>
-                        </span>
-                        <span>
-                            <button>
-                                <div>
-                                    <span>$$$$</span>
-                                </div>
-                                <div>
-                                    <span>Fine Dining</span>
-                                </div>
-                            </button>
-                        </span>
-                    </div>
-                </div>
-
-                <div class="pb-2">
-                    <div class="d-flex justify-content-between">
-                        <div>
-                            <span>Cuisine</span>
-                        </div>
-                        <div class="text-end">
-                            <span>See All</span>
-                        </div>
-                    </div>
-                    <div class="regular-grid filter-holder">
-                        <span>
-                            <button>
-                                <span>Asian</span>
-                            </button>
-                        </span>
-                        <span>
-                            <button>
-                                <span>Indonesian</span>
-                            </button>
-                        </span>
-                        <span>
-                            <button>
-                                <span>Internasional</span>
-                            </button>
-                        </span>
-                        <span>
-                            <button>
-                                <span>Seafood</span>
-                            </button>
-                        </span>
-                    </div>
-                </div>
-
-                <div class="pb-2">
-                    <div class="d-flex justify-content-between">
-                        <div>
-                            <span>Dishes</span>
-                        </div>
-                        <div class="text-end">
-                            <span>See All</span>
-                        </div>
-                    </div>
-                    <div class="regular-grid filter-holder">
-                        <span>
-                            <button>
-                                <span>Salad</span>
-                            </button>
-                        </span>
-                        <span>
-                            <button>
-                                <span>Fish</span>
-                            </button>
-                        </span>
-                        <span>
-                            <button>
-                                <span>Burger</span>
-                            </button>
-                        </span>
-                        <span>
-                            <button>
-                                <span>Beef</span>
-                            </button>
-                        </span>
-                    </div>
-                </div>
-
-                <div class="pb-2">
-                    <div class="d-flex justify-content-between">
-                        <div>
-                            <span>Dietary Restriction</span>
-                        </div>
-                        <div class="text-end">
-                            <span>See All</span>
-                        </div>
-                    </div>
-                    <div class="regular-grid filter-holder">
-                        <span>
-                            <button>
-                                <span>Vegetarian Friendly</span>
-                            </button>
-                        </span>
-                        <span>
-                            <button>
-                                <span>Vegan Options</span>
-                            </button>
-                        </span>
-                        <span>
-                            <button>
-                                <span>Halal</span>
-                            </button>
-                        </span>
-                        <span>
-                            <button>
-                                <span>Kosher</span>
-                            </button>
-                        </span>
-                    </div>
-                </div>
-
-                <div class="pb-2">
-                    <div class="d-flex justify-content-between">
-                        <div>
-                            <span>Good For</span>
-                        </div>
-                        <div class="text-end">
-                            <span>See All</span>
-                        </div>
-                    </div>
-                    <div class="regular-grid filter-holder">
-                        <span>
-                            <button>
-                                <span>Families with Children</span>
-                            </button>
-                        </span>
-                        <span>
-                            <button>
-                                <span>Kids</span>
-                            </button>
-                        </span>
-                        <span>
-                            <button>
-                                <span>Large Groups</span>
-                            </button>
-                        </span>
-                        <span>
-                            <button>
-                                <span>Local Cuisines</span>
-                            </button>
-                        </span>
-                    </div>
-                </div>
-
-
-
             </div>
 
-            <div class="filter-button">
+            <div class="filter-button {{ $filterIsOpen ? "open" : "" }}" id="filterButton">
                 <div class="d-flex justify-content-center">
-                    <button class="w-100 py-1 rounded">
+                    <button class="w-100 py-1 rounded" id="apply" wire:click="applyCheckedTag()">
                         <span>Apply</span>
                     </button>
                 </div>

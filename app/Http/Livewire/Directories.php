@@ -15,6 +15,10 @@ class Directories extends Component
     public $choosenTag = [];
     public $categoryID = null;
 
+    // mobile
+    public $checkedTag = [];
+    public $filterIsOpen = false;
+
     public function mount($categoryID = null, $tag = null)
     {
         $this->categoryID = $categoryID;
@@ -41,6 +45,41 @@ class Directories extends Component
         }
         unset($this->choosenTag[$remove]);
         $this->setupUI();
+    }
+
+    public function addCheckedTag($tag_id) 
+    {
+        $this->checkedTag[] = $tag_id;
+        $this->setupUI();
+    }
+
+    public function removeCheckedTag($tag_id) 
+    {
+        $remove = null;
+        foreach($this->choosenTag as $index => $tag) {
+            if ($tag == $tag_id) {
+                $remove = $index;
+            }
+        }
+        unset($this->checkedTag[$remove]);
+        $this->setupUI();
+    }
+
+    public function applyCheckedTag() 
+    {
+        $this->choosenTag = $this->checkedTag;
+        $this->filterIsOpen = false;
+        $this->setupUI();
+    }
+
+    public function openFilter() 
+    {
+        $this->filterIsOpen = true;
+    }
+
+    public function closeFilter() 
+    {
+        $this->filterIsOpen = false;
     }
 
     public function setupUI() 

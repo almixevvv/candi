@@ -21,3 +21,37 @@
     />
 </div>
 @endsection
+
+@push('extra-css')
+<style>
+    .filter-page.open {
+        top: 0;
+    }
+    .filter-page {
+        top: -50em;
+    }
+
+    .filter-button.open {
+        bottom: 0;
+    }
+
+    .filter-button {
+        bottom: -50em;
+    }
+</style>
+@endpush
+
+
+@push('extra-js')
+<script>
+    function openFilter() {
+        $('#filterPage').addClass('open');
+        $('#filterButton').addClass('open');
+    }
+
+    function closeFilter() {
+        $('#filterPage').removeClass('open');
+        $('#filterButton').removeClass('open');
+    }
+</script>
+@endpush

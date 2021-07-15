@@ -182,9 +182,9 @@ body {
     .destinations .wrap .wrap_float .section_content .box_image{
         width:15%; 
         float:left;
-        padding:2%;
-        text-align:center;
-        margin:0px auto;
+        padding: 2%;
+        text-align: center;
+        margin-left: 1em;
         
     }
     .destinations .wrap .wrap_float .section_content .box_image2{
