@@ -53,7 +53,6 @@
                     <div class="contact-detail">
                         <span>
                             <a href="{{ $_profile->gmaps }}">{{ $_profile->address }}</a>
-                            {{-- {{ $_profile->address }} --}}
                         </span>
                     </div>
                 </div>
@@ -72,7 +71,6 @@
                             <a href="https://api.whatsapp.com/send?phone={{ $_profile->phone_number }}" target="_blank">
                                 {{ Str::phoneFormat($_profile->phone_number) }}
                             </a>
-                            {{-- {{ $_profile->phone_number }} --}}
                         </span>
                     </div>
                 </div>
@@ -89,7 +87,6 @@
                     <div class="contact-detail">
                         <span>
                             <a href="mailto:{{ $_profile->email }}?">{{ $_profile->email }}</a>
-                            {{-- {{ $_profile->email }} --}}
                         </span>
                     </div>
                 </div>
@@ -129,96 +126,71 @@
                 </div>
             @endif
             <form action="{{ route('contact.store') }}" method="POST">
-            @csrf
-            <div class="form-container">
-                <div class="row">
-                     <div class="col-12">
-                        <div class="contact-input">
-                            <div class="user-box">
-                                 <select name="purpose_id" id="cars" class="">
-                                    <option value="" selected="">Select Purpose</option>
-                                    @foreach($purposes as $purpose)
-                                        <option value="{{ $purpose->id }}">{{ $purpose->name }}</option>
-                                    @endforeach
-                                  </select>
+                @csrf
+                <div class="form-container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="contact-input">
+                                <div class="user-box">
+                                    <select name="purpose_id" id="cars" class="">
+                                        <option value="" selected="">Select Purpose</option>
+                                        @foreach($purposes as $purpose)
+                                            <option value="{{ $purpose->id }}">{{ $purpose->name }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-12 col-md-6">
-                        <div class="contact-input">
-                            <div class="user-box">
-                                <textarea name="name" id="contactName" required></textarea>
-                                <label>Your Name</label>
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+                            <div class="contact-input">
+                                <div class="user-box">
+                                    <textarea name="name" id="contactName" required></textarea>
+                                    <label>Your Name</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-md-6">
+                            <div class="contact-input">
+                                <div class="user-box">
+                                    <textarea name="email" id="contactEmail" ></textarea>
+                                    <label>Your Email</label>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-12 col-md-6">
-                        <div class="contact-input">
-                            <div class="user-box">
-                                <textarea name="email" id="contactEmail" ></textarea>
-                                <label>Your Email</label>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="contact-input">
+                                <div class="user-box">
+                                    <textarea name="message" id="contactMessage" ></textarea>
+                                    <label>Your Messages</label>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="row">
-                    <div class="col-12">
-                        <div class="contact-input">
+                    <div class="row">
+                        <div class="col-12">
                             <div class="user-box">
-                                <textarea name="message" id="contactMessage" ></textarea>
-                                <label>Your Messages</label>
+                                <input class="w-auto" type="checkbox" name="checkbox" id="contactCheck"> 
+                                <label class="checkbox-label position-relative" for="contactCheck">I agree that my submitted data is being collected and stored.</label>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="row">
-                    <div class="col-12">
-                        <div class="user-box">
-                            <input class="w-auto" type="checkbox" name="checkbox" id="contactCheck"> 
-                            <label class="checkbox-label position-relative" for="contactCheck">I agree that my submitted data is being collected and stored.</label>
-                          </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-secondary mt-5">Send Message</button>
+                        </div>
                     </div>
-                </div>
 
-                <div class="row">
-                    <div class="col-12">
-                        <button type="submit" class="btn btn-secondary mt-5">Send Message</button>
-                        {{-- <a href="{{ url('/contacts') }}" type="button" class="btn btn-secondary mt-5">Send Message</a> --}}
-                    </div>
                 </div>
-
-            </div>
-        </form>
+            </form>
         </div>
-
-        {{-- <div class="wrap">
-            <div class="wrap_float">
-                <div class="page_head">
-                   <div class="gridywrap ">
-                        <div class="gridy-3 " style="text-align:center;padding:5%">
-                            <label for="" style="font-weight:bold; font-size:3em;">CONTACT US</label><br>
-                            <select name="" id="" class="select_option" style="width:40%;float:left;">
-                                <option value="">Cooperation</option>
-                                <option value="">Complaint</option>
-                                <option value="">Proposition</option>
-                            </select>
-                            <br>
-                            <input type="text" class="input_bottom" style="clear:both;width:40%;float:left;" placeholder="Name">
-                            <input type="email" class="input_bottom" style="width:40%;float:right;" placeholder="Email">
-                            <textarea name="" id="" cols="30" rows="10" class="input_bottom" placeholder="Message"></textarea><br>
-                            <input type="checkbox" style="clear:both;float:left;"> <label for="" style="float:left;">I agree that my submitted data is being collected and stored.</label>
-                            <br><br>
-                            <button class="button_contact">Send Message</button>
-                        </div>
-                   </div>
-                </div>
-            </div>
-        </div> --}}
     </div>
 </div>
 @endsection
