@@ -14,6 +14,7 @@
                 <th>ID</th>
                 <th>Email</th>
                 <th>Status</th>
+                <th>Unsubscribe Url</th>
                 <th>Action</th>
             </thead>
             <tbody>
@@ -24,6 +25,11 @@
                     </td>
                     <td>{{ $subscription->email }}</td>
                     <td>{{ $subscription->status->description }}</td>
+                    <td>
+                        <a href="{{ $subscription->unsubscribe_url }}">
+                            {{ Str::limit($subscription->unsubscribe_url, 50) }}
+                        </a>
+                    </td>
                     <td>
                         <a href="{{ route('cms.subscriptions.destroy', ["id" => $subscription->id]) }}" class="btn btn-danger">Delete</a>
                     </td>

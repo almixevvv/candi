@@ -16,7 +16,7 @@ class SubscriptionExport implements FromArray
         $subscriptions = Subscription::where('status', SubscriptionStatus::Subscribed)->get();
         $subscriptions = $subscriptions->map(fn($value) => [
             $value->email,
-            config('app.url') . "/unsubscribe?email={$value->email}"
+            $value->unsubscribe_url
         ]);
 
         $data = [["Email", "UnSubscribe Url"]];

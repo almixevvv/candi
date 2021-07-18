@@ -2,9 +2,10 @@
 
 namespace App\Models;
 
+use Illuminate\Support\Facades\Crypt;
+use Illuminate\Database\Eloquent\Model;
 use App\Enums\Subscription\SubscriptionStatus;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 
 class Subscription extends Model
 {
@@ -15,4 +16,10 @@ class Subscription extends Model
     public $casts = [
         "status" => SubscriptionStatus::class
     ];
+
+    public function getUnSubscribeUrlAttribute() 
+    {
+        $unsubscribe_code = Crypt::encryptString($this->email);
+        return route('subscriptions.unsubscribe')."?code={$unsubscribe_code}";
+    }
 }

@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use Exception;
 use App\Models\Subscription;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Crypt;
 use App\Enums\Subscription\SubscriptionStatus;
+use Illuminate\Contracts\Encryption\DecryptException;
 
 class SubscriptionController extends Controller
 {
@@ -28,19 +31,24 @@ class SubscriptionController extends Controller
 
     public function unsubscribe(Request $request) 
     {
-        if (! $request->email) {
-            return "No Email Found.";
+        if (! $request->code) {
+            return response("Email not found.", 404);
+        }
+        try {
+            $email = Crypt::decryptString($request->code);
+    
+            $subscription = Subscription::where('email', $email)->first();
+    
+            if (!$subscription) {
+                return response("Email not found.", 404);
+            }
+            $subscription->status = SubscriptionStatus::NotSubscribed;
+            $subscription->save();
+
+        } catch (Exception $e) {
+            return response("Email not found.", 404);
         }
 
-        $subscription = Subscription::where('email', $request->email)->first();
-
-        if (!$subscription) {
-            return "No Email Found.";
-        }
-
-        $subscription->status = SubscriptionStatus::NotSubscribed;
-        $subscription->save();
-
-        return "You've been unsubscribed to newsletter.";
+        return response("You've been unsubscribed to newsletter.");
     }
 }
