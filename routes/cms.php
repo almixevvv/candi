@@ -66,6 +66,7 @@ Route::group(["middleware" => "auth"], function() {
     Route::get('/contacts', [ContactController::class, 'index'])->name('contacts.index');
     Route::get('/subscriptions', [SubscriptionController::class, 'index'])->name('subscriptions.index');
     Route::get('/destroy/{id}', [SubscriptionController::class, 'destroy'])->name('subscriptions.destroy');
+    Route::get('/subscriptions/export', [SubscriptionController::class, 'export'])->name('subscriptions.export');
 
     // Settings
     Route::get('profile-setting', [SettingController::class, "profile"])->name('profile.index');

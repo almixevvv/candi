@@ -1,5 +1,5 @@
 <div>
-    <button type="button" class="btn btn-primary" onclick="showModal('modalFilter')">
+    <button type="button" class="btn btn-primary" style="float:right" onclick="showModal('modalFilter')">
         <i class="fas fa-search"></i> Filter
     </button>
     <div class="modal fade" id="modalFilter" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdrop" aria-hidden="true">
