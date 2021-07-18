@@ -37,6 +37,7 @@ class MenuSeeder extends Seeder
         $this->addMenu(70, "Contact", 'employee', 'contact', ['position' => 7]);
         $this->addMenu(71, "Purpose", "employee", "-", ["route" => 'cms.purposes.index', "child_of" => 70, "position" => 1]);
         $this->addMenu(72, "Contact", "employee", "-", ["route" => 'cms.contacts.index', "child_of" => 70, "position" => 2]);
+        $this->addMenu(73, "Subscription", "employee", "-", ["route" => 'cms.subscriptions.index', "child_of" => 70, "position" => 3]);
 
         $this->addMenu(80, "Settings", "superuser", "settings", ["position" => 8]);
         $this->addMenu(81, "Profile", "superuser", "-", ["route" => 'cms.profile.index', "child_of" => 80, "position" => 1]);

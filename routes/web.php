@@ -4,13 +4,14 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
-use App\Http\Controllers\ContactController;
-
 use App\Http\Controllers\HomeController;
+
 use Illuminate\Support\Facades\Response;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ListingController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\WhoareweController;
-use App\Http\Controllers\ListingController;
+use App\Http\Controllers\SubscriptionController;
 use CKSource\CKFinderBridge\Controller\CKFinderController;
 use Illuminate\Contracts\Filesystem\FileNotFoundException;
 
@@ -62,17 +63,13 @@ Route::get('/advertise', function (Request $request) {
 Route::get('/directory', [ListingController::class, 'index'])->name('directory');
 Route::get('/directory/{directory}', [ListingController::class, 'detail'])->name('directory.detail');
 
-// function (Request $request) {
-//     return view('front.directory.index', ['request' => $request]);
-// })->name('directory');
-
-// Route::get('/detail_directory', function (Request $request) {
-//     return view('front.directory.detail', ['request' => $request]);
-// })->name('detail_directory');
-
 Route::get('/whoweare', [WhoareweController::class, 'index'])->name('whoweare');
 
-//CMS Routes
+// Subscription
+Route::post('subscribe/', [SubscriptionController::class, 'subscribe'])->name('subscriptions.subscribe');
+Route::get('unsubscribe/', [SubscriptionController::class, 'unsubscribe'])->name('subscriptions.unsubscribe');
+
+// CMS Routes
 Route::prefix('cms')->name('cms.')->group(base_path('routes/cms.php'));
 
 

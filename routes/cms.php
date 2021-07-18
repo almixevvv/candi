@@ -12,9 +12,10 @@ use App\Http\Controllers\Backend\ListingController;
 use App\Http\Controllers\Backend\PurposeController;
 use App\Http\Controllers\Backend\SettingController;
 use App\Http\Controllers\Backend\WhoWeAreController;
+use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\ListingTagController;
 use App\Http\Controllers\Backend\BlogCategoryController;
-use App\Http\Controllers\Backend\DashboardController;
+use App\Http\Controllers\Backend\SubscriptionController;
 use App\Http\Controllers\Backend\ListingCategoryController;
 
 //Login Process
@@ -63,6 +64,8 @@ Route::group(["middleware" => "auth"], function() {
 
     // Contact
     Route::get('/contacts', [ContactController::class, 'index'])->name('contacts.index');
+    Route::get('/subscriptions', [SubscriptionController::class, 'index'])->name('subscriptions.index');
+    Route::get('/destroy/{id}', [SubscriptionController::class, 'destroy'])->name('subscriptions.destroy');
 
     // Settings
     Route::get('profile-setting', [SettingController::class, "profile"])->name('profile.index');
