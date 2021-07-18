@@ -189,11 +189,9 @@
 
             </div>
         </div>
-        @if (count($blogCategories) > 4)
-            <div style="text-align: center; margin-top: 10px;">
-                <a href="{{ route('blog') }}" class="link"><label>Load More</label></a>
-            </div>
-        @endif
+        <div style="text-align: center; margin-top: 10px;">
+            <a href="{{ route('blog') }}" class="link"><label>Load More</label></a>
+        </div>
     </div>
 </div>
 
