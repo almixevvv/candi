@@ -207,10 +207,16 @@
                     <label for="">Get a variety of information about your favorite places</label>
                     <br> <br>
 
-                    <div class="input_wrap" style="border-radius:40px; text-align:center;">
-                        <input type="email" class="input" placeholder="Put your email here">
-                    </div>
-                    <button class="submit button"><span style="color: black;">Subscribe Now</span></button>
+                    <form method="POST" action="{{ route('subscriptions.subscribe') }}">
+                        @csrf
+                        <div class="input_wrap" style="border-radius:40px; text-align:center;">
+                            <input type="email" name="email" class="input" placeholder="Put your email here">
+                            @if ($errors->has('email'))
+                                <i style="color: red">{{ $errors->first('email') }}</i>
+                            @endif
+                        </div>
+                        <button class="submit button"><span style="color: black;">Subscribe Now</span></button>
+                    </form>
                 </div>
             </div>
         </div>
