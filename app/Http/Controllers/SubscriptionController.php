@@ -11,12 +11,17 @@ class SubscriptionController extends Controller
     public function subscribe(Request $request) 
     {
         $this->validate($request, [
-            "email" => "required|email|unique:subscriptions,email"
-        ], [
-            "unique" => "You already subscribed."
+            "email" => "required|email"
         ]);
 
-        Subscription::create(["email" => $request->email]);
+        $subscription = Subscription::where("email", $request->email)->first();
+
+        if ($subscription) {
+            $subscription->status = SubscriptionStatus::Subscribed;
+            $subscription->save();
+        } else {
+            Subscription::create(["email" => $request->email]);
+        }
 
         return redirect()->route('home');
     }
