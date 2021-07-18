@@ -24,19 +24,21 @@
                         </ul>
                     </div>
                     <div class="col">
-                        <div class="_title m_title">Latest Blog</div>
-                        <ul>
-                            @foreach ($latest_blog as $blog)
-                                <li><a href="{{ route('blog.detail', ['blog' => $blog]) }}">{{$blog->title}}</a></li>
-                            @endforeach
-                        </ul>
+                        @if(count($latest_blog))
+                            <div class="_title m_title">Latest Blog</div>
+                            <ul>
+                                @foreach ($latest_blog as $blog)
+                                    <li><a href="{{ route('blog.detail', ['blog' => $blog]) }}">{{$blog->title}}</a></li>
+                                @endforeach
+                            </ul>
+                        @endif
                     </div>
                 </div>
                 <div class="right">
                     <div class="_title">Contacts</div>
                     <div class="contacts_info">
                         <div class="tel">
-                            <a href="tel:{{ $_profile->phone_number }}">{{ $_profile->phone_number }}</a>
+                            <a href="https://api.whatsapp.com/send?phone={{ $_profile->phone_number }}" target="_blank">{{ Str::phoneFormat($_profile->phone_number) }}</a>
                             <p>Round the clock support</p>
                         </div>
                         <div class="email">
@@ -48,9 +50,15 @@
                         </div>
                     </div>
                     <div class="socials social-links">
-                        <a href="{{ $_profile->facebook }}" class="link facebook"><span></span></a>
-                        <a href="{{ $_profile->instagram }}" class="link instagram"><span></span></a>
-                        <a href="{{ $_profile->twitter }}" class="link twitter"><span></span></a>
+                        @if ($_profile->facebook)
+                            <a href="https://facebook.com/{{ $_profile->facebook }}" class="link facebook" target="_blank"><span></span></a>
+                        @endif
+                        @if ($_profile->instagram)
+                            <a href="https://instagram.com/{{ $_profile->instagram }}" class="link instagram" target="_blank"><span></span></a>
+                        @endif
+                        @if ($_profile->twitter)
+                            <a href="https://twitter.com/{{ $_profile->twitter }}" class="link twitter" target="_blank"><span></span></a>
+                        @endif
                     </div>
                 </div>
             </div>
