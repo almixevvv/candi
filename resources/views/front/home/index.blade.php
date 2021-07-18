@@ -203,7 +203,7 @@
                     <h2 class="_title">Stay in touch</h2>
 
                 </div>
-                <div class="right" style="background-color: #fff;padding-left:2%;padding-right:2%;padding-top:5%;padding-bottom:5%; text-align:center;border-radius:20px;">
+                <div class="right subscription-box">
                     <label for="">Get a variety of information about your favorite places</label>
                     <br> <br>
 
