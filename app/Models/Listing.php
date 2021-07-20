@@ -15,7 +15,7 @@ class Listing extends Model
 {
     use HasFactory, HasImage, HasMetadata;
 
-    public $fillable = ["title", "details", "address", "lat", "long", "low_price", "high_price", 'category_id', 'image_360_url'];
+    public $fillable = ["title", "details", "address", "lat", "long", "low_price", "high_price", 'category_id', 'image_360_url', 'top_destination'];
 
     public $casts = [
         "image_360_url" => ImageCast::class

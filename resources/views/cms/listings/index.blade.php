@@ -11,6 +11,7 @@
                 <th>Title</th>
                 <th>Address</th>
                 <th>Price</th>
+                <th>Top Destination</th>
                 <th>Action</th>
             </thead>
             <tbody>
@@ -27,6 +28,7 @@
                     <td>{{ $listing->title }}</td>
                     <td>{{ $listing->address }}</td>
                     <td>Rp {{ number_format($listing->low_price) }} - Rp {{ number_format($listing->high_price) }}</td>
+                    <td>{{ $listing->top_destination ? "Yes" : "No" }}</td>
                     <td>
                         <x-button-group editUrl="{{ route('cms.listings.edit', $listing) }}" deleteUrl="{{ route('cms.listings.destroy', $listing) }}" />
                     </td>
