@@ -19,6 +19,7 @@ class ListingCreateForm extends Form
         $this->number('long', 'Long');
         $this->number('low_price', 'Low Price');
         $this->number('high_price', 'High Price');
+        $this->radio('top_destination', 'Top Destination', [1 => "Yes", 0 => "No"]);
         $this->radio('category_id', 'Category', Utils::createModelChoices(ListingCategory::all(), "id", "name"));
         $this->text('tags', 'Tags', ["class" => "taglify taglify-tags"]);
         $this->textArea('details', 'Details', ["class" => "wysiwyg"]);

@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
-use App\Models\BlogCategory;
 use App\Models\Blog;
+
+use App\Models\Listing;
+use App\Models\BlogCategory;
+use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
@@ -18,6 +19,8 @@ class HomeController extends Controller
             'blogs.image'
         ])->get();
 
-    	return view('front.home.index', compact('request', 'blogCategories'));
+        $topDestinations = Listing::getTopDestinations();
+
+    	return view('front.home.index', compact('request', 'blogCategories', 'topDestinations'));
     }
 }

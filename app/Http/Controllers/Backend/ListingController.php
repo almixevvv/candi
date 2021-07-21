@@ -6,6 +6,7 @@ use App\Rules\TagRule;
 use App\Models\Listing;
 use App\Models\ListingTag;
 use Illuminate\Http\Request;
+use App\Rules\TopDestinationRule;
 use App\Http\Controllers\Controller;
 use App\Form\Listing\ListingCreateForm;
 use App\Form\Listing\ListingFilterForm;
@@ -74,7 +75,8 @@ class ListingController extends Controller
             "high_price" => "required|numeric|min:1",
             "tags" => ["required", new TagRule],
             "category_id" => "required",
-            "image" => "required|image"
+            "image" => "required|image",
+            "top_destination" => new TopDestinationRule,
         ]);
 
         $listing = Listing::create($request->except('_token', '_method', 'tags'));
@@ -144,6 +146,7 @@ class ListingController extends Controller
                 "category_id" => $listing->category_id,
                 "tags" => $listing->tags->map(fn ($value) => $value->name),
                 "details" => $listing->details,
+                "top_destination" => $listing->top_destination,
 
                 // metadata details
                 "description" => ($listing->metadata) ? $listing->metadata->description : "",
@@ -175,6 +178,7 @@ class ListingController extends Controller
             "high_price" => "required|numeric|min:1",
             "tags" => ["required", new TagRule],
             "category_id" => "required",
+            "top_destination" => new TopDestinationRule($listing),
             "image" => "image"
         ]);
 
