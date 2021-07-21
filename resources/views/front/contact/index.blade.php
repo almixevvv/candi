@@ -1,6 +1,8 @@
 @extends('layouts.front.index')
 
 @push('extra-css')
+<link rel="stylesheet" href="./css/contact/contact.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.css">
 <style>
     select option {
         padding: 2em;
@@ -9,9 +11,6 @@
 @endpush
 
 @section('content')
-
-<link rel="stylesheet" href="./css/contact/contact.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.css">
 
 <style>
     .btn-secondary {
