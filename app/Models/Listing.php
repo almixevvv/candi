@@ -36,6 +36,11 @@ class Listing extends Model
         return $query->with('category', 'tags', 'image')->where('top_destination', true)->get();
     }
 
+    public function ratings() 
+    {
+        return $this->hasMany(ListingRating::class);
+    }
+
     public function uploadImage360(UploadedFile $file) 
     {
         // remove 360 image if exists

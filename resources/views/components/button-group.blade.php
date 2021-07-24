@@ -11,4 +11,5 @@
             </button>
         </form>
     @endif
+    {{ $slot }}
 </div>

@@ -235,4 +235,10 @@ class ListingController extends Controller
         $this->message("success", "Delete success.");
         return redirect($this->index);
     }
+
+    public function addRatings(Listing $listing)
+    {
+        $this->contextData['listing'] = $listing;
+        return view('cms.listings.add_ratings', $this->contextData);
+    }
 }

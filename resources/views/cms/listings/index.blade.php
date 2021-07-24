@@ -12,6 +12,7 @@
                 <th>Address</th>
                 <th>Price</th>
                 <th>Top Destination</th>
+                <th>Ratings</th>
                 <th>Action</th>
             </thead>
             <tbody>
@@ -30,7 +31,14 @@
                     <td>Rp {{ number_format($listing->low_price) }} - Rp {{ number_format($listing->high_price) }}</td>
                     <td>{{ $listing->top_destination ? "Yes" : "No" }}</td>
                     <td>
-                        <x-button-group editUrl="{{ route('cms.listings.edit', $listing) }}" deleteUrl="{{ route('cms.listings.destroy', $listing) }}" />
+                        @foreach ($listing->ratings as $rating)
+                            {{ $rating->category->name }}: {{ $rating->rating }}<br>
+                        @endforeach
+                    </td>
+                    <td>
+                        <x-button-group editUrl="{{ route('cms.listings.edit', $listing) }}" deleteUrl="{{ route('cms.listings.destroy', $listing) }}" >
+                            <a href="{{ route('cms.listings.add_ratings', $listing) }}" class="btn btn-primary">Update Ratings</a>
+                        </x-button-group>
                     </td>
                 </tr>
                 @endforeach
