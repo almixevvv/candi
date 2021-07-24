@@ -17,6 +17,7 @@ use App\Http\Controllers\Backend\ListingTagController;
 use App\Http\Controllers\Backend\BlogCategoryController;
 use App\Http\Controllers\Backend\SubscriptionController;
 use App\Http\Controllers\Backend\ListingCategoryController;
+use App\Http\Controllers\Backend\ListingRatingCategoryController;
 
 //Login Process
 Route::get('/login', [AuthController::class, 'show'])->name('login.index');
@@ -32,9 +33,13 @@ Route::group(["middleware" => "auth"], function() {
     // Route::get('/fetchData', [WhoareweController::class, 'fetch'])->name('waw.fetch');
     Route::post('/whoarewe', [WhoWeAreController::class, 'store'])->name('waw.store');
 
-    //Listing process
+    // Listing process
     Route::resource('listings', ListingController::class);
     Route::resource('listing-categories', ListingCategoryController::class);
+    Route::resource('rating-categories', ListingRatingCategoryController::class, [
+        "names" => "rating_categories"
+    ]);
+    Route::get('listings/{listing}/add-ratings', [ListingController::class, 'addRatings'])->name('listings.add_ratings');
 
     // listing tags
     Route::resource('listing-tags', ListingTagController::class);

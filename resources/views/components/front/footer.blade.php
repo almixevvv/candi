@@ -52,4 +52,35 @@
           };
       }
   }
+  
+  function getId(url) {
+        var regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+        var match = url.match(regExp);
+
+        if (match && match[2].length == 11) {
+            return `https://youtube.com/embed/${match[2]}`;
+        } else {
+            return 'error';
+        }
+    }
+
+    function convertFigureToIframe() {
+        let medias = document.querySelectorAll('figure.media');
+        for (let i = 0 ; i < medias.length; i++) {
+            const url = medias[0].children[0].attributes[0].value
+            let newUrl = getId(url);
+
+            if (newUrl == 'error') {
+                newUrl = medias[0].children[0].attributes[0].value
+            }
+
+            const iFrame = document.createElement('iframe')
+            iFrame.width = "100%"
+            iFrame.height = "600"
+            iFrame.src = newUrl
+
+            medias[i].replaceWith(iFrame)
+        }
+    }
+    convertFigureToIframe()
   </script>

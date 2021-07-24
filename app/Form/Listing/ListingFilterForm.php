@@ -25,7 +25,7 @@ class ListingFilterForm extends Form
 
     public function filter(Request $request): LengthAwarePaginator
     {
-        $listings = Listing::with('image')->orderBy('id', 'desc');
+        $listings = Listing::with('image', 'ratings.category')->orderBy('id', 'desc');
 
         if ($request->title) {
             $listings = Database::whereLike($listings, "title", $request->title, true);

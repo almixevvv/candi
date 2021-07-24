@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Image;
 use App\Models\WhoWeAre;
 use Illuminate\Database\Seeder;
 
@@ -15,6 +16,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         WhoWeAre::truncate(); // should truncate who we are before running
+        Image::truncate();
         WhoWeAre::create([
             "contents" => "empty content"
         ]);
@@ -23,5 +25,6 @@ class DatabaseSeeder extends Seeder
         $this->call(ProfileSettingSeeder::class);
         $this->call(PurposeSeeder::class);
         $this->call(ListingCategorySeeder::class);
+        $this->call(ListingRatingSeeder::class);
     }
 }
