@@ -15,7 +15,11 @@ class Listing extends Model
 {
     use HasFactory, HasImage, HasMetadata;
 
-    public $fillable = ["title", "details", "address", "lat", "long", "low_price", "high_price", 'category_id', 'image_360_url', 'top_destination'];
+    public $fillable = [
+        "title", "details", "address", "lat", "long", "low_price",
+        "high_price", 'category_id', 'image_360_url', 'top_destination',
+        'phone_number', 'website', 'is_active'
+    ];
 
     public $casts = [
         "image_360_url" => ImageCast::class
@@ -33,7 +37,7 @@ class Listing extends Model
 
     public function scopegetTopDestinations($query) 
     {
-        return $query->with('category', 'tags', 'image')->where('top_destination', true)->get();
+        return $query->with('category', 'tags', 'image')->where('is_active', true)->where('top_destination', true)->get();
     }
 
     public function ratings() 

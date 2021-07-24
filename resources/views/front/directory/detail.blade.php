@@ -39,7 +39,7 @@
     </div>
   </div>
   <div class="mt-3">
-    <img class="img-fluid" src="{{ $listingDetail->image->image_url }}" alt="Food Feature Image" style="height: 300px; width: 100%; object-fit: cover;">
+    <img class="img-fluid" src="{{ $listingDetail->image->image_url }}" alt="Food Feature Image" style="max-height: 500px; height: auto; width: 100%; object-fit: cover;">
 </div>
   <div class="page contacts-page full-width">
 
@@ -85,17 +85,27 @@
                 </span>
               </span>
               <span class="border-end me-2 pe-3">
-                <i class="fas fa-phone-alt"></i>
+                Rp.&nbsp;
                 <span>
-                  +62 859-5371-4433
+                    {{ number_format($listingDetail->low_price) }} - {{ number_format($listingDetail->high_price) }}
                 </span>
-              </span>
-              <span>
-                <i class="fas fa-desktop"></i>
+            </span>
+              @if ($listingDetail->phone_number)
+                <span class="border-end me-2 pe-3">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>
+                    {{ $listingDetail->phone_number }}
+                    </span>
+                </span>
+              @endif
+              @if ($listingDetail->website)
                 <span>
-                  Website
+                    <i class="fas fa-desktop"></i>
+                    <span>
+                    <a href="{{ $listingDetail->website }}">{{ $listingDetail->website }}</a>
+                    </span>
                 </span>
-              </span>
+              @endif
             </div>
           </div>
         </div>
@@ -152,33 +162,6 @@
                     </iframe>
                   </span>
                 </div>
-              </div>
-              <div class="px-3 pt-3">
-                <div class="row my-2">
-                  <div class="col-12">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span class="ps-1" style="color: #474747; font-size: 14px; line-height: 18px;">
-                      {{ $listingDetail->address }}
-                    </span>
-                  </div>
-                </div>
-                <div class="row my-2">
-                  <div class="col-12">
-                    <i class="fas fa-desktop"></i>
-                    <span class="ps-1" style="color: #474747; font-size: 14px; line-height: 18px;">
-                      Website
-                    </span>
-                  </div>
-                </div>
-                <div class="row my-2">
-                  <div class="col-12">
-                    <i class="fas fa-phone-alt"></i>
-                    <span class="ps-1" style="color: #474747; font-size: 14px; line-height: 18px;">
-                      Call
-                    </span>
-                  </div>
-                </div>
-
               </div>
             </div>
           </div>

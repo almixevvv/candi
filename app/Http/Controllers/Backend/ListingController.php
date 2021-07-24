@@ -51,7 +51,8 @@ class ListingController extends Controller
             "action" => route('cms.listings.store'),
             "extra" => [
                 "wysiwyg" => true
-            ]
+            ],
+            "data" => ['is_active' => 0]
         ]);
 
         return view('cms.base_form', $this->contextData);
@@ -77,6 +78,9 @@ class ListingController extends Controller
             "category_id" => "required",
             "image" => "required|image",
             "top_destination" => new TopDestinationRule,
+            "phone_number" => "phone:ID",
+            "website" => "url",
+            "is_active" => "required",
         ]);
 
         $listing = Listing::create($request->except('_token', '_method', 'tags'));
@@ -147,6 +151,9 @@ class ListingController extends Controller
                 "tags" => $listing->tags->map(fn ($value) => $value->name),
                 "details" => $listing->details,
                 "top_destination" => $listing->top_destination,
+                "phone_number" => $listing->phone_number,
+                "website" => $listing->website,
+                "is_active" => $listing->is_active,
 
                 // metadata details
                 "description" => ($listing->metadata) ? $listing->metadata->description : "",
@@ -179,7 +186,10 @@ class ListingController extends Controller
             "tags" => ["required", new TagRule],
             "category_id" => "required",
             "top_destination" => new TopDestinationRule($listing),
-            "image" => "image"
+            "image" => "image",
+            "phone_number" => "nullable|phone:ID",
+            "website" => "nullable|url",
+            "is_active" => "required",
         ]);
 
         $listing->update($request->except('_token', '_method', 'tags'));
