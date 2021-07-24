@@ -13,7 +13,9 @@ class ListingCreateForm extends Form
     public function handle() 
     {
         $this->text('title', 'Title');
-        $this->text('address', 'Address');
+        $this->textArea('address', 'Address');
+        $this->text('phone_number', 'Phone Number');
+        $this->text('website', 'Website');
         $this->upload('image', 'Image');
         $this->number('lat', 'Lat');
         $this->number('long', 'Long');
@@ -21,6 +23,7 @@ class ListingCreateForm extends Form
         $this->number('high_price', 'High Price');
         $this->radio('top_destination', 'Top Destination', [1 => "Yes", 0 => "No"]);
         $this->radio('category_id', 'Category', Utils::createModelChoices(ListingCategory::all(), "id", "name"));
+        $this->radio('is_active', 'Active', [1 => "Yes", 0 => "No"]);
         $this->text('tags', 'Tags', ["class" => "taglify taglify-tags"]);
         $this->textArea('details', 'Details', ["class" => "wysiwyg"]);
         $this->extra['taglify'] = collect([

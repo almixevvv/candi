@@ -68,6 +68,7 @@ class SearchBox extends Component
     public function updatedQuery()
     {
         $this->listings = Listing::with('image', 'tags', 'category')->where('title', 'ILIKE', '%' . $this->query. '%')
+            ->where('is_active', true)
             ->take(5)
             ->get()
             ->map(function ($value) {

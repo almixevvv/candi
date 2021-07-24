@@ -18,6 +18,7 @@ class ListingFilterForm extends Form
         $this->number('low_price', 'Low Price');
         $this->number('high_price', 'High Price');
         $this->radio('top_destination', 'Top Destination', [1 => "Yes", 0 => "No"]);
+        $this->radio('is_active', 'Active', [1 => "Yes", 0 => "No"]);
 
         $this->separator();
         $this->button('Search', 'btn-secondary');
@@ -49,6 +50,10 @@ class ListingFilterForm extends Form
 
         if ($request->top_destination) {
             $listings = $listings->where('top_destination', $request->top_destination);
+        }
+
+        if ($request->is_active) {
+            $listings = $listings->where('is_active', $request->is_active);
         }
 
         return $listings->paginate(config('app.pagination_limit'));

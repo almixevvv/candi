@@ -9,9 +9,9 @@
                 <th>ID</th>
                 <th>Image</th>
                 <th>Title</th>
-                <th>Address</th>
                 <th>Price</th>
                 <th>Top Destination</th>
+                <th>Is Active</th>
                 <th>Ratings</th>
                 <th>Action</th>
             </thead>
@@ -27,9 +27,9 @@
                         @endif
                     </td>
                     <td>{{ $listing->title }}</td>
-                    <td>{{ $listing->address }}</td>
                     <td>Rp {{ number_format($listing->low_price) }} - Rp {{ number_format($listing->high_price) }}</td>
                     <td>{{ $listing->top_destination ? "Yes" : "No" }}</td>
+                    <td>{{ $listing->is_active ? "Yes" : "No" }}</td>
                     <td>
                         @foreach ($listing->ratings as $rating)
                             {{ $rating->category->name }}: {{ $rating->rating }}<br>

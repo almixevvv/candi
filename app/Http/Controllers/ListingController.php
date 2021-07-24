@@ -9,17 +9,15 @@ class ListingController extends Controller
 {
     public function index(Request $request)
     {
-        $this->contextData['listings'] = Listing::with('image', 'tags')->get();
+        $this->contextData['listings'] = Listing::with('image', 'tags')->where('is_active', true)->get();
         $this->contextData['request']  = $request;
-
-        // return response($this->contextData['listings'], 200);
 
         return view('front.directory.index', $this->contextData);
     }
 
     public function detail(Request $request, int $id)
     {
-        $listingDetail = Listing::with('image', 'tags', 'ratings.category')->where('id', $id)->firstOrFail();
+        $listingDetail = Listing::with('image', 'tags', 'ratings.category')->where('id', $id)->where('is_active', true)->firstOrFail();
 
         return view('front.directory.detail', compact('request', 'listingDetail'));
     }
