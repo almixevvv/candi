@@ -3,7 +3,6 @@
         <input
             type="text"
             class="search-box {{ (!empty($query) && $selectedListing == 0 && $showDropdown) ? "searching" : "" }}"
-            style="width: 90%"
             placeholder="What are you looking for?"
             wire:model="query"
             {{-- wire:click="reset" --}}

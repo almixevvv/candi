@@ -2222,6 +2222,7 @@ body.os-windows .popup::-webkit-scrollbar-thumb {
 	font-family: 'Comfortaa', serif;
 	color: #fff;
 	width: auto;
+    text-align: left;
 	line-height: 1;
 }
 .main_slider .slider_wrap .slide .slide_content .title_wrap .country {
@@ -3890,6 +3891,7 @@ body.os-windows .popup::-webkit-scrollbar-thumb {
 @media screen and (max-width: 1930px) {
 	.main_slider .slider_wrap .slide .slide_content .title_wrap .slide_title {
 		font-size: 136px;
+        text-align: left;
 	}
 }
 @media screen and (max-width: 1762px) {
@@ -3997,6 +3999,7 @@ body.os-windows .popup::-webkit-scrollbar-thumb {
 	}
 	.main_slider .slider_wrap .slide .slide_content .title_wrap .slide_title {
 		font-size: 100px;
+        text-align: left;
 	}
 	.main_slider .arrows {
 		margin-right: -640px;
@@ -5004,6 +5007,7 @@ body.os-windows .popup::-webkit-scrollbar-thumb {
 @media screen and (max-width: 760px) {
 	.main_slider .slider_wrap .slide .slide_content .title_wrap .slide_title {
 		font-size: 54px;
+        text-align: center;
 	}
 	.main_slider .slider_wrap .slide .slide_content .title_wrap .country {
 		font-size: 19px;
@@ -5459,6 +5463,7 @@ body.os-windows .popup::-webkit-scrollbar-thumb {
 	}
 	.main_slider .slider_wrap .slide .slide_content .title_wrap .slide_title {
 		font-size: 48px;
+        text-align: center;
 	}
 	.popup.profile-setting .scroll .scroll_wrap {
 		padding-top: 65px;
@@ -5535,6 +5540,7 @@ body.os-windows .popup::-webkit-scrollbar-thumb {
 @media screen and (max-width: 340px) {
 	.main_slider .slider_wrap .slide .slide_content .title_wrap .slide_title {
 		font-size: 41px;
+        text-align: center;
 	}
 	.popup.book-now-popup .tour-info .col .date .day {
 		font-size: 38px;

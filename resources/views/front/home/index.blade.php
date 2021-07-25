@@ -7,9 +7,9 @@
             <div class="wrap">
                 <div class="wrap_float js_height">
                     <div class="slide_content">
-                        <div class="title_wrap" style="margin-top: -25em;">
-                            <p class="slide_title" style="font-size:36pt; text-align:center; width: 100%;">Time to start a journey</p>
-                            <div style="margin-top: 5em; margin-left: 1.5em">
+                        <div class="title_wrap home">
+                            <p class="slide_title" style="font-size:36pt; width: 100%;">Time to start a journey</p>
+                            <div style="margin-top: 5em;">
                                 <livewire:search-box />
                             </div>
                         </div>

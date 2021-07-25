@@ -43,3 +43,21 @@
     text-align:center;
     border-radius:20px;
 }
+
+.title_wrap {
+    &.home {
+        margin-top: -25em;
+    }
+
+    @media screen and (max-width: 1041px) {
+        &.home {
+            margin-top: -14em;
+        }
+    }
+
+    @media screen and (max-width: 679px) {
+        &.home {
+            margin-top: -24em;
+        }
+    }
+}
