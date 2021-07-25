@@ -84,7 +84,13 @@ class Directories extends Component
 
     public function setupUI() 
     {
-        $listingTags = ListingTag::with('listings.image', 'listings.tags')->has('listings', '>', 0);
+        $listingTags = ListingTag::with([
+            'listings.image', 'listings.tags',
+            "listings" => function($query) {
+                $query->where('is_active', true);
+            }
+        ])->has('listings', '>', 0);
+
         if (count($this->choosenTag)) {
             $listingTags = $listingTags->whereIn('id', $this->choosenTag);
         }

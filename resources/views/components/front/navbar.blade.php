@@ -28,25 +28,20 @@
                                 </ul>
                                 <div class="mobile_content">
                                     <div class="currency_mob">
-                                        <select>
-                                            <option value="usd">usd</option>
-                                            <option value="rub">rub</option>
-                                            <option value="eur">eur</option>
-                                        </select>
-                                        <p>
-                                            Chosen currency
-                                        </p>
                                     </div>
                                     <div class="tel">
-                                        <a href="tel:+0034411345777">+ 00 344 113 457 77</a>
-                                        <p>Round the clock support</p>
+                                        <a href="https://api.whatsapp.com/send?phone={{ $_profile->phone_number }}">{{ Str::phoneFormat($_profile->phone_number) }}</a>
                                     </div>
                                     <div class="social">
-                                        <a href="#" class="link facebook"><span></span></a>
-                                        <a href="#" class="link instagram"><span></span></a>
-                                        <a href="#" class="link pinterest"><span></span></a>
-                                        <a href="#" class="link twitter"><span></span></a>
-                                        <a href="#" class="link youtube"><span></span></a>
+                                        @if ($_profile->facebook)
+                                            <a href="https://facebook.com/{{ $_profile->facebook }}" class="link facebook" target="_blank"><span></span></a>
+                                        @endif
+                                        @if ($_profile->instagram)
+                                            <a href="https://instagram.com/{{ $_profile->instagram }}" class="link instagram" target="_blank"><span></span></a>
+                                        @endif
+                                        @if ($_profile->twitter)
+                                            <a href="https://twitter.com/{{ $_profile->twitter }}" class="link twitter" target="_blank"><span></span></a>
+                                        @endif
                                     </div>
                                 </div>
                             </div>

@@ -17,6 +17,7 @@ mix
 	.js('resources/js/sign-in/auth', 'public/js/sign-in')
 	.js('resources/js/editor/editor', 'public/js/editor')
 	.js('resources/js/editor/front', 'public/js/editor')
+	.copy('resources/js/front/custom.js', 'public/js/custom.js')
 	// .postCss('resources/css/blog/blogdetail', 'public/css/blog')
 	// .postCss('resources/css/blog/blogmain', 'public/css/blog')
     .sass("resources/css/app.scss", "public/css/app.css");

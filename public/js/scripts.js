@@ -949,12 +949,9 @@ $(document).ready(function(){
     //     popupCloseFunction();
     // });
      $("#mobile_btn").on("click", function(){
-        var thisBtn = $(this),
-            // menu = $("#menu_wrap").show(1000,linear,);
-             menu = $("#menu_wrap").show("slide", { direction: "right" }, 1000);
-             $("#menu_mobile_content").slideDown(3000);
+        $("#menu_wrap").show("slide", { direction: "right" }, 500);
+        $("#menu_mobile_content").slideDown(1000);
 
-        
         $("html, body").addClass("locked");
         $("#menu-close, #mobile_btn").addClass("opened");
         popupFunction();
@@ -965,8 +962,8 @@ $(document).ready(function(){
         $("html, body").removeClass("locked");
         $("#menu-close, #mobile_btn").removeClass("opened");
         // $("#menu_wrap").fadeOut();
-        // $("#menu_mobile_content").slideUp(1000);
-        $("#menu_wrap").hide("slide", { direction: "left" }, 1500);
+        $("#menu_mobile_content").fadeOut(10);
+        $("#menu_wrap").hide("slide", { direction: "left" }, 500);
 
         popupCloseFunction();
     });

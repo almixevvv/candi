@@ -3,6 +3,7 @@
         <input
             type="text"
             class="search-box {{ (!empty($query) && $selectedListing == 0 && $showDropdown) ? "searching" : "" }}"
+            style="width: 90%"
             placeholder="What are you looking for?"
             wire:model="query"
             {{-- wire:click="reset" --}}
@@ -31,8 +32,8 @@
                 @foreach($listings as $i => $listing)
                     <div class="search-list {{ $highlightIndex === $i ? 'highlighted' : "" }}" onclick="window.location.href = '{{ route('directory.detail', ['directory' => $listing['id']]) }}'">
                         <div class="row">
-                            <div class="col-md-2">
-                                <img src="{{ $listing['image']['image_thumbnail'] }}" width="100%" />
+                            <div class="col-md-4">
+                                <img src="{{ $listing['image']['image_thumbnail'] }}" style="max-width: 8em;min-width: 5em;width: 100%;" />
                             </div>
                             <div class="col">
                                 <b>{{ $listing['title'] }}</b><br>
@@ -80,7 +81,7 @@
         left: 0;
         top: 0;
         box-shadow: 0px 3px 9px #8c8c8c !important;
-        width: 100%;
+        width: 90%;
         background-color: white;
         border-bottom-left-radius: 25px;
         border-bottom-right-radius: 25px;

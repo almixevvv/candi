@@ -35,10 +35,9 @@
     </div>
     <div class="page contacts-page full-width">
 
-        <div class="container-fluid px-0 mb-3">
-            <div class="d-flex justify-content-around flex-column flex-md-row">
-                
-                <div class="contact-container">
+        <div class="container-fluid mb-3">
+            <div class="row" style="margin-left: auto; margin-right: auto">
+                <div class="contact-container col-md-3 col-6">
                     <div class="contact-card mx-0 lg-mx-2">
                         <a href="{{ $_profile->gmaps }}" target="_blank">
                             <i class="fas fa-map-marker-alt"></i>
@@ -56,7 +55,7 @@
                     </div>
                 </div>
 
-                <div class="contact-container even">
+                <div class="contact-container col-md-3 col-6">
                     <div class="contact-card mx-0 lg-mx-2">
                         <a href="https://api.whatsapp.com/send?phone={{ $_profile->phone_number }}" target="_blank">
                             <i class="fas fa-phone-square-alt"></i>
@@ -74,10 +73,10 @@
                     </div>
                 </div>
 
-                <div class="contact-container odd">
+                <div class="contact-container col-md-3 col-6">
                     <div class="contact-card mx-0 lg-mx-2">
                         <a href="mailto:{{ $_profile->email }}?" target="_blank">
-                           <i class="fas fa-envelope"></i> 
+                        <i class="fas fa-envelope"></i> 
                         </a>
                         <div class="contact-bottom">
                             <h5>Email</h5>
@@ -90,7 +89,7 @@
                     </div>
                 </div>
 
-                <div class="contact-container">
+                <div class="contact-container col-md-3 col-6">
                     <div class="contact-card mx-0 lg-mx-2">
                         <i class="fas fa-clock"></i>
                         <div class="contact-bottom">

@@ -1,86 +1,74 @@
-<script src="/js/jquery.min.js"></script>
-<script src="/js/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
-<script src="/js/lightgallery.js"></script>
-<script src="/js/jquery.mousewheel.min.js"></script>
-<script src="/js/slick.min.js"></script>
-<script src="/js/hammer.js"></script>
-<script src="/js/scripts.js"></script>
-<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
-<script>
-    //Blog Slider
-  var slider = document.getElementById('slider'),
-      sliderTrigger = document.querySelector('.section-scrollable .section-featured');
-
-  if (sliderTrigger) {
-      var flkty = new Flickity(slider, {
-          wrapAround: true,
-          contain: true,
-          adaptiveHeight: true,
-          accessibility: false,
-          prevNextButtons: false,
-          pageDots: false,
-          selectedAttraction: .025,
-          friction: .3,
-          dragThreshold: 5
-      });
-
-      /* Next button */
-      var nextButton = document.getElementById('next');
-      nextButton.addEventListener('click', function() {
-          flkty.next();
-      });
-
-      /* Add class to "loop" when is slider */
-      var loop = document.getElementById('loop');
-      if (flkty.cells.length > 0) {
-          loop.classList.remove('no-featured');
-          loop.classList.add('is-featured');
-      }
-
-      /* iOS 12 & 13 fix */
-      var tapArea, startX;
-      tapArea = document.querySelectorAll('.section-scrollable');
-      startX = 0;
-      for (var item of tapArea) {
-          item.ontouchstart = function(e) {
-              startX = e.touches[0].clientX;
-          };
-          item.ontouchmove = function(e) {
-              if (Math.abs(e.touches[0].clientX - startX) > 5 && e.cancelable) {
-                  e.preventDefault();
-              }
-          };
-      }
-  }
-  
-  function getId(url) {
-        var regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
-        var match = url.match(regExp);
-
-        if (match && match[2].length == 11) {
-            return `https://youtube.com/embed/${match[2]}`;
-        } else {
-            return 'error';
-        }
-    }
-
-    function convertFigureToIframe() {
-        let medias = document.querySelectorAll('figure.media');
-        for (let i = 0 ; i < medias.length; i++) {
-            const url = medias[0].children[0].attributes[0].value
-            let newUrl = getId(url);
-
-            if (newUrl == 'error') {
-                newUrl = medias[0].children[0].attributes[0].value
-            }
-
-            const iFrame = document.createElement('iframe')
-            iFrame.width = "100%"
-            iFrame.height = "600"
-            iFrame.src = newUrl
-
-            medias[i].replaceWith(iFrame)
-        }
-    }
-    convertFigureToIframe()
-  </script>
+<div class="footer">
+    <div class="wrap">
+        <div class="wrap_float">
+            <div class="footer_top">
+                <div class="left">
+                    <div class="col">
+                        <div class="_title m_title">Bantuan</div>
+                        <ul>
+                            <li><a href="#">Hubungi Kami</a></li>
+                            <li><a href="#">Kebijakan Privasi</a></li>
+                            <li><a href="#">Syarat dan Ketentuan</a></li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <div class="_title m_title">Perusahaan</div>
+                        <ul>
+                            <li><a href="{{ route('whoweare') }}">Who We Are</a></li>
+                            <li><a href="{{ route('blog') }}">Blog</a></li>
+                            <li><a href="{{ route('contact') }}">Contact Us</a></li>
+                            <li><a href="{{ route('directory') }}">Directory</a></li>
+                            <li><a href="{{ route('promo') }}">Promo</a></li>
+                            <li><a href="{{ route('advertise') }}">Advertise With Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        @if(count($latest_blog))
+                            <div class="_title m_title">Latest Blog</div>
+                            <ul>
+                                @foreach ($latest_blog as $blog)
+                                    <li><a href="{{ route('blog.detail', ['blog' => $blog]) }}">{{$blog->title}}</a></li>
+                                @endforeach
+                            </ul>
+                        @endif
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="_title">Contacts</div>
+                    <div class="contacts_info">
+                        <div class="tel">
+                            <a href="https://api.whatsapp.com/send?phone={{ $_profile->phone_number }}" target="_blank">{{ Str::phoneFormat($_profile->phone_number) }}</a>
+                            <p>Round the clock support</p>
+                        </div>
+                        <div class="email">
+                            <a href="mailto:{{ $_profile->email }}">{{ $_profile->email }}</a>
+                            <p>For any questions</p>
+                        </div>
+                        <div class="address">
+                            {{ $_profile->address }}
+                        </div>
+                    </div>
+                    <div class="socials social-links">
+                        @if ($_profile->facebook)
+                            <a href="https://facebook.com/{{ $_profile->facebook }}" class="link facebook" target="_blank"><span></span></a>
+                        @endif
+                        @if ($_profile->instagram)
+                            <a href="https://instagram.com/{{ $_profile->instagram }}" class="link instagram" target="_blank"><span></span></a>
+                        @endif
+                        @if ($_profile->twitter)
+                            <a href="https://twitter.com/{{ $_profile->twitter }}" class="link twitter" target="_blank"><span></span></a>
+                        @endif
+                    </div>
+                </div>
+            </div>
+            <div class="footer_bottom">
+                <div class="left">
+                    Copyright © 2021 by Candi
+                </div>
+                <div class="right">
+                    <a href="#" style="color: white; ">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -4,5 +4,6 @@
     "/js/sign-in/auth.js": "/js/sign-in/auth.js",
     "/js/editor/editor.js": "/js/editor/editor.js",
     "/js/editor/front.js": "/js/editor/front.js",
-    "/css/app.css": "/css/app.css"
+    "/css/app.css": "/css/app.css",
+    "/js/custom.js": "/js/custom.js"
 }

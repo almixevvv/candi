@@ -8,7 +8,7 @@
                 <div class="wrap_float js_height">
                     <div class="slide_content">
                         <div class="title_wrap" style="margin-top: -25em;">
-                            <p class="slide_title" style="font-size:36pt; text-align:center;">Time to start a journey</p>
+                            <p class="slide_title" style="font-size:36pt; text-align:center; width: 100%;">Time to start a journey</p>
                             <div style="margin-top: 5em; margin-left: 1.5em">
                                 <livewire:search-box />
                             </div>
@@ -68,9 +68,10 @@
             </div>
             <div class="section_content mt-2">
                 @foreach($blogCategories as $blogCategory)
-                    @if (count($blogCategory->blogs))
-                        <a href="{{ route('blog.detail', ['blog' => $blogCategory->blogs[0]]) }}" class="blog_item">
-                            <div class="blog_item_top" style="background-image: url({{ $blogCategory->blogs[0]->image->image_thumbnail }});">
+                    @if ($blogCategory->blogs->count())
+                        @php $blog = $blogCategory->blogs->first(); @endphp
+                        <a href="{{ route('blog.detail', ['blog' => $blog]) }}" class="blog_item">
+                            <div class="blog_item_top" style="background: url({{ $blog->image ? $blog->image ->image_thumbnail : "/images/logo_biru.svg" }}) no-repeat center;">
                                 <div class="sq_parent">
                                     <div class="sq_wrap">
                                         <div class="sq_content">
@@ -78,7 +79,7 @@
                                                 <div class="tag red">{{ $blogCategory->name }}</div>
                                             </div>
                                             <h3 class="_title">
-                                                {{ $blogCategory->blogs[0]->title }}
+                                                {{ $blog->title }}
                                             </h3>
                                         </div>
                                     </div>
@@ -94,9 +95,11 @@
 
             </div>
         </div>
-        <div style="text-align: center; margin-top: 10px;">
-            <a href="{{ route('blog') }}" class="link"><label>Load More</label></a>
-        </div>
+        @if ($blogCategories->count() > 3)
+            <div style="text-align: center; margin-top: 10px;">
+                <a href="{{ route('blog') }}" class="link"><label>Load More</label></a>
+            </div>
+        @endif
     </div>
 </div>
 

@@ -550,7 +550,7 @@ body.os-windows .popup::-webkit-scrollbar-thumb {
 }
 .subtitle {
 	font-size: 18px;
-	color: rgba(74, 74, 74, 0.58);
+	color: black;
 }
 .section_content {
 	/* margin-top: 36px; */
