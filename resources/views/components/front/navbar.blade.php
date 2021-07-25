@@ -5,9 +5,9 @@
                 <div class="left">
                     <div class="search_btn"></div>
                     <a href="/home" class="logo">
-                        @if (strlen($request->path()) > 1 && $request->path() != 'home')
+                        @if (strlen(request()->path()) > 1 && request()->path() != 'home')
                             <img src="/images/logo_horizontal_2.svg" alt="Candi Alt Logo">
-                        @elseif ($request->path() == '/home')
+                        @elseif (request()->path() == '/home')
                             <img src="/images/logo_horizontal.svg" alt="Candi Logo Original">
                         @else
                             <img src="/images/logo_horizontal.svg" alt="Candi Logo Original">

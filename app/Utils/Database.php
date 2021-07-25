@@ -5,7 +5,7 @@ use Illuminate\Database\Eloquent\Builder;
 
 class Database 
 {
-    public static function whereLike(Builder $query, string $field, mixed $value, bool $optional = false): Builder
+    public static function whereLike(Builder $query, string $field, $value, bool $optional = false): Builder
     {
         $likeOperator = "LIKE";
         if (config('database.default') == "pgsql") {

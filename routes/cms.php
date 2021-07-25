@@ -13,6 +13,7 @@ use App\Http\Controllers\Backend\PurposeController;
 use App\Http\Controllers\Backend\SettingController;
 use App\Http\Controllers\Backend\WhoWeAreController;
 use App\Http\Controllers\Backend\DashboardController;
+use App\Http\Controllers\Backend\PromotionController;
 use App\Http\Controllers\Backend\ListingTagController;
 use App\Http\Controllers\Backend\BlogCategoryController;
 use App\Http\Controllers\Backend\SubscriptionController;
@@ -54,6 +55,9 @@ Route::group(["middleware" => "auth"], function() {
     // Blog
     Route::resource('blog-categories', BlogCategoryController::class);
     Route::resource('blog', BlogController::class);
+
+    // promotions
+    Route::resource('promotions', PromotionController::class);
 
     // user
     Route::resource('/users', UserController::class);

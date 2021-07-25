@@ -11,6 +11,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ListingController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\WhoareweController;
+use App\Http\Controllers\PromotionController;
 use App\Http\Controllers\SubscriptionController;
 use CKSource\CKFinderBridge\Controller\CKFinderController;
 use Illuminate\Contracts\Filesystem\FileNotFoundException;
@@ -52,9 +53,7 @@ Route::get('/contact', [FrontendController::class, "contact"])->name('contact');
 
 Route::post('/contact', [ContactController::class, "store"])->name('contact.store');
 
-Route::get('/promo', function (Request $request) {
-    return view('front.promo.index', ['request' => $request]);
-})->name('promo');
+Route::get('/promo', [PromotionController::class, "index"])->name('promo');
 
 Route::get('/advertise', function (Request $request) {
     return view('front.advertise.index', ['request' => $request]);
