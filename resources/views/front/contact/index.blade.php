@@ -39,7 +39,7 @@
             <div class="row" style="margin-left: auto; margin-right: auto">
                 <div class="contact-container col-md-3 col-6">
                     <div class="contact-card mx-0 lg-mx-2">
-                        <a href="{{ $_profile->gmaps }}" target="_blank">
+                        <a href="{{ $_profile->maps }}" target="_blank">
                             <i class="fas fa-map-marker-alt"></i>
                         </a>
                         <div class="contact-bottom">
@@ -50,7 +50,7 @@
                     </div>
                     <div class="contact-detail">
                         <span>
-                            <a href="{{ $_profile->gmaps }}">{{ $_profile->address }}</a>
+                            <a href="{{ $_profile->maps }}">{{ $_profile->address }}</a>
                         </span>
                     </div>
                 </div>

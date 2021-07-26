@@ -32,7 +32,8 @@ class SettingController extends Controller
                 "open_hour_range" => $profileSetting->open_hour_range,
                 "facebook" => $profileSetting->facebook,
                 "instagram" => $profileSetting->instagram,
-                "twitter" => $profileSetting->twitter
+                "twitter" => $profileSetting->twitter,
+                "maps" => $profileSetting->maps,
             ]
         ]);
 
@@ -50,6 +51,7 @@ class SettingController extends Controller
             "facebook" => "present",
             "instagram" => "present",
             "twitter" => "present",
+            "maps" => "present",
         ]);
 
         ProfileSetting::first()->update($request->except('_token'));
