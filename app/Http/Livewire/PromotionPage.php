@@ -17,7 +17,7 @@ class PromotionPage extends Component
 
     public function searchPromotion() 
     {
-        $promotions = Promotion::with('image')->where('is_active', true)->where('valid_until', "<=", now());
+        $promotions = Promotion::with('image')->where('is_active', true)->where('valid_until', ">=", now());
 
         if ($this->searchQuery) {
             $promotions = Database::whereLike($promotions, "title", "{$this->searchQuery}%");
