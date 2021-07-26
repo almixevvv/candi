@@ -83,7 +83,7 @@
     </div>
 
     <div class="page blog-list-page full-width">
-      <div id="loop" class="section-loop blog-wrap is-featured">
+      <div id="loop" class="section-loop blog-wrap" style="margin-top: 0">
           <div class="items-wrap flex loop-first">
               @foreach($blogCategories as $blogCategory)
                 @if (count($blogCategory->blogs))
