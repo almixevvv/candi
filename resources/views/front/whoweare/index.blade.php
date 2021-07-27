@@ -6,7 +6,7 @@
             <div class="wrap_float">
                 <a href="{{ route('home') }}">Home</a>
                 <span class="separator">/</span>
-                <a href="#">{{ ucfirst($request->path()) }}</a>
+                <a href="#">{{ ucfirst(request()->path()) }}</a>
             </div>
         </div>
     </div>
@@ -15,7 +15,7 @@
             <div class="wrap_float">
                 <div class="page_head" id="_holder">
                     <div class="markdown who-we-are">
-                        {!! Markdown::convertToHtml($content) !!}
+                        {!! $content !!}
                     </div>
                 </div>
             </div>

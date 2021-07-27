@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\Backend\FaqController;
 use App\Http\Controllers\Backend\BlogController;
 use App\Http\Controllers\Backend\RoleController;
 use App\Http\Controllers\Backend\UserController;
@@ -19,6 +18,7 @@ use App\Http\Controllers\Backend\BlogCategoryController;
 use App\Http\Controllers\Backend\SubscriptionController;
 use App\Http\Controllers\Backend\ListingCategoryController;
 use App\Http\Controllers\Backend\ListingRatingCategoryController;
+use App\Http\Controllers\Backend\PageController;
 
 //Login Process
 Route::get('/login', [AuthController::class, 'show'])->name('login.index');
@@ -66,7 +66,7 @@ Route::group(["middleware" => "auth"], function() {
     Route::resource('/roles', RoleController::class);
 
     // FAQ
-    Route::resource('/faq', FaqController::class);
+    Route::resource('/pages', PageController::class);
 
     // Purpose
     Route::resource('/purposes', PurposeController::class);

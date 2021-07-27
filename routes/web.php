@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\HomeController;
 
+use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Response;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ListingController;
@@ -67,6 +68,9 @@ Route::get('/whoweare', [WhoareweController::class, 'index'])->name('whoweare');
 // Subscription
 Route::post('subscribe/', [SubscriptionController::class, 'subscribe'])->name('subscriptions.subscribe');
 Route::get('unsubscribe/', [SubscriptionController::class, 'unsubscribe'])->name('subscriptions.unsubscribe');
+
+// Dynamic Pages
+Route::get("pages/{page:slug}", [PageController::class, 'show'])->name('page.show');
 
 // CMS Routes
 Route::prefix('cms')->name('cms.')->group(base_path('routes/cms.php'));

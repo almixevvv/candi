@@ -19,14 +19,15 @@ class Controller extends BaseController
         Session::flash('message_type', $type);
     }
 
-    public function getBaseTableContextData(LengthAwarePaginator $data, array $title, array $fields, string $path) 
+    public function getBaseTableContextData(LengthAwarePaginator $data, array $title, array $fields,
+                                            string $path, bool $hasDetail = false) 
     {
         return [
             "title" => $title,
             "fields" => $fields,
             "data" => $data,
             "path" => $path,
-            "hasDetail" => false,
+            "hasDetail" => $hasDetail,
             "hasEdit" => true,
             "hasDelete" => true,
         ];
