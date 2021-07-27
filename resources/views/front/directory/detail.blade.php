@@ -2,12 +2,6 @@
 
 @push('extra-css')
 <style>
-    @media(min-width: 1024px) {
-        .contacts-page {
-            padding: 2%;
-        }
-    }
-
     .text-lg {
         font-size: 3rem;
     }
@@ -41,7 +35,7 @@
   <div class="mt-3">
     <img class="img-fluid" src="{{ $listingDetail->image->image_url }}" alt="Food Feature Image" style="max-height: 500px; height: auto; width: 100%; object-fit: cover;">
 </div>
-  <div class="page contacts-page full-width">
+  <div class="page px-4 full-width">
 
     <div class="container-fluid px-0">
 
@@ -52,7 +46,7 @@
             </div>
         </div>
 
-        <div class="row px-3 mt-4">
+        <div class="row mt-4">
 
           <div class="col-12">
             <div>
@@ -66,51 +60,53 @@
 
         </div>
 
-        <div class="row px-3 d-md-block mt-2">
-          <div class="col-12">
-            <div class="d-flex">
-              <span class="me-2 pe-3">
-                @foreach ($listingDetail->tags as $tag)
-                    {{ $tag->name }}
-                @endforeach
-              </span>
+        <div class="row d-md-block mt-2">
+            <div class="col-12">
+                <div class="d-flex">
+                <span class="me-2 pe-3">
+                    @foreach ($listingDetail->tags as $tag)
+                        {{ $tag->name }}
+                    @endforeach
+                </span>
+                </div>
             </div>
-          </div>
-          <div class="col-12 mt-2">
-            <div class="d-flex">
-              <span class="border-end me-2 pe-3">
-                <i class="fas fa-map-marker-alt"></i>
-                <span>
-                  {{ $listingDetail->address }}
-                </span>
-              </span>
-              <span class="border-end me-2 pe-3">
-                Rp.&nbsp;
-                <span>
-                    {{ number_format($listingDetail->low_price) }} - {{ number_format($listingDetail->high_price) }}
-                </span>
-            </span>
-              @if ($listingDetail->phone_number)
+            <div class="col-6 col-md-3 mt-4">
                 <span class="border-end me-2 pe-3">
-                    <i class="fas fa-phone-alt"></i>
+                    <i class="fas fa-map-marker-alt"></i>
                     <span>
-                    {{ $listingDetail->phone_number }}
+                        {{ $listingDetail->address }}
                     </span>
                 </span>
-              @endif
-              @if ($listingDetail->website)
-                <span>
+            </div>
+            <div class="col-6 col-md-3 mt-4">
+                <span class="border-end me-2 pe-3">
+                    Rp.&nbsp;
+                    <span>
+                        {{ number_format($listingDetail->low_price) }} - {{ number_format($listingDetail->high_price) }}
+                    </span>
+                </span>
+            </div>
+            <div class="col-6 col-md-3 mt-4">
+                @if ($listingDetail->phone_number)
+                    <span class="border-end me-2 pe-3">
+                        <i class="fas fa-phone-alt"></i>
+                        <span>
+                        {{ $listingDetail->phone_number }}
+                        </span>
+                    </span>
+                @endif
+            </div>
+            <div class="col-6 col-md-3 mt-4" style="word-wrap: break-word;">
+                @if ($listingDetail->website)
                     <i class="fas fa-desktop"></i>
-                    <span>
-                    <a href="{{ $listingDetail->website }}">{{ $listingDetail->website }}</a>
-                    </span>
-                </span>
-              @endif
+                    <a href="{{ $listingDetail->website }}">{{ Str::of($listingDetail->website)->limit(40) }}</a>
+                @endif
+            </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="px-3">
+      <div class="px-4">
           {!! $listingDetail->details !!}
       </div>
 
@@ -119,7 +115,7 @@
             <div class="bg-white pt-3 me-4" style="min-width: 300px;">
             <div class="row">
                 <div class="col-12">
-                <div class="px-3">
+                <div class="px-4">
                     <h2 class="fw-bold text-md">Ratings</h2>
                 </div>
                 </div>
@@ -127,7 +123,7 @@
 
             <div class="row mt-2">
                 <div class="col-12">
-                <div class="px-3">
+                <div class="px-4">
                     <div class="border-top mt-2 pt-2 rating-section">
                     @foreach($listingDetail->ratings as $rating)
                         <div class="row my-2">
@@ -151,11 +147,11 @@
         <div class="bg-white pt-3 me-4" style="min-width: 300px;">
           <div class="row">
             <div class="col-12">
-              <div class="px-3">
+              <div class="px-4">
                 <h2 class="fw-bold">Location and Contact</h2>
               </div>
 
-              <div class="px-3 pt-2">
+              <div class="px-4 pt-2">
                 <div>
                   <span>
                     <iframe class="w-100" height="450" style="border:0" loading="lazy" allowfullscreen src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCQGNMGUsmXbzXFMqbYIE53AtYsCk7c5Bc&q={{ $listingDetail->lat . ',' . $listingDetail->long }}&center={{ $listingDetail->lat . ',' . $listingDetail->long }}">
@@ -172,11 +168,11 @@
         <div class="bg-white pt-3 me-4" style="min-width: 300px;">
           <div class="row">
             <div class="col-12">
-              <div class="px-3">
+              <div class="px-4">
                 <h2 class="fw-bold">FAQ</h2>
               </div>
 
-              <div class="px-3 pt-2">
+              <div class="px-4 pt-2">
                 <div class="row">
                     @foreach ($listingDetail->faqs as $faq)
                         <div class="col-12 mb-2">
@@ -196,10 +192,10 @@
         @if ($listingDetail->getRawOriginal('image_360_url'))
             <div class="row">
                 <div class="col-12">
-                    <div class="px-3">
+                    <div class="px-4">
                         <h2 class="fw-bold">360 View</h2>
                     </div>
-                    <div class="px-3 pt-2">
+                    <div class="px-4 pt-2">
                         <button class="btn btn-primary" id="show360Image">Show 360 Image</button>
                         <div id="vwview"></div>
                     </div>
@@ -207,68 +203,8 @@
             </div>
         @endif
       </div>
-
-      {{-- <div class="directory-faq mt-3 bg-white border-bottom pb-4 pt-3">
-        <div class="row g-0">
-          <div class="col-12">
-            <div class="px-3">
-              <h2 class="fw-bold">Frequently Asked Question about Tarunyan Resto Traditional</h2>
-            </div>
-
-            <div class="accordion px-3 pt-3" id="accordionExample">
-              <div class="accordion-item border-0 border-top">
-                <h2 class="accordion-header" id="headingOne">
-                  <button class="ps-0 fw-bold accordion-button bg-white text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                    Does Tarunyan Resto Traditional Offer Takeout?
-                  </button>
-                </h2>
-                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                  <div class="accordion-body">
-                    <span>Yes, Tarunyan Resto Traditional offer takeout services</span>
-                  </div>
-                </div>
-              </div>
-              <div class="accordion-item border-0 border-top">
-                <h2 class="accordion-header bg-white" id="headingTwo">
-                  <button class="ps-0 fw-bold accordion-button bg-white text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                    Does Tarunyan Resto Traditional offer delivery?
-                  </button>
-                </h2>
-                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                  <div class="accordion-body">
-                    <span>Yes, Tarunyan Resto Traditional offer delivery services</span>
-                  </div>
-                </div>
-              </div>
-              <div class="accordion-item border-0 border-top border-bottom">
-                <h2 class="accordion-header" id="headingThree">
-                  <button class=" ps-0 fw-bold accordion-button bg-white text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                    How is Tarunyan Traditional Rated?
-                  </button>
-                </h2>
-                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                  <div class="accordion-body">
-                    <span>Tarunyan Resto Traditional is rated accordingly in the following categories by Tripadvisor travelers </span>
-                    <ol class="pt-2">
-                      <li>Food: 4.5</li>
-                      <li>Service: 4.5</li>
-                      <li>Value: 4.5</li>
-                    </ol>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div> --}}
-
-
-
     </div>
-
   </div>
-
 </div>
 
 

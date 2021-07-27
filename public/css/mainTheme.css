@@ -279,7 +279,7 @@ body {
 }
 @media only screen  and (max-width: 640px){
     .destinations .wrap .wrap_float .section_content .box_image{
-        width:30%; 
+        width: 33%;
         float:left;
         padding:2%;
         text-align:center;
