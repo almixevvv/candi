@@ -10,9 +10,9 @@
         @foreach($tableData as $value)
             <tr>
                 <td>
-                    {{ $hasDetail 
+                    {!! $hasDetail 
                         ? "<a href='". route('cms.'. $path .'.show', $value). "'>". $value->id . "</a>" 
-                        : $value->id }}
+                        : $value->id !!}
                 </td>
                 @foreach($fields as $field)
                     <td>{{ $value->{$field} }}</td>

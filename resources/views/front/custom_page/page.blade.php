@@ -15,10 +15,16 @@
         </div>
     </div>
 
-    <livewire:directories
-        categoryID="{{ request()->get('category_id') }}"
-        tag="{{ request()->get('tag') }}"
-    />
+    <div class="container-fluid mt-3 pb-5">
+
+        <div class="row g-0">
+            <div class="col-12">
+                <div class="markdown who-we-are">
+                    {!! $page->content !!}
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 @endsection
 

@@ -29,7 +29,7 @@
             <div class="wrap_float">
                 <a href="{{ route('home') }}">Home</a>
                 <span class="separator">/</span>
-                <a href="#">{{ ucfirst($request->path()) }}</a>
+                <a href="#">{{ ucfirst(request()->path()) }}</a>
             </div>
         </div>
     </div>
