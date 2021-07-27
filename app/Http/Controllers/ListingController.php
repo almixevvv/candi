@@ -17,7 +17,7 @@ class ListingController extends Controller
 
     public function detail(Request $request, int $id)
     {
-        $listingDetail = Listing::with('image', 'tags', 'ratings.category')->where('id', $id)->where('is_active', true)->firstOrFail();
+        $listingDetail = Listing::with('image', 'tags', 'ratings.category', 'faqs')->where('id', $id)->where('is_active', true)->firstOrFail();
 
         return view('front.directory.detail', compact('request', 'listingDetail'));
     }
