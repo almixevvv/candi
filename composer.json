@@ -5,7 +5,7 @@
     "keywords": ["framework", "laravel"],
     "license": "MIT",
     "require": {
-        "php": "^7.3|^8.0",
+        "php": "^8.0",
         "bensampo/laravel-enum": "^3.4",
         "ckfinder/ckfinder-laravel-package": "v3.5.1.7",
         "doctrine/dbal": "^3.1",
