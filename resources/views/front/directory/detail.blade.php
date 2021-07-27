@@ -158,7 +158,7 @@
               <div class="px-3 pt-2">
                 <div>
                   <span>
-                    <iframe class="w-100" height="450" style="border:0" loading="lazy" allowfullscreen src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCQGNMGUsmXbzXFMqbYIE53AtYsCk7c5Bc&q={{ urlencode($listingDetail->address) }}&center={{ $listingDetail->lat . ',' . $listingDetail->long }}">
+                    <iframe class="w-100" height="450" style="border:0" loading="lazy" allowfullscreen src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCQGNMGUsmXbzXFMqbYIE53AtYsCk7c5Bc&q={{ $listingDetail->lat . ',' . $listingDetail->long }}&center={{ $listingDetail->lat . ',' . $listingDetail->long }}">
                     </iframe>
                   </span>
                 </div>
@@ -167,6 +167,30 @@
           </div>
         </div>
       </div>
+        
+      @if ($listingDetail->faqs->count())
+        <div class="bg-white pt-3 me-4" style="min-width: 300px;">
+          <div class="row">
+            <div class="col-12">
+              <div class="px-3">
+                <h2 class="fw-bold">FAQ</h2>
+              </div>
+
+              <div class="px-3 pt-2">
+                <div class="row">
+                    @foreach ($listingDetail->faqs as $faq)
+                        <div class="col-12 mb-2">
+                            <strong>Q: {{ $faq->question }} </strong><br>
+                            A: {{ $faq->answer }}
+                        </div>
+                    @endforeach
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      @endif
 
       <div class="directory-location mt-3 bg-white border-bottom pb-4 pt-3">
         @if ($listingDetail->getRawOriginal('image_360_url'))

@@ -25,6 +25,9 @@ class DatabaseSeeder extends Seeder
         $this->call(ProfileSettingSeeder::class);
         $this->call(PurposeSeeder::class);
         $this->call(ListingCategorySeeder::class);
+
+        $this->call(ListingSeeder::class);
+
         $this->call(ListingRatingSeeder::class);
     }
 }

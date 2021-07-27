@@ -9,7 +9,12 @@ class Faq extends Model
 {
     use HasFactory;
 
-    public $fillable = ["question", "answer", "position"];
+    public $fillable = ["question", "answer", "position", "listing_id"];
+
+    public function listing() 
+    {
+        return $this->belongsTo(Listing::class);
+    }
 
     public function rearrangePosition(int $position)
     {

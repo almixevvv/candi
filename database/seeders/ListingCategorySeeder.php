@@ -3,8 +3,10 @@
 namespace Database\Seeders;
 
 use App\Models\Image;
+use App\Models\ListingTag;
 use App\Models\ListingCategory;
 use Illuminate\Database\Seeder;
+use App\Models\ListingTagCategory;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
@@ -19,7 +21,7 @@ class ListingCategorySeeder extends Seeder
     public function run()
     {
         $this->listing_categories_seeder();
-        // $this->listing_tags_seeder();
+        $this->listing_tags_seeder();
     }
 
     private function listing_categories_seeder() 
@@ -81,58 +83,12 @@ class ListingCategorySeeder extends Seeder
 
     private function listing_tags_seeder() 
     {
-        $listingCategories = array(
-            array(
-                'tag_name'          => 'Seafood',
-                'tag_type'          => 'Cuisine',
-            ),
-            array(
-                'tag_name'          => 'Barbeque',
-                'tag_type'          => 'Cuisine',
-            ),
-            array(
-                'tag_name'          => 'Grill',
-                'tag_type'          => 'Cuisine',
-            ),
-            array(
-                'tag_name'          => 'Chinese',
-                'tag_type'          => 'Cuisine',
-            ),
-            array(
-                'tag_name'          => 'Korean',
-                'tag_type'          => 'Cuisine',
-            ),
-            array(
-                'tag_name'          => 'Asian',
-                'tag_type'          => 'Cuisine',
-            ),
-            array(
-                'tag_name'          => 'Takeout',
-                'tag_type'          => 'Feature',
-            ),
-            array(
-                'tag_name'          => 'Parking Available',
-                'tag_type'          => 'Feature',
-            ),
-            array(
-                'tag_name'          => 'Reservations',
-                'tag_type'          => 'Feature',
-            ),
-            array(
-                'tag_name'          => 'Outdoor Seatings',
-                'tag_type'          => 'Feature',
-            ),
-            array(
-                'tag_name'          => 'Street Parking',
-                'tag_type'          => 'Feature',
-            ),
-            array(
-                'tag_name'          => 'Accepts American Express',
-                'tag_type'          => 'Feature',
-            ),
+        ListingTagCategory::truncate();
+        ListingTag::truncate();
 
-        );
-
-        DB::table('listing_tags')->insert($listingCategories);
+        ListingTagCategory::factory()
+            ->has(ListingTag::factory()->count(4), 'tags')
+            ->count(2)
+            ->create();
     }
 }

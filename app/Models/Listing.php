@@ -35,14 +35,19 @@ class Listing extends Model
         return $this->belongsToMany(ListingTag::class, "listing_has_tags", "listing_id", "listing_tag_id");
     }
 
-    public function scopegetTopDestinations($query) 
-    {
-        return $query->with('category', 'tags', 'image')->where('is_active', true)->where('top_destination', true)->get();
-    }
-
     public function ratings() 
     {
         return $this->hasMany(ListingRating::class);
+    }
+
+    public function faqs() 
+    {
+        return $this->hasMany(Faq::class);
+    }
+
+    public function scopegetTopDestinations($query) 
+    {
+        return $query->with('category', 'tags', 'image')->where('is_active', true)->where('top_destination', true)->get();
     }
 
     public function uploadImage360(UploadedFile $file) 
