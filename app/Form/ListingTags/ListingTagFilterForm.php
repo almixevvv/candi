@@ -21,7 +21,7 @@ class ListingTagFilterForm extends Form
 
     public function filter(Request $request): LengthAwarePaginator
     {
-        $listingTagsCategory = ListingTagCategory::orderBy('id');
+        $listingTagsCategory = ListingTagCategory::with('tags')->orderBy('id');
 
         if ($request->name) {
             $listingTagsCategory = Database::whereLike($listingTagsCategory, "name", $request->name);

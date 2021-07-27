@@ -251,4 +251,10 @@ class ListingController extends Controller
         $this->contextData['listing'] = $listing;
         return view('cms.listings.add_ratings', $this->contextData);
     }
+
+    public function addFaq(Listing $listing)
+    {
+        $this->contextData['listing'] = $listing;
+        return view('cms.listings.add_faq', $this->contextData);
+    }
 }

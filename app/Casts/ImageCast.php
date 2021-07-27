@@ -2,6 +2,7 @@
 
 namespace App\Casts;
 
+use Illuminate\Support\Str;
 use Illuminate\Contracts\Database\Eloquent\CastsAttributes;
 
 class ImageCast implements CastsAttributes
@@ -17,6 +18,9 @@ class ImageCast implements CastsAttributes
      */
     public function get($model, $key, $value, $attributes)
     {
+        if (Str::of($value)->startsWith("http")) {
+            return $value;
+        }
         return config("app.url"). "/storage/" . $value;
     }
 

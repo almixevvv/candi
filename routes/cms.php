@@ -31,7 +31,6 @@ Route::group(["middleware" => "auth"], function() {
 
     //Who are we process
     Route::get('/whoarewe', [WhoWeAreController::class, 'index'])->name('waw.index');
-    // Route::get('/fetchData', [WhoareweController::class, 'fetch'])->name('waw.fetch');
     Route::post('/whoarewe', [WhoWeAreController::class, 'store'])->name('waw.store');
 
     // Listing process
@@ -41,6 +40,7 @@ Route::group(["middleware" => "auth"], function() {
         "names" => "rating_categories"
     ]);
     Route::get('listings/{listing}/add-ratings', [ListingController::class, 'addRatings'])->name('listings.add_ratings');
+    Route::get('listings/{listing}/add-faq', [ListingController::class, 'addFaq'])->name('listings.add_faq');
 
     // listing tags
     Route::resource('listing-tags', ListingTagController::class);

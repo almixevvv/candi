@@ -51,10 +51,37 @@
                 </tr>
             </tbody>
         </table>
-        @if ($listing->image_360_url)
+        @if ($listing->getRawOriginal('image_360_url'))
             <h3 style="margin-top: 2em; margin-bottom: 2em">360 Image</h3>
             @include('cms.includes.image_360', ["imageUrl" => $listing->image_360_url])
         @endif
+
+        <h3 style="margin-top: 2em; margin-bottom: 2em">FAQ</h3>
+        <div class="row">
+            <div class="col-md-12">
+                <a href="{{ route('cms.listings.add_faq', $listing) }}" class="btn btn-primary">Change FAQ Data</a>
+            </div>
+            <div class="col-md-12">
+                @if ($listing->faqs->count())
+                    <table class="table table-stripped table-bordered detail-table">
+                        <thead>
+                            <th>No. </th>
+                            <th>Question</th>
+                            <th>Answer</th>
+                        </thead>
+                        <tbody>
+                            @foreach($listing->faqs as $faq)
+                                <tr>
+                                    <td>{{ $faq->position }}</td>
+                                    <td>{{ $faq->question }}</td>
+                                    <td>{{ $faq->answer }}</td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                @endif
+            </div>
+        </div>
         @if ($listing->metadata)
         <h3 style="margin-top: 2em; margin-bottom: 2em">Metadata</h3>
         <div>
