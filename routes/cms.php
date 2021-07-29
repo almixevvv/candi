@@ -18,6 +18,7 @@ use App\Http\Controllers\Backend\BlogCategoryController;
 use App\Http\Controllers\Backend\SubscriptionController;
 use App\Http\Controllers\Backend\ListingCategoryController;
 use App\Http\Controllers\Backend\ListingRatingCategoryController;
+use App\Http\Controllers\Backend\MenuController;
 use App\Http\Controllers\Backend\PageController;
 
 //Login Process
@@ -80,6 +81,7 @@ Route::group(["middleware" => "auth"], function() {
     // Settings
     Route::get('profile-setting', [SettingController::class, "profile"])->name('profile.index');
     Route::post('profile-setting', [SettingController::class, "updateProfile"])->name('profile.update');
+    Route::resource('/menus', MenuController::class);
 
     // utility
     // probably will not used in the future for now dont delete

@@ -3,14 +3,16 @@
         <div class="wrap_float">
             <div class="footer_top">
                 <div class="left">
-                    <div class="col">
-                        <div class="_title m_title">Bantuan</div>
-                        <ul>
-                            <li><a href="#">Hubungi Kami</a></li>
-                            <li><a href="#">Kebijakan Privasi</a></li>
-                            <li><a href="#">Syarat dan Ketentuan</a></li>
-                        </ul>
-                    </div>
+                    @if ($_footerMenu->count())
+                        <div class="col">
+                            <div class="_title m_title">Bantuan</div>
+                            <ul>
+                                @foreach($_footerMenu as $menu)
+                                    <li><a href="{{ route('page.show', $menu->page) }}">{{ $menu->name }}</a></li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
                     <div class="col">
                         <div class="_title m_title">Perusahaan</div>
                         <ul>
