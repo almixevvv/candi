@@ -10,7 +10,19 @@
                         <div class="title_wrap home">
                             <p class="slide_title" style="font-size:36pt; width: 100%;">Time to start a journey</p>
                             <div style="margin-top: 5em;">
-                                <livewire:search-box />
+                                <div style="position: relative">
+                                    <div style="position: relative">
+                                        <input
+                                            type="text"
+                                            class="search-box"
+                                            placeholder="What are you looking for?"
+                                            id="box-search"
+                                        />
+                                        <span style="position: absolute; top: 0.5em; bottom: 0px; left: 0.75em;">
+                                            <img src="/images/search-hover.svg" style="width:1.25em;"></img>
+                                        </span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

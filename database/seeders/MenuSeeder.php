@@ -45,6 +45,7 @@ class MenuSeeder extends Seeder
 
         $this->addMenu(80, "Settings", "superuser", "settings", ["position" => 9]);
         $this->addMenu(81, "Profile", "superuser", "-", ["route" => 'cms.profile.index', "child_of" => 80, "position" => 1]);
+        $this->addMenu(82, "Menu", "superuser", "-", ["route" => 'cms.menus.index', "child_of" => 80, "position" => 2]);
 
 
         Menu::truncate();

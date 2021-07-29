@@ -10,6 +10,10 @@ class Promotion extends Model
 {
     use HasFactory, HasImage;
 
+    public $casts = [
+        "valid_until" => "date"
+    ];
+
     public $fillable = [
         "title", "details", "valid_until", "is_active",
         "cashback", "discount_percentage", "discount_value"

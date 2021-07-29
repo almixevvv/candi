@@ -27,12 +27,14 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{{ asset('css/mainTheme.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/app.css') }}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.css">
 
     @livewireStyles
     @stack('extra-css')
 </head>
 
 <body>
+    <livewire:search-box />
     @include('components.front.navbar')
     @yield('content')
     @include('components.front.footer')
@@ -46,51 +48,6 @@
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
     <script src="{{ asset('/js/custom.js') }}"></script>
     <script>
-        //Blog Slider
-        var slider = document.getElementById('slider'),
-            sliderTrigger = document.querySelector('.section-scrollable .section-featured');
-
-        if (sliderTrigger) {
-            var flkty = new Flickity(slider, {
-                wrapAround: true,
-                contain: true,
-                adaptiveHeight: true,
-                accessibility: false,
-                prevNextButtons: false,
-                pageDots: false,
-                selectedAttraction: .025,
-                friction: .3,
-                dragThreshold: 5
-            });
-
-            /* Next button */
-            var nextButton = document.getElementById('next');
-            nextButton.addEventListener('click', function() {
-                flkty.next();
-            });
-
-            /* Add class to "loop" when is slider */
-            var loop = document.getElementById('loop');
-            if (flkty.cells.length > 0) {
-                loop.classList.remove('no-featured');
-                loop.classList.add('is-featured');
-            }
-
-            /* iOS 12 & 13 fix */
-            var tapArea, startX;
-            tapArea = document.querySelectorAll('.section-scrollable');
-            startX = 0;
-            for (var item of tapArea) {
-                item.ontouchstart = function(e) {
-                    startX = e.touches[0].clientX;
-                };
-                item.ontouchmove = function(e) {
-                    if (Math.abs(e.touches[0].clientX - startX) > 5 && e.cancelable) {
-                        e.preventDefault();
-                    }
-                };
-            }
-        }
         
         function getId(url) {
             var regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
@@ -122,6 +79,14 @@
             }
         }
         convertFigureToIframe()
+
+        $('#search-button, #box-search').on('click', function() {
+            $('#search-box').addClass('is-active')
+        });
+
+        $('#close-search-button').on('click', function() {
+            $('#search-box').removeClass('is-active')
+        });
     </script>
 
     @livewireScripts

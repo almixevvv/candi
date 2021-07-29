@@ -31,15 +31,20 @@
                     <br><br>
 
                     @if ($promotion->discount_value)
-                        <label style="font-weight: bolder;font-size: 32px;">{{ $promotion->discount_value }}</label>
+                        <label style="font-weight: bolder;font-size: 32px;">Discount Rp {{ number_format($promotion->discount_value) }}</label>
                     @endif
                 </div>
 
                 <div class="gridy-2" style="box-shadow: inset 0 0 0 0px #fff;">
-                    <h2 class="text-lg">{{ $promotion->title }}</h2>
+                    <div class="col-9">
+                        <h2 class="text-lg"><strong>{{ $promotion->title }}</strong></h2>
+                    </div>
+                    <div class="col-3">
+                        <strong>Valid Until: {{ $promotion->valid_until->format('d M Y') }}</strong>
+                    </div>
                     <hr>
                 </div>
-                <div class="gridy-2" style="box-shadow: inset 0 0 0 0px #fff; padding-top: 0px;" >
+                <div class="gridy-2" style="box-shadow: inset 0 0 0 0px #fff; padding-top: 0px">
                     <label>{!! $promotion->details !!}</label>
                 </div>
             </div>

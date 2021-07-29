@@ -3,7 +3,7 @@
         <div class="wrap">
             <div class="wrap_float">
                 <div class="left">
-                    <div class="search_btn"></div>
+                    <div class="search_btn" id="search-button"></div>
                     <a href="/home" class="logo">
                         @if (strlen(request()->path()) > 1 && request()->path() != 'home')
                             <img src="/images/logo_horizontal_2.svg" alt="Candi Alt Logo">

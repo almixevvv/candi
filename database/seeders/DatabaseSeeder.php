@@ -29,5 +29,6 @@ class DatabaseSeeder extends Seeder
         $this->call(ListingSeeder::class);
 
         $this->call(ListingRatingSeeder::class);
+        $this->call(FrontendMenuSeeder::class);
     }
 }

@@ -15,7 +15,14 @@
                         : $value->id !!}
                 </td>
                 @foreach($fields as $field)
-                    <td>{{ $value->{$field} }}</td>
+                    @php 
+                        $field = explode(".", $field);
+                        $data = $value;
+                    @endphp
+                    @foreach ($field as $k => $f)
+                        @php $data = $data->{$f}; @endphp
+                    @endforeach
+                    <td>{{ $data }}</td>
                 @endforeach
                 <td>
                     @if ($hasEdit or $hasDelete)

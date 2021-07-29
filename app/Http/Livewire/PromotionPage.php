@@ -9,7 +9,7 @@ use App\Utils\Database;
 class PromotionPage extends Component
 {
     public $sortable;
-    public $choosenSortable = null;
+    public $choosenSortable = "Date";
     public $promotions = [];
 
     public $searchQuery = "";
@@ -24,7 +24,7 @@ class PromotionPage extends Component
         }
 
         if ($this->choosenSortable == "Date") {
-            $promotions = $promotions->orderBy('valid_until', 'desc');
+            $promotions = $promotions->orderBy('valid_until');
         } else if ($this->choosenSortable == "Cashback") {
             $promotions = $promotions->orderBy('cashback', 'desc');
         } else if ($this->choosenSortable == "Discount") {
