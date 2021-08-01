@@ -34,7 +34,9 @@
 </head>
 
 <body>
-    <livewire:search-box />
+    <div id="search-box">
+        <livewire:search-box id="search-box"/>
+    </div>
     @include('components.front.navbar')
     @yield('content')
     @include('components.front.footer')
@@ -81,10 +83,12 @@
         convertFigureToIframe()
 
         $('#search-button, #box-search').on('click', function() {
+            console.log("triggered")
             $('#search-box').addClass('is-active')
         });
 
         $('#close-search-button').on('click', function() {
+            console.log("closing")
             $('#search-box').removeClass('is-active')
         });
     </script>

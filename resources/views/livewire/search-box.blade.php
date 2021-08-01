@@ -1,4 +1,4 @@
-<div class="search-wrapper" id="search-box">
+<div class="search-wrapper">
     <div style="position: relative; width: 100%">
         <div class="search-box-wrapper">
             <input
@@ -11,7 +11,6 @@
                 wire:keydown.tab="hideDropdown"
                 wire:keydown.Arrow-Up="decrementHighlight"
                 wire:keydown.Arrow-Down="incrementHighlight"
-                wire:keydown.enter.prevent="selectAccount"
             />
             <span style="position: absolute; top: 0.5em; bottom: 0px; left: 0.75em;">
                 <img src="/images/search-hover.svg" style="width:1.25em;"></img>
@@ -46,8 +45,3 @@
         @endif
     </div>
 </div>
-
-@once
-@push('extra-css')
-@endpush
-@endonce
