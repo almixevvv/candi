@@ -101,11 +101,11 @@ class ListingController extends Controller
         }
 
         $listing->createOrUpdateMetadata([
-            "title" => $request->title,
-            "description" => $request->description,
-            "robots" => $request->robots,
-            "keywords" => $request->keywords,
-            "canonical" => $request->canonical,
+            "title" => $request->title ?? "",
+            "description" => $request->description ?? "",
+            "robots" => $request->robots ?? "",
+            "keywords" => $request->keywords ?? "",
+            "canonical" => $request->canonical ?? "",
         ]);
 
         $this->message("success", "Create success.");
@@ -215,11 +215,11 @@ class ListingController extends Controller
         }
 
         $listing->createOrUpdateMetadata([
-            "title" => $request->title,
-            "description" => $request->description,
-            "robots" => $request->robots,
-            "keywords" => $request->keywords,
-            "canonical" => $request->canonical,
+            "title" => $request->title ?? "",
+            "description" => $request->description ?? "",
+            "robots" => $request->robots ?? "",
+            "keywords" => $request->keywords ?? "",
+            "canonical" => $request->canonical ?? "",
         ]);
 
         $this->message("success", "Update success.");

@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\AdvertiseWithUs;
 use App\Models\Image;
 use App\Models\WhoWeAre;
 use Illuminate\Database\Seeder;
@@ -20,6 +21,12 @@ class DatabaseSeeder extends Seeder
         WhoWeAre::create([
             "contents" => "empty content"
         ]);
+
+        AdvertiseWithUs::truncate();
+        AdvertiseWithUs::create([
+            "content" => "empty content"
+        ]);
+        
         $this->call(MenuSeeder::class);
         $this->call(RoleSeeder::class);
         $this->call(ProfileSettingSeeder::class);

@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Backend\BlogController;
+use App\Http\Controllers\Backend\MenuController;
+use App\Http\Controllers\Backend\PageController;
 use App\Http\Controllers\Backend\RoleController;
 use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\Backend\UploadController;
@@ -16,10 +18,9 @@ use App\Http\Controllers\Backend\PromotionController;
 use App\Http\Controllers\Backend\ListingTagController;
 use App\Http\Controllers\Backend\BlogCategoryController;
 use App\Http\Controllers\Backend\SubscriptionController;
+use App\Http\Controllers\Backend\AdvertiseWithUsController;
 use App\Http\Controllers\Backend\ListingCategoryController;
 use App\Http\Controllers\Backend\ListingRatingCategoryController;
-use App\Http\Controllers\Backend\MenuController;
-use App\Http\Controllers\Backend\PageController;
 
 //Login Process
 Route::get('/login', [AuthController::class, 'show'])->name('login.index');
@@ -82,6 +83,10 @@ Route::group(["middleware" => "auth"], function() {
     Route::get('profile-setting', [SettingController::class, "profile"])->name('profile.index');
     Route::post('profile-setting', [SettingController::class, "updateProfile"])->name('profile.update');
     Route::resource('/menus', MenuController::class);
+
+    // adv with us
+    Route::get('adv-with-us', [AdvertiseWithUsController::class, "edit"])->name('adv.edit');
+    Route::POST('adv-with-us', [AdvertiseWithUsController::class, "update"])->name('adv.update');
 
     // utility
     // probably will not used in the future for now dont delete

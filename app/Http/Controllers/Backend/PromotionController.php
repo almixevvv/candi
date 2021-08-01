@@ -96,7 +96,7 @@ class PromotionController extends Controller
             "data" => [
                 "title" => $promotion->title,
                 "details" => $promotion->details,
-                "valid_until" => $promotion->valid_until,
+                "valid_until" => $promotion->valid_until->format('Y-m-d'),
                 "cashback" => $promotion->cashback,
                 "discount_percentage" => $promotion->discount_percentage,
                 "discount_value" => $promotion->discount_value,

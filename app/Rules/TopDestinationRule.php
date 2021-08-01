@@ -8,7 +8,7 @@ use Illuminate\Contracts\Validation\Rule;
 class TopDestinationRule implements Rule
 {
     private $listing = null;
-    private int $max_top_destination = 1;
+    private int $max_top_destination = 6;
     /**
      * Create a new rule instance.
      *

@@ -14,7 +14,7 @@ class ListingFaq extends Component
     public function mount(Listing $listing) 
     {
         $this->listing = $listing;
-        if ($listing->faqs) {
+        if ($listing->faqs->count()) {
             $faqs = [];
             foreach ($listing->faqs as $faq) {
                 $faqs[] = [
