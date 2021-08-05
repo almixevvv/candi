@@ -48,7 +48,7 @@ trait HasImage
 
     public function image()
     {
-        return $this->hasOne(Image::class, "model_id", "id")->where('model_name', $this->getModelName());
+        return $this->hasOne(Image::class, "model_id", "id")->where('model_name', $this->getModelName())->orderBy('id', 'desc');
     }
 
     public function images()

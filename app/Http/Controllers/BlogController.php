@@ -11,25 +11,26 @@ class BlogController extends Controller
 {
 	public function index(Request $request)
 	{
-		$blogCategories = BlogCategory::with('blogs')->get();
-		return view('front.blog.index', compact('request', 'blogCategories'));
+        $featuredBlogs = Blog::with('image')->where('is_featured', true)->get();
+		$blogCategories = BlogCategory::with(['blogs' => function($query) {
+            $query->where('is_featured', false);
+        }, 'blogs.image'])->get();
+		return view('front.blog.index', compact('request', 'blogCategories', 'featuredBlogs'));
 	}
 
 	public function detail(Request $request, int $id)
 	{
-		$blog = Blog::with('category')->where('id', $id)->firstOrFail();
+		$blog = Blog::with('category', 'metadata')->where('id', $id)->firstOrFail();
 
 		$older = Blog::where('category_id', $blog->category_id)
-			->where('id', '<', $blog->id)
+			->where('created_at', '<', $blog->created_at)
 			->orderBy('created_at', 'desc')
 			->first();
 
 		$newer = Blog::where('category_id', $blog->category_id)
-			->where('id', '>', $blog->id)
-			->orderBy('created_at', 'desc')
+			->where('created_at', '>', $blog->created_at)
+			->orderBy('created_at', 'asc')
 			->first();
-
-		// dd($older, $newer);
 
 		return view('front.blog.detail', compact('request', 'blog', 'older', 'newer'));
 	}

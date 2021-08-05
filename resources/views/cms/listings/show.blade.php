@@ -51,7 +51,7 @@
                 </tr>
             </tbody>
         </table>
-        @if ($listing->getRawOriginal('image_360_url'))
+        @if ($listing->image_360_url)
             <h3 style="margin-top: 2em; margin-bottom: 2em">360 Image</h3>
             @include('cms.includes.image_360', ["imageUrl" => $listing->image_360_url])
         @endif

@@ -1,4 +1,11 @@
-@extends('layouts.front.index')
+@extends('layouts.front.index', ['title' => $whoweare->metadata->title])
+
+@once
+@push('metadata')
+    @include('front.meta', ["metadata" => $whoweare->metadata])
+@endpush
+@endonce
+
 @section('content')
 <div class="container">
     <div class="breadcrumbs">

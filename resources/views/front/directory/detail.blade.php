@@ -1,4 +1,10 @@
-@extends('layouts.front.index')
+@extends('layouts.front.index', ['title' => $listingDetail->metadata->title])
+
+@once
+@push('metadata')
+    @include('front.meta', ["metadata" => $listingDetail->metadata])
+@endpush
+@endonce
 
 @push('extra-css')
 <style>
@@ -189,7 +195,7 @@
       @endif
 
       <div class="directory-location mt-3 bg-white border-bottom pb-4 pt-3">
-        @if ($listingDetail->getRawOriginal('image_360_url'))
+        @if ($listingDetail->image_360_url)
             <div class="row">
                 <div class="col-12">
                     <div class="px-4">
@@ -197,8 +203,18 @@
                     </div>
                     <div class="px-4 pt-2">
                         <button class="btn btn-primary" id="show360Image">Show 360 Image</button>
-                        <div id="vwview"></div>
                     </div>
+                </div>
+                <div class="col-12 px-4 pt-2" style="padding-left: 2.25rem !important">
+                    <iframe class="ku-embed"
+                        width="100%"
+                        height="500px"
+                        frameborder="0"
+                        allowfullscreen
+                        allow="xr-spatial-tracking; gyroscope; accelerometer"
+                        scrolling="no"
+                        src="{{ $listingDetail->image_360_url }}"
+                    ></iframe>
                 </div>
             </div>
         @endif

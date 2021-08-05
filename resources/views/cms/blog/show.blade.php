@@ -26,6 +26,10 @@
                     <th>Category</th>
                     <td>{{ $blog->category->name }}</td>
                 </tr>
+                <tr>
+                    <th>Is Featured</th>
+                    <td>{{ $blog->is_featured ? "Yes" : "No" }}</td>
+                </tr>
             </thead>
         </table>
         <h3 style="margin-top: 2em; margin-bottom: 2em">Content</h3>
