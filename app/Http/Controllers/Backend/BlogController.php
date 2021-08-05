@@ -118,6 +118,7 @@ class BlogController extends Controller
                 "title" => $blog->title,
                 "content" => $blog->content,
                 "category_id" => $blog->category_id,
+                "is_featured" => $blog->is_featured,
 
                 // metadata
                 "description" => ($blog->metadata) ? $blog->metadata->description : "",
@@ -149,6 +150,7 @@ class BlogController extends Controller
         $blog->title = $request->title;
         $blog->content = $request->content;
         $blog->category_id = $request->category_id;
+        $blog->is_featured = $request->is_featured;
         $blog->save();
 
         if ($request->file('image')) {

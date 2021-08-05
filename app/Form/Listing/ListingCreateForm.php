@@ -31,7 +31,7 @@ class ListingCreateForm extends Form
         ]);
 
         $this->separator('360 Image');
-        $this->upload('image_360', '360 Image');
+        $this->text('image_360_url', '360 Image');
 
         $this->separator('Metadata');
 

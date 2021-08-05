@@ -11,7 +11,7 @@ class Blog extends Model
 {
     use HasFactory, HasImage, HasMetadata;
 
-    public $fillable = ["title", "content", "category_id"];
+    public $fillable = ["title", "content", "category_id", 'is_featured'];
 
     public function category() 
     {

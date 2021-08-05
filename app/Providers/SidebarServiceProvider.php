@@ -31,8 +31,13 @@ class SidebarServiceProvider extends ServiceProvider
     {
         View::composer('components.cms.sidebar', MenuComposer::class);
         View::composer('components.cms.sidebar', IconComposer::class);
-        View::composer('front.*', BlogComposer::class);
-        View::composer('front.*', ProfileComposer::class);
+
+        View::composer('components.front.footer', BlogComposer::class);
+
+        View::composer([
+            'components.front.footer', 'components.front.navbar',
+            'front.contact.index',
+        ], ProfileComposer::class);
 
     }
 }

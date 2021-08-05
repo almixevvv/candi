@@ -29,28 +29,11 @@ use Illuminate\Contracts\Filesystem\FileNotFoundException;
 |
 */
 
-// Route::get('/', function (Request $request) {
-//     return view('front.home.index', ['request' => $request]);
-// });
-
 Route::get('/', [HomeController::class, 'index'])->name('index');
-
-//Front Routes
-// Route::get('/home', function (Request $request) {
-//     return view('front.home.index', ['request' => $request]);
-// })->name('home');
-
-// Route::get('/blog', function (Request $request) {
-//     return view('front.blog.index', ['request' => $request]);
-// })->name('blog');
-
-// Route::get('/detail_blog', function (Request $request) {
-//     return view('front.blog.detail', ['request' => $request]);
-// })->name('blog.detail');
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/blog', [BlogController::class, 'index'])->name('blog');
-Route::get('/detail_blog/{blog}', [BlogController::class, 'detail'])->name('blog.detail');
+Route::get('/blog/{blog}', [BlogController::class, 'detail'])->name('blog.detail');
 Route::get('/contact', [FrontendController::class, "contact"])->name('contact');
 
 Route::post('/contact', [ContactController::class, "store"])->name('contact.store');

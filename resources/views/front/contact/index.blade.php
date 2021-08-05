@@ -182,7 +182,7 @@
 
                     <div class="row">
                         <div class="col-12">
-                            <button type="submit" class="btn btn-secondary mt-5">Send Message</button>
+                            <button type="submit" class="btn btn-primary-candi mt-5">Send Message</button>
                         </div>
                     </div>
 
