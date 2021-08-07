@@ -1,4 +1,4 @@
-@extends('layouts.front.index', ['title' => $blog->metadata->title])
+@extends('layouts.front.index', ['title' => $blog->metadata?->title])
 
 @push('extra-css')
 <link rel="stylesheet" href="{{ asset('css/blog/blogdetail.css') }}">

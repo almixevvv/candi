@@ -1,4 +1,4 @@
-@extends('layouts.front.index', ['title' => $listingDetail->metadata->title])
+@extends('layouts.front.index', ['title' => $listingDetail->metadata?->title])
 
 @once
 @push('metadata')
