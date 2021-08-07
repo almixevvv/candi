@@ -1,8 +1,10 @@
-@extends('layouts.front.index', ['title' => $whoweare->metadata->title])
+@extends('layouts.front.index', ['title' => $whoweare->metadata?->title])
 
 @once
 @push('metadata')
-    @include('front.meta', ["metadata" => $whoweare->metadata])
+    @if ($whoweare->metadata)
+        @include('front.meta', ["metadata" => $whoweare->metadata])
+    @endif
 @endpush
 @endonce
 
