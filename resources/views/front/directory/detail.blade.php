@@ -203,9 +203,6 @@
                     <div class="px-4">
                         <h2 class="fw-bold">360 View</h2>
                     </div>
-                    <div class="px-4 pt-2">
-                        <button class="btn btn-primary" id="show360Image">Show 360 Image</button>
-                    </div>
                 </div>
                 <div class="col-12 px-4 pt-2" style="padding-left: 2.25rem !important">
                     <iframe class="ku-embed"
