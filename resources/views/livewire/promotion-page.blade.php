@@ -1,6 +1,6 @@
 <div class="gridy-3" style="background-color: #fff;box-shadow: inset 0 0 0 0px #fff;">
     <div class="row">
-        <div class="col-12 col-md-5">
+        <div class="col-12 col-md-5" style="margin-top: 1em;">
             Sort by:
             <select class="form-control" style="width: 75%" wire:model="choosenSortable">
                 <option value="">-- Select --</option>
