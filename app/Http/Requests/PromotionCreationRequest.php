@@ -26,7 +26,7 @@ class PromotionCreationRequest extends FormRequest
         return [
             'title' => "required",
             'valid_until' => "required|date",
-            'image' => "image",
+            'image' => "required|image",
             'cashback' => [
                 "required_without_all:discount_percentage,discount_value",
                 "prohibited_unless:discount_percentage,null",
