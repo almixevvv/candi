@@ -15,7 +15,7 @@
         </div>
         <div class="col-12 col-md-2" style="margin-top: 1em;">
             <br>
-            <button class="btn btn-primary btn-block" wire:click="searchPromotion">Search</button>
+            <button class="btn btn-primary-candi" wire:click="searchPromotion">Search</button>
         </div>
     </div>
     <div class="row">
