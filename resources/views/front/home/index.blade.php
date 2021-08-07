@@ -84,7 +84,7 @@
                     @if ($blogCategory->blogs->count())
                         @php $blog = $blogCategory->blogs->first(); @endphp
                         <a href="{{ route('blog.detail', ['blog' => $blog]) }}" class="blog_item">
-                            <div class="blog_item_top" style="background: url({{ $blog->image ? $blog->image ->image_thumbnail : "/images/logo_biru.svg" }}) no-repeat center;">
+                            <div class="blog_item_top" style="background-image: url({{ $blog->image ? $blog->image->image_url : "/images/logo_biru.svg" }});">
                                 <div class="sq_parent">
                                     <div class="sq_wrap">
                                         <div class="sq_content">

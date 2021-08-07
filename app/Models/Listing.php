@@ -21,10 +21,6 @@ class Listing extends Model
         'phone_number', 'website', 'is_active'
     ];
 
-    public $casts = [
-        "image_360_url" => ImageCast::class
-    ];
-
     public function category() 
     {
         return $this->belongsTo(ListingCategory::class);

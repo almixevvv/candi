@@ -12,6 +12,7 @@ class BlogCreateForm extends Form
         $this->text("title", "Title");
         $this->textArea("content", "Content", ["class" => "wysiwyg"]);
         $this->radio("category_id", "Category", Utils::createModelChoices(BlogCategory::all(), "id", "name"));
+        $this->radio('is_featured', 'Is Featured', [1 => "Yes", 0 => "No"]);
         $this->upload("image", "Header Image");
 
         $this->separator('Metadata');

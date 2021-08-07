@@ -96,9 +96,6 @@ class ListingController extends Controller
         $listing->tags()->attach($tags);
 
         $listing->addImage($request->file('image'));
-        if ($request->file('image_360')) {
-            $listing->uploadImage360($request->file('image_360'));
-        }
 
         $listing->createOrUpdateMetadata([
             "title" => $request->title ?? "",
@@ -154,6 +151,7 @@ class ListingController extends Controller
                 "phone_number" => $listing->phone_number,
                 "website" => $listing->website,
                 "is_active" => $listing->is_active,
+                "image_360_url" => $listing->image_360_url,
 
                 // metadata details
                 "description" => ($listing->metadata) ? $listing->metadata->description : "",
@@ -190,28 +188,21 @@ class ListingController extends Controller
             "phone_number" => "nullable|phone:ID",
             "website" => "nullable|url",
             "is_active" => "required",
+            'image_360_url' => "nullable|url",
         ]);
 
         $listing->update($request->except('_token', '_method', 'tags'));
+
+        // tag process
         $listing->tags()->toggle($listing->tags->map(fn ($value) => $value->id));
 
         $tagData = collect(json_decode($request->tags))->map(fn ($value) => $value->value);
-        $tags = [];
-        foreach ($tagData as $tag) {
-            $tags[] = ListingTag::where('name', $tag)->firstOrFail();
-        }
-
-        $tags = collect($tags)->map(fn ($value) => $value->id);
+        $tags = ListingTag::whereIn('name', $tagData)->get()->map(fn ($value) => $value->id);
         $listing->tags()->attach($tags);
 
         if ($request->file('image')) {
             $listing->removeAllImage();
             $listing->addImage($request->file('image'));
-        }
-
-        if ($request->file('image_360')) {
-            $listing->removeImage360();
-            $listing->uploadImage360($request->file('image_360'));
         }
 
         $listing->createOrUpdateMetadata([
