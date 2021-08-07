@@ -2,7 +2,9 @@
 
 @once
 @push('metadata')
-    @include('front.meta', ["metadata" => $listingDetail->metadata])
+    @if ($listingDetail->metadata)
+        @include('front.meta', ["metadata" => $listingDetail->metadata])
+    @endif
 @endpush
 @endonce
 

@@ -8,7 +8,9 @@
 
 @once
 @push('metadata')
-    @include('front.meta', ["metadata" => $blog->metadata])
+    @if ($blog->metadata)
+        @include('front.meta', ["metadata" => $blog->metadata])
+    @endif
 @endpush
 @endonce
 
