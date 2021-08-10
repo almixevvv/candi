@@ -56,6 +56,31 @@
                                     </div>
                                 @endforeach
                             @endforeach
+                            {{-- RATING --}}
+                            <div class="border-top mt-2 pt-3 filter-form d-flex justify-content-between">
+                                <div>
+                                    <span class="fw-bolder">Rating</span>
+                                </div>
+                            </div>
+                            @foreach($ratingCategories as $ratingCategory)
+                                <div class="filter-form mt-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input"
+                                            name="rating"
+                                            type="radio"
+                                            id="rating-{{ $ratingCategory->id }}"
+                                            wire:click="chooseRating({{ $ratingCategory->id }})"
+                                            @if($ratingCategory->id == $choosenRating)
+                                                selected
+                                            @endif
+                                            {{ $ratingCategory->id == $choosenRating ? "checked" : "" }}
+                                        >
+                                        <label class="form-check-label" for="rating-{{ $ratingCategory->id }}">
+                                            {{ $ratingCategory->name }}
+                                        </label>
+                                    </div>
+                                </div>
+                            @endforeach
                         </div>
                     </div>
 
@@ -156,6 +181,28 @@
                         @endforeach
                     </div>
                 @endforeach
+                {{-- RATING --}}
+                <div class="pb-2">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <span>Rating</span>
+                        </div>
+                    </div>
+                    @foreach($ratingCategories as $ratingCategory)
+                        <div class="regular-grid filter-holder">
+                            <span>
+                                <button
+                                    wire:click="chooseRating({{ $ratingCategory->id }})"
+                                    @if($ratingCategory->id == $choosenRating)
+                                        style="border: 1px solid blue"
+                                    @endif
+                                >
+                                    <span>{{ $ratingCategory->name }}</span>
+                                </button>
+                            </span>
+                        </div>
+                    @endforeach
+                </div>
             </div>
 
             <div class="filter-button {{ $filterIsOpen ? "open" : "" }}" id="filterButton">

@@ -61,12 +61,13 @@ class ListingCategoryController extends Controller
     {
         $this->validate($request, [
             "name" => "required",
-            "image" => "required|image"
+            "image" => "required|image",
+            "position" => "required|numeric"
         ]);
 
-        $listingCategory = ListingCategory::create([
-            "name" => $request->name
-        ]);
+        (new ListingCategory)->preparePosition($request->position);
+
+        $listingCategory = ListingCategory::create($request->except('_token', '_method'));
 
         $listingCategory->addImage($request->file('image'));
 
@@ -99,7 +100,8 @@ class ListingCategoryController extends Controller
             "action" => route('cms.listing-categories.update', $listingCategory),
             "method" => "PUT",
             "data" => [
-                "name" => $listingCategory->name
+                "name" => $listingCategory->name,
+                "position" => $listingCategory->position,
             ],
             "extra" => [
                 "helpText" => "You will replace the image if you upload a new image"
@@ -123,8 +125,9 @@ class ListingCategoryController extends Controller
             "image" => "image"
         ]);
 
-        $listingCategory->name = $request->name;
-        $listingCategory->save();
+        $listingCategory->preparePosition($request->position, $listingCategory->id);
+
+        $listingCategory->update($request->except('_token', '_method'));
 
         if ($request->file('image')) {
             $listingCategory->removeAllImage();

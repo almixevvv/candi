@@ -15,7 +15,7 @@ class DirectoryCategories extends Component
      */
     public function __construct()
     {
-        $this->categories = ListingCategory::with('image')->orderBy('id', 'desc')->get();
+        $this->categories = ListingCategory::with('image')->orderBy('position')->get();
     }
 
     /**

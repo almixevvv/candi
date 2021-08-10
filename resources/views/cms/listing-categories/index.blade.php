@@ -8,6 +8,7 @@
             <thead>
                 <th>ID</th>
                 <th>Name</th>
+                <th>Position</th>
                 <th>Icon</th>
                 <th>Action</th>
             </thead>
@@ -18,9 +19,10 @@
                             <a href="{{ route('cms.listing-categories.show', $listingCategory) }}">{{ $listingCategory->id }}</a>
                         </td>
                         <td>{{ $listingCategory->name }}</td>
+                        <td>{{ $listingCategory->position }}</td>
                         <td>
                             @if ($listingCategory->image)
-                                <img src="{{ $listingCategory->image->image_thumbnail }}" />
+                                <img src="{{ $listingCategory->image->image_thumbnail }}" width="10%" />
                             @endif
                         </td>
                         <td>
