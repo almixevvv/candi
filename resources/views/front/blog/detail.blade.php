@@ -60,7 +60,7 @@
                 <aside class="section-prev-next">
                     <div class="prev-next-wrap">
                         @if ($newer)
-                        <a href="{{ route('blog.detail', ['blog' => $newer->id]) }}" class="prev-post post tag-people tag-journey is-image ">
+                        <a href="{{ route('blog.detail', ['slug' => $newer->slug]) }}" class="prev-post post tag-people tag-journey is-image ">
                             <div class="prev-next-image" style="background-image: url({{ $newer->image->image_url }})"></div>
                             <section class="prev-next-title">
                                 <h5>Newer Post</h5>
@@ -69,7 +69,7 @@
                         </a>
                         @endif
                         @if ($older)
-                        <a href="{{ route('blog.detail', ['blog' => $older->id]) }}" class="next-post post tag-design featured is-image">
+                        <a href="{{ route('blog.detail', ['slug' => $older->slug]) }}" class="next-post post tag-design featured is-image">
                             <div class="prev-next-image" style="background-image: url({{ $older->image->image_url }})"></div>
                             <section class="prev-next-title">
                                 <h5>Older Post</h5>

@@ -23,8 +23,10 @@ class ListingFactory extends Factory
     {
         $lowPrice = $this->faker->randomNumber(6);
 
+        $title = $this->faker->title;
         return [
-            "title" => $this->faker->title,
+            "title" => $title,
+            "slug" => str_replace(" ", "-", $title),
             "details" => $this->faker->paragraph(5, true),
             "address" => $this->faker->address,
             "lat" => $this->faker->latitude(-6.2, -6.3),

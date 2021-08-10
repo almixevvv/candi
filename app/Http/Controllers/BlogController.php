@@ -18,9 +18,9 @@ class BlogController extends Controller
 		return view('front.blog.index', compact('request', 'blogCategories', 'featuredBlogs'));
 	}
 
-	public function detail(Request $request, int $id)
+	public function detail(Request $request, $slug)
 	{
-		$blog = Blog::with('category', 'metadata')->where('id', $id)->firstOrFail();
+		$blog = Blog::with('category', 'metadata')->where('slug', $slug)->firstOrFail();
 
 		$older = Blog::where('category_id', $blog->category_id)
 			->where('created_at', '<', $blog->created_at)

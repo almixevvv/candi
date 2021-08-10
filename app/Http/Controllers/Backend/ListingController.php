@@ -81,6 +81,7 @@ class ListingController extends Controller
             "phone_number" => "phone:ID",
             "website" => "url",
             "is_active" => "required",
+            "slug" => "required"
         ]);
 
         $listing = Listing::create($request->except('_token', '_method', 'tags'));
@@ -189,6 +190,7 @@ class ListingController extends Controller
             "website" => "nullable|url",
             "is_active" => "required",
             'image_360_url' => "nullable|url",
+            "slug" => "required"
         ]);
 
         $listing->update($request->except('_token', '_method', 'tags'));

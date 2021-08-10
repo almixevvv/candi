@@ -10,6 +10,7 @@ class BlogCreateForm extends Form
     public function handle() 
     {
         $this->text("title", "Title");
+        $this->text("slug", "Slug (Url)");
         $this->textArea("content", "Content", ["class" => "wysiwyg"]);
         $this->radio("category_id", "Category", Utils::createModelChoices(BlogCategory::all(), "id", "name"));
         $this->radio('is_featured', 'Is Featured', [1 => "Yes", 0 => "No"]);

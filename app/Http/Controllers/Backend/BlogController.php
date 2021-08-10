@@ -66,7 +66,8 @@ class BlogController extends Controller
             "title" => "required",
             "content" => "required",
             "category_id" => "required",
-            "image" => "required|image"
+            "image" => "required|image",
+            "slug" => "required"
         ]);
 
         $blog = Blog::create($request->except('_token', '_method', 'image'));
@@ -144,10 +145,12 @@ class BlogController extends Controller
             "title" => "required",
             "content" => "required",
             "category_id" => "required",
-            "image" => "image"
+            "image" => "image",
+            "slug" => "required"
         ]);
 
         $blog->title = $request->title;
+        $blog->slug = $request->slug;
         $blog->content = $request->content;
         $blog->category_id = $request->category_id;
         $blog->is_featured = $request->is_featured;

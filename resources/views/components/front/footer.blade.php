@@ -29,7 +29,7 @@
                             <div class="_title m_title">Latest Blog</div>
                             <ul>
                                 @foreach ($latest_blog as $blog)
-                                    <li><a href="{{ route('blog.detail', ['blog' => $blog]) }}">{{$blog->title}}</a></li>
+                                    <li><a href="{{ route('blog.detail', ['slug' => $blog->slug]) }}">{{$blog->title}}</a></li>
                                 @endforeach
                             </ul>
                         @endif

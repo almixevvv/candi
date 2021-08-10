@@ -33,7 +33,7 @@ Route::get('/', [HomeController::class, 'index'])->name('index');
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/blog', [BlogController::class, 'index'])->name('blog');
-Route::get('/blog/{blog}', [BlogController::class, 'detail'])->name('blog.detail');
+Route::get('/blog/{slug}', [BlogController::class, 'detail'])->name('blog.detail');
 Route::get('/contact', [FrontendController::class, "contact"])->name('contact');
 
 Route::post('/contact', [ContactController::class, "store"])->name('contact.store');
@@ -45,7 +45,7 @@ Route::get('/advertise', function () {
 })->name('advertise');
 
 Route::get('/directory', [ListingController::class, 'index'])->name('directory');
-Route::get('/directory/{directory}', [ListingController::class, 'detail'])->name('directory.detail');
+Route::get('/directory/{slug}', [ListingController::class, 'detail'])->name('directory.detail');
 
 Route::get('/whoweare', [WhoareweController::class, 'index'])->name('whoweare');
 

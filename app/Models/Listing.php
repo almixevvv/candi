@@ -18,7 +18,7 @@ class Listing extends Model
     public $fillable = [
         "title", "details", "address", "lat", "long", "low_price",
         "high_price", 'category_id', 'image_360_url', 'top_destination',
-        'phone_number', 'website', 'is_active'
+        'phone_number', 'website', 'is_active', 'slug'
     ];
 
     public function category() 
