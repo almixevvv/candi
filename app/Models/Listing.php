@@ -2,9 +2,9 @@
 
 namespace App\Models;
 
-use App\Casts\ImageCast;
 use App\Traits\HasImage;
 use App\Traits\HasMetadata;
+use App\Traits\HasPosition;
 use Illuminate\Support\Facades\File;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Storage;

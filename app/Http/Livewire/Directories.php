@@ -6,14 +6,18 @@ use App\Models\Listing;
 use Livewire\Component;
 use App\Models\ListingTag;
 use App\Models\ListingTagCategory;
+use Illuminate\Support\Facades\DB;
+use App\Models\ListingRatingCategory;
 
 class Directories extends Component
 {
-
     public $listingTags = [];
     public $tagCategories = [];
+    public $ratingCategories = [];
+
     public $choosenTag = [];
     public $categoryID = null;
+    public $choosenRating = null;
 
     // mobile
     public $checkedTag = [];
@@ -65,6 +69,16 @@ class Directories extends Component
         $this->setupUI();
     }
 
+    public function chooseRating($ratingID) 
+    {
+        if ($ratingID != $this->choosenRating) {
+            $this->choosenRating = $ratingID;
+        } else {
+            $this->choosenRating = null;
+        }
+        $this->setupUI();
+    }
+
     public function applyCheckedTag() 
     {
         $this->choosenTag = $this->checkedTag;
@@ -84,12 +98,18 @@ class Directories extends Component
 
     public function setupUI() 
     {
+        $choosenRating = $this->choosenRating;
         $listingTags = ListingTag::with([
             'listings.image', 'listings.tags',
             "listings" => function($query) {
                 $query->where('is_active', true);
             }
-        ])->has('listings', '>', 0);
+        ])->whereHas('listings.ratings', function ($query) use ($choosenRating) {
+            if ($choosenRating) {
+                $query->where('listing_rating_category_id', $choosenRating)
+                    ->orderByDesc("rating");
+            }
+        })->has('listings', '>', 0);
 
         if (count($this->choosenTag)) {
             $listingTags = $listingTags->whereIn('id', $this->choosenTag);
@@ -104,6 +124,7 @@ class Directories extends Component
 
         $this->listingTags = $listingTags->get();
         $this->tagCategories = ListingTagCategory::with('tags')->get();
+        $this->ratingCategories = ListingRatingCategory::get();
     }
 
     public function render()
