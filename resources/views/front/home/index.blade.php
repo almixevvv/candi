@@ -49,7 +49,7 @@
             <div class="section_content mt-2">
                 <div class="scroll">
                     @foreach($topDestinations as $topDestination)
-                        <a href="{{  route('directory.detail', ['directory' => $topDestination->id ]) }}" class="destinations_item" style="background-image: url({{ $topDestination->image->image_url }})">
+                        <a href="{{  route('directory.detail', ['slug' => $topDestination->slug ]) }}" class="destinations_item" style="background-image: url({{ $topDestination->image->image_url }})">
                             <div class="sq_parent">
                                 <div class="sq_wrap">
                                     <div class="sq_content">

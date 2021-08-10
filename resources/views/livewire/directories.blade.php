@@ -119,7 +119,7 @@
                                                 <i class="fas fa-circle"></i>
                                                 <span>Rp {{ number_format($listing->low_price) }} - {{ number_format($listing->high_price) }}</span>
                                             </div>
-                                            <a href="{{ route('directory.detail', ['directory' => $listing->id ]) }}" class="btn btn-primary-candi btn-order">More Info</a>
+                                            <a href="{{ route('directory.detail', ['slug' => $listing->slug ]) }}" class="btn btn-primary-candi btn-order">More Info</a>
                                         </div>
                                     </div>
                                     @endforeach

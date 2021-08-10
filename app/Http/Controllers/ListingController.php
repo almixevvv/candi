@@ -15,9 +15,9 @@ class ListingController extends Controller
         return view('front.directory.index', $this->contextData);
     }
 
-    public function detail(Request $request, int $id)
+    public function detail(Request $request, string $slug)
     {
-        $listingDetail = Listing::with('image', 'tags', 'ratings.category', 'faqs')->where('id', $id)->where('is_active', true)->firstOrFail();
+        $listingDetail = Listing::with('image', 'tags', 'ratings.category', 'faqs')->where('slug', $slug)->where('is_active', true)->firstOrFail();
 
         return view('front.directory.detail', compact('request', 'listingDetail'));
     }

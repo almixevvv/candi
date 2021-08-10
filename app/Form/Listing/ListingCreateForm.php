@@ -13,6 +13,7 @@ class ListingCreateForm extends Form
     public function handle() 
     {
         $this->text('title', 'Title');
+        $this->text("slug", "Slug (Url)");
         $this->textArea('address', 'Address');
         $this->text('phone_number', 'Phone Number');
         $this->text('website', 'Website');

@@ -27,7 +27,7 @@
                                 </svg> Featured
                             </span>
                             <h2>
-                                <a href="{{ route('blog.detail', ['blog' => 1]) }}">
+                                <a href="{{ route('blog.detail', ['slug' => $featuredBlog->slug]) }}">
                                     {{ $featuredBlog->title }}
                                 </a>
                                 <span class="featured-dot"></span>
@@ -53,9 +53,9 @@
                 @if (count($blogCategory->blogs))
                   <div class="item-wrap flex post tag-story tag-hash-orange tag-hash-post-orange tag-hash-cta-violet no-image ">
                       <article>
-                          <a href="{{ route('blog.detail', ['blog' => $blogCategory->blogs[0]]) }}" class="item-link-overlay" aria-label="The future of architecture is culture"></a>
+                          <a href="{{ route('blog.detail', ['slug' => $blogCategory->blogs[0]->slug]) }}" class="item-link-overlay" aria-label="The future of architecture is culture"></a>
                           <div class="item-image" style="background-image: url({{ $blogCategory->blogs[0]->image->image_url }})"></div>
-                          <h2><a href="{{ route('blog.detail', ['blog' => $blogCategory->blogs[0]]) }}" class="white">{{ $blogCategory->blogs[0]->title }}</a></h2>
+                          <h2><a href="{{ route('blog.detail', ['slug' => $blogCategory->blogs[0]->slug]) }}" class="white">{{ $blogCategory->blogs[0]->title }}</a></h2>
                           <div class="item-meta white is-primary-tag is-members-label">
                               <span>by</span>
                               <a href="#">Patricia Jenkins</a>

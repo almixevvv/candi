@@ -104,12 +104,16 @@ class Directories extends Component
             "listings" => function($query) {
                 $query->where('is_active', true);
             }
-        ])->whereHas('listings.ratings', function ($query) use ($choosenRating) {
-            if ($choosenRating) {
-                $query->where('listing_rating_category_id', $choosenRating)
-                    ->orderByDesc("rating");
-            }
-        })->has('listings', '>', 0);
+        ])->has('listings', '>', 0);
+
+        if ($choosenRating) {
+            $listingTags = $listingTags->whereHas('listings.ratings', function ($query) use ($choosenRating) {
+                if ($choosenRating) {
+                    $query->where('listing_rating_category_id', $choosenRating)
+                        ->orderByDesc("rating");
+                }
+            });
+        }
 
         if (count($this->choosenTag)) {
             $listingTags = $listingTags->whereIn('id', $this->choosenTag);

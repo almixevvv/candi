@@ -21,6 +21,10 @@
                     <td>{{ $listing->title }}</td>
                 </tr>
                 <tr>
+                    <th>Slug (Url)</th>
+                    <td>{{ $listing->slug }}</td>
+                </tr>
+                <tr>
                     <th>Category</th>
                     <td>{{ $listing->category->name }}</td>
                 </tr>
