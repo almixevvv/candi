@@ -130,7 +130,7 @@
             <div class="section_content mt-2">
                 <!-- LightWidget WIDGET -->
                 <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
-                <iframe src="{{ $homeData ? $homeData->instagram_widget_url : "//lightwidget.com/widgets/b613fc91fd595ea1977f73997b998929.html" }}"
+                <iframe src="{{ $homeData ? $homeData->instagram_widget_url : "http://lightwidget.com/widgets/b613fc91fd595ea1977f73997b998929.html" }}"
                     scrolling="no"
                     allowtransparency="true"
                     class="lightwidget-widget"
