@@ -31,6 +31,9 @@ class HomeController extends Controller
                 "sub_top_destination" => $home->sub_top_destination,
                 "featured_blog" => $home->featured_blog,
                 "sub_featured_blog" => $home->sub_featured_blog,
+                "instagram_head" => $home->instagram_head,
+                "sub_instagram_head" => $home->sub_instagram_head,
+                "instagram_widget_url" => $home->instagram_widget_url,
             ]
             : [];
 
@@ -56,6 +59,9 @@ class HomeController extends Controller
             "sub_top_destination" => "required",
             "featured_blog" => "required",
             "sub_featured_blog" => "required",
+            "instagram_head" => "required",
+            "sub_instagram_head" => "required",
+            "instagram_widget_url" => "required",
         ]);
 
         $home = Home::first();
