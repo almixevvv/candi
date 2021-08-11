@@ -15,14 +15,22 @@
                         : $value->id !!}
                 </td>
                 @foreach($fields as $field)
-                    @php 
-                        $field = explode(".", $field);
+                    @php
+                        $parsedOption = explode("|", $field); 
+                        $option = count($parsedOption) > 1 ? $parsedOption[1] : null;
+                        $field = explode(".", $parsedOption[0]);
                         $data = $value;
                     @endphp
                     @foreach ($field as $k => $f)
                         @php $data = $data->{$f}; @endphp
                     @endforeach
-                    <td>{{ $data }}</td>
+                    @if ($option)
+                        @if ($option == "image")
+                            <td><img src="{{ $data }}" width="50%" /></td>
+                        @endif
+                    @else
+                        <td>{{ $data }}</td>
+                    @endif
                 @endforeach
                 <td>
                     @if ($hasEdit or $hasDelete)

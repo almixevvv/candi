@@ -2,26 +2,28 @@
 @section('content')
 <div class="main_slider js_height">
     <div class="slider_wrap" id="main_slider_wrap">
-        <div class="slide">
-            <div class="bg-img" style="background-image: url('/images/bali.jpg')"></div>
-            <div class="wrap">
-                <div class="wrap_float js_height">
-                    <div class="slide_content">
-                        <div class="title_wrap home">
-                            <p class="slide_title" style="font-size:36pt; width: 100%;">Time to start a journey</p>
-                            <div style="margin-top: 5em;">
-                                <div style="position: relative">
+        @foreach($banners as $banner)
+            <div class="slide">
+                <div class="bg-img" style="background-image: url('{{ $banner->image->image_url }}')"></div>
+                <div class="wrap">
+                    <div class="wrap_float js_height">
+                        <div class="slide_content">
+                            <div class="title_wrap home">
+                                <p class="slide_title" style="font-size:36pt; width: 100%;">Time to start a journey</p>
+                                <div style="margin-top: 5em;">
                                     <div style="position: relative">
-                                        <input
-                                            type="text"
-                                            class="search-box"
-                                            placeholder="What are you looking for?"
-                                            id="box-search"
-                                            readonly
-                                        />
-                                        <span style="position: absolute; top: 0.5em; bottom: 0px; left: 0.75em;">
-                                            <img src="/images/search-hover.svg" style="width:1.25em;"></img>
-                                        </span>
+                                        <div style="position: relative">
+                                            <input
+                                                type="text"
+                                                class="search-box"
+                                                placeholder="What are you looking for?"
+                                                id="box-search"
+                                                readonly
+                                            />
+                                            <span style="position: absolute; top: 0.5em; bottom: 0px; left: 0.75em;">
+                                                <img src="/images/search-hover.svg" style="width:1.25em;"></img>
+                                            </span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -29,7 +31,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        @endforeach
     </div>
 </div>
 
@@ -128,7 +130,7 @@
             <div class="section_content mt-2">
                 <!-- LightWidget WIDGET -->
                 <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
-                <iframe src="{{ $homeData ? $homeData->instagram_widget_url ? "https://lightwidget.com/widgets/b613fc91fd595ea1977f73997b998929.html" }}"
+                <iframe src="{{ $homeData ? $homeData->instagram_widget_url : "//lightwidget.com/widgets/b613fc91fd595ea1977f73997b998929.html" }}"
                     scrolling="no"
                     allowtransparency="true"
                     class="lightwidget-widget"

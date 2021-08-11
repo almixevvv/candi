@@ -99,7 +99,7 @@ $(document).ready(function(){
     if ($("#main_slider_wrap").length) {
         $('#main_slider_wrap').slick({
             arrows: true,
-            dots: false,
+            dots: true,
             slidesToShow: 1,
             slidesToScroll: 1,
             infinite: true,
@@ -111,9 +111,8 @@ $(document).ready(function(){
             touchMove: true,
             draggable: true,
             autoplay: true,
-            pauseOnHover: true,
             speed: 500,
-            autoplaySpeed: 8000,
+            autoplaySpeed: 3000,
             prevArrow: $('.main_slider .arrow.prev'),
             nextArrow: $('.main_slider .arrow.next, .next_title')
         });
