@@ -116,6 +116,33 @@
     </div>
 </div>
 
+<div class="blog slick232">
+    <div class="wrap">
+        <div class="title_wrap">
+            <h2 class="title">{{ $homeData ? $homeData->instagram_head : "Our Instagram Posts" }}</h2>
+            <p class="subtitle">
+                {{ $homeData ? $homeData->sub_instagram_head : "Let's take a look at our latest instagram posts." }}
+            </p>
+        </div>
+        <div class="wrap_float">
+            <div class="section_content mt-2">
+                <!-- LightWidget WIDGET -->
+                <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
+                <iframe src="{{ $homeData ? $homeData->instagram_widget_url ? "https://lightwidget.com/widgets/b613fc91fd595ea1977f73997b998929.html" }}"
+                    scrolling="no"
+                    allowtransparency="true"
+                    class="lightwidget-widget"
+                    style="width:100%;border:0;overflow:hidden;"></iframe>
+            </div>
+        </div>
+        @if ($blogCategories->count() > 3)
+            <div style="text-align: center; margin-top: 10px;">
+                <a href="{{ route('blog') }}" class="link"><label>Load More</label></a>
+            </div>
+        @endif
+    </div>
+</div>
+
 <div class="subscribe_section">
     <div class="wrap">
         <div class="wrap_float">
