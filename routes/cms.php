@@ -19,6 +19,7 @@ use App\Http\Controllers\Backend\ListingTagController;
 use App\Http\Controllers\Backend\BlogCategoryController;
 use App\Http\Controllers\Backend\SubscriptionController;
 use App\Http\Controllers\Backend\AdvertiseWithUsController;
+use App\Http\Controllers\Backend\HomeController;
 use App\Http\Controllers\Backend\ListingCategoryController;
 use App\Http\Controllers\Backend\ListingRatingCategoryController;
 
@@ -72,6 +73,9 @@ Route::group(["middleware" => "auth"], function() {
 
     // Purpose
     Route::resource('/purposes', PurposeController::class);
+
+    // Home
+    Route::resource('/home', HomeController::class);
 
     // Contact
     Route::get('/contacts', [ContactController::class, 'index'])->name('contacts.index');

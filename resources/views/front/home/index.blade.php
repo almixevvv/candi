@@ -40,9 +40,9 @@
     <div class="wrap">
         <div class="wrap_float">
             <div class="title_wrap">
-                <h2 class="title">Top Destinations</h2>
+                <h2 class="title">{{ $homeData ? $homeData->top_destination : "Top Destinations" }}</h2>
                 <p class="subtitle">
-                    Find out detailed information in a place that you want to know more about.
+                    {{ $homeData ? $homeData->sub_top_destination : "Find out detailed information in a place that you want to know more about." }}
                 </p>
 
             </div>
@@ -74,16 +74,16 @@
     <div class="wrap">
         <div class="wrap_float">
             <div class="title_wrap">
-                <h2 class="title">Discover Our Journey Stories</h2>
+                <h2 class="title">{{ $homeData ? $homeData->featured_blog : "Discover Our Journey Stories" }}</h2>
                 <p class="subtitle">
-                    Let's take a look at the best recommended places to visit and reviews about them
+                    {{ $homeData ? $homeData->sub_featured_blog : "Let's take a look at the best recommended places to visit and reviews about them" }}
                 </p>
             </div>
             <div class="section_content mt-2">
                 @foreach($blogCategories as $blogCategory)
                     @if ($blogCategory->blogs->count())
                         @php $blog = $blogCategory->blogs->first(); @endphp
-                        <a href="{{ route('blog.detail', ['blog' => $blog]) }}" class="blog_item">
+                        <a href="{{ route('blog.detail', ['slug' => $blog->slug]) }}" class="blog_item">
                             <div class="blog_item_top" style="background-image: url({{ $blog->image ? $blog->image->image_url : "/images/logo_biru.svg" }});">
                                 <div class="sq_parent">
                                     <div class="sq_wrap">
