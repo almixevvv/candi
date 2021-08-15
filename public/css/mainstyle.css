@@ -1734,10 +1734,18 @@ body.os-windows .popup::-webkit-scrollbar-thumb {
 2.1. Top panel
 -----------------------------------------------------------------------------------*/
 .top_panel {
-	position: absolute;
-	top: 48px;
+	position: fixed;
+	background-color: #ffffff00;
+    padding: 24px 0;
 	z-index: 2;
+    transition: all ease-in-out 500ms;
 }
+
+.top_panel.hovered {
+    background-color: #ffffff;
+    box-shadow: 0 2px 6px 0px #cccccc;
+}
+
 .top_panel .menu_wrap {
 	width: 1090px;
 }
@@ -2124,10 +2132,11 @@ body.os-windows .popup::-webkit-scrollbar-thumb {
 	background: #c7c7c7;
 }
 .top_panel.inversion .center .menu ul li a {
-	color: #222;
+	color: #868686;
 }
 .top_panel.inversion .center .menu ul li a:hover span {
-	border-color: #222;
+	border-color: transparent;
+    color: #39E7E0
 }
 .top_panel.inversion .right .tel a {
 	color: #222;
@@ -3610,7 +3619,7 @@ body.os-windows .popup::-webkit-scrollbar-thumb {
 2.10. Footer
 -----------------------------------------------------------------------------------*/
 .footer {
-	background: #151515;
+	background: #39e7e0;
 	padding: 66px 0;
 	position: relative;
 	z-index: 1;
@@ -3683,13 +3692,13 @@ body.os-windows .popup::-webkit-scrollbar-thumb {
 }
 .footer_top ul li a {
 	font-size: 18px;
-	color: rgba(255, 255, 255, 0.38);
+	color: white;
 	display: block;
 	width: auto;
 	line-height: 20px;
 }
 .footer_top ul li a:hover {
-	color: #fff;
+	color: #868686;
 }
 .footer_bottom {
 	padding-top: 80px;
@@ -4571,7 +4580,7 @@ body.os-windows .popup::-webkit-scrollbar-thumb {
 	.top_panel .center .menu ul li .dropdown_ul li a {
 		font-size: 18px;
 		color: rgba(255, 255, 255, 0.38);
-		font-family: 'Nunito', sans-serif;
+		font-family: 'Comfortaa', sans-serif;
 	}
 	.top_panel .center .menu ul li.dropdown_li > a {
 		pointer-events: inherit;
@@ -7926,7 +7935,7 @@ body.os-windows .popup::-webkit-scrollbar-thumb {
 }
 .write_comment .title {
 	font-size: 24px;
-	font-family: 'Nunito', sans-serif;
+	font-family: 'Comfortaa', sans-serif;
 	font-weight: 600;
 	width: 50%;
 	line-height: 34px;
@@ -7989,7 +7998,7 @@ body.os-windows .popup::-webkit-scrollbar-thumb {
 	width: 49%;
 	margin-left: 2%;
 	font-size: 21px;
-	font-family: 'Nunito', sans-serif;
+	font-family: 'Comfortaa', sans-serif;
 	padding: 0 20px;
 }
 .write_comment .input:first-child {
@@ -8020,7 +8029,7 @@ body.os-windows .popup::-webkit-scrollbar-thumb {
 	resize: vertical;
 	font-size: 21px;
 	margin-top: 2%;
-	font-family: 'Nunito', sans-serif;
+	font-family: 'Comfortaa', sans-serif;
 	padding: 20px;
 }
 .write_comment .textarea:hover {

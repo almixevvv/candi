@@ -20,8 +20,8 @@
                                                 id="box-search"
                                                 readonly
                                             />
-                                            <span style="position: absolute; top: 0.5em; bottom: 0px; left: 0.75em;">
-                                                <img src="/images/search-hover.svg" style="width:1.25em;"></img>
+                                            <span style="position: absolute; top: 0.70em; bottom: 0px; left: 0.75em;">
+                                                <i class="fas fa-search"></i>
                                             </span>
                                         </div>
                                     </div>

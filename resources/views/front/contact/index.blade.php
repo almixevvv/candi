@@ -19,7 +19,7 @@
     }
 
     .contact-card i {
-        color: #23a8e4;
+        color: #39E7E0;
     }
 </style>
 

@@ -14,7 +14,7 @@
                         </div>
                     @endif
                     <div class="col">
-                        <div class="_title m_title">Perusahaan</div>
+                        <div class="_title m_title"><img src="/images/logo_horizontal.svg" alt="Candi Logo Original" width="50%"></div>
                         <ul>
                             <li><a href="{{ route('whoweare') }}">Who We Are</a></li>
                             <li><a href="{{ route('blog') }}">Blog</a></li>
@@ -46,9 +46,7 @@
                             <a href="mailto:{{ $_profile->email }}">{{ $_profile->email }}</a>
                             <p>For any questions</p>
                         </div>
-                        <div class="address">
-                            {{ $_profile->address }}
-                        </div>
+                        <div>&nbsp;</div>
                     </div>
                     <div class="socials social-links">
                         @if ($_profile->facebook)

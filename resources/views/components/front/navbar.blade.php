@@ -1,5 +1,5 @@
 <header class="header_area">
-    <div class="top_panel inversion">
+    <div class="top_panel inversion" id="top-panel">
         <div class="wrap">
             <div class="wrap_float">
                 <div class="left">
@@ -8,9 +8,9 @@
                         @if (strlen(request()->path()) > 1 && request()->path() != 'home')
                             <img src="/images/logo_horizontal_2.svg" alt="Candi Alt Logo">
                         @elseif (request()->path() == '/home')
-                            <img src="/images/logo_horizontal.svg" alt="Candi Logo Original">
+                            <img src="/images/logo_horizontal_2.svg" alt="Candi Logo Original">
                         @else
-                            <img src="/images/logo_horizontal.svg" alt="Candi Logo Original">
+                            <img src="/images/logo_horizontal_2.svg" alt="Candi Logo Original">
                         @endif
                     </a>
                 </div>
