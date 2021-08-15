@@ -12,12 +12,12 @@
                 wire:keydown.Arrow-Up="decrementHighlight"
                 wire:keydown.Arrow-Down="incrementHighlight"
             />
-            <span style="position: absolute; top: 0.5em; bottom: 0px; left: 0.75em;">
-                <img src="/images/search-hover.svg" style="width:1.25em;"></img>
+            <span style="position: absolute; top: 0.7em; bottom: 0px; left: 0.75em;">
+                <i class="fas fa-search"></i>
             </span>
         </div>
         <div class="close-button-wrapper">
-            <div class="close-button" id="close-search-button">X</div>
+            <div class="close-button btn-primary-candi" id="close-search-button">X</div>
         </div>
 
         @if(!empty($query) && $selectedListing == 0 && $showDropdown)
