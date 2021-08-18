@@ -120,6 +120,7 @@ class BlogController extends Controller
                 "content" => $blog->content,
                 "category_id" => $blog->category_id,
                 "is_featured" => $blog->is_featured,
+                "slug" => $blog->slug,
 
                 // metadata
                 "description" => ($blog->metadata) ? $blog->metadata->description : "",
