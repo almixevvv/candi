@@ -9,7 +9,7 @@
                             <a href="{{ route('directory') }}?category_id={{ $category->id }}" class="logo">
                                 <img src="{{ $category->image->image_url }}" alt="{{ $category->name }}">
                             </a>
-                            <label>{{ $category->name }}</label>
+                            <label style="margin-top: 10px;">{{ $category->name }}</label>
                         </div>
                     @endforeach
                     </center>
