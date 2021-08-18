@@ -51,7 +51,7 @@
             <div class="section_content mt-2">
                 <div class="scroll">
                     @foreach($topDestinations as $topDestination)
-                        <a href="{{  route('directory.detail', ['slug' => $topDestination->slug ]) }}" class="destinations_item" style="background-image: url({{ $topDestination->image->image_url }})">
+                        <a href="{{  route('directory.detail', ['slug' => $topDestination->slug ]) }}" class="destinations_item" style="background-image: url('{{ $topDestination->image->image_url }}')">
                             <div class="sq_parent">
                                 <div class="sq_wrap">
                                     <div class="sq_content">
@@ -86,7 +86,7 @@
                     @if ($blogCategory->blogs->count())
                         @php $blog = $blogCategory->blogs->first(); @endphp
                         <a href="{{ route('blog.detail', ['slug' => $blog->slug]) }}" class="blog_item">
-                            <div class="blog_item_top" style="background-image: url({{ $blog->image ? $blog->image->image_url : "/images/logo_biru.svg" }});">
+                            <div class="blog_item_top" style="background-image: url('{{ $blog->image ? $blog->image->image_url : "/images/logo_biru.svg" }}');">
                                 <div class="sq_parent">
                                     <div class="sq_wrap">
                                         <div class="sq_content">

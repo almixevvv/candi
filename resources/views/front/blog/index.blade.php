@@ -18,7 +18,7 @@
         <div id="slider" class="section-scrollable" data-flickity='{ "cellAlign": "left", "contain": true, "pageDots": false, "wrapAround": true }'>	            
             @foreach($featuredBlogs as $featuredBlog)
                 <div class="section-featured is-featured-image">
-                    <div class="featured-image" style="background-image: url({{ $featuredBlog->image->image_url }})"></div>
+                    <div class="featured-image" style="background-image: url('{{ $featuredBlog->image->image_url }}')"></div>
                     <div class="featured-wrap flex">
                         <article class="featured-content">
                             <span class="featured-label global-tag">
@@ -54,7 +54,7 @@
                   <div class="item-wrap flex post tag-story tag-hash-orange tag-hash-post-orange tag-hash-cta-violet no-image ">
                       <article>
                           <a href="{{ route('blog.detail', ['slug' => $blogCategory->blogs[0]->slug]) }}" class="item-link-overlay" aria-label="The future of architecture is culture"></a>
-                          <div class="item-image" style="background-image: url({{ $blogCategory->blogs[0]->image->image_url }})"></div>
+                          <div class="item-image" style="background-image: url('{{ $blogCategory->blogs[0]->image->image_url }}')"></div>
                           <h2><a href="{{ route('blog.detail', ['slug' => $blogCategory->blogs[0]->slug]) }}" class="white">{{ $blogCategory->blogs[0]->title }}</a></h2>
                           <div class="item-meta white is-primary-tag is-members-label">
                               <span>by</span>

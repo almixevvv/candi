@@ -31,7 +31,7 @@
         <div class="section-content-wrap">
             <article>
                 <div class="section-featured is-featured-image">
-                    <div class="featured-image" style="background-image: url({{ $blog->image->image_url }})"></div>
+                    <div class="featured-image" style="background-image: url('{{ $blog->image->image_url }}')"></div>
                     <div class="featured-wrap flex">
                         <div class="featured-content">
                             <div class="tags-wrap">
@@ -39,8 +39,6 @@
                             </div>
                             <h1 class="white">{{$blog->title}}</h1>
                             <div class="item-meta white">
-                                <span>by</span>
-                                <a href="../author/sean/index.html">Sean Hamilton</a>
                                 <time datetime="2017-06-28">{{ $blog->created_at->diffForHumans() }}</time>
                             </div>
                         </div>
@@ -61,7 +59,7 @@
                     <div class="prev-next-wrap">
                         @if ($newer)
                         <a href="{{ route('blog.detail', ['slug' => $newer->slug]) }}" class="prev-post post tag-people tag-journey is-image ">
-                            <div class="prev-next-image" style="background-image: url({{ $newer->image->image_url }})"></div>
+                            <div class="prev-next-image" style="background-image: url('{{ $newer->image->image_url }}')"></div>
                             <section class="prev-next-title">
                                 <h5>Newer Post</h5>
                                 <h3>{{ $newer->title }}</h3>
@@ -70,7 +68,7 @@
                         @endif
                         @if ($older)
                         <a href="{{ route('blog.detail', ['slug' => $older->slug]) }}" class="next-post post tag-design featured is-image">
-                            <div class="prev-next-image" style="background-image: url({{ $older->image->image_url }})"></div>
+                            <div class="prev-next-image" style="background-image: url('{{ $older->image->image_url }}')"></div>
                             <section class="prev-next-title">
                                 <h5>Older Post</h5>
                                 <h3>{{ $older->title }}</h3>
