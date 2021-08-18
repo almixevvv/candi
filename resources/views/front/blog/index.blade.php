@@ -57,8 +57,6 @@
                           <div class="item-image" style="background-image: url('{{ $blogCategory->blogs[0]->image->image_url }}')"></div>
                           <h2><a href="{{ route('blog.detail', ['slug' => $blogCategory->blogs[0]->slug]) }}" class="white">{{ $blogCategory->blogs[0]->title }}</a></h2>
                           <div class="item-meta white is-primary-tag is-members-label">
-                              <span>by</span>
-                              <a href="#">Patricia Jenkins</a>
                               <time datetime="2018-05-17">{{ $blogCategory->blogs[0]->created_at->diffForHumans() }}</time>
                           </div>
                           <a class="primary-tag global-tag white" href="#">{{ $blogCategory->name }}</a>
