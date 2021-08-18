@@ -3286,12 +3286,12 @@ body.os-windows .popup::-webkit-scrollbar-thumb {
 .blog_item {
 	position: relative;
 	width: 456px;
-	width: 32%;
+	width: 23%;
 	margin-right: 2%;
 	display: block;
 	float: left;
 }
-.blog_item:nth-child(3n) {
+.blog_item:nth-child(4n) {
 	margin-right: 0;
 }
 .blog_item:hover .blog_item_top .shadow {

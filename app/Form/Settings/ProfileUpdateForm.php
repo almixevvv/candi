@@ -15,6 +15,7 @@ class ProfileUpdateForm extends Form
         $this->text("facebook", "Facebook");
         $this->text("instagram", "Instagram");
         $this->text("twitter", "Twitter");
+        $this->text("tik_tok", "Tik Tok");
         $this->text("maps", "Maps");
     }
 }

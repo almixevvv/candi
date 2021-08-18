@@ -173,3 +173,29 @@ $breakpoint-desktop: 1200px;
         border-bottom-width: 0px !important;
     }
 }
+
+// search-button
+#search-button {
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    position: relative;
+    margin-right: 40px;
+    background-color: $primary;
+
+    transition: all 200ms;
+
+    &:hover {
+        i {
+            color: #ececec;
+        }
+    }
+
+    * {
+        cursor: pointer;
+    }
+
+    i {
+        color: white;
+    }
+}

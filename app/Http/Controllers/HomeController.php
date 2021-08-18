@@ -19,7 +19,7 @@ class HomeController extends Controller
                 $query->orderBy('created_at', 'desc');
             },
             'blogs.image'
-        ])->whereHas('blogs')->limit(3)->get();
+        ])->whereHas('blogs')->take(4)->orderBy('id')->get();
 
         $topDestinations = Listing::getTopDestinations();
 

@@ -106,11 +106,9 @@
                         </a>
                     @endif
                 @endforeach
-
-
             </div>
         </div>
-        @if ($blogCategories->count() > 3)
+        @if ($blogCategories->count() > 4)
             <div style="text-align: center; margin-top: 10px;">
                 <a href="{{ route('blog') }}" class="link"><label>Load More</label></a>
             </div>
@@ -129,7 +127,7 @@
         <div class="wrap_float">
             <div class="section_content mt-2">
                 <!-- LightWidget WIDGET -->
-                <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
+                <script src="{{ asset('js/lightwidget.js') }}"></script>
                 <iframe src="{{ $homeData ? $homeData->instagram_widget_url : "http://lightwidget.com/widgets/b613fc91fd595ea1977f73997b998929.html" }}"
                     scrolling="no"
                     allowtransparency="true"
@@ -137,11 +135,6 @@
                     style="width:100%;border:0;overflow:hidden;"></iframe>
             </div>
         </div>
-        @if ($blogCategories->count() > 3)
-            <div style="text-align: center; margin-top: 10px;">
-                <a href="{{ route('blog') }}" class="link"><label>Load More</label></a>
-            </div>
-        @endif
     </div>
 </div>
 

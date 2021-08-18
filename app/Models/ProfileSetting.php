@@ -13,6 +13,6 @@ class ProfileSetting extends Model
         "address", "phone_number", "email",
         "open_day_range", "open_hour_range",
         "facebook", "instagram", "twitter",
-        "maps"
+        "maps", 'tik_tok'
     ];
 }
