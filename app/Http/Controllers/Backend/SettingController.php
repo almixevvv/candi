@@ -33,6 +33,7 @@ class SettingController extends Controller
                 "facebook" => $profileSetting->facebook,
                 "instagram" => $profileSetting->instagram,
                 "twitter" => $profileSetting->twitter,
+                "tik_tok" => $profileSetting->tik_tok,
                 "maps" => $profileSetting->maps,
             ]
         ]);

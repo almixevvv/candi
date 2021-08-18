@@ -74,3 +74,25 @@ function convertFigureToIframe() {
     }
 }
 convertFigureToIframe()
+
+function setHeaderBackground() {
+    return setInterval(() => {
+        if (window.scrollY != 0) {
+            $('#top-panel').addClass('hovered')
+        } else { 
+            $('#top-panel').removeClass('hovered')
+        }
+    }, 50)
+}
+
+setHeaderBackground()
+
+$('#search-button, #box-search').on('click', function() {
+    console.log("triggered")
+    $('#search-box').addClass('is-active')
+});
+
+$('#close-search-button').on('click', function() {
+    console.log("closing")
+    $('#search-box').removeClass('is-active')
+});

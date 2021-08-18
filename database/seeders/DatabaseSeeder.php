@@ -26,7 +26,7 @@ class DatabaseSeeder extends Seeder
         AdvertiseWithUs::create([
             "content" => "empty content"
         ]);
-        
+
         $this->call(MenuSeeder::class);
         $this->call(RoleSeeder::class);
         $this->call(ProfileSettingSeeder::class);
