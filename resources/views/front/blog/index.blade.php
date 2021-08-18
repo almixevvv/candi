@@ -1,8 +1,10 @@
 @extends('layouts.front.index')
 @section('content')
 
-<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
-<link rel="stylesheet" href="./css/blog/blogmain.css">
+@push('extra-css')
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <link rel="stylesheet" href="./css/blog/blogmain.css?version={{ config('app.version') }}">
+@endpush
 
 <div class="container-fluid px-0">
     <div class="breadcrumbs">

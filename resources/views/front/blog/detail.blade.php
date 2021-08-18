@@ -1,7 +1,7 @@
 @extends('layouts.front.index', ['title' => $blog->metadata?->title])
 
 @push('extra-css')
-<link rel="stylesheet" href="{{ asset('css/blog/blogdetail.css') }}">
+<link rel="stylesheet" href="{{ asset('css/blog/blogdetail.css') }}?version={{ config('app.version') }}">
 @endpush
 
 @section('content')
