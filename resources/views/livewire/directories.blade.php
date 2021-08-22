@@ -89,6 +89,9 @@
 
                 <div class="col-12 col-lg-9">
                     @foreach($listingTags as $tag)
+                        @if ($tag->listings->count() == 0)
+                            @continue
+                        @endif
                         <div class="row mx-0 g-0">
                             <div class="col-12">
                                 <div class="d-inline-flex justify-content-between directory-list px-3 pt-3">

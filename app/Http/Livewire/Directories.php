@@ -5,6 +5,7 @@ namespace App\Http\Livewire;
 use App\Models\Listing;
 use Livewire\Component;
 use App\Models\ListingTag;
+use App\Models\ListingRating;
 use App\Models\ListingTagCategory;
 use Illuminate\Support\Facades\DB;
 use App\Models\ListingRatingCategory;
@@ -99,31 +100,27 @@ class Directories extends Component
     public function setupUI() 
     {
         $choosenRating = $this->choosenRating;
+        $categoryID = $this->categoryID;
+
         $listingTags = ListingTag::with([
-            'listings.image', 'listings.tags',
-            "listings" => function($query) {
+            'listings.image', 'listings.tags', 'listings.ratings',
+            "listings" => function($query) use ($choosenRating, $categoryID) {
                 $query->where('is_active', true);
+
+                $filteredListingIds = Listing::whereHas('ratings', function($query) use ($choosenRating) {
+                    $query->where('listing_rating_category_id', $choosenRating);
+                })->select('id')->get()->map(fn ($listing) => $listing->id)->toArray();
+
+                $query->whereIn('listings.id', $filteredListingIds);
+
+                if ($categoryID) {
+                    $query->where('category_id', $categoryID);
+                }
             }
         ])->has('listings', '>', 0);
 
-        if ($choosenRating) {
-            $listingTags = $listingTags->whereHas('listings.ratings', function ($query) use ($choosenRating) {
-                if ($choosenRating) {
-                    $query->where('listing_rating_category_id', $choosenRating)
-                        ->orderByDesc("rating");
-                }
-            });
-        }
-
         if (count($this->choosenTag)) {
             $listingTags = $listingTags->whereIn('id', $this->choosenTag);
-        }
-
-        if ($this->categoryID) {
-            $categoryID = $this->categoryID;
-            $listingTags = $listingTags->whereHas('listings', function($query) use($categoryID) {
-                $query->where('category_id', $categoryID);
-            });
         }
 
         $this->listingTags = $listingTags->get();

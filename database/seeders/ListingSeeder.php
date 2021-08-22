@@ -17,7 +17,7 @@ class ListingSeeder extends Seeder
     public function run()
     {
         Listing::truncate();
-        $listings = Listing::factory()->count(20)->create();
+        $listings = Listing::factory()->count(10)->create();
         Image::where('model_name', "App\Models\Listing")->delete();
 
         foreach($listings as $listing) {

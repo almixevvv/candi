@@ -23,7 +23,7 @@ class ListingFactory extends Factory
     {
         $lowPrice = $this->faker->randomNumber(6);
 
-        $title = $this->faker->title;
+        $title = $this->faker->sentence();
         return [
             "title" => $title,
             "slug" => str_replace(" ", "-", $title),

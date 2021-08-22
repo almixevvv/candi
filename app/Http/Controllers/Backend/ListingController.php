@@ -153,6 +153,7 @@ class ListingController extends Controller
                 "website" => $listing->website,
                 "is_active" => $listing->is_active,
                 "image_360_url" => $listing->image_360_url,
+                "slug" => $listing->slug,
 
                 // metadata details
                 "description" => ($listing->metadata) ? $listing->metadata->description : "",
