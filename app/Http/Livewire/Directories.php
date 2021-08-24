@@ -107,11 +107,13 @@ class Directories extends Component
             "listings" => function($query) use ($choosenRating, $categoryID) {
                 $query->where('is_active', true);
 
-                $filteredListingIds = Listing::whereHas('ratings', function($query) use ($choosenRating) {
-                    $query->where('listing_rating_category_id', $choosenRating);
-                })->select('id')->get()->map(fn ($listing) => $listing->id)->toArray();
-
-                $query->whereIn('listings.id', $filteredListingIds);
+                if ($choosenRating) {
+                    $filteredListingIds = Listing::whereHas('ratings', function($query) use ($choosenRating) {
+                        $query->where('listing_rating_category_id', $choosenRating);
+                    })->select('id')->get()->map(fn ($listing) => $listing->id)->toArray();
+    
+                    $query->whereIn('listings.id', $filteredListingIds);
+                }
 
                 if ($categoryID) {
                     $query->where('category_id', $categoryID);
