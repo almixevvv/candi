@@ -5,9 +5,8 @@ namespace App\Http\Livewire;
 use App\Models\Listing;
 use Livewire\Component;
 use App\Models\ListingTag;
-use App\Models\ListingRating;
+use App\Models\ListingCategory;
 use App\Models\ListingTagCategory;
-use Illuminate\Support\Facades\DB;
 use App\Models\ListingRatingCategory;
 
 class Directories extends Component
@@ -24,9 +23,15 @@ class Directories extends Component
     public $checkedTag = [];
     public $filterIsOpen = false;
 
-    public function mount($categoryID = null, $tag = null)
+    public function mount($categoryName = null, $tag = null)
     {
-        $this->categoryID = $categoryID;
+        if ($categoryName) {
+            $category = ListingCategory::where('name', $categoryName)->first();
+            if (!$category) abort(404);
+
+            $this->categoryID = $category->id;
+        }
+
         if ($tag) {
             $this->choosenTag[] = $tag;
         }
