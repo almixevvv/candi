@@ -16,7 +16,7 @@
     </div>
 
     <livewire:directories
-        categoryID="{{ request()->get('category_id') }}"
+        categoryName="{{ request()->get('category_name') }}"
         tag="{{ request()->get('tag') }}"
     />
 </div>

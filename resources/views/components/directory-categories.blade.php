@@ -6,7 +6,7 @@
                     <center>
                     @foreach($categories as $category)
                         <div class="box_image">
-                            <a href="{{ route('directory') }}?category_id={{ $category->id }}" class="logo">
+                            <a href="{{ route('directory') }}?category_name={{ $category->name }}" class="logo">
                                 <img src="{{ $category->image->image_url }}" alt="{{ $category->name }}">
                             </a>
                             <label style="margin-top: 10px;">{{ $category->name }}</label>
