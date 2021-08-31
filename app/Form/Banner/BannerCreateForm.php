@@ -9,5 +9,9 @@ class BannerCreateForm extends Form
     {
         $this->upload('image', "Image");
         $this->number('position', "Position");
+        $this->text("title", "Title");
+        $this->text("button_text", "Button Text");
+        $this->text("button_url", "Button Url");
+        $this->radio("has_search", "Has Search", [ "1" => "Yes", "0" => "No"]);
     }
 }

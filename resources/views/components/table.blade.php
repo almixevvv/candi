@@ -26,7 +26,9 @@
                     @endforeach
                     @if ($option)
                         @if ($option == "image")
-                            <td><img src="{{ $data }}" width="50%" /></td>
+                            <td width="25%"><img src="{{ $data }}" width="25%" style="cursor: pointer" onclick="window.location.href = '{{ $data }}'" /></td>
+                        @elseif ($option == "boolean")
+                            <td>{{ $data ? "Yes" : "No" }}</td>
                         @endif
                     @else
                         <td>{{ $data }}</td>

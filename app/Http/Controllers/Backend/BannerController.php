@@ -26,11 +26,11 @@ class BannerController extends Controller
     public function index()
     {
         $this->contextData['table'] = $this->getBaseTableContextData(
-            data: Banner::with('image')->paginate(config('app.paginator_count')),
-            title: ["Image", "Position"],
-            fields: ["image.image_url|image", "position"],
+            data: Banner::with('image')->orderBy('position')->paginate(config('app.paginator_count')),
+            title: ["Image", "Title", "Button Text", "Button Url", "Has Search", "Position"],
+            fields: ["image.image_url|image", "title", "button_text", "button_url", "has_search|boolean", "position"],
             path: "banners",
-            hasDetail: true
+            hasDetail: false
         );
 
         return view('cms.base_table', $this->contextData);
@@ -61,7 +61,10 @@ class BannerController extends Controller
     {
         $this->validate($request, [
             "image" => "required|image",
-            "position" => "required|numeric"
+            "position" => "required|numeric",
+            "title" => "required",
+            "button_url" => "url|nullable",
+            "has_search" => "required",
         ]);
 
         (new Banner)->preparePosition($request->position);
@@ -86,7 +89,10 @@ class BannerController extends Controller
             "method" => "PUT",
             "action" => route('cms.banners.update', $banner),
             "data" => [
-                "position" => $banner->position
+                "position" => $banner->position,
+                "title" => $banner->title,
+                "button_url" => $banner->button_url,
+                "has_search" => $banner->has_search,
             ],
             "extra" => [
                 "helpText" => "You will replace the image if you upload a new image"
@@ -107,7 +113,10 @@ class BannerController extends Controller
     {
         $this->validate($request, [
             "image" => "image",
-            "position" => "required|numeric"
+            "position" => "required|numeric",
+            "title" => "required",
+            "button_url" => "url|nullable",
+            "has_search" => "required",
         ]);
 
         $banner->preparePosition($request->position, $banner->id);

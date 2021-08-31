@@ -11,5 +11,9 @@ class Banner extends Model
 {
     use HasFactory, HasImage, HasPosition;
 
-    public $fillable = ["position"];
+    public $fillable = ["position", "title", "button_url", "button_text", "has_search"];
+
+    public $casts = [
+        "has_search" => "boolean"
+    ];
 }
