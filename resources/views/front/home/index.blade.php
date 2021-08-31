@@ -9,20 +9,26 @@
                     <div class="wrap_float js_height">
                         <div class="slide_content">
                             <div class="title_wrap home">
-                                <p class="slide_title" style="font-size:36pt; width: 100%;">Time to start a journey</p>
+                                <p class="slide_title" style="font-size:36pt; width: 100%;">{{ $banner->title }}</p>
                                 <div style="margin-top: 5em;">
                                     <div style="position: relative">
                                         <div style="position: relative">
-                                            <input
-                                                type="text"
-                                                class="search-box"
-                                                placeholder="What are you looking for?"
-                                                id="box-search"
-                                                readonly
-                                            />
-                                            <span style="position: absolute; top: 0.70em; bottom: 0px; left: 0.75em;">
-                                                <i class="fas fa-search"></i>
-                                            </span>
+                                            @if ($banner->has_search)
+                                                <input
+                                                    type="text"
+                                                    class="search-box"
+                                                    placeholder="What are you looking for?"
+                                                    id="box-search"
+                                                    readonly
+                                                />
+                                                <span style="position: absolute; top: 0.70em; bottom: 0px; left: 0.75em;">
+                                                    <i class="fas fa-search"></i>
+                                                </span>
+                                            @elseif ($banner->button_url)
+                                                <a href="{{ $banner->button_url }}" class="btn btn-primary-candi">
+                                                    {{ $banner->button_text }}
+                                                </a>
+                                            @endif
                                         </div>
                                     </div>
                                 </div>
