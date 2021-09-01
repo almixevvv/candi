@@ -151,6 +151,24 @@
             </div>
             </div>
         @endif
+        @if ($listingDetail->galleries->count())
+            <div class="bg-white pt-3 me-4" style="min-width: 300px;">
+            <div class="row">
+                <div class="col-12">
+                <div class="px-4">
+                    <h2 class="fw-bold text-md">Galleries</h2>
+                </div>
+                </div>
+            </div>
+
+            <div class="row mt-2">
+                <div class="col-12">
+                    @php $images = $listingDetail->galleries->map(fn ($gallery) => $gallery->image->image_url)->toArray() @endphp
+                    <livewire:image-carousel :images="$images"/>
+                </div>
+            </div>
+            </div>
+        @endif
 
         <div class="bg-white pt-3 me-4" style="min-width: 300px;">
           <div class="row">
