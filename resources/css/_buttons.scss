@@ -1,14 +1,10 @@
 .btn-primary-candi {
     color: white;
-    background-image: -webkit-gradient(linear,left top,right top,from(#4AACC5),color-stop(51%,#4AACC5),to(#13b3e0));
-    background-image: -webkit-linear-gradient(left,#4AACC5 0,#4AACC5 51%,#13b3e0 100%);
-    background-image: -moz-linear-gradient(left,#4AACC5 0,#4AACC5 51%,#13b3e0 100%);
-    background-image: -o-linear-gradient(left,#4AACC5 0,#4AACC5 51%,#13b3e0 100%);
-    background-image: linear-gradient(to right,#4AACC5 0,#4AACC5 51%,#13b3e0 100%);
-    background-position: left center;
-    -webkit-background-size: 200% auto;
-    background-size: 200% auto;
+    background-color: #50e7e0;
     border: 0;
-    -webkit-box-shadow: 0 0 12px 0 rgb(100 239 207 / 90%);
-    box-shadow: 0 0 12px 0 rgb(100 239 207 / 90%);
+
+    &:hover {
+        color: white;
+        box-shadow: 0 0 12px 0 rgb(100 239 207 / 90%);
+    }
 }
