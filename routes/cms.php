@@ -20,6 +20,7 @@ use App\Http\Controllers\Backend\PromotionController;
 use App\Http\Controllers\Backend\ListingTagController;
 use App\Http\Controllers\Backend\BlogCategoryController;
 use App\Http\Controllers\Backend\SubscriptionController;
+use App\Http\Controllers\Backend\ListingGalleryController;
 use App\Http\Controllers\Backend\AdvertiseWithUsController;
 use App\Http\Controllers\Backend\ListingCategoryController;
 use App\Http\Controllers\Backend\ListingRatingCategoryController;
@@ -54,6 +55,15 @@ Route::group(["middleware" => "auth"], function() {
         Route::get('{id}/edit', [ListingTagController::class, "editTag"])->name('edit');
         Route::put('{id}', [ListingTagController::class, "updateTag"])->name('update');
         Route::delete('{id}', [ListingTagController::class, "destroyTag"])->name('destroy');
+    });
+
+    Route::name('listings.galleries.')->prefix('listings/{listing}/galleries')->group(function() {
+        Route::get('/', [ListingGalleryController::class, 'index'])->name('index');
+        Route::get('/create', [ListingGalleryController::class, 'create'])->name('create');
+        Route::post('/', [ListingGalleryController::class, 'store'])->name('store');
+        Route::get('/{id}', [ListingGalleryController::class, 'edit'])->name('edit');
+        Route::put('/{id}', [ListingGalleryController::class, 'update'])->name('update');
+        Route::delete('/{id}', [ListingGalleryController::class, 'destroy'])->name('destroy');
     });
 
     // Blog
