@@ -748,8 +748,8 @@ body.os-windows .popup::-webkit-scrollbar-thumb {
 .breadcrumbs {
 	font-size: 15px;
 	color: rgba(74, 74, 74, 0.58);
-	padding-top: 130px;
-	margin-bottom: 42px;
+	padding-top: 150px;
+	margin-bottom: 0px;
 	position: relative;
 	z-index: 1;
 }
@@ -4600,7 +4600,7 @@ body.os-windows .popup::-webkit-scrollbar-thumb {
 		margin-bottom: 17px;
 	}
 	.breadcrumbs {
-		padding-top: 110px;
+		padding-top: 130px;
 	}
 	.top_panel.inversion .mobile_btn {
 		background: #c7c7c7;
@@ -5294,9 +5294,12 @@ body.os-windows .popup::-webkit-scrollbar-thumb {
 		bottom: 22px;
 	}
 	.top_panel {
-		top: 18px;
-		height: 48px;
+		top: 0px !important;
+		height: 90px !important;
 	}
+    #search-button {
+        margin-right: -40px !important;
+    }
 	.modal_search .close {
 		right: 4%;
 		top: 18px;
@@ -5328,7 +5331,7 @@ body.os-windows .popup::-webkit-scrollbar-thumb {
 		padding-top: 30px;
 	}
 	.breadcrumbs {
-		padding-top: 85px;
+		padding-top: 100px;
 	}
 	.page.favourites-list .page_head .select_wrap {
 		width: 100%;
