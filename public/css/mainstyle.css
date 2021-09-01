@@ -462,7 +462,7 @@ button:hover {
 a:hover,
 button:hover {
 	cursor: pointer;
-    color: #50e7e0 !important;
+    color: #868686 !important;
 }
 a:hover *,
 button:hover * {

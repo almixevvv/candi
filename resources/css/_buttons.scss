@@ -7,4 +7,9 @@
         color: white;
         box-shadow: 0 0 12px 0 rgb(100 239 207 / 90%);
     }
+
+    &.radius {
+        border-radius: 18px;
+        font-size: 14px;
+    }
 }
