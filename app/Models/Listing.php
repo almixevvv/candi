@@ -41,6 +41,11 @@ class Listing extends Model
         return $this->hasMany(Faq::class);
     }
 
+    public function galleries() 
+    {
+        return $this->hasMany(ListingGallery::class);
+    }
+
     public function scopegetTopDestinations($query) 
     {
         return $query->with('category', 'tags', 'image')->where('is_active', true)->where('top_destination', true)->get();

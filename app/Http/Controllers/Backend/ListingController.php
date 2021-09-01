@@ -6,6 +6,7 @@ use App\Rules\TagRule;
 use App\Models\Listing;
 use App\Models\ListingTag;
 use Illuminate\Http\Request;
+use App\Models\ListingGallery;
 use App\Rules\TopDestinationRule;
 use App\Http\Controllers\Controller;
 use App\Form\Listing\ListingCreateForm;

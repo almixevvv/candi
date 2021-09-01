@@ -50,6 +50,10 @@
                     <td>Rp {{ number_format($listing->low_price) . " - ". number_format($listing->high_price) }}</td>
                 </tr>
                 <tr>
+                    <th>Gallery</th>
+                    <td><a href="{{ route('cms.listings.galleries.index', $listing) }}" class="btn btn-primary">Modify Gallery</a></td>
+                </tr>
+                <tr>
                     <th>Details</th>
                     <td>{!! Markdown::convertToHtml($listing->details) !!}</td>
                 </tr>
