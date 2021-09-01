@@ -131,13 +131,15 @@ a {
 .btn-order {
 	margin-top: 9px;
 	color: rgb(255 255 255 / 93%);
-	background-color: rgba(11, 176, 201, 0.933);
-	border: 1px solid rgba(11, 176, 201, 0.933);
 	border-radius: 18px;
 	line-height: 18px;
 	font-size: 14px;
 	font-weight: 700;
 	padding: 8px 16px;
+}
+
+.btn-order:hover {
+    color: white !important;
 }
 
 .rating-holder {
