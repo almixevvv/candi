@@ -469,10 +469,8 @@ a:focus {
 	margin: 0 auto;
 	padding: 45px 60px 120px;
 
-	margin-top: -10vh;
 	background-color: white;
 	border-radius: 15px;
-    box-shadow: 1px 1px 8px 4px #bfbfbf;
     margin-bottom: 2em;
 }
 
