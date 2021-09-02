@@ -25,9 +25,11 @@
                                                     <i class="fas fa-search"></i>
                                                 </span>
                                             @elseif ($banner->button_url)
-                                                <a href="{{ $banner->button_url }}" class="btn btn-primary-candi">
-                                                    {{ $banner->button_text }}
-                                                </a>
+                                                <center>
+                                                    <a href="{{ $banner->button_url }}" class="btn btn-primary-candi">
+                                                        {{ $banner->button_text }}
+                                                    </a>
+                                                </center>
                                             @endif
                                         </div>
                                     </div>

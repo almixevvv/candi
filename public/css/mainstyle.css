@@ -4265,7 +4265,7 @@ body.os-windows .popup::-webkit-scrollbar-thumb {
 		transition: 0.5s;*/
 		display: none;
 		width: 100%;
-		background: #000;
+		background: #54c2c1;
 		position: fixed;
 		top: 0;
 		left: 0;

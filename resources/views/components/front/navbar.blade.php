@@ -31,18 +31,21 @@
                                 <div class="mobile_content">
                                     <div class="currency_mob">
                                     </div>
-                                    <div class="tel">
-                                        <a href="https://api.whatsapp.com/send?phone={{ $_profile->phone_number }}">{{ Str::phoneFormat($_profile->phone_number) }}</a>
-                                    </div>
                                     <div class="social">
+                                        @if ($_profile->phone_number)
+                                            <a href="https://api.whatsapp.com/send?phone={{ $_profile->phone_number }}" class="link" target="_blank"><i style="color: white;" class="fab fa-2x fa-whatsapp"></i></a>
+                                        @endif
                                         @if ($_profile->facebook)
-                                            <a href="https://facebook.com/{{ $_profile->facebook }}" class="link facebook" target="_blank"><span></span></a>
+                                            <a href="{{ $_profile->facebook }}" class="link" target="_blank"><i style="color: white;" class="fab fa-2x fa-facebook"></i></a>
                                         @endif
                                         @if ($_profile->instagram)
-                                            <a href="https://instagram.com/{{ $_profile->instagram }}" class="link instagram" target="_blank"><span></span></a>
+                                            <a href="{{ $_profile->instagram }}" class="link" target="_blank"><i style="color: white;" class="fab fa-2x fa-instagram"></i></a>
                                         @endif
                                         @if ($_profile->twitter)
-                                            <a href="https://twitter.com/{{ $_profile->twitter }}" class="link twitter" target="_blank"><span></span></a>
+                                            <a href="{{ $_profile->twitter }}" class="link" target="_blank"><i style="color: white;" class="fab fa-2x fa-twitter"></i></a>
+                                        @endif
+                                        @if ($_profile->tik_tok)
+                                            <a href="{{ $_profile->tik_tok }}" class="link" target="_blank"><i style="color: white;" class="fab fa-2x fa-tiktok"></i></a>
                                         @endif
                                     </div>
                                 </div>

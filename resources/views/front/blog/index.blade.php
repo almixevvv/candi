@@ -9,7 +9,7 @@
 <div class="container-fluid px-0">
     <div class="breadcrumbs">
     </div>
-    <div class="page contacts-page full-width">
+    <div class="page contacts-page full-width blog">
         <div id="slider" class="section-scrollable" data-flickity='{ "cellAlign": "left", "contain": true, "pageDots": false, "wrapAround": true }'>	            
             @foreach($featuredBlogs as $featuredBlog)
                 <div class="section-featured is-featured-image">

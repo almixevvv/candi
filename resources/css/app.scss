@@ -66,8 +66,29 @@
     }
 }
 
-.input-wrap {
+@media screen and (max-width: 1041px) {
+    .mobile ul li a:hover {
+        color: #868686 !important;
+        span {
+            color: #868686 !important;
+        }
+    }
+}
 
+.socials a i {
+    color: white;
+}
+
+.blog {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+@media screen and (min-width: 1041px) {
+    .blog {
+        padding-left: 0;
+        padding-right: 0;
+    }
 }
 
 @import "variables";
