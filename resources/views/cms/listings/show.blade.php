@@ -57,10 +57,12 @@
                     <th>Details</th>
                     <td>{!! $listing->details !!}</td>
                 </tr>
-                <tr>
-                    <th>Area</th>
-                    <td>{{ $listing->province?->name }} / {{ $listing->city?->name }} / {{ $listing->district?->name }}</td>
-                </tr>
+                @if ($listing->province)
+                    <tr>
+                        <th>Area</th>
+                        <td>{{ $listing->province?->name }} / {{ $listing->city?->name }} / {{ $listing->district?->name }}</td>
+                    </tr>
+                @endif
             </tbody>
         </table>
         @if ($listing->image_360_url)
