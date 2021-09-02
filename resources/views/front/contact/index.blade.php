@@ -40,17 +40,17 @@
                 <div class="contact-container col-md-3 col-6">
                     <div class="contact-card mx-0 lg-mx-2">
                         <a href="{{ $_profile->maps }}" target="_blank">
-                            <i class="fas fa-map-marker-alt"></i>
+                            <i class="fab fa-instagram"></i>
                         </a>
                         <div class="contact-bottom">
                             <span>
-                                <h5>Home</h5>
+                                <h5>Instagram</h5>
                             </span>
                         </div>
                     </div>
                     <div class="contact-detail">
                         <span>
-                            <a href="{{ $_profile->maps }}">{{ $_profile->address }}</a>
+                            <a href="{{ $_profile->instagram }}">{{ str_replace("https://instagram.com/", "@", $_profile->instagram) }}</a>
                         </span>
                     </div>
                 </div>

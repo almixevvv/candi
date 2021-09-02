@@ -3323,7 +3323,7 @@ body.os-windows .popup::-webkit-scrollbar-thumb {
 	margin-right: 8px;
 }
 .blog_item_top .tags .tag.red {
-	background: #50e7e0;
+	background: #3399ff;
 }
 .blog_item_top .tags .tag.green {
 	background: #2fb26b;
@@ -3626,7 +3626,7 @@ body.os-windows .popup::-webkit-scrollbar-thumb {
 2.10. Footer
 -----------------------------------------------------------------------------------*/
 .footer {
-	background: #39e7e0;
+	background: #54c2c1;
 	padding: 66px 0;
 	position: relative;
 	z-index: 1;
