@@ -34,9 +34,9 @@
   <div class="breadcrumbs">
     <div class="wrap">
       <div class="wrap_float">
-        <a href="#">Home</a>
-        <span class="separator">/</span>
-        <a href="#">Travel List Right Sidebar</a>
+            @if ($listingDetail->province)
+                {{ $listingDetail->province?->name }} / {{ $listingDetail->city?->name }} / {{ $listingDetail->district?->name }}
+            @endif
       </div>
     </div>
   </div>

@@ -55,7 +55,11 @@
                 </tr>
                 <tr>
                     <th>Details</th>
-                    <td>{!! Markdown::convertToHtml($listing->details) !!}</td>
+                    <td>{!! $listing->details !!}</td>
+                </tr>
+                <tr>
+                    <th>Area</th>
+                    <td>{{ $listing->province->name }} / {{ $listing->city->name }} / {{ $listing->district->name }}</td>
                 </tr>
             </tbody>
         </table>

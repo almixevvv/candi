@@ -156,6 +156,11 @@ class ListingController extends Controller
                 "image_360_url" => $listing->image_360_url,
                 "slug" => $listing->slug,
 
+                // area
+                "province_id" => $listing->province_id,
+                "city_id" => $listing->city_id,
+                "district_id" => $listing->district_id,
+
                 // metadata details
                 "description" => ($listing->metadata) ? $listing->metadata->description : "",
                 "robots" => ($listing->metadata) ? $listing->metadata->robots : "",

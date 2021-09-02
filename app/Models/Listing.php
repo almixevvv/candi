@@ -2,9 +2,18 @@
 
 namespace App\Models;
 
+use App\Models\Faq;
+use App\Models\City;
+use App\Models\Image;
+use App\Models\District;
+use App\Models\Province;
 use App\Traits\HasImage;
+use App\Models\ListingTag;
 use App\Traits\HasMetadata;
 use App\Traits\HasPosition;
+use App\Models\ListingRating;
+use App\Models\ListingGallery;
+use App\Models\ListingCategory;
 use Illuminate\Support\Facades\File;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Storage;
@@ -45,6 +54,21 @@ class Listing extends Model
     public function galleries() 
     {
         return $this->hasMany(ListingGallery::class);
+    }
+
+    public function province() 
+    {
+        return $this->belongsTo(Province::class);
+    }
+
+    public function city() 
+    {
+        return $this->belongsTo(City::class);
+    }
+
+    public function district() 
+    {
+        return $this->belongsTo(District::class);
     }
 
     public function scopegetTopDestinations($query) 
