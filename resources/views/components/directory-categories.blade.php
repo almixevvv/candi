@@ -1,6 +1,6 @@
 <div class="destinations" style="padding:0">
     <center>
-        <div class="wrap">
+        <div class="wrap" style="max-width: unset; width: 85%;">
             <div class="wrap_float">
                 <div class="section_content">
                     <center>
