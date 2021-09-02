@@ -59,7 +59,7 @@
                 </tr>
                 <tr>
                     <th>Area</th>
-                    <td>{{ $listing->province->name }} / {{ $listing->city->name }} / {{ $listing->district->name }}</td>
+                    <td>{{ $listing->province?->name }} / {{ $listing->city?->name }} / {{ $listing->district?->name }}</td>
                 </tr>
             </tbody>
         </table>
