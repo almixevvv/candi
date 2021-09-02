@@ -1,8 +1,11 @@
 <?php
 namespace App\Form\Listing;
 
+use App\Models\City;
 use App\Utils\Utils;
 use App\Models\Listing;
+use App\Models\District;
+use App\Models\Province;
 use App\Models\ListingTag;
 use App\Models\ListingCategory;
 use Gustiawan\FormBuilder\Form;
@@ -27,6 +30,21 @@ class ListingCreateForm extends Form
         $this->radio('is_active', 'Active', [1 => "Yes", 0 => "No"]);
         $this->text('tags', 'Tags', ["class" => "taglify taglify-tags"]);
         $this->textArea('details', 'Details', ["class" => "wysiwyg"]);
+        $this->separator('Area');
+        $this->select('province_id', 'Province', Utils::createModelChoices(Province::all(), "id", "name"), [
+            "load" => [
+                "url" => route('cms.cities'). "?province_id={city_id}",
+                "field" => "city_id"
+            ]
+        ]);
+        $this->select('city_id', 'City', Utils::createModelChoices(City::all(), "id", "name"), [
+            "load" => [
+                "url" => route('cms.districts'). "?city_id={district_id}",
+                "field" => "district_id"
+            ]
+        ]);
+        $this->select('district_id', 'District', Utils::createModelChoices(District::all(), "id", "name"));
+
         $this->extra['taglify'] = collect([
             "tags" => ListingTag::all()->map(fn ($value) => $value->name)
         ]);

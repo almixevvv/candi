@@ -1,5 +1,9 @@
 <?php
 
+use App\Models\City;
+use App\Utils\Utils;
+use App\Models\District;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Backend\BlogController;
@@ -109,4 +113,15 @@ Route::group(["middleware" => "auth"], function() {
     // utility
     // probably will not used in the future for now dont delete
     Route::post('/editor-upload-image', [UploadController::class, 'editorImageUpload'])->name('upload.editor-image');
+
+    // load for forms
+    Route::get('/cities', function(Request $request) {
+        $cities = City::where('province_id', $request->province_id)->get();
+        return response()->json(Utils::createModelChoices($cities, "id", "name"));
+    })->name('cities');
+
+    Route::get('/districts', function(Request $request) {
+        $districts = District::where('city_id', $request->city_id)->get();
+        return response()->json(Utils::createModelChoices($districts, "id", "name"));
+    })->name('districts');
 });

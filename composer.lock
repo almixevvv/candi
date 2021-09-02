@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "22e6f597cf36c67e55e9eb954d58213e",
+    "content-hash": "be03497d7d3dd38ac8d37f156a845c3e",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1586,16 +1586,16 @@
         },
         {
             "name": "gustiawan/laravel-form-builder",
-            "version": "1.3.11",
+            "version": "1.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/agus24/laravel-form-builder.git",
-                "reference": "169a724daf1d59c42eccdfd5324e31c02c9fd314"
+                "reference": "57b75bfe6ae90fb9d2ac66213cb489614be467df"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/agus24/laravel-form-builder/zipball/169a724daf1d59c42eccdfd5324e31c02c9fd314",
-                "reference": "169a724daf1d59c42eccdfd5324e31c02c9fd314",
+                "url": "https://api.github.com/repos/agus24/laravel-form-builder/zipball/57b75bfe6ae90fb9d2ac66213cb489614be467df",
+                "reference": "57b75bfe6ae90fb9d2ac66213cb489614be467df",
                 "shasum": ""
             },
             "require": {
@@ -1631,9 +1631,9 @@
             ],
             "support": {
                 "issues": "https://github.com/agus24/laravel-form-builder/issues",
-                "source": "https://github.com/agus24/laravel-form-builder/tree/1.3.11"
+                "source": "https://github.com/agus24/laravel-form-builder/tree/1.4.0"
             },
-            "time": "2021-07-04T06:21:56+00:00"
+            "time": "2021-09-02T15:48:26+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
