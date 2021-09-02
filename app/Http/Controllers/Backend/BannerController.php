@@ -91,6 +91,7 @@ class BannerController extends Controller
             "data" => [
                 "position" => $banner->position,
                 "title" => $banner->title,
+                "button_text" => $banner->button_text,
                 "button_url" => $banner->button_url,
                 "has_search" => $banner->has_search,
             ],

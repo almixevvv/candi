@@ -16,15 +16,6 @@
 
 <div class="container-fluid px-0">
     <div class="breadcrumbs">
-        <div class="wrap">
-            <div class="wrap_float">
-                <a href="#">Home</a>
-                <span class="separator">/</span>
-                <a href="{{ route('blog') }}">Blog</a>
-                <span class="separator">/</span>
-                <a href="">{{ $blog->title }}</a>
-            </div>
-        </div>
     </div>
 
     <div class="global-wrap">
@@ -35,7 +26,7 @@
                     <div class="featured-wrap flex">
                         <div class="featured-content">
                             <div class="tags-wrap">
-                                <a class="post-tag global-tag" href="../tag/people/index.html">{{ $blog->category->name }}</a>
+                                <a class="post-tag global-tag" style="background-color: #50e7e0;color: white;font-weight: bold;" href="../tag/people/index.html">{{ $blog->category->name }}</a>
                             </div>
                             <h1 class="white">{{$blog->title}}</h1>
                             <div class="item-meta white">

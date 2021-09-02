@@ -32,15 +32,15 @@
 
 <div class="container-fluid px-0">
   <div class="breadcrumbs">
-    <div class="wrap">
-      <div class="wrap_float">
+    <div class="wrap px-4" style="margin: 0;">
+      <div class="wrap_float" style="font-weight: bold; font-size: 17px;">
             @if ($listingDetail->province)
                 {{ $listingDetail->province?->name }} / {{ $listingDetail->city?->name }} / {{ $listingDetail->district?->name }}
             @endif
       </div>
     </div>
   </div>
-  <div class="mt-3">
+  <div class="mt-3 px-4">
     <img class="img-fluid" src="{{ $listingDetail->image->image_url }}" alt="Food Feature Image" style="max-height: 500px; height: auto; width: 100%; object-fit: cover;">
 </div>
   <div class="page px-4 full-width">

@@ -9,7 +9,7 @@
                     <div class="wrap_float js_height">
                         <div class="slide_content">
                             <div class="title_wrap home">
-                                <p class="slide_title" style="font-size:36pt; width: 100%;">{{ $banner->title }}</p>
+                                <p class="slide_title" style="font-size:36pt; width: 100%; text-align: center">{!! $banner->title !!}</p>
                                 <div style="margin-top: 5em;">
                                     <div style="position: relative">
                                         <div style="position: relative">
@@ -134,11 +134,7 @@
             <div class="section_content mt-2">
                 <!-- LightWidget WIDGET -->
                 <script src="{{ asset('js/lightwidget.js') }}"></script>
-                <iframe src="{{ $homeData ? $homeData->instagram_widget_url : "http://lightwidget.com/widgets/b613fc91fd595ea1977f73997b998929.html" }}"
-                    scrolling="no"
-                    allowtransparency="true"
-                    class="lightwidget-widget"
-                    style="width:100%;border:0;overflow:hidden;"></iframe>
+                <div class='embedsocial-stories' data-ref="695d7ac3976d820ed7d7f4d99b44a2ddd4d1f46e" ><a class="stories-powered-by-es" href="https://embedsocial.com/stories/" target="_blank" title="Powered by EmbedSocial">by <span>EmbedSocial</span></a></div><script>(function(d, s, id){var js; if (d.getElementById(id)) {return;} js = d.createElement(s); js.id = id; js.src = "https://embedsocial.com/embedscript/st.js"; d.getElementsByTagName("head")[0].appendChild(js);}(document, "script", "EmbedSocialStoriesScript"));</script>
             </div>
         </div>
     </div>

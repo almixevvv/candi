@@ -21,27 +21,16 @@
         </div>
     </div>
     <div class="col-12">
-        <div class="px-2">
+        <div class="">
             <div class="border-top mt-2 pt-2 rating-section">
-                <div class="row">
-                    @foreach($images as $key => $image)
-                        <div class="col-md-2 {{ $imageActive == $key ? "image-active" : "" }}" wire:click="chooseImage({{ $key }})">
-                            <img src="{{ $image }}" width="100%" height="200px" />
-                        </div>
-                    @endforeach
+                <div class="wrapper">
+                    <div class="scrollable">
+                        @foreach($images as $key => $image)
+                            <img src="{{ $image }}" class="image {{ $imageActive == $key ? "image-active" : "" }}" width="100%" wire:click="chooseImage({{ $key }})" />
+                        @endforeach
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
-@push('extra-css')
-<style>
-    .image-active {
-        border: 5px solid #50e7e0;
-        margin-right: 5px;
-        margin-left: 5px;
-        padding: 0;
-    }
-</style>
-@endpush
