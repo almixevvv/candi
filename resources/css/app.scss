@@ -91,6 +91,23 @@
     }
 }
 
+.slide_title {
+    text-align: center;
+}
+
+.banner-button {
+    text-align: center;
+}
+
+@media screen and (min-width: 1041px) {
+    .slide_title {
+        text-align: left;
+    }
+    .banner-button {
+        text-align: left;
+    }
+}
+
 @import "variables";
 @import "search";
 @import "buttons";

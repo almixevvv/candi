@@ -9,7 +9,7 @@
                     <div class="wrap_float js_height">
                         <div class="slide_content">
                             <div class="title_wrap home">
-                                <p class="slide_title" style="font-size:36pt; width: 100%; text-align: center">{!! $banner->title !!}</p>
+                                <p class="slide_title" style="font-size:36pt; width: 100%;">{!! $banner->title !!}</p>
                                 <div style="margin-top: 5em;">
                                     <div style="position: relative">
                                         <div style="position: relative">
@@ -25,11 +25,11 @@
                                                     <i class="fas fa-search"></i>
                                                 </span>
                                             @elseif ($banner->button_url)
-                                                <center>
-                                                    <a href="{{ $banner->button_url }}" class="btn btn-primary-candi">
+                                                <div class="banner-button">
+                                                    <a href="{{ $banner->button_url }}" class="btn btn-primary-candi banner-button">
                                                         {{ $banner->button_text }}
                                                     </a>
-                                                </center>
+                                                </div>
                                             @endif
                                         </div>
                                     </div>
