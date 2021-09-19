@@ -19,9 +19,9 @@
                             <a href="{{ route('cms.blog.show', $blog) }}">{{ $blog->id }}</a>
                         </td>
                         <td>{{ $blog->title }}</td>
-                        <td>{{ $blog->category->name }}</td>
+                        <td>{{ optional($blog->category)->name }}</td>
                         <td>
-                            <img src="{{ $blog->image->image_thumbnail }}" width="25%" />
+                            <img src="{{ optional($blog->image)->image_thumbnail }}" width="25%" />
                         </td>
                         <td>
                             <x-button-group 

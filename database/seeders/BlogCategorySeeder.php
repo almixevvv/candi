@@ -20,6 +20,7 @@ class BlogCategorySeeder extends Seeder
             ["name" => "Culinary"],
             ["name" => "Lifestyle"],
             ["name" => "Giveaway"],
+            ["name" => "Unlisted"]
         ];
         BlogCategory::insert($data);
     }

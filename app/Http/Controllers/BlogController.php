@@ -14,7 +14,9 @@ class BlogController extends Controller
         $featuredBlogs = Blog::with('image')->where('is_featured', true)->get();
 		$blogCategories = BlogCategory::with(['blogs' => function($query) {
             $query->where('is_featured', false);
+            $query->whereNotNull('category_id');
         }, 'blogs.image'])->get();
+
 		return view('front.blog.index', compact('request', 'blogCategories', 'featuredBlogs'));
 	}
 

@@ -26,7 +26,7 @@
                     <div class="featured-wrap flex">
                         <div class="featured-content">
                             <div class="tags-wrap">
-                                <a class="post-tag global-tag" style="background-color: #50e7e0;color: white;font-weight: bold;" href="../tag/people/index.html">{{ $blog->category->name }}</a>
+                                <a class="post-tag global-tag" style="background-color: #50e7e0;color: white;font-weight: bold;" href="../tag/people/index.html">{{ optional($blog->category)->name }}</a>
                             </div>
                             <h1 class="white">{{$blog->title}}</h1>
                             <div class="item-meta white">

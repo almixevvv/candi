@@ -74,13 +74,15 @@ class BlogController extends Controller
 
         $blog->addImage($request->file('image'));
 
-        $blog->createOrUpdateMetadata([
-            "title" => $request->title,
-            "description" => $request->description,
-            "robots" => $request->robots,
-            "keywords" => $request->keywords,
-            "canonical" => $request->canonical,
-        ]);
+        if ($request->description) {
+            $blog->createOrUpdateMetadata([
+                "title" => $request->title,
+                "description" => $request->description,
+                "robots" => $request->robots,
+                "keywords" => $request->keywords,
+                "canonical" => $request->canonical,
+            ]);
+        }
 
         $this->message("success", "Create success.");
 
@@ -162,13 +164,15 @@ class BlogController extends Controller
             $blog->addImage($request->file('image'));
         }
 
-        $blog->createOrUpdateMetadata([
-            "title" => $request->title,
-            "description" => $request->description,
-            "robots" => $request->robots,
-            "keywords" => $request->keywords,
-            "canonical" => $request->canonical,
-        ]);
+        if ($request->description) {
+            $blog->createOrUpdateMetadata([
+                "title" => $request->title,
+                "description" => $request->description,
+                "robots" => $request->robots,
+                "keywords" => $request->keywords,
+                "canonical" => $request->canonical,
+            ]);
+        }
 
         $this->message("success", "Update success.");
 

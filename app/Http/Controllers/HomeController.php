@@ -14,12 +14,11 @@ class HomeController extends Controller
 {
     public function index(Request $request) 
     {
-    	$blogCategories = BlogCategory::with([
-            'blogs' => function($query) {
-                $query->orderBy('created_at', 'desc');
-            },
-            'blogs.image'
-        ])->whereHas('blogs')->take(4)->orderBy('id')->get();
+    	$blogCategories = BlogCategory::with(['blogs', 'blogs.image'])
+        ->whereHas('blogs', function($query) {
+            $query->orderBy('created_at', 'desc');
+            $query->whereNotNull('category_id');
+        })->take(4)->orderBy('id')->get();
 
         $topDestinations = Listing::getTopDestinations();
 

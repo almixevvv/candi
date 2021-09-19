@@ -15,16 +15,20 @@
                     <td>{{ $blog->title }}</td>
                 </tr>
                 <tr>
+                    <th>Slug</th>
+                    <td>{{ $blog->slug }}</td>
+                </tr>
+                <tr>
                     <th>Image</th>
                     <td>
-                        <img src="{{ $blog->image->image_thumbnail }}" width="25%"
-                            onclick="window.location.href = '{{ $blog->image->image_url }}'"
+                        <img src="{{ optional($blog->image)->image_thumbnail }}" width="25%"
+                            onclick="window.location.href = '{{ optional($blog->image)->image_url }}'"
                             style="cursor:pointer"/>
                     </td>
                 </tr>
                 <tr>
                     <th>Category</th>
-                    <td>{{ $blog->category->name }}</td>
+                    <td>{{ optional($blog->category)->name }}</td>
                 </tr>
                 <tr>
                     <th>Is Featured</th>
@@ -33,7 +37,7 @@
             </thead>
         </table>
         <h3 style="margin-top: 2em; margin-bottom: 2em">Content</h3>
-        <div>{!! Markdown::convertToHtml($blog->content) !!}</div>
+        <div>{!! $blog->content !!}</div>
         @if ($blog->metadata)
             <h3 style="margin-top: 2em; margin-bottom: 2em">Metadata</h3>
             <div>

@@ -13,7 +13,7 @@ class DashboardController extends Controller
     public function index() 
     {
         $latestListing = Listing::with('image')->orderBy('id', 'desc')->limit(5)->get();
-        $latestBlog = Blog::with('image', 'category')->orderBy('id', 'desc')->limit(5)->get();
+        $latestBlog = Blog::with('image', 'category')->whereNotNull('category_id')->orderBy('id', 'desc')->limit(5)->get();
         $latestContact = Contact::orderBy('id', 'desc')->limit(5)->get();
         return view('cms.dashboard.index', compact('latestListing', 'latestBlog', 'latestContact'));
     }
