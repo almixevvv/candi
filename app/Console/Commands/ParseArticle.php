@@ -61,6 +61,7 @@ class ParseArticle extends Command
 
             $imageUrl = [];
             preg_match("/(http:\/\/candi.id\/wp-content\/uploads\/)[^\"]+/", $content, $imageUrl);
+            $imageUrl = str_replace("http://candi.id", "http://old.candi.id", $imageUrl);
             $images[] = $imageUrl;
             $blog = Blog::create([
                 "title" => $post['title'],

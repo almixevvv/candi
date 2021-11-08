@@ -9,6 +9,7 @@ use Illuminate\Database\Seeder;
 use App\Models\ListingTagCategory;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\Storage;
 
 class ListingCategorySeeder extends Seeder
@@ -20,8 +21,10 @@ class ListingCategorySeeder extends Seeder
      */
     public function run()
     {
+        Schema::disableForeignKeyConstraints();
         $this->listing_categories_seeder();
         $this->listing_tags_seeder();
+        Schema::enableForeignKeyConstraints();
     }
 
     private function listing_categories_seeder() 

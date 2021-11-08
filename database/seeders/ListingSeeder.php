@@ -6,6 +6,7 @@ use App\Models\Image;
 use App\Models\Listing;
 use App\Models\ListingTag;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Schema;
 
 class ListingSeeder extends Seeder
 {
@@ -16,6 +17,7 @@ class ListingSeeder extends Seeder
      */
     public function run()
     {
+        Schema::disableForeignKeyConstraints();
         Listing::truncate();
         $listings = Listing::factory()->count(10)->create();
         Image::where('model_name', "App\Models\Listing")->delete();
@@ -31,5 +33,7 @@ class ListingSeeder extends Seeder
 
             $listing->tags()->attach(ListingTag::all()->random(2));
         }
+
+        Schema::enableForeignKeyConstraints();
     }
 }

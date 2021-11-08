@@ -17,7 +17,7 @@ class CreateMenusTable extends Migration
             $table->id();
             $table->string('name', 100);
             $table->string('permission', 100);
-            $table->text('icon')->default('');
+            $table->text('icon');
             $table->string('route', 100)->nullable()->default(null);
             $table->integer('child_of')->nullable()->default(0);
             $table->integer('position')->default(0);

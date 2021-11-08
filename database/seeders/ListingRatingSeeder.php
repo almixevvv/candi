@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\ListingRatingCategory;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Schema;
 
 class ListingRatingSeeder extends Seeder
 {
@@ -19,7 +20,10 @@ class ListingRatingSeeder extends Seeder
             ["name" => "Service"],
             ["name" => "Value"],
         ];
+
+        Schema::disableForeignKeyConstraints();
         ListingRatingCategory::truncate();
         ListingRatingCategory::insert($data);
+        Schema::enableForeignKeyConstraints();
     }
 }

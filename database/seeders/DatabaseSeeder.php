@@ -6,6 +6,7 @@ use App\Models\AdvertiseWithUs;
 use App\Models\Image;
 use App\Models\WhoWeAre;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Schema;
 
 class DatabaseSeeder extends Seeder
 {
@@ -16,6 +17,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        Schema::disableForeignKeyConstraints();
         WhoWeAre::truncate(); // should truncate who we are before running
         Image::truncate();
         WhoWeAre::create([
@@ -37,5 +39,7 @@ class DatabaseSeeder extends Seeder
 
         $this->call(ListingRatingSeeder::class);
         $this->call(FrontendMenuSeeder::class);
+
+        Schema::enableForeignKeyConstraints();
     }
 }

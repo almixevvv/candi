@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use App\Models\FrontendMenuCategory;
+use Illuminate\Support\Facades\Schema;
 
 class FrontendMenuSeeder extends Seeder
 {
@@ -14,10 +15,12 @@ class FrontendMenuSeeder extends Seeder
      */
     public function run()
     {
+        Schema::disableForeignKeyConstraints();
         FrontendMenuCategory::truncate();
         FrontendMenuCategory::create([
             "code" => "footer",
             "name" => "Footer",
         ]);
+        Schema::enableForeignKeyConstraints();
     }
 }
